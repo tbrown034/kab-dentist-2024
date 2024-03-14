@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
-      <body className="bg-gray-700 text-slate-200">{children}</body>
+      <body className="text-teal-950 bg-teal-50">{children}</body>
     </html>
   );
 }

@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className={`${nunito.className}`}>
       <nav className="flex justify-between p-2 text-xl">
-        <p className="">Keith A. Brown D.D.S.</p>
+        <p className="font-semibold ">Keith A. Brown D.D.S.</p>
         <div className="flex gap-2">
           <Switch />
 
