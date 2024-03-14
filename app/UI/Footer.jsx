@@ -1,3 +1,6 @@
-export default function Footer() {
-  return <>foot</>;
-}
+// components/Footer.jsx
+const Footer = () => {
+  return <footer className="">Footer</footer>;
+};
+
+export default Footer;

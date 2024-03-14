@@ -5,10 +5,9 @@ import Hero from "./UI/Hero";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col justify-center min-h-screen">
         <Header />
         <Hero />
-        <h1 className="text-4xl ">hi</h1>
         <Footer />
       </div>
     </>
