@@ -1,5 +1,9 @@
 const Hero = () => {
-  return <div className="">hero</div>;
+  return (
+    <div className="">
+      hero texkkdsjt lsdjgkljads lkfdsfkljdas lkfjsdlkfjl ksadjflksdj{" "}
+    </div>
+  );
 };
 
 export default Hero;
