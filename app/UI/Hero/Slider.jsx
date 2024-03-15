@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -9,14 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import bank from "../../../public/images/bank.jpeg";
+import door from "../../../public/images/door.jpeg";
+import drSitting from "../../../public/images/drSitting.jpeg";
+import frontOffice from "../../../public/images/frontOffice.jpeg";
 
-// Static imports for your images
-import bank from "../../public/images/bank.jpeg";
-import door from "../../public/images/door.jpeg";
-import drSitting from "../../public/images/drSitting.jpeg";
-import frontOffice from "../../public/images/frontOffice.jpeg";
-
-// Array of imported images
+// Images for Slider
 const images = [
   { src: bank, alt: "Bank" },
   { src: door, alt: "Door" },
@@ -26,7 +23,7 @@ const images = [
 
 const Slider = () => {
   return (
-    <div className="px-8 mx-2">
+    <div className="px-4 mx-4 aspect-w-4 aspect-h-3">
       <Carousel
         plugins={[
           Autoplay({
@@ -38,7 +35,7 @@ const Slider = () => {
       >
         <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="flex-shrink-0 w-full">
+            <CarouselItem key={index}>
               <Image
                 className="border-2 border-teal-800 rounded-2xl"
                 src={image.src}
@@ -47,8 +44,10 @@ const Slider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <div className="opacity-50 bg-slate-200">
+          <CarouselPrevious className="bg-transparent " />
+          <CarouselNext className="bg-transparent " />
+        </div>
       </Carousel>
     </div>
   );
