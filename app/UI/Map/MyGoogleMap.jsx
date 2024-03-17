@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import {
   APIProvider,
   Map,
@@ -9,18 +9,20 @@ import {
 
 function MyGoogleMap() {
   const [infoOpen, setInfoOpen] = useState(false);
-  const [selectedPosition, setSelectedPosition] = useState(null);
+  const [cameraProps, setCameraProps] = useState({
+    center: { lat: 41.74840597561523, lng: -88.16671308810265 },
+    zoom: 15,
+  });
 
-  const position = {
-    lat: 41.74840597561523,
-    lng: -88.16671308810265,
-  };
   const address = "1296 Rickert Dr #300, Naperville, IL 60540";
 
-  const handleMarkerClick = () => {
-    setSelectedPosition(position);
+  const handleMarkerClick = useCallback(() => {
     setInfoOpen(true);
-  };
+  }, []);
+
+  const handleCameraChange = useCallback((ev) => {
+    setCameraProps(ev.detail);
+  }, []);
 
   const copyAddressToClipboard = async () => {
     try {
@@ -42,14 +44,14 @@ function MyGoogleMap() {
         }}
       >
         <Map
-          center={position}
-          zoom={15}
+          {...cameraProps}
+          onCameraChanged={handleCameraChange}
           style={{ width: "100%", height: "100%" }}
         >
-          <Marker position={position} onClick={handleMarkerClick} />
-          {infoOpen && selectedPosition && (
+          <Marker position={cameraProps.center} onClick={handleMarkerClick} />
+          {infoOpen && (
             <InfoWindow
-              position={selectedPosition}
+              position={cameraProps.center}
               onCloseClick={() => setInfoOpen(false)}
             >
               <div style={{ fontSize: "16px", maxWidth: "250px" }}>
@@ -59,7 +61,7 @@ function MyGoogleMap() {
                 <p>{address}</p>
                 <p>Providing top-notch dental care.</p>
                 <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${position.lat},${position.lng}`}
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${cameraProps.center.lat},${cameraProps.center.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#0078A8", textDecoration: "underline" }}
