@@ -3,7 +3,8 @@ const Features = () => {
     <section className="p-4">
       <div>
         <h2 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-900">
-          Designed for Patients Like You
+          Personalized Dental Excellence for{" "}
+          <span className="text-teal-500">Every Smile in Chicagoland</span>
         </h2>
         <p className="mb-8 text-gray-500 sm:text-xl">
           Dr. Keith Brown and our team focus on providing high-quality dental

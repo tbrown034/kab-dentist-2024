@@ -5,22 +5,30 @@ const HeroText = () => {
     <div className="flex flex-col items-start justify-center space-y-6">
       <div>
         <h1
-          className="text-5xl font-bold text-gray-900"
+          className="text-5xl font-bold leading-tight text-gray-900"
           style={{ fontFamily: `${poppins.style.fontFamily}` }}
         >
-          Let Us Brighten Your <span className="text-teal-500">Smile!</span>
+          Naperville's Home for{" "}
+          <span className="text-teal-500">Healthy Smiles</span>
         </h1>
         <div
-          className="flex flex-col gap-2 mt-4 text-lg leading-relaxed "
+          className="flex flex-col gap-2 mt-4 text-lg leading-relaxed"
           style={{ fontFamily: `${openSans.style.fontFamily}` }}
         >
           <p>
-            Dr. Keith Brown, DDS, has been a cornerstone of dental excellence in
-            the Chicagoland area since 1962.
+            Six decades of dedicated dental care have established{" "}
+            <a className="underline cursor-pointer underline-offset-4 hover:text-teal-800 active:text-teal-700">
+              Dr. Keith Brown, D.D.S.
+            </a>
+            , as a pillar of the Chicagoland's dental community.
           </p>
           <p>
-            Experience the best in dental care from one of Naperville's most
-            esteemed and trusted dentists.
+            In need of immediate care or searching for a dental home? Step into
+            a a anxiety-free experience at the{" "}
+            <a className="underline cursor-pointer underline-offset-4 hover:text-teal-800 active:text-teal-700">
+              Fifth Third Bank Building, 75th St. and Rickert Drive
+            </a>{" "}
+            — where every smile is a masterpiece.
           </p>
         </div>
       </div>
@@ -31,12 +39,28 @@ const HeroText = () => {
         >
           Book Now
         </button>
-        <p
-          className="text-lg font-medium text-gray-800 "
-          style={{ fontFamily: `${openSans.style.fontFamily}` }}
-        >
-          Or Call Us At <b className="font-bold text-teal-500">630-301-0891</b>
-        </p>
+        <p className="text-lg">Or</p>
+        <div>
+          <p
+            className="text-lg font-medium text-gray-800"
+            style={{ fontFamily: `${openSans.style.fontFamily}` }}
+          >
+            Call Us At{" "}
+            <b className="font-bold text-teal-500 underline hover:text-teal-600 active:text-teal-700 underline-offset-4 hover:cursor-pointer">
+              630-301-0891
+            </b>
+          </p>
+          <div className="flex items-center gap-1">
+            {" "}
+            <i class="fa-solid fa-turn-down-right"></i>
+            <p>
+              Including{" "}
+              <span className="underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
+                24/7 Emergency Care
+              </span>{" "}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

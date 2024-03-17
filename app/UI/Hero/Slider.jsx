@@ -23,7 +23,7 @@ const images = [
 
 const Slider = () => {
   return (
-    <div className="px-4 mx-4 aspect-w-4 aspect-h-3">
+    <div className="mx-4  aspect-w-4 aspect-h-3">
       <Carousel
         plugins={[
           Autoplay({
@@ -44,10 +44,6 @@ const Slider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="opacity-50 bg-slate-200">
-          <CarouselPrevious className="bg-transparent " />
-          <CarouselNext className="bg-transparent " />
-        </div>
       </Carousel>
     </div>
   );

@@ -2,6 +2,8 @@ import Features from "./UI/Features";
 import Footer from "./UI/Footer";
 import Header from "./UI/Header";
 import Hero from "./UI/Hero/Hero";
+import Doctor from "./UI/Hero/Doctor/Doctor";
+import Testimonials from "./UI/Testimonials";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
         <Header />
         <Hero />
         <Features />
+        <Doctor />
+        <Testimonials />
         <Footer />
       </div>
     </>
