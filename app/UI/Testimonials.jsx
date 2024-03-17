@@ -35,7 +35,7 @@ const testimonialsEntries = [
 ];
 const Highlight = ({ children }) => {
   return (
-    <span className="p-1 font-bold text-white bg-teal-600 rounded-lg">
+    <span className="inline-block p-1 font-bold text-white bg-teal-500 rounded-lg">
       {children}
     </span>
   );
@@ -57,40 +57,45 @@ const insertHighlight = (text, highlight) => {
 
 const Testimonials = () => {
   return (
-    <section className="">
-      <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-        <h2 className="mb-2 text-3xl font-bold text-gray-900">
-          Don't Just Take Our Word For It. Hear Directly{" "}
-          <span className="text-teal-600">From Our Patients</span>
-        </h2>
-        <Carousel
-          plugins={[
-            Autoplay({
-              delay: 8000,
-              stopOnInteraction: true,
-            }),
-          ]}
-          className="w-full"
-        >
-          <CarouselContent>
-            {testimonialsEntries.map(
-              ({ id, quote, highlight, reviewer, city }) => (
-                <CarouselItem key={id} className="flex justify-center">
-                  <div className="w-4/5 p-6 px-12 border-4 border-teal-600 rounded-lg teal-800 border-3 max">
-                    <blockquote className="text-xl font-medium text-gray-900">
-                      {insertHighlight(quote, highlight)}
-                    </blockquote>
-                    <figcaption className="mt-4 text-lg font-semibold">
-                      {reviewer},{" "}
-                      <span className="text-sm text-gray-500">{city}</span>
-                    </figcaption>
+    <section className="flex flex-col gap-4">
+      <h2 className="text-4xl font-extrabold tracking-tight text-gray-900">
+        Don't Just Take Our Word For It. Hear Directly{" "}
+        <span className="text-teal-500">From Our Patients ...</span>
+      </h2>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 8000,
+            stopOnInteraction: true,
+          }),
+        ]}
+        className="w-full"
+      >
+        <CarouselContent>
+          {testimonialsEntries.map(
+            ({ id, quote, highlight, reviewer, city }) => (
+              <CarouselItem key={id} className="flex justify-center">
+                <div className="p-4 px-8 mx-4 border-4 border-teal-600 rounded-lg border-3 ">
+                  <div className="flex justify-center my-2 text-2xl">
+                    <i className="text-teal-500 fa-solid fa-quote-left "></i>
                   </div>
-                </CarouselItem>
-              )
-            )}
-          </CarouselContent>
-        </Carousel>
-      </div>
+                  <blockquote className="text-xl font-medium text-gray-900">
+                    {insertHighlight(quote, highlight)}
+                  </blockquote>
+                  <div className="flex justify-center my-2 text-2xl">
+                    <i className="text-teal-500 fa-solid fa-quote-right "></i>
+                  </div>
+
+                  <figcaption className="mt-4 text-lg font-semibold">
+                    {reviewer},{" "}
+                    <span className="text-sm text-gray-500">{city}</span>
+                  </figcaption>
+                </div>
+              </CarouselItem>
+            )
+          )}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 };

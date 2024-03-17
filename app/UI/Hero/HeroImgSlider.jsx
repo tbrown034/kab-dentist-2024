@@ -5,8 +5,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import bank from "../../../public/images/bank.jpeg";
 import door from "../../../public/images/door.jpeg";
@@ -21,9 +19,9 @@ const images = [
   { src: frontOffice, alt: "Front Office" },
 ];
 
-const Slider = () => {
+const HeroImgSlider = () => {
   return (
-    <div className="mx-4  aspect-w-4 aspect-h-3">
+    <div className=" aspect-w-4 aspect-h-3">
       <Carousel
         plugins={[
           Autoplay({
@@ -49,4 +47,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default HeroImgSlider;

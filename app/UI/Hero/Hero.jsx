@@ -1,15 +1,15 @@
 // Hero.jsx
 import HeroText from "./HeroText";
-import Slider from "./Slider";
+import HeroImgSlider from "./HeroImgSlider";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col gap-8 p-2 sm:flex-row">
-      <div className="flex-1">
+    <div className="flex flex-col gap-4 sm:flex-row">
+      <div className="flex-col">
         <HeroText />
       </div>
-      <div className="flex-1">
-        <Slider />
+      <div className="flex-col">
+        <HeroImgSlider />
       </div>
     </div>
   );

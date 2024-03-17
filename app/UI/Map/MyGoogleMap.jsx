@@ -10,8 +10,8 @@ import {
 function MyGoogleMap() {
   const [infoOpen, setInfoOpen] = useState(false);
   const [cameraProps, setCameraProps] = useState({
-    center: { lat: 41.74840597561523, lng: -88.16671308810265 },
-    zoom: 15,
+    center: { lat: 41.74822087068904, lng: -88.16676740280504 },
+    zoom: 14,
   });
 
   const address = "1296 Rickert Dr #300, Naperville, IL 60540";

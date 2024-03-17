@@ -2,21 +2,18 @@ import { poppins, openSans } from "../../../lib/fonts.js";
 
 const HeroText = () => {
   return (
-    <div className="flex flex-col items-start justify-center space-y-6">
+    <div className="flex flex-col items-start justify-center gap-4">
       <div>
         <h1
-          className="text-5xl font-bold leading-tight text-gray-900"
+          className="text-4xl font-extrabold leading-tight text-gray-900"
           style={{ fontFamily: `${poppins.style.fontFamily}` }}
         >
           Naperville's Home for{" "}
           <span className="text-teal-500">Healthy Smiles</span>
         </h1>
-        <div
-          className="flex flex-col gap-2 mt-4 text-lg leading-relaxed"
-          style={{ fontFamily: `${openSans.style.fontFamily}` }}
-        >
+        <div className="flex flex-col gap-2 mt-4 text-xl ">
           <p>
-            Six decades of dedicated dental care have established{" "}
+            Decades of dedicated dental care have established{" "}
             <a className="underline cursor-pointer underline-offset-4 hover:text-teal-800 active:text-teal-700">
               Dr. Keith Brown, D.D.S.
             </a>

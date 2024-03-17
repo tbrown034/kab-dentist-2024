@@ -9,13 +9,15 @@ import MapSection from "./UI/Map/MapSection";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col justify-between min-h-screen gap-4 p-2">
+      <div className="flex flex-col gap-2 p-2 ">
         <Header />
-        <Hero />
-        <Features />
-        <Doctor />
-        <Testimonials />
-        <MapSection />
+        <main className="flex flex-col gap-8 p-2 px-4">
+          <Hero />
+          <Features />
+          <Doctor />
+          <Testimonials />
+          <MapSection />
+        </main>
         <Footer />
       </div>
     </>
