@@ -40,28 +40,25 @@ const HeroText = () => {
           Book Now
         </button>
         <p className="text-lg">Or</p>
-        <div>
+        <div className="flex flex-col gap-2">
           <p
             className="text-lg font-medium text-gray-800"
             style={{ fontFamily: `${openSans.style.fontFamily}` }}
           >
-            Call Us At{" "}
+            Call Us At <br></br>
             <b className="font-bold text-teal-500 underline hover:text-teal-600 active:text-teal-700 underline-offset-4 hover:cursor-pointer">
               630-301-0891
             </b>
           </p>
-          <div className="flex items-center gap-1">
-            {" "}
-            <i class="fa-solid fa-turn-down-right"></i>
-            <p>
-              Including{" "}
-              <span className="underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
-                24/7 Emergency Care
-              </span>{" "}
-            </p>
-          </div>
+          <div className="flex items-center gap-4"> </div>
         </div>
       </div>
+      <p>
+        Now Offering{" "}
+        <span className="text-teal-900 underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
+          24/7 Emergency Care
+        </span>
+      </p>
     </div>
   );
 };
