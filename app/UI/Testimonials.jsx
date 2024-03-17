@@ -33,14 +33,12 @@ const testimonialsEntries = [
     city: "Naperville",
   },
 ];
+// Custom Highlight component using `mark` instead of `span`
 const Highlight = ({ children }) => {
-  return (
-    <span className="inline-block p-1 font-bold text-white bg-teal-500 rounded-lg">
-      {children}
-    </span>
-  );
+  return <mark className="p-1 text-white bg-teal-500">{children}</mark>;
 };
 
+// Updated insertHighlight function to use the Highlight component
 const insertHighlight = (text, highlight) => {
   const parts = text.split(highlight);
   return (
@@ -75,11 +73,11 @@ const Testimonials = () => {
           {testimonialsEntries.map(
             ({ id, quote, highlight, reviewer, city }) => (
               <CarouselItem key={id} className="flex justify-center">
-                <div className="p-4 px-8 mx-4 border-4 border-teal-600 rounded-lg border-3 ">
+                <div className="p-4 px-8 text-white bg-teal-800 rounded-lg opacity-95 0 ">
                   <div className="flex justify-center my-2 text-2xl">
                     <i className="text-teal-500 fa-solid fa-quote-left "></i>
                   </div>
-                  <blockquote className="text-xl font-medium text-gray-900">
+                  <blockquote className="text-xl font-medium">
                     {insertHighlight(quote, highlight)}
                   </blockquote>
                   <div className="flex justify-center my-2 text-2xl">
@@ -87,8 +85,7 @@ const Testimonials = () => {
                   </div>
 
                   <figcaption className="mt-4 text-lg font-semibold">
-                    {reviewer},{" "}
-                    <span className="text-sm text-gray-500">{city}</span>
+                    {reviewer}, <span className="text-sm ">{city}</span>
                   </figcaption>
                 </div>
               </CarouselItem>
