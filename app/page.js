@@ -2,8 +2,9 @@ import Features from "./UI/Features";
 import Footer from "./UI/Footer";
 import Header from "./UI/Header";
 import Hero from "./UI/Hero/Hero";
-import Doctor from "./UI/Hero/Doctor/Doctor";
+import Doctor from "./UI/Doctor/Doctor";
 import Testimonials from "./UI/Testimonials";
+import MapSection from "./UI/Map/MapSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Features />
         <Doctor />
         <Testimonials />
+        <MapSection />
         <Footer />
       </div>
     </>
