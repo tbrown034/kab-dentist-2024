@@ -1,6 +1,6 @@
 // components/Header.jsx
 "use client";
-import { nunito } from "../../lib/fonts.js";
+import { nunito } from "../../../lib/fonts.js";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +14,7 @@ import { Switch } from "@/components/ui/switch";
 const Header = () => {
   return (
     <header className={`${nunito.className}`}>
-      <nav className="flex justify-between p-2 text-xl">
+      <nav className="flex justify-between p-2 text-2xl">
         <p className="font-semibold ">Keith A. Brown D.D.S.</p>
         <div className="flex gap-2">
           <Switch />

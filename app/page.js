@@ -1,10 +1,11 @@
-import Features from "./UI/Features";
-import Footer from "./UI/Footer";
-import Header from "./UI/Header";
+import Features from "./UI/Other/Features";
+import Footer from "./UI/Other/Footer";
+import Header from "./UI/Other/Header";
 import Hero from "./UI/Hero/Hero";
 import Doctor from "./UI/Doctor/Doctor";
-import Testimonials from "./UI/Testimonials";
+import Testimonials from "./UI/TestimonialSection";
 import MapSection from "./UI/Map/MapSection";
+import AppointmentSection from "./UI/Appointment.jsx/AppointmentSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <Doctor />
           <Testimonials />
           <MapSection />
+          <AppointmentSection />
         </main>
         <Footer />
       </div>
