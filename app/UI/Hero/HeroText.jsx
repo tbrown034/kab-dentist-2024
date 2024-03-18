@@ -1,3 +1,4 @@
+import CallUsAtDiallogue from "@/app/Dialogues/CallUsAtDialogue.jsx";
 import { poppins, openSans } from "../../../lib/fonts.js";
 
 const HeroText = () => {
@@ -13,13 +14,12 @@ const HeroText = () => {
       <p className="text-lg lg:text-xl">
         Decades of dedicated dental care have established{" "}
         <a className="underline cursor-pointer underline-offset-4 hover:text-teal-800 active:text-teal-700">
-          Dr. Keith Brown, D.D.S.
+          Dr. Keith Brown, DDS FAGD
         </a>
         , as a pillar of the Chicagoland's dental community.
       </p>
       <p className="text-lg lg:text-xl">
-        In need of immediate care or searching for a dental home? Step into a a
-        anxiety-free experience at the{" "}
+        In need of immediate care or searching for a dental home? See us at{" "}
         <a className="underline cursor-pointer underline-offset-4 hover:text-teal-800 active:text-teal-700">
           Fifth Third Bank Building, 75th St. and Rickert Drive
         </a>{" "}
@@ -36,9 +36,7 @@ const HeroText = () => {
         <div className="flex flex-col gap-2">
           <p className="text-lg font-bold">
             Call Us At <br></br>
-            <b className="font-bold text-teal-500 underline hover:text-teal-600 active:text-teal-700 underline-offset-4 hover:cursor-pointer">
-              630-301-0891
-            </b>
+            <CallUsAtDiallogue />
           </p>
           <div className="flex items-center gap-4"> </div>
         </div>
