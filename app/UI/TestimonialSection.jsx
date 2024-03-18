@@ -10,7 +10,7 @@ const TestimonialSection = () => {
   return (
     <section className="flex flex-col gap-4">
       <h2 className="text-4xl font-extrabold tracking-tight text-gray-900">
-        Don't Just Take Our Word For It. Hear Directly{" "}
+        Do Not Just Take Our Word For It. Hear Directly{" "}
         <span className="text-teal-500">From Our Patients ...</span>
       </h2>
       <Carousel

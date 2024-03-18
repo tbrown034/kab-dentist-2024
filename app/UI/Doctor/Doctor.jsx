@@ -13,7 +13,7 @@ const Doctor = () => {
       </h2>
       <p className="text-xl">
         Bringing over four decades of unparalleled dedication and expertise to
-        Naperville, Dr. Keith A. Brown, DDS, FAGD, is more than a dentist; he's
+        Naperville, Dr. Keith A. Brown, DDS, FAGD, is more than a dentist; he is
         a community staple committed to your dental well-being.
       </p>
       <DoctorImgGroup alt="Dr. Keith A. Brown in his dental practice" />
@@ -26,8 +26,8 @@ const Doctor = () => {
         </p>
         <p>
           With a deep-seated belief in the power of modern dentistry, combined
-          with a personalized approach, Dr. Brown offers a care experience
-          that's both exceptional and uniquely tailored to meet your needs.
+          with a personalized approach, Dr. Brown offers a care experience that
+          is both exceptional and uniquely tailored to meet your needs.
         </p>
         <p>
           His journey in dentistry is punctuated by a lifelong commitment to
@@ -37,8 +37,8 @@ const Doctor = () => {
           comprehensive and compassionate.
         </p>
         <blockquote className="italic text-center">
-          A smile is a curve that sets everything straight. Let's care for yours
-          together. - Dr. Keith A. Brown
+          A smile is a curve that sets everything straight. Let us care for
+          yours together. - Dr. Keith A. Brown
         </blockquote>
       </div>
     </section>
