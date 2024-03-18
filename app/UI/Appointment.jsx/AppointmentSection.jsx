@@ -1,5 +1,5 @@
 import React from "react";
-import AppointmentSeperator from "./AppointmentSeperator";
+
 import ContactForm from "./ContactForm";
 
 const AppointmentSection = () => {
@@ -18,7 +18,7 @@ const AppointmentSection = () => {
           experience the difference today!
         </p>
       </div>
-      <AppointmentSeperator />
+
       <ContactForm />
     </section>
   );
