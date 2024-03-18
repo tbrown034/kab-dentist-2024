@@ -10,7 +10,7 @@ import AppointmentSection from "./UI/Appointment.jsx/AppointmentSection";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col gap-2 p-2 ">
+      <div className="flex flex-col gap-4 p-2 ">
         <Header />
         <main className="flex flex-col gap-8 p-2 px-4">
           <Hero />
