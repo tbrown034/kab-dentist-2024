@@ -3,11 +3,13 @@ import HeroImgSlider from "./HeroImgSlider";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col gap-4 md:flex-row">
-      <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-1/3">
+    <div className="flex flex-col gap-4 md:flex-row md:gap-8 ">
+      {/* HeroText div will take up 2/3 of the space */}
+      <div className="md:flex-grow md:basis-7/12">
         <HeroText />
       </div>
-      <div className="flex flex-col w-full md:w-1/2 xl:w-3/5 2xl:w-2/3">
+      {/* HeroImgSlider div will take up 1/3 of the space */}
+      <div className="md:flex-grow md:basis-5/12">
         <HeroImgSlider />
       </div>
     </div>

@@ -5,11 +5,11 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import testimonialsEntries from "./Testimonials/testimonialEntries";
+import testimonialsEntries from "./testimonialEntries.js";
 const TestimonialSection = () => {
   return (
     <section className="flex flex-col gap-4">
-      <h2 className="text-4xl font-extrabold tracking-tight text-gray-900">
+      <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
         Do Not Just Take Our Word For It. Hear Directly{" "}
         <span className="text-teal-500">From Our Patients ...</span>
       </h2>

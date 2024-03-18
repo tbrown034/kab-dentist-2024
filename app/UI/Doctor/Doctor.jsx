@@ -36,10 +36,17 @@ const Doctor = () => {
           philosophy drives everything we do, ensuring that your care is both
           comprehensive and compassionate.
         </p>
-        <blockquote className="italic text-center">
-          A smile is a curve that sets everything straight. Let us care for
-          yours together. - Dr. Keith A. Brown
-        </blockquote>
+        <div className="flex items-center justify-center gap-4 mx-2">
+          <i className="fa-solid fa-quote-left"></i>
+          <blockquote className="italic text-center">
+            A smile is a curve that sets everything straight. Let us care for
+            yours together.{" "}
+          </blockquote>
+          <i className="fa-solid fa-quote-right"></i>
+        </div>
+        <p className="font-semibold text-center ">
+          - Dr. Keith A. Brown DDS FAGD
+        </p>
       </div>
     </section>
   );
