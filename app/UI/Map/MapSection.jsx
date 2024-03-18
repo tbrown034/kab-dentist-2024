@@ -4,12 +4,12 @@ import MyGoogleMap from "./MyGoogleMap";
 
 const MapSection = () => {
   return (
-    <section>
-      <h2 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-900">
+    <section className="flex flex-col gap-4">
+      <h2 className="text-4xl font-extrabold tracking-tight text-gray-900">
         Discover <span className="text-teal-500"> Comfort & Care</span> at Our
         Naperville Dental Home
       </h2>
-      <p className="mb-8 text-center sm:text-xl">
+      <p className="text-lg ">
         For over 30 years, we have dedicated ourselves to bringing smiles to
         life right here in Naperville. Enjoy the panoramic views and exceptional
         dental care on the third floor of the Fifth Third Bank building at 75th
