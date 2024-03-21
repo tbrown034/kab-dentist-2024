@@ -46,14 +46,14 @@ const MapSection = () => {
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    className="rounded-xl"
+                    className="border-4 border-teal-800 rounded-xl"
                   />
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
         </div>
-        <div className="overflow-hidden rounded-2xl h-96">
+        <div className="overflow-hidden border-4 border-teal-800 rounded-2xl ">
           <MyGoogleMap />
         </div>
       </div>

@@ -25,7 +25,7 @@ const TestimonialSection = () => {
         <CarouselContent>
           {testimonialsEntries.map(({ id, quote, reviewer, city }) => (
             <CarouselItem key={id} className="flex justify-center">
-              <div className="flex flex-col p-4 px-8 text-white bg-teal-800 rounded-lg opacity-95 justify-center items-center min-h-[100px]">
+              <div className="flex flex-col p-4 px-8 text-white bg-teal-800 border-4 border-teal-900 rounded-xl opacity-95 justify-center items-center min-h-[100px]">
                 {" "}
                 {/* Adjusted for dynamic content sizing */}
                 <div className="flex justify-center my-2 text-2xl">

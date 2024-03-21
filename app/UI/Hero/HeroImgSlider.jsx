@@ -65,7 +65,11 @@ const HeroImgSlider = () => {
           {images.map((image) => (
             <CarouselItem key={image.id}>
               {/* Note: Next.js Image component might require explicit width and height or layout="fill" for proper rendering. */}
-              <Image src={image.src} alt={image.alt} className="rounded-xl" />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                className="border-4 border-teal-800 rounded-xl"
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
