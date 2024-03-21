@@ -6,22 +6,52 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import bank from "../../../public/images/bank.jpeg";
-import door from "../../../public/images/door.jpeg";
-import drSitting from "../../../public/images/drSitting.jpeg";
-import frontOffice from "../../../public/images/frontOffice.jpeg";
 
-// Images for Slider
+// Import images by giving each a unique name
+import drAtReception from "../../../public/images/doctor/drAtReception.jpeg";
+import drSitting from "../../../public/images/doctor/drSitting.jpeg";
+import drWithPatient1 from "../../../public/images/doctor/drWithPatient1.jpeg";
+import drWithPatient2 from "../../../public/images/doctor/drWithPatient2.jpeg";
+import bankExt from "../../../public/images/office/bankExt.jpeg";
+import doorWithoutStickers from "../../../public/images/office/doorWithoutStickers.jpeg";
+
+// Update the images array with imported images
 const images = [
-  { src: bank, alt: "Bank" },
-  { src: door, alt: "Door" },
-  { src: drSitting, alt: "Doctor Sitting" },
-  { src: frontOffice, alt: "Front Office" },
+  {
+    id: 1,
+    src: drAtReception,
+    alt: "Dr. Brown welcoming patients at the reception",
+  },
+  {
+    id: 2,
+    src: drSitting, // Assuming you want to add src for this and the following
+    alt: "Dr. Brown sitting in his office",
+  },
+  {
+    id: 3,
+    src: drWithPatient1, // Assuming src needs to be added
+    alt: "Dr. Brown with a patient and computer",
+  },
+  {
+    id: 4,
+    src: drWithPatient2, // Assuming src needs to be added
+    alt: "Dr. Brown consulting with a patient",
+  },
+  {
+    id: 5,
+    src: bankExt, // Direct path works but importing optimizes
+    alt: "Exterior view of Fifth Third Bank building housing the dental office",
+  },
+  {
+    id: 6,
+    src: doorWithoutStickers, // Direct path works but importing optimizes
+    alt: "Entrance door to the dental office without stickers",
+  },
 ];
 
 const HeroImgSlider = () => {
   return (
-    <div className=" aspect-w-4 aspect-h-3">
+    <div className="aspect-w-4 aspect-h-3">
       <Carousel
         plugins={[
           Autoplay({
@@ -32,13 +62,10 @@ const HeroImgSlider = () => {
         className="w-full"
       >
         <CarouselContent>
-          {images.map((image, index) => (
-            <CarouselItem key={index}>
-              <Image
-                className="border-2 border-teal-800 rounded-2xl"
-                src={image.src}
-                alt={image.alt}
-              />
+          {images.map((image) => (
+            <CarouselItem key={image.id}>
+              {/* Note: Next.js Image component might require explicit width and height or layout="fill" for proper rendering. */}
+              <Image src={image.src} alt={image.alt} className="rounded-xl" />
             </CarouselItem>
           ))}
         </CarouselContent>
