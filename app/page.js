@@ -6,6 +6,7 @@ import Doctor from "./UI/Doctor/Doctor";
 import TestimonialSection from "./UI/Testimonials/TestimonialSection";
 import MapSection from "./UI/Map/MapSection";
 import AppointmentSection from "./UI/Appointment.jsx/AppointmentSection";
+import OfficeSection from "./UI/Office/OfficeSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           <TestimonialSection />
           <MapSection />
           <AppointmentSection />
+          <OfficeSection />
         </main>
         <Footer />
       </div>

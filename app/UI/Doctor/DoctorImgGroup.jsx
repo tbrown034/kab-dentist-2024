@@ -7,7 +7,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 // Importing images from the doctor directory
-import drAtReception from "../../../public/images/doctor/drAtReception.jpeg";
 import drSitting from "../../../public/images/doctor/drSitting.jpeg";
 import drStandingHallwayVertical from "../../../public/images/doctor/drStandingHallwayVertical.jpeg";
 import drStandingVertical from "../../../public/images/doctor/drStandingVertical.jpeg";
@@ -17,12 +16,6 @@ import drWithPatientandComputer from "../../../public/images/doctor/drWithPatien
 
 // Importing images and their details
 const drImages = [
-  {
-    id: 1,
-    src: drAtReception,
-    alt: "Dr. Brown welcoming patients at the reception",
-    direction: "horizontal",
-  },
   {
     id: 2,
     src: drSitting,
@@ -41,22 +34,11 @@ const drImages = [
     alt: "Dr. Brown standing",
     direction: "vertical",
   },
-  {
-    id: 5,
-    src: drWithPatient1,
-    alt: "Dr. Brown with a patient",
-    direction: "horizontal",
-  },
-  {
-    id: 6,
-    src: drWithPatient2,
-    alt: "Dr. Brown discussing treatment options with a patient",
-    direction: "horizontal",
-  },
+
   {
     id: 7,
     src: drWithPatientandComputer,
-    alt: "Dr. Brown with a patient and computer",
+    alt: "Dr. Brown working with a patient and computer",
     direction: "horizontal",
   },
 ];
