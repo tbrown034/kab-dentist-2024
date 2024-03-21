@@ -41,14 +41,26 @@ const HeroText = () => {
           <div className="flex items-center gap-4"> </div>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-2">
-        <i className="fa-solid fa-star-of-life"></i>{" "}
-        <p>
-          Now Offering{" "}
-          <span className="text-teal-900 underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
-            24/7 Emergency Care
-          </span>
-        </p>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <i className="fa-solid fa-star-of-life"></i>{" "}
+          <p>
+            Now Offering{" "}
+            <span className="text-teal-900 underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
+              24/7 Emergency Care
+            </span>
+          </p>
+        </div>
+        <div className="flex items-center justify-center gap-2">
+          <i className="fa-regular fa-face-smile-relaxed"></i>{" "}
+          <p>
+            Complimentary nitrous to ensure a{" "}
+            <span className="text-teal-900 underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
+              relaxed and pain-free
+            </span>{" "}
+            visit.
+          </p>
+        </div>
       </div>
     </div>
   );

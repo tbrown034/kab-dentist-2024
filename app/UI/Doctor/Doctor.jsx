@@ -2,11 +2,8 @@ import DoctorImgGroup from "./DoctorImgGroup";
 
 const Doctor = () => {
   return (
-    <section className="flex flex-col gap-4" aria-labelledby="doctor-heading">
-      <h2
-        id="doctor-heading"
-        className="text-3xl font-extrabold tracking-tight"
-      >
+    <section className="flex flex-col gap-4">
+      <h2 className="text-3xl font-extrabold tracking-tight">
         Dr. Keith A. Brown:{" "}
         <span className="text-teal-500">Your Trusted Partner</span> in Dental
         Health
@@ -16,7 +13,7 @@ const Doctor = () => {
         Naperville, Dr. Keith A. Brown, DDS, FAGD, is more than a dentist; he is
         a community staple committed to your dental well-being.
       </p>
-      <DoctorImgGroup alt="Dr. Keith A. Brown in his dental practice" />
+      <DoctorImgGroup />
 
       <div className="flex flex-col gap-4 mt-4 text-lg">
         <p>

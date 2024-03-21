@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <div className="flex flex-col gap-4 p-2 ">
         <Header />
-        <main className="flex flex-col gap-8 p-2 px-4">
+        <main className="flex flex-col gap-12 p-4 ">
           <Hero />
           <Features />
           <Doctor />
