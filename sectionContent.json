@@ -1,0 +1,72 @@
+{
+    "financialSection": {
+      "title": "Making Dental Care",
+      "highlight": "Affordable",
+      "paragraphs": [
+        "We promise to give you the most affordable dental care we can offer. We can also assist you in arranging a financing program tailored to your specific needs and budget.",
+        "We accept most traditional insurance plans, contact our office to verify acceptance of your plan. We also accept checks, cash or credit cards, and we offer a flexible payment plan. We, however, are not accepting Medicad at this time."
+      ]
+    },
+    "doctorSection": {
+      "title": "Dr. Keith A. Brown:",
+      "highlight": "Your Trusted Partner",
+      "subtitle": "in Dental Health",
+      "paragraphs": [
+        "Bringing over four decades of unparalleled dedication and expertise to Naperville, Dr. Keith A. Brown, DDS, FAGD, is more than a dentist; he is a community staple committed to your dental well-being.",
+        "With a deep-seated belief in the power of modern dentistry, combined with a personalized approach, Dr. Brown offers a care experience that is both exceptional and uniquely tailored to meet your needs.",
+        "\"Your healthiest smile, our shared mission.\" This philosophy drives everything we do, ensuring that your care is both comprehensive and compassionate."
+      ],
+      "quote": "A smile is a curve that sets everything straight. Let us care for yours together.",
+      "attribution": "- Dr. Keith A. Brown DDS FAGD"
+    },
+    "officeSection": {
+      "title": "At Our Office, We Prioritize",
+      "highlight": "Care and Comfort",
+      "paragraphs": [
+        "We provide a range of dental services to take the best care of you and your family's dental health for life. Whether it's your child's first cleaning or an emergency procedure, we got you covered. Our goal is to have your teeth looking great and free of pain or discomfort in as short a time as possible."
+      ]
+    },
+    "heroText": {
+      "title": "Naperville's Home for Healthy Smiles",
+      "paragraphs": [
+        "Decades of dedicated dental care have established Dr. Keith Brown, DDS FAGD, as a pillar of the Chicagoland's dental community.",
+        "In need of immediate care or searching for a dental home? See us at Fifth Third Bank Building, 75th St. and Rickert Drive — where every smile is a masterpiece."
+      ]
+    },
+    "appointmentSection": {
+      "title": "Easy Scheduling for Your Dental Care Needs",
+      "paragraph": "Ready to start your journey to a healthier, happier smile? With easy online scheduling and a commitment to patient convenience, we make it simpler than ever to access top-tier dental care."
+    },
+    "mapSection": {
+      "title": "Discover Comfort & Care at Our Naperville Dental Home",
+      "paragraph": "For over 30 years, we have dedicated ourselves to bringing smiles to life right here in Naperville. Enjoy the panoramic views and exceptional dental care on the third floor of the Fifth Third Bank building at 75th and Rickert."
+    },
+
+      "features": {
+        "title": "Personalized Dental Excellence for",
+        "highlight": "Every Smile in Chicagoland",
+        "intro": "Dr. Keith Brown and our team focus on providing high-quality dental care with a personal touch to the Chicagoland area.",
+        "features": [
+          {
+            "title": "Affordable Care",
+            "description": "We promise to offer the most affordable dental care possible and assist in finding a financing program tailored to your needs.",
+            "icon": "fa-hand-holding-medical"
+          },
+          {
+            "title": "24/7 Emergency Services",
+            "description": "We're here for you in an emergency. Give us a call, and we'll make sure to see you as soon as possible.",
+            "icon": "fa-kit-medical"
+          },
+          {
+            "title": "Convenient Location",
+            "description": "Located on the third floor of the Fifth Third Bank at 75th St. and Rickert Drive in Naperville, Illinois.",
+            "icon": "fa-location-dot"
+          },
+          {
+            "title": "Stress-Free Environment",
+            "description": "Our office is designed to be a tranquil retreat from the stress of everyday life, ensuring a calm and comforting dental experience.",
+            "icon": "fa-spa"
+          }
+        ]
+      }
+    }
