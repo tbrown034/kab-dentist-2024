@@ -1,3 +1,6 @@
+import { DatePicker } from "../Other/DatePicker";
+import PainSlider from "../Other/PainSlider";
+
 const BookAppointmentReturning = () => {
   return (
     <section className="">
@@ -69,6 +72,22 @@ const BookAppointmentReturning = () => {
             placeholder="Leave a comment..."
             required
           ></textarea>
+        </div>
+        <div>
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+            Requested Date
+          </label>
+          <DatePicker />
+        </div>
+        <div>
+          <label
+            htmlFor="pain-slider"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            Pain Level
+          </label>
+
+          <PainSlider />
         </div>
 
         <button

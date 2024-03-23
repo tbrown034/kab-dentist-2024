@@ -17,14 +17,14 @@ export default function Home() {
       <div className="flex flex-col gap-4 p-2">
         <Header />
         <main className="flex flex-col gap-8 p-4">
-          <HeroSection content={sectionContents.heroText} />
-          <Features content={sectionContents.features} />
-          <DoctorSection content={sectionContents.doctorSection} />
-          <TestimonialSection content={sectionContents.testimonialSection} />
-          <MapSection content={sectionContents.mapSection} />
-          <OfficeSection content={sectionContents.officeSection} />
-          <FinancialSection content={sectionContents.financialSection} />
-          <AppointmentSection content={sectionContents.appointmentSection} />
+          <HeroSection />
+          <Features />
+          <DoctorSection />
+          <TestimonialSection />
+          <MapSection />
+          <OfficeSection />
+          <FinancialSection />
+          <AppointmentSection />
         </main>
         <Footer />
       </div>

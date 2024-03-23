@@ -1,4 +1,17 @@
+"use client";
+import { DatePicker } from "../Other/DatePicker";
+import { Slider } from "@/components/ui/slider";
+import { useState } from "react";
+import PainSlider from "../Other/PainSlider";
+
 const BookAppointmentNew = () => {
+  const [painLevel, setPainLevel] = useState([]); // Initialize to default pain level
+
+  const handleSliderChange = (value) => {
+    console.log("Slider Value:", value); // Debugging: Log the slider value
+    setPainLevel(value); // Directly use the value assuming it's not an array
+  };
+
   return (
     <section>
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
@@ -10,6 +23,7 @@ const BookAppointmentNew = () => {
         ASAP.
       </p>
       <form action="#" className="space-y-8">
+        {/* Input fields for Full Name, Email Address, and Phone Number */}
         <div>
           <label
             htmlFor="name"
@@ -54,7 +68,22 @@ const BookAppointmentNew = () => {
             placeholder="(555) 555-5555"
           />
         </div>
-        {/* Continue with your form fields as necessary */}
+        <div>
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+            Requested Date
+          </label>{" "}
+          <DatePicker />
+        </div>
+        <div>
+          <label
+            htmlFor="pain-slider"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            Pain Level
+          </label>
+
+          <PainSlider />
+        </div>
         <button
           type="submit"
           className="block w-full px-8 py-3 text-lg font-medium text-center text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700"
