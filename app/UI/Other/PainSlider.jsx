@@ -22,7 +22,7 @@ const PainSlider = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-2 py-4">
+    <div className="flex flex-col items-center justify-center w-4/5 p-2 py-4 ">
       <input
         type="range"
         min="1"

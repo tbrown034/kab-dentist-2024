@@ -1,11 +1,11 @@
 import React from "react";
-import DoctorImgGroup from "./DoctorImgGroup";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
+import DentalServicesImgGroup from "./DentalServicesImgGroup";
 
-const DoctorSection = () => {
+const DentalServicesSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
-    sectionContents.doctorSection;
+    sectionContents.dentalServicesSection;
 
   if (!title || !textBlock || textBlock.length === 0) return null;
 
@@ -29,9 +29,9 @@ const DoctorSection = () => {
           </div>
         ))}
       </div>
-      <DoctorImgGroup />
+      <DentalServicesImgGroup />
     </section>
   );
 };
 
-export default DoctorSection;
+export default DentalServicesSection;

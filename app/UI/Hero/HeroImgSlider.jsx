@@ -9,6 +9,7 @@ import {
 import drWithPatient1 from "../../../public/images/doctor/drWithPatient1.jpeg";
 import bankExt from "../../../public/images/office/bankExt.jpeg";
 import doorWithoutStickers from "../../../public/images/office/doorWithoutStickers.jpeg";
+import drAtReception from "../../../public/images/doctor/drAtReception.jpeg";
 
 const images = [
   {
@@ -25,6 +26,11 @@ const images = [
     id: 3,
     src: doorWithoutStickers, // Direct path works but importing optimizes
     alt: "Entrance door to the dental office without stickers",
+  },
+  {
+    id: 4,
+    src: drAtReception, // Direct path works but importing optimizes
+    alt: "Dr. Brown",
   },
 ];
 const HeroImgSlider = () => {

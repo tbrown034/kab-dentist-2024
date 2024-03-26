@@ -5,7 +5,7 @@ import HeaderHamburger from "./HeaderHamburger.jsx";
 const Header = () => {
   return (
     <nav className="flex items-center justify-between p-2 font-bold">
-      <a href="/" className="text-3xl font-extrabold">
+      <a href="/" className="text-2xl font-extrabold">
         Dr. Keith A. Brown DDS
       </a>
       <div>

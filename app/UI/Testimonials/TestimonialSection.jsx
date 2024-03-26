@@ -13,6 +13,7 @@ const TestimonialSection = () => {
         Do Not Just Take Our Word For It. Hear Directly{" "}
         <span className="text-teal-500">From Our Patients ...</span>
       </h2>
+
       <Carousel
         plugins={[
           Autoplay({
@@ -20,12 +21,12 @@ const TestimonialSection = () => {
             stopOnInteraction: true,
           }),
         ]}
-        className="w-full"
+        className="p-1 px-8 m-2 bg-teal-800 shadow-2xl text-teal-50"
       >
         <CarouselContent>
           {testimonialsEntries.map(({ id, quote, reviewer, city }) => (
             <CarouselItem key={id} className="flex justify-center">
-              <div className="flex flex-col p-4 px-8 text-white bg-teal-800 border-4 border-teal-900 rounded-xl opacity-95 justify-center items-center min-h-[100px]">
+              <div className="flex flex-col items-center justify-center ">
                 {" "}
                 {/* Adjusted for dynamic content sizing */}
                 <div className="flex justify-center my-2 text-2xl">

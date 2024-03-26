@@ -1,22 +1,33 @@
 import React from "react";
-import sectionContents from "../../../sectionContent.json"; // Adjust the import path as needed
+import sectionContents from "../../../sectionContent.json";
 import AppointmentComboTab from "./AppointmentComboTab";
-import ContactUs from "./ContactUs";
+import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
 
 const AppointmentSection = () => {
-  const { title, highlight, paragraph } = sectionContents.appointmentSection;
+  const { title, highlightedText, highlightInFront, textBlock } =
+    sectionContents.appointmentSection;
+
+  const fullTitle = (
+    <FullTitle
+      title={title}
+      highlightedText={highlightedText}
+      highlightInFront={highlightInFront}
+    />
+  );
 
   return (
     <section className="flex flex-col gap-4">
       <div className="flex flex-col gap-4">
-        <h2 className="text-3xl font-extrabold tracking-tight">
-          {title} <span className="text-teal-500">{highlight}</span>
-        </h2>
-        <p className="text-lg">{paragraph}</p>
+        <h2 className="text-3xl font-extrabold tracking-tight">{fullTitle}</h2>
+        {textBlock.map((block, blockIndex) => (
+          <div key={blockIndex} className="flex flex-col gap-2 text-lg">
+            <p>{block.text}</p>
+          </div>
+        ))}
       </div>
-      <AppointmentComboTab />
-      {/* Optionally include ContactUs if it's meant to be part of this section */}
-      {/* <ContactUs /> */}
+      <div className="p-2 m-2 bg-white shadow-2xl">
+        <AppointmentComboTab />
+      </div>
     </section>
   );
 };

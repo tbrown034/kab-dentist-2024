@@ -1,17 +1,29 @@
 import React from "react";
-import sectionContents from "../../../sectionContent.json"; // Adjust the import path as needed
+import sectionContents from "../../../sectionContent.json";
+import FullTitle from "@/app/UI/Other/FullTitle"; // Make sure the import path is correct
 import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
-
 const MapSection = () => {
-  const { title, highlight, paragraph } = sectionContents.mapSection;
-
+  const { title, highlightedText, highlightInFront, textBlock } =
+    sectionContents.mapSection;
+  if (!title || !textBlock || textBlock.length === 0) return null;
   return (
     <section className="flex flex-col gap-4">
       <h2 className="text-3xl font-extrabold tracking-tight">
-        {title} <span className="text-teal-500">{highlight}</span>
+        <FullTitle
+          title={title}
+          highlightedText={highlightedText}
+          highlightInFront={highlightInFront}
+        />
       </h2>
-      <p className="text-lg">{paragraph}</p>
+      {textBlock.map((block, blockIndex) => (
+        <div
+          key={blockIndex}
+          className="flex flex-col gap-2 text-lg lg:text-xl"
+        >
+          <p>{block.text}</p>
+        </div>
+      ))}
       <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
         <div className="overflow-hidden border-4 border-teal-800 rounded-2xl">
           <MyGoogleMap />

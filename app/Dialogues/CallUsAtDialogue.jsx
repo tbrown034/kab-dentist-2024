@@ -1,45 +1,34 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import React from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
-const CallUsAtDiallogue = () => {
+const CallUsAtDialogue = () => {
   return (
-    <>
-      <Dialog>
-        <DialogTrigger className="text-teal-500 underline underline-offset-4">
-          630-301-0589
-        </DialogTrigger>
-        <DialogContent className="w-5/6 p-4">
-          <DialogHeader>
-            <DialogTitle>Hi, we are happy to take your call!</DialogTitle>
-            <DialogDescription>
-              To help us direct your call, please first select from the option
-              below.
-            </DialogDescription>
-            <div className="flex gap-4 text-sm">
-              <button className="flex items-center justify-center gap-4 p-2 px-4 font-medium text-white transition duration-200 ease-in-out bg-teal-500 rounded-md shadow hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700">
-                <div>
-                  <i class="fa-solid fa-phone"></i>
-                </div>
-                <div>
-                  <p>Call Dr. Brown's Office </p> <p>(630-301-0589)</p>{" "}
-                </div>
-              </button>
-              <button className="flex items-center gap-2 p-2 font-medium text-white transition duration-200 ease-in-out bg-red-400 rounded-md shadow hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 active:bg-red-600">
-                <i class="fa-solid fa-phone"></i>
-                <p> Afterhours and Emergency care</p>
-              </button>
-            </div>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
-    </>
+    <Dialog>
+      <DialogTrigger>
+        <div className="flex items-center gap-4 text-xl">
+          <p className="font-bold ">Or</p>
+          <p className="font-semibold text-teal-800 underline underline-offset-8 hover:text-teal-700 active:text-teal-600">
+            Call us at (630) 301-0589
+          </p>
+        </div>
+      </DialogTrigger>
+      <DialogContent className="w-5/6 max-w-md p-4 bg-white rounded-md shadow-lg">
+        <h3 className="text-xl font-semibold">Contact Dr. Brown's Office</h3>
+        <p className="mt-2">
+          We're happy to take your call! To direct your call appropriately,
+          please select an option below.
+        </p>
+        <div className="flex flex-col gap-4 mt-4">
+          <button className="p-2 px-4 text-white bg-teal-500 rounded-md hover:bg-teal-600">
+            General Inquiry (630-301-0589)
+          </button>
+          <button className="p-2 px-4 text-white bg-red-400 rounded-md hover:bg-red-500">
+            Afterhours & Emergency Care
+          </button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
-export default CallUsAtDiallogue;
+export default CallUsAtDialogue;

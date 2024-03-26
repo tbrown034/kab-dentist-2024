@@ -1,72 +1,109 @@
 {
-    "financialSection": {
-      "title": "Making Dental Care",
-      "highlight": "Affordable",
-      "paragraphs": [
-        "We promise to give you the most affordable dental care we can offer. We can also assist you in arranging a financing program tailored to your specific needs and budget.",
-        "We accept most traditional insurance plans, contact our office to verify acceptance of your plan. We also accept checks, cash or credit cards, and we offer a flexible payment plan. We, however, are not accepting Medicad at this time."
-      ]
-    },
-    "doctorSection": {
-      "title": "Dr. Keith A. Brown:",
-      "highlight": "Your Trusted Partner",
-      "subtitle": "in Dental Health",
-      "paragraphs": [
-        "Bringing over four decades of unparalleled dedication and expertise to Naperville, Dr. Keith A. Brown, DDS, FAGD, is more than a dentist; he is a community staple committed to your dental well-being.",
-        "With a deep-seated belief in the power of modern dentistry, combined with a personalized approach, Dr. Brown offers a care experience that is both exceptional and uniquely tailored to meet your needs.",
-        "\"Your healthiest smile, our shared mission.\" This philosophy drives everything we do, ensuring that your care is both comprehensive and compassionate."
-      ],
-      "quote": "A smile is a curve that sets everything straight. Let us care for yours together.",
-      "attribution": "- Dr. Keith A. Brown DDS FAGD"
-    },
-    "officeSection": {
-      "title": "At Our Office, We Prioritize",
-      "highlight": "Care and Comfort",
-      "paragraphs": [
-        "We provide a range of dental services to take the best care of you and your family's dental health for life. Whether it's your child's first cleaning or an emergency procedure, we got you covered. Our goal is to have your teeth looking great and free of pain or discomfort in as short a time as possible."
-      ]
-    },
-    "heroText": {
-      "title": "Naperville's Home for Healthy Smiles",
-      "paragraphs": [
-        "Decades of dedicated dental care have established Dr. Keith Brown, DDS FAGD, as a pillar of the Chicagoland's dental community.",
-        "In need of immediate care or searching for a dental home? See us at Fifth Third Bank Building, 75th St. and Rickert Drive — where every smile is a masterpiece."
-      ]
-    },
-    "appointmentSection": {
-      "title": "Easy Scheduling for Your Dental Care Needs",
-      "paragraph": "Ready to start your journey to a healthier, happier smile? With easy online scheduling and a commitment to patient convenience, we make it simpler than ever to access top-tier dental care."
-    },
-    "mapSection": {
-      "title": "Discover Comfort & Care at Our Naperville Dental Home",
-      "paragraph": "For over 30 years, we have dedicated ourselves to bringing smiles to life right here in Naperville. Enjoy the panoramic views and exceptional dental care on the third floor of the Fifth Third Bank building at 75th and Rickert."
-    },
-
-      "features": {
-        "title": "Personalized Dental Excellence for",
-        "highlight": "Every Smile in Chicagoland",
-        "intro": "Dr. Keith Brown and our team focus on providing high-quality dental care with a personal touch to the Chicagoland area.",
-        "features": [
-          {
-            "title": "Affordable Care",
-            "description": "We promise to offer the most affordable dental care possible and assist in finding a financing program tailored to your needs.",
-            "icon": "fa-hand-holding-medical"
-          },
-          {
-            "title": "24/7 Emergency Services",
-            "description": "We're here for you in an emergency. Give us a call, and we'll make sure to see you as soon as possible.",
-            "icon": "fa-kit-medical"
-          },
-          {
-            "title": "Convenient Location",
-            "description": "Located on the third floor of the Fifth Third Bank at 75th St. and Rickert Drive in Naperville, Illinois.",
-            "icon": "fa-location-dot"
-          },
-          {
-            "title": "Stress-Free Environment",
-            "description": "Our office is designed to be a tranquil retreat from the stress of everyday life, ensuring a calm and comforting dental experience.",
-            "icon": "fa-spa"
-          }
-        ]
+  "heroText": {
+    "title": "Healthy Smiles: Naperville's Premier Dental Home",
+    "highlightedText": "Healthy Smiles:",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "Decades of dedicated dental care have established Dr. Keith Brown as a linchpin of the dental community in Chicagoland."
+      },
+      {
+        "text": "Whether you need immediate care or are looking for a long-term dental home, our doors are open at the landmark Fifth Third Bank Building."
       }
-    }
+    ]
+  },
+  "features": {
+    "title": "Delivering Dental Excellence to Every Smile",
+    "highlightedText": "Dental Excellence",
+    "highlightInFront": false,
+    "intro": "At Dr. Keith Brown's office, we're committed to high-quality care with a personal touch for the Chicagoland community.",
+    "textBlock": [
+      {
+        "title": "Affordable Dental Solutions",
+        "text": "Offering the most accessible dental care and financing solutions tailored to meet your needs.",
+        "icon": "fa-hand-holding-medical"
+      },
+      {
+        "title": "Emergency Services Available 24/7",
+        "text": "Immediate care when you need it most. Contact us anytime for emergency dental services.",
+        "icon": "fa-kit-medical"
+      },
+      {
+        "title": "Conveniently Located",
+        "text": "Find us easily on the third floor of the Fifth Third Bank building at the heart of Naperville, Illinois.",
+        "icon": "fa-location-dot"
+      },
+      {
+        "title": "A Stress-Free Dental Experience",
+        "text": "Experience dental care in a serene environment designed to alleviate the stress of your visit.",
+        "icon": "fa-spa"
+      }
+    ]
+  },
+  "doctorSection": {
+    "title": "Dr. Keith A. Brown: A Legacy of Excellence",
+    "highlightedText": "A Legacy of Excellence",
+    "highlightInFront": false,
+    "textBlock": [
+      {
+        "text": "With over four decades of dedication, Dr. Keith A. Brown, DDS, FAGD, represents a cornerstone of dental well-being in Naperville, offering unmatched expertise and a personal touch."
+      },
+      {
+        "text": "Embracing the latest in dentistry with a personalized care approach, Dr. Brown delivers an exceptional and tailored dental experience."
+      }
+
+    ]
+  },
+  "mapSection": {
+    "title": "Welcoming You to Your Naperville Dental Home",
+    "highlightedText": "Welcoming",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "Dedicated to enhancing smiles for over 30 years, our Naperville location offers exceptional dental care amidst panoramic views on the third floor of the Fifth Third Bank building."
+      }
+    ]
+  },
+  "financialSection": {
+    "title": "Empowering Everyone with Affordable Dental Care",
+    "highlightedText": "Empowering Everyone",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "We're dedicated to providing affordable dental care tailored to your needs. We proudly accept most traditional insurance plans. Please contact our office to confirm your plan's acceptance"
+      },
+
+      {
+        "text": "Flexible payment options, including checks, cash, and credit cards, are available to ensure you receive the care you need."
+      }
+    ]
+  },
+  "dentalServicesSection": {
+    "title": "Our Dental Services Are Designed to Meet Your Needs",
+    "highlightedText": "Our Dental Services",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "At our practice, we offer a wide range of dental services to cater to your oral health needs."
+      },
+      {
+        "text": "From routine checkups and cleanings to advanced restorative and cosmetic treatments, we are dedicated to providing personalized care for every patient."
+      }
+    ]
+  }
+,
+
+  "appointmentSection": {
+    "title": "Simplifying Your Journey with Premier Dental Services",
+    "highlightedText": "Simplifying Your Journey",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "Embark on your journey to a healthier, happier smile with our easy online scheduling."
+      },
+      {
+        "text": "Committed to patient convenience, accessing top-tier dental care has never been simpler."
+      }
+    ]
+  }
+}

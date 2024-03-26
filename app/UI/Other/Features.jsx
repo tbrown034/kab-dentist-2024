@@ -1,33 +1,37 @@
 import React from "react";
-import sectionContents from "../../../sectionContent.json"; // Ensure this path is correct
+import sectionContents from "../../../sectionContent.json";
+import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure this path is correct based on your project structure
 
 const Features = () => {
-  const { title, intro, features } = sectionContents.features;
+  const { title, intro, textBlock, highlightedText, highlightInFront } =
+    sectionContents.features;
 
   return (
     <section className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-extrabold tracking-tight">
-          {title}{" "}
-          <span className="text-teal-500">Every Smile in Chicagoland</span>
+          {/* Utilize FullTitle component here */}
+          <FullTitle
+            title={title}
+            highlightedText={highlightedText}
+            highlightInFront={highlightInFront}
+          />
         </h2>
         <p className="text-xl">{intro}</p>
       </div>
       <div className="grid gap-4 md:grid-cols-2">
-        {features.map((feature, index) => (
+        {textBlock.map((feature, index) => (
           <article className="flex flex-col" key={index}>
             <div className="flex items-center mb-4">
               <div
                 className="flex items-center justify-center w-12 h-12 text-white bg-teal-600 rounded-full"
                 aria-hidden="true"
               >
-                {/* Assuming an icon is associated with each feature, you might need a method to dynamically choose the icon */}
                 <i className={`fa-solid ${feature.icon} fa-lg`}></i>
-                <span className="sr-only">{feature.title}</span>
               </div>
               <h3 className="ml-4 text-xl font-bold">{feature.title}</h3>
             </div>
-            <p>{feature.description}</p>
+            <p>{feature.text}</p>
           </article>
         ))}
       </div>
