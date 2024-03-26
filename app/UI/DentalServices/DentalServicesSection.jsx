@@ -10,7 +10,7 @@ const DentalServicesSection = () => {
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4" id="servicesSection">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-extrabold tracking-tight">
           {/* Replace manual title handling with FullTitle component */}

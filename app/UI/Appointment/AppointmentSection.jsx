@@ -16,7 +16,7 @@ const AppointmentSection = () => {
   );
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 " id="apptSection">
       <div className="flex flex-col gap-4">
         <h2 className="text-3xl font-extrabold tracking-tight">{fullTitle}</h2>
         {textBlock.map((block, blockIndex) => (

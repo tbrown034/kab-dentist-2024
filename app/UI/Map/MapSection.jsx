@@ -8,7 +8,7 @@ const MapSection = () => {
     sectionContents.mapSection;
   if (!title || !textBlock || textBlock.length === 0) return null;
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4" id="locationSection">
       <h2 className="text-3xl font-extrabold tracking-tight">
         <FullTitle
           title={title}

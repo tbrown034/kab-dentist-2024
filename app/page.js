@@ -8,12 +8,14 @@ import MapSection from "./UI/Map/MapSection";
 import AppointmentSection from "./UI/Appointment/AppointmentSection";
 import FinancialSection from "./UI/Financial/FinancialSection";
 import DentalServicesSection from "./UI/DentalServices/DentalServicesSection";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col gap-4 p-2">
+      <div className="flex flex-col gap-4 p-2 ">
         <Header />
+
         <main className="flex flex-col gap-10 p-4">
           <HeroSection />
           <Features />
@@ -23,6 +25,7 @@ export default function Home() {
 
           <FinancialSection />
           <DentalServicesSection />
+
           <AppointmentSection />
         </main>
         <Footer />
