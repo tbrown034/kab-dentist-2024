@@ -25,7 +25,7 @@ const MapSection = () => {
         </div>
       ))}
       <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="overflow-hidden border-4 border-teal-800 rounded-2xl">
+        <div className="overflow-hidden rounded-2xl">
           <MyGoogleMap />
         </div>
         <MapImgGroup />

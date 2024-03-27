@@ -4,10 +4,6 @@ import bankExtClose from "../../../public/images/office/bankExtClose.jpeg";
 import officeViewWithBirds from "../../../public/images/office/offficeViewWithBirds.jpeg";
 
 const MapImgGroup = () => {
-  return (
-    <div className="">
-      <Image src={bankExt} alt="alt"></Image>
-    </div>
-  );
+  return <Image src={bankExt} alt="alt"></Image>;
 };
 export default MapImgGroup;
