@@ -1,7 +1,8 @@
 import React from "react";
 import DoctorImgGroup from "./DoctorImgGroup";
 import sectionContents from "../../../sectionContent.json";
-import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
+import FullTitle from "@/app/UI/Other/FullTitle";
+import DoctorFAGD from "./DoctorFAGD";
 
 const DoctorSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
@@ -30,6 +31,7 @@ const DoctorSection = () => {
         ))}
       </div>
       <DoctorImgGroup />
+      <DoctorFAGD />
     </section>
   );
 };

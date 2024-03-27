@@ -18,7 +18,7 @@ const FinancialSection = () => {
   );
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4" id="financialSection">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-extrabold tracking-tight">{fullTitle}</h2>
         {textBlock.map((block, blockIndex) => (

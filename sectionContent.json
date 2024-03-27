@@ -21,22 +21,29 @@
       {
         "title": "Affordable Dental Solutions",
         "text": "Offering the most accessible dental care and financing solutions tailored to meet your needs.",
-        "icon": "fa-hand-holding-medical"
+        "icon": "fa-hand-holding-medical",
+        "link": "#financialSection"
       },
       {
         "title": "Emergency Services Available 24/7",
         "text": "Immediate care when you need it most. Contact us anytime for emergency dental services.",
-        "icon": "fa-kit-medical"
+        "icon": "fa-kit-medical",
+        "link": "#apptSection"
+
       },
       {
         "title": "Conveniently Located",
         "text": "Find us easily on the third floor of the Fifth Third Bank building at the heart of Naperville, Illinois.",
-        "icon": "fa-location-dot"
+        "icon": "fa-location-dot",
+        "link": "#locationServices"
+
       },
       {
         "title": "A Stress-Free Dental Experience",
         "text": "Experience dental care in a serene environment designed to alleviate the stress of your visit.",
-        "icon": "fa-spa"
+        "icon": "fa-spa",
+        "link": "#servicesSection"
+
       }
     ]
   },
@@ -52,6 +59,11 @@
         "text": "Embracing the latest in dentistry with a personalized care approach, Dr. Brown delivers an exceptional and tailored dental experience."
       }
 
+    ],
+    "bottomTextBlock": [
+      {
+        "text": "wordse"
+      }
     ]
   },
   "mapSection": {
