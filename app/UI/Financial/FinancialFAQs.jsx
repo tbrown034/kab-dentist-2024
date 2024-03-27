@@ -4,7 +4,7 @@ const FinancialFAQs = () => {
   return (
     <section>
       <div className="p-4">
-        <h2 className="mb-8 text-xl font-extrabold tracking-tight">
+        <h2 className="mb-2 text-xl font-extrabold tracking-tight">
           Frequently Asked Questions
         </h2>
         <div className="pt-4 text-left border-t border-gray-200">

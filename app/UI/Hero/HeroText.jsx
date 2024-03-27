@@ -31,8 +31,29 @@ const HeroText = () => {
           Book Now
         </Link>
         <p>Or</p>
-        <div className="p-2 text-sm border border-teal-800 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700">
+        <div className="p-2 text-sm text-black bg-teal-100 border border-teal-900 rounded-lg shadow border-opacity-30 hover:bg-teal-200 active:bg-teal-300 ">
           <CallDiallogue buttonName="Call us at (630) 301-0589" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <i className="fa-solid fa-star-of-life"></i>{" "}
+          <p>
+            Now Offering{" "}
+            <span className="text-teal-900 underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
+              24/7 Emergency Care
+            </span>
+          </p>
+        </div>
+        <div className="flex items-center justify-center gap-2">
+          <i className="fa-regular fa-face-smile-relaxed"></i>{" "}
+          <p>
+            Complimentary nitrous to ensure a{" "}
+            <span className="text-teal-900 underline underline-offset-4 hover:cursor-pointer hover:text-teal-800 active:text-teal-700">
+              relaxed and pain-free
+            </span>{" "}
+            visit.
+          </p>
         </div>
       </div>
     </div>

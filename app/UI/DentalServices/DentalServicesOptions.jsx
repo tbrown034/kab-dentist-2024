@@ -3,7 +3,10 @@ import React from "react";
 const DentalServicesOptions = () => {
   return (
     <section className="p-4">
-      <div className="text-left border-t border-gray-200">
+      <h2 className="mb-2 text-xl font-extrabold tracking-tight ">
+        Our Services
+      </h2>
+      <div className="pt-4 text-left border-t border-gray-200">
         {/* General Dentistry */}
         <div className="mb-6">
           <h3 className="flex items-center mb-2 text-xl font-semibold">

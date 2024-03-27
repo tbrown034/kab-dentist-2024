@@ -33,15 +33,11 @@ const PainSlider = () => {
         className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
       />
       <div className="flex justify-between w-full mt-2 text-xs">
-        <span className="text-gray-500">No Pain</span>
-        <span className="text-gray-500">Severe Pain</span>
+        <span>No Pain</span>
+        <span>Severe Pain</span>
       </div>
-      <p className="mt-2 text-sm text-gray-600">
-        Selected Value: {sliderValue}
-      </p>
-      <p className="mt-1 text-sm text-gray-500">
-        Description: {painDescriptions[sliderValue]}
-      </p>
+      <p className="mt-2 text-sm ">Selected Value: {sliderValue}</p>
+      <p className="mt-1 text-sm">{painDescriptions[sliderValue]}</p>
     </div>
   );
 };

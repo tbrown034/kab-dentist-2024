@@ -32,9 +32,8 @@ const MapSection = () => {
         >
           Book Now
         </Link>
-        <p>Or</p>
         <Link
-          className="p-2 text-sm border border-black rounded-lg shadow-sm hover:bg-gray-100 active:bg-gray-200"
+          className="p-2 text-sm text-black bg-teal-100 border border-teal-900 rounded-lg border-opacity-30 hover:bg-teal-200 active:bg-teal-300 "
           href="#apptSection"
         >
           Copy Address

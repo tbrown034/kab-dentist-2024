@@ -15,7 +15,7 @@ const InsuranceSelect = () => {
         <SelectValue placeholder="Select " />
       </SelectTrigger>
       <SelectContent>
-        <SelectGroup>
+        <SelectGroup className="p-2 text-black">
           <SelectLabel>Options</SelectLabel>
           <SelectItem value="apple">Private or Through Employer</SelectItem>
           <SelectItem value="banana">Medicare</SelectItem>
