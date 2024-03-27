@@ -1,9 +1,8 @@
 import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import CallDiallogue from "@/app/Dialogues/CallDiallogue";
-import BookNowDialogue from "@/app/Dialogues/BookNowDialogue";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Adjust the path as necessary
-
+import Link from "next/link";
 const HeroText = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
     sectionContents.heroText;
@@ -25,7 +24,12 @@ const HeroText = () => {
         </p>
       ))}
       <div className="flex flex-row items-center gap-4 mt-4">
-        <BookNowDialogue />
+        <Link
+          className="p-2 font-semibold border-2 border-teal-800 rounded-xl"
+          href="#apptSection"
+        >
+          Book Appointment Now
+        </Link>
         <p>Or</p>
         <div className="p-2 font-semibold border-2 border-teal-800 rounded-xl">
           <CallDiallogue buttonName="Call us at (630)301-0589" />

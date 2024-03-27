@@ -10,7 +10,7 @@ const HeaderFullNav = () => {
       </Link>
       <Link
         className=" hover:text-teal-800 active:text-teal-700"
-        href="#locationServices"
+        href="#locationSection"
       >
         Location
       </Link>

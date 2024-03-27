@@ -33,7 +33,6 @@ function MyGoogleMap() {
         style={{
           width: "100%",
           height: "400px",
-          borderRadius: "20px",
           overflow: "hidden",
         }}
       >

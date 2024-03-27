@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const links = [
   { href: "#doctorSection", label: "Meet the Doctor" },
-  { href: "#locationServices", label: "Location" },
+  { href: "#locationSection", label: "Location" },
   { href: "#servicesSection", label: "Services" },
   { href: "#apptSection", label: "Appointments" },
 ];
@@ -14,7 +14,7 @@ const links = [
 function HeaderDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+      <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 rounded-md ">
         <i className="text-teal-900 fa-solid fa-bars"></i>
       </Menu.Button>
       <Transition
