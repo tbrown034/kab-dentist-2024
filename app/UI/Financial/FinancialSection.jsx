@@ -2,6 +2,7 @@ import React from "react";
 import FinancialImgGroup from "./FinancialImgGroup";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
+import FinancialFAQs from "./FinancialFAQs";
 
 const FinancialSection = () => {
   const { title, highlightedText, highlightInFront, textBlock } =
@@ -28,6 +29,7 @@ const FinancialSection = () => {
         ))}
       </div>
       <FinancialImgGroup />
+      <FinancialFAQs />
     </section>
   );
 };

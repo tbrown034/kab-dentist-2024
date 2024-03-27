@@ -1,26 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import retainer from "../../../public/images/stock/retainer.jpg";
-import teeth from "../../../public/images/stock/teeth.jpg";
 import teeth2 from "../../../public/images/stock/teeth2.jpg";
 import toothbrushes from "../../../public/images/stock/toothbrushes.jpg";
-import womanSmiling from "../../../public/images/stock/retainer.jpg"; // Note: This is the same as `retainer`. Update if this was a mistake.
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
+import womanSmiling from "../../../public/images/stock/womanSmiling.jpg"; // Assuming this is corrected and unique from `retainer`.
 
 const financialImages = [
   {
     src: retainer,
     alt: "A dental retainer",
-  },
-  {
-    src: teeth,
-    alt: "Display of various teeth models",
   },
   {
     src: teeth2,
@@ -32,28 +19,19 @@ const financialImages = [
   },
   {
     src: womanSmiling,
-    alt: "Woman smiling, showcasing dental work", // Double-check if this should indeed be the retainer image.
+    alt: "Woman smiling, showcasing dental work",
   },
 ];
 
 const FinancialImgGroup = () => {
   return (
-    <Carousel
-      plugins={[
-        Autoplay({
-          delay: 8000,
-          stopOnInteraction: true,
-        }),
-      ]}
-    >
-      <CarouselContent>
-        {financialImages.map((image, index) => (
-          <CarouselItem key={index}>
-            <Image src={image.src} alt={image.alt} className="rounded-xl" />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="grid grid-cols-2 gap-4">
+      {financialImages.map((image, index) => (
+        <div key={index} className="overflow-hidden rounded-xl">
+          <Image src={image.src} alt={image.alt} />
+        </div>
+      ))}
+    </div>
   );
 };
 

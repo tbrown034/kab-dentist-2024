@@ -25,7 +25,7 @@ const AppointmentSection = () => {
           </div>
         ))}
       </div>
-      <div className="p-2 m-2 bg-white shadow-2xl">
+      <div className="p-2 ">
         <AppointmentComboTab />
       </div>
     </section>

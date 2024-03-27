@@ -3,6 +3,7 @@ import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Make sure the import path is correct
 import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
+import Link from "next/link";
 const MapSection = () => {
   const { title, highlightedText, highlightInFront, textBlock } =
     sectionContents.mapSection;
@@ -24,8 +25,23 @@ const MapSection = () => {
           <p>{block.text}</p>
         </div>
       ))}
+      <div className="flex flex-row items-center gap-4 mt-4">
+        <Link
+          className="p-2 text-sm text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700"
+          href="#apptSection"
+        >
+          Book Now
+        </Link>
+        <p>Or</p>
+        <Link
+          className="p-2 text-sm border border-black rounded-lg shadow-sm hover:bg-gray-100 active:bg-gray-200"
+          href="#apptSection"
+        >
+          Copy Address
+        </Link>
+      </div>
       <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
-        <div className="overflow-hidden rounded-2xl">
+        <div className="m-2 border-2 rounded-2xl">
           <MyGoogleMap />
         </div>
         <MapImgGroup />

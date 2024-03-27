@@ -2,6 +2,7 @@ import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
 import DentalServicesImgGroup from "./DentalServicesImgGroup";
+import DentalServicesOptions from "./DentalServicesOptions";
 
 const DentalServicesSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
@@ -30,6 +31,7 @@ const DentalServicesSection = () => {
         ))}
       </div>
       <DentalServicesImgGroup />
+      <DentalServicesOptions />
     </section>
   );
 };

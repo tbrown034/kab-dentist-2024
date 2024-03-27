@@ -8,11 +8,12 @@ import MapSection from "./UI/Map/MapSection";
 import AppointmentSection from "./UI/Appointment/AppointmentSection";
 import FinancialSection from "./UI/Financial/FinancialSection";
 import DentalServicesSection from "./UI/DentalServices/DentalServicesSection";
+
 export default function Home() {
   return (
-    <>
-      <div className="flex flex-col gap-8 p-2 ">
-        <Header />
+    <div className="flex flex-col gap-2 p-2">
+      <Header />
+      <div className="flex flex-col gap-4 p-2">
         <HeroSection />
         <Features />
         <DoctorSection />
@@ -21,8 +22,8 @@ export default function Home() {
         <DentalServicesSection />
         <FinancialSection />
         <AppointmentSection />
-        <Footer />
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }

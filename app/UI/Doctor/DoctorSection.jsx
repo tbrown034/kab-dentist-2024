@@ -30,7 +30,7 @@ const DoctorSection = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-4">
         <DoctorImgGroup />
         <DoctorFAGD />
       </div>

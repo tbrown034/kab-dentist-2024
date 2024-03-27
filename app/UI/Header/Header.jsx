@@ -5,17 +5,17 @@ import HeaderDropDown from "./HeaderDropDown";
 
 const Header = () => {
   return (
-    <nav className="flex items-center justify-between p-2 font-bold">
-      <a href="/" className="text-2xl font-extrabold">
+    <nav className="flex items-center justify-between p-1">
+      <a href="/" className="text-xl font-extrabold ">
         Dr. Keith A. Brown DDS
       </a>
-      {/* Hide on mobile, show on screens larger than 'sm' */}
+
       <div className="hidden md:flex">
         <HeaderFullNav />
       </div>
-      <div className="flex items-center gap-2">
-        <div className="p-1 text-sm border-2 border-teal-800 sm:flex rounded-2xl text-medium hover:bg-gray-50 active:bg-white whitespace-nowrap">
-          <CallDiallogue buttonName="Call Us Now" />
+      <div className="flex items-center">
+        <div className="p-2 text-sm text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700">
+          <CallDiallogue buttonName="Call Now" />
         </div>
         <div className="flex text-lg md:hidden">
           <HeaderDropDown />
