@@ -5,17 +5,8 @@ import InsuranceSelect from "./InsuranceSelect";
 
 const BookAppointmentNew = () => {
   return (
-    <section className="text-teal-50">
-      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
-        New Patients
-      </h2>
-      <p className="mb-8 font-light lg:mb-16 sm:text-xl">
-        Welcome! Whether you have questions about our services, need assistance
-        with billing and financing options, or want to understand how we can
-        meet your dental health needs, we're here for you!
-      </p>
-
-      <form action="#" className="flex flex-col gap-2">
+    <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
+      <form action="#" className="flex flex-col gap-4 mt-4">
         <div className="flex gap-4">
           <div>
             <label htmlFor="name" className="block mb-2 text-sm">
@@ -79,10 +70,7 @@ const BookAppointmentNew = () => {
           </div>
         </div>
         <div>
-          <label
-            htmlFor="pain-slider"
-            className="block mb-2 text-sm font-medium "
-          >
+          <label htmlFor="pain-slider" className="">
             Pain Level
           </label>
           <PainSlider />
@@ -102,10 +90,10 @@ const BookAppointmentNew = () => {
             can help you."
           ></textarea>
         </div>
-        <div>
+        <div className="flex justify-center">
           <button
             type="submit"
-            className="p-3 px-16 text-lg text-black bg-teal-500 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700 dark:text-white"
+            className="w-5/6 p-2 text-lg text-white bg-teal-600 border border-teal-500 rounded-lg shadow hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
           >
             Submit
           </button>

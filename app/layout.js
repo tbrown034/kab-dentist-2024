@@ -1,5 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
+import Footer from "./UI/Other/Footer";
+import Header from "./UI/Header/Header";
 
 export const metadata = {
   title: "Keith Brown DDS, Naperville's Trusted Dentist",
@@ -15,7 +17,11 @@ export default function RootLayout({ children }) {
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
-      <body className="scroll-smooth text-teal-950 bg-teal-50">{children}</body>
+      <body className="p-3 scroll-smooth text-teal-950 bg-teal-50">
+        {" "}
+        <Header />
+        {children} <Footer />
+      </body>
     </html>
   );
 }

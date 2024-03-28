@@ -3,6 +3,7 @@ import FinancialImgGroup from "./FinancialImgGroup";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
 import FinancialFAQs from "./FinancialFAQs";
+import FinancialPills from "./FinancialPills";
 
 const FinancialSection = () => {
   const { title, highlightedText, highlightInFront, textBlock } =
@@ -29,6 +30,12 @@ const FinancialSection = () => {
         ))}
       </div>
       <FinancialImgGroup />
+      {textBlock.map((block, blockIndex) => (
+        <div key={blockIndex} className="flex flex-col gap-2 text-lg">
+          <p>{block.text2}</p>
+        </div>
+      ))}
+      <FinancialPills />
       <FinancialFAQs />
     </section>
   );

@@ -11,7 +11,7 @@ const DentalServicesImgGroup = () => {
       </div>
       <div className="flex flex-col gap-4">
         <div className=" rounded-xl">
-          <Image src={officeStuff} alt="dolls" class Name="rounded-xl" />
+          <Image src={officeStuff} alt="dolls" className="rounded-xl" />
         </div>
       </div>
     </div>

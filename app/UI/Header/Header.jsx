@@ -13,11 +13,11 @@ const Header = () => {
       <div className="hidden md:flex">
         <HeaderFullNav />
       </div>
-      <div className="flex items-center">
-        <div className="p-2 text-sm text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700">
+      <div className="flex items-center gap-1 text-xs">
+        <div className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400">
           <CallDiallogue buttonName="Call Now" />
         </div>
-        <div className="flex text-lg md:hidden">
+        <div className="flex md:hidden">
           <HeaderDropDown />
         </div>
       </div>

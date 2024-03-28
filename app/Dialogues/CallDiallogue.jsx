@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import PainSlider from "../UI/Other/PainSlider";
+import Medicaid from "../UI/Other/Medicaid";
 
 const CallDialogue = ({ buttonName }) => {
   const [dialogContent, setDialogContent] = useState("initial");
@@ -21,7 +22,7 @@ const CallDialogue = ({ buttonName }) => {
       <Dialog onDismiss={resetDialog}>
         <DialogTrigger className="btn-primary">{buttonName}</DialogTrigger>
         {dialogContent === "initial" && (
-          <DialogContent className="w-5/6 max-w-md p-4 bg-white rounded-md shadow-lg">
+          <DialogContent className="w-5/6 max-w-md p-4 rounded-lg shadow-lg">
             <h3 className="text-xl font-semibold">
               Contact Dr. Brown's Office
             </h3>
@@ -32,16 +33,21 @@ const CallDialogue = ({ buttonName }) => {
             <div className="flex flex-col gap-4 mt-4">
               <button
                 onClick={showSecondDialog}
-                className="p-2 px-4 text-white bg-teal-500 rounded-md hover:bg-teal-600"
+                className="flex items-center justify-center gap-2 p-2 px-4 text-white bg-teal-500 rounded-md hover:bg-teal-600"
               >
-                General Inquiry (630-301-0589)
+                <div className="flex items-center justify-center gap-4">
+                  <i className="fa-solid fa-phone"></i>
+                  <p>Call Our Office Now</p>
+                </div>
               </button>
               <button
                 onClick={showSecondDialog}
-                className="p-2 px-4 text-white bg-red-400 rounded-md hover:bg-red-500"
+                className="flex items-center justify-center gap-4 p-2 px-4 text-white bg-red-400 rounded-md hover:bg-red-500"
               >
-                Afterhours & Emergency Care
+                <i className="fa-solid fa-note-medical"></i>
+                <p>Afterhours & Emergency Care</p>
               </button>
+              <Medicaid />
             </div>
           </DialogContent>
         )}
@@ -142,6 +148,9 @@ const CallDialogue = ({ buttonName }) => {
                 </label>
 
                 <PainSlider />
+              </div>
+              <div className="p-2 mb-2">
+                <Medicaid />
               </div>
               <div className="flex gap-4">
                 <button

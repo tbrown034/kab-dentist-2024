@@ -5,16 +5,16 @@ const PainSlider = () => {
   const [sliderValue, setSliderValue] = useState(5); // Start in the middle of the scale
 
   const painDescriptions = {
-    1: "No pain",
-    2: "Very mild pain, barely noticeable",
-    3: "Minor pain",
-    4: "Noticeable pain",
-    5: "Moderate pain",
-    6: "Moderately strong pain",
-    7: "Moderately stronger pain",
-    8: "Strong pain",
-    9: "A whole lot of pain",
-    10: "Extreme or unbearable pain",
+    1: { text: "No pain", emoji: "😄" },
+    2: { text: "Very mild pain, barely noticeable", emoji: "🙂" },
+    3: { text: "Minor pain", emoji: "😐" },
+    4: { text: "Noticeable pain", emoji: "🙁" },
+    5: { text: "Moderate pain", emoji: "😖" },
+    6: { text: "Moderately strong pain", emoji: "😣" },
+    7: { text: "Strong pain", emoji: "😫" },
+    8: { text: "Very strong pain", emoji: "😡" },
+    9: { text: "A whole lot of pain", emoji: "😵" },
+    10: { text: "Extreme or unbearable pain", emoji: "🤯" },
   };
 
   const handleSliderChange = (event) => {
@@ -22,7 +22,7 @@ const PainSlider = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-4/5 p-2 py-4 ">
+    <div className="flex flex-col">
       <input
         type="range"
         min="1"
@@ -36,8 +36,13 @@ const PainSlider = () => {
         <span>No Pain</span>
         <span>Severe Pain</span>
       </div>
-      <p className="mt-2 text-sm ">Selected Value: {sliderValue}</p>
-      <p className="mt-1 text-sm">{painDescriptions[sliderValue]}</p>
+      <div className="flex flex-col items-center justify-center gap-2 font-semibold ">
+        <p>Value: {sliderValue}</p>
+        <p>
+          {painDescriptions[sliderValue].text}{" "}
+          {painDescriptions[sliderValue].emoji}
+        </p>
+      </div>
     </div>
   );
 };

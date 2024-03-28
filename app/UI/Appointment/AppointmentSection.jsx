@@ -25,8 +25,18 @@ const AppointmentSection = () => {
           </div>
         ))}
       </div>
-      <div className="p-2 ">
-        <AppointmentComboTab />
+      <div className="flex flex-col gap-2 p-4 text-white bg-teal-800 rounded-lg">
+        <h2 className="text-2xl font-extrabold tracking-tight ">
+          Book Your Appointment
+        </h2>
+        <p className="mb-4 text-light">
+          Welcome! Whether you have questions about our services, need
+          assistance with billing and financing options, or want to understand
+          how we can meet your dental health needs, we're here for you!
+        </p>
+        <div className="p-1">
+          <AppointmentComboTab />
+        </div>
       </div>
     </section>
   );

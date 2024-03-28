@@ -1,6 +1,6 @@
 import React from "react";
 import sectionContents from "../../../sectionContent.json";
-import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
+import FullTitle from "@/app/UI/Other/FullTitle";
 import DentalServicesImgGroup from "./DentalServicesImgGroup";
 import DentalServicesOptions from "./DentalServicesOptions";
 
@@ -14,7 +14,6 @@ const DentalServicesSection = () => {
     <section className="flex flex-col gap-4" id="servicesSection">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-extrabold tracking-tight">
-          {/* Replace manual title handling with FullTitle component */}
           <FullTitle
             title={title}
             highlightedText={highlightedText}

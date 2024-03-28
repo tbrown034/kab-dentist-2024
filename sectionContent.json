@@ -82,13 +82,19 @@
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "We're dedicated to providing affordable dental care tailored to your needs. We proudly accept most traditional insurance plans. Please contact our office to confirm your plan's acceptance"
+        "text": "Our clinic prioritizes affordable, accessible dental care. We work with many insurance providers and offer guidance on flexible financing options with low monthly payments."
       },
-
       {
-        "text": "Flexible payment options, including checks, cash, and credit cards, are available to ensure you receive the care you need."
+        "text": "Please contact us to confirm your insurance plan's acceptance."
+      },
+      {
+        "text2": "Without insurance or facing coverage gaps? We provide financial services support, offering plans with no or low interest and minimal monthly payments."
+      },
+      {
+        "text3": "Coverage includes preventive care, diagnostics, and medically necessary treatments like cleanings, fillings, and braces."
       }
     ]
+
   },
   "dentalServicesSection": {
     "title": "Our Dental Services Are Designed to Meet Your Needs",

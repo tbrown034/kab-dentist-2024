@@ -27,17 +27,14 @@ const MapSection = () => {
       ))}
       <div className="flex flex-row items-center gap-4 mt-4">
         <Link
-          className="p-2 text-sm text-white bg-teal-500 rounded-lg shadow hover:bg-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700"
+          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400"
           href="#apptSection"
         >
           Book Now
         </Link>
-        <Link
-          className="p-2 text-sm text-black bg-teal-100 border border-teal-900 rounded-lg border-opacity-30 hover:bg-teal-200 active:bg-teal-300 "
-          href="#apptSection"
-        >
+        <button className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 active:bg-gray-300">
           Copy Address
-        </Link>
+        </button>
       </div>
       <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
         <div className="m-2 border-2 rounded-2xl">

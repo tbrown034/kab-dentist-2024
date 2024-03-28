@@ -12,16 +12,23 @@ const DoctorFAGD = () => {
       </h2>
       <p className="mb-4 text-teal-900">
         Dr. Brown is among the select few who have earned his{" "}
-        <span className="font-semibold text-teal-500">
-          Fellow of the Academy of General Dentistry (FAGD)
+        <span className="font-semibold text-teal-600">
+          Fellow of the Academy of General Dentistry (FAGD).
         </span>
       </p>
-      <div className="relative px-6 py-4 mx-4 my-2 border-l-4 border-teal-500 rounded ">
-        <i className="absolute top-0 -mt-3 text-teal-500 left-2 fa-solid fa-quote-left"></i>
-        <blockquote className="italic text-teal-900">{quote}</blockquote>
-        <i className="absolute bottom-0 -mb-3 text-teal-500 right-2 fa-solid fa-quote-right"></i>
+      <div className="p-2 bg-white shadow rounded-xl">
+        <div className="relative p-2 px-6 py-4 mx-4 my-2 border-l-4 border-teal-500 ">
+          <i className="text-teal-600 left-2 fa-solid fa-quote-left"></i>
+          <blockquote className="italic rounded-lg ">{quote}</blockquote>
+          <i className="absolute bottom-0 -mb-3 text-teal-600 right-2 fa-solid fa-quote-right"></i>
+        </div>
       </div>
-      <p className="mt-2 text-sm text-center text-teal-900">{citation}</p>
+      <a
+        href="https://www.agd.org/practice/tools/patient-resources/know-my-dentist/why-choose-an-fagd-or-magd-dentist#:~:text=If%20your%20dentist%20is%20a,2%20percent%20are%20AGD%20Masters"
+        className="mt-2 text-sm italic font-semibold text-center text-teal-900 hover:text-teal-800 active:text-teal-700"
+      >
+        {citation}
+      </a>
       <div className="grid grid-cols-1 gap-4 mt-2 text-center text-md md:grid-cols-3">
         <div className="flex flex-col items-center text-teal-600">
           <i className="mb-2 text-4xl text-teal-900 fa-solid fa-award"></i>

@@ -1,6 +1,5 @@
 import Features from "./UI/Other/Features";
-import Footer from "./UI/Other/Footer";
-import Header from "./UI/Header/Header";
+
 import HeroSection from "./UI/Hero/HeroSection";
 import DoctorSection from "./UI/Doctor/DoctorSection";
 import TestimonialSection from "./UI/Testimonials/TestimonialSection";
@@ -11,19 +10,15 @@ import DentalServicesSection from "./UI/DentalServices/DentalServicesSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-2 p-2">
-      <Header />
-      <div className="flex flex-col gap-8 p-2">
-        <HeroSection />
-        <Features />
-        <DoctorSection />
-        <TestimonialSection />
-        <MapSection />
-        <DentalServicesSection />
-        <FinancialSection />
-        <AppointmentSection />
-      </div>
-      <Footer />
+    <div className="flex flex-col gap-8 p-2">
+      <HeroSection />
+      <Features />
+      <DoctorSection />
+      <TestimonialSection />
+      <MapSection />
+      <DentalServicesSection />
+      <FinancialSection />
+      <AppointmentSection />
     </div>
   );
 }
