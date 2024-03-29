@@ -2,7 +2,7 @@ import "./globals.css";
 import Script from "next/script";
 import Footer from "./UI/Other/Footer";
 import Header from "./UI/Header/Header";
-import { roboto } from "./font";
+import { inter } from "./font";
 
 export const metadata = {
   title: "Keith Brown DDS, Naperville's Trusted Dentist",
@@ -17,7 +17,9 @@ export default function RootLayout({ children }) {
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
-      <body className={`${roboto.className} p-2 text-teal-950 bg-teal-50`}>
+      <body
+        className={`${inter.className} p-2 text-teal-950 bg-teal-50 lg:text-xl `}
+      >
         <Header />
         {children} <Footer />
       </body>

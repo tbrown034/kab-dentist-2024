@@ -2,12 +2,12 @@ import React from "react";
 
 const DentalServicesOptions = () => {
   return (
-    <section className="px-4 pt-2e">
+    <section className="p-2 px-4 ">
       <h2 className="mb-2 text-xl font-extrabold tracking-tight ">
         Our Services
       </h2>
-      <div className="pt-4 text-left border-t border-gray-200">
-        <div className="mb-6">
+      <div className="pt-4 text-left border-t border-teal-800 border-opacity-55">
+        <div className="">
           <h3 className="flex items-center mb-2 text-lg font-semibold">
             <i className="mr-2 fa-solid fa-tooth fa-fw"></i>
             General Dentistry
@@ -28,12 +28,12 @@ const DentalServicesOptions = () => {
             alleviate pain and prevent further complications.
           </p>
         </div>
-        <div className="mb-6">
+        <div className="">
           <h3 className="flex items-center mb-2 text-lg font-semibold">
             <i className="mr-2 fa-solid fa-smile fa-fw"></i>
             Cosmetic Dentistry
           </h3>
-          <p className="mb-4">
+          <p className="">
             Enhancing your smile with treatments designed to improve the
             appearance of your teeth, giving you the confidence to show off your
             smile.

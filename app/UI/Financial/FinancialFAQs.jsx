@@ -9,13 +9,11 @@ import {
 
 const FinancialFAQs = () => {
   return (
-    <section className="p-4">
+    <section className="flex flex-col items-start justify-start px-4 text-left ">
       <h2 className="mb-2 text-xl font-extrabold tracking-tight">
         Frequently Asked Questions
       </h2>
-      {/* Replace div with Accordion component */}
       <Accordion type="single" collapsible className="w-full">
-        {/* Each FAQ item becomes an AccordionItem */}
         <AccordionItem value="payment-options">
           <AccordionTrigger>
             What payment options do you offer?
@@ -26,7 +24,6 @@ const FinancialFAQs = () => {
             accessible.
           </AccordionContent>
         </AccordionItem>
-
         <AccordionItem value="payment-plans">
           <AccordionTrigger>Do you offer payment plans?</AccordionTrigger>
           <AccordionContent>
@@ -34,11 +31,8 @@ const FinancialFAQs = () => {
             goal is to make dental care affordable for all our patients.
           </AccordionContent>
         </AccordionItem>
-
         <AccordionItem value="fsa-hsa">
-          <AccordionTrigger>
-            Can I use FSAs or HSAs for dental expenses?
-          </AccordionTrigger>
+          <AccordionTrigger>Can I use FSAs or HSAs?</AccordionTrigger>
           <AccordionContent>
             Yes, FSAs and HSAs are great options to cover dental expenses with
             pre-tax dollars. Eligible expenses include preventive care,
@@ -46,7 +40,6 @@ const FinancialFAQs = () => {
             fillings, reducing your taxable income and saving you money.
           </AccordionContent>
         </AccordionItem>
-
         <AccordionItem value="insurance-billing">
           <AccordionTrigger>How does insurance billing work?</AccordionTrigger>
           <AccordionContent>
@@ -54,7 +47,6 @@ const FinancialFAQs = () => {
             paperwork to ensure you receive the benefits you're entitled to.
           </AccordionContent>
         </AccordionItem>
-
         <AccordionItem value="hidden-fees">
           <AccordionTrigger>Are there any hidden fees?</AccordionTrigger>
           <AccordionContent>

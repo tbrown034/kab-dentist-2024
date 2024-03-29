@@ -13,26 +13,24 @@ const AppointmentSection = () => {
 
   return (
     <section className="flex flex-col gap-4" id="apptSection">
-      <div className="flex flex-col gap-2">
-        <h2
-          className={`${raleway.className} text-2xl font-extrabold tracking-tight`}
+      <h2
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+      >
+        <FullTitle
+          title={title}
+          highlightedText={highlightedText}
+          highlightInFront={highlightInFront}
+        />
+      </h2>
+      {textBlock.map((block, blockIndex) => (
+        <div
+          key={blockIndex}
+          className="flex flex-col gap-2 text-lg lg:text-xl"
         >
-          <FullTitle
-            title={title}
-            highlightedText={highlightedText}
-            highlightInFront={highlightInFront}
-          />
-        </h2>
-        {textBlock.map((block, blockIndex) => (
-          <div
-            key={blockIndex}
-            className="flex flex-col gap-2 text-lg lg:text-xl"
-          >
-            <p>{block.text}</p>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col gap-2 p-4 text-white bg-teal-800 rounded-lg">
+          <p>{block.text}</p>
+        </div>
+      ))}
+      <div className="flex flex-col gap-2 p-4 text-white bg-teal-800 rounded-lg shadow-2xl">
         <h2 className="text-2xl font-extrabold tracking-tight">
           Book Your Appointment
         </h2>

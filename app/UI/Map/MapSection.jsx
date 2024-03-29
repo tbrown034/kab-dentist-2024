@@ -4,7 +4,8 @@ import FullTitle from "@/app/UI/Other/FullTitle"; // Confirm this import path is
 import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
 import Link from "next/link";
-
+import { raleway } from "../../../app/font.js";
+// Import section contents
 const MapSection = () => {
   // Destructuring to get the necessary data from sectionContents
   const { title, highlightedText, highlightInFront, textBlock } =
@@ -15,8 +16,9 @@ const MapSection = () => {
 
   return (
     <section className="flex flex-col gap-4" id="locationSection">
-      <h2 className="text-2xl font-extrabold tracking-tight">
-        {/* FullTitle is used here to dynamically render the title with potential highlights */}
+      <h2
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold  tracking-tight`}
+      >
         <FullTitle
           title={title}
           highlightedText={highlightedText}
@@ -28,7 +30,7 @@ const MapSection = () => {
           <p>{block.text}</p>
         </div>
       ))}
-      <div className="flex flex-row items-center gap-4 mt-4">
+      <div className="flex flex-row items-center gap-4 py-2">
         <Link
           className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400"
           href="#apptSection"
@@ -39,7 +41,7 @@ const MapSection = () => {
           Copy Address
         </button>
       </div>
-      <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid items-center grid-cols-1 gap-4 md:grid-cols-2">
         <div className="m-2 border-2 rounded-2xl">
           <MyGoogleMap />
         </div>

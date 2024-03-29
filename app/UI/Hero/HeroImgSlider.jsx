@@ -6,30 +6,36 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import drWithPatient1 from "../../../public/images/doctor/drWithPatient1.jpeg";
-import bankExt from "../../../public/images/office/bankExt.jpeg";
+import drWithPatientRelaxed from "../../../public/images/doctor/drWithPatientRelaxed.jpeg";
+import bank1 from "../../../public/images/office/bank1.jpeg";
 import doorWithoutStickers from "../../../public/images/office/doorWithoutStickers.jpeg";
-import drAtReception from "../../../public/images/doctor/drAtReception.jpeg";
+import drAtReception1 from "../../../public/images/doctor/drAtReception1.jpeg";
+import drFramesBackground from "../../../public/images/doctor/drFramesBackground.jpeg";
 
 const images = [
   {
     id: 1,
-    src: drWithPatient1,
+    src: drWithPatientRelaxed,
     alt: "Dr. Brown with a patient and computer",
   },
   {
     id: 2,
-    src: bankExt,
+    src: bank1,
     alt: "Exterior view of Fifth Third Bank building housing the dental office",
   },
   {
     id: 3,
+    src: drFramesBackground,
+    alt: "Exterior view of Fifth Third Bank building housing the dental office",
+  },
+  {
+    id: 4,
     src: doorWithoutStickers,
     alt: "Entrance door to the dental office without stickers",
   },
   {
-    id: 4,
-    src: drAtReception,
+    id: 5,
+    src: drAtReception1,
     alt: "Dr. Brown",
   },
 ];
@@ -47,13 +53,7 @@ const HeroImgSlider = () => {
       <CarouselContent>
         {images.map((image) => (
           <CarouselItem key={image.id}>
-            <div className="w-full h-full rounded-xl">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                className="object-cover rounded-xl"
-              />
-            </div>
+            <Image src={image.src} alt={image.alt} className=" rounded-xl" />
           </CarouselItem>
         ))}
       </CarouselContent>

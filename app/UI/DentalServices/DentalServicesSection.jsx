@@ -13,22 +13,20 @@ const DentalServicesSection = () => {
 
   return (
     <section className="flex flex-col gap-4" id="servicesSection">
-      <div className="flex flex-col gap-2">
-        <h2
-          className={`${raleway.className} text-2xl font-extrabold tracking-tight`}
-        >
-          <FullTitle
-            title={title}
-            highlightedText={highlightedText}
-            highlightInFront={highlightInFront}
-          />
-        </h2>
-        {textBlock.map((block, blockIndex) => (
-          <div key={blockIndex} className="flex flex-col gap-2">
-            <p>{block.text}</p>
-          </div>
-        ))}
-      </div>
+      <h2
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+      >
+        <FullTitle
+          title={title}
+          highlightedText={highlightedText}
+          highlightInFront={highlightInFront}
+        />
+      </h2>
+      {textBlock.map((block, blockIndex) => (
+        <div key={blockIndex} className="flex flex-col gap-2">
+          <p>{block.text}</p>
+        </div>
+      ))}
       <DentalServicesImgGroup />
       <DentalServicesOptions />
     </section>

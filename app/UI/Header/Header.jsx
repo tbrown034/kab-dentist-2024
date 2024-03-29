@@ -2,22 +2,22 @@
 import CallDiallogue from "@/app/Dialogues/CallDiallogue.jsx";
 import HeaderFullNav from "./HeaderFullNav";
 import HeaderDropDown from "./HeaderDropDown";
-import { roboto } from "../../../app/font.js";
+import { montserrat } from "../../../app/font.js";
 
 const Header = () => {
   return (
     <nav
-      className={`${roboto.className} flex items-center justify-between p-2`}
+      className={`${montserrat.className} flex items-center gap-2 md:gap-6 justify-between p-2`}
     >
-      <a href="/" className="text-2xl font-bold tracking-wide">
+      <a href="/" className="text-2xl font-bold ">
         Dr. Keith Brown DDS
       </a>
       <div className="hidden md:flex">
         <HeaderFullNav />
       </div>
       <div className="flex items-center gap-4 text-xs">
-        <div className="p-2 text-white bg-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400">
-          <CallDiallogue buttonName="Call Us" />
+        <div className="p-2 text-white bg-teal-600 rounded-xl hover:bg-teal-500 0 active:bg-teal-400">
+          <CallDiallogue buttonName="Contact" />
         </div>
         <div className="flex md:hidden">
           <HeaderDropDown />

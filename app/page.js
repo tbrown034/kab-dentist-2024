@@ -10,7 +10,7 @@ import DentalServicesSection from "./UI/DentalServices/DentalServicesSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8 p-4 m-1">
+    <div className="flex flex-col gap-8 p-4 m-1 md:gap-12 lg:gap-16">
       <HeroSection />
       <Features />
       <DoctorSection />

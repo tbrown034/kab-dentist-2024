@@ -18,7 +18,7 @@ const TestimonialSection = () => {
   return (
     <section className="flex flex-col gap-4">
       <h2
-        className={`${raleway.className} text-2xl font-extrabold tracking-tight`}
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         {/* Dynamically render the title and the first item of text block as highlighted text */}
         {title} <span className="text-teal-500">{textBlock[0].text}</span>

@@ -10,11 +10,25 @@
       {
         "text": "Whether you need immediate care or are looking for a long-term dental home, our doors are open at the landmark Fifth Third Bank Building."
       }
+    ],
+    "additionalInfo": [
+      {
+        "icon": "fa-solid fa-star-of-life",
+        "text": "Now Providing 24/7 Emergency Care."
+      },
+      {
+        "icon": "fa-sharp fa-light fa-mask-ventilator",
+        "text": "Free Nitrous for Anxiety and Pain-Free visits."
+      },
+      {
+        "icon": "fa-solid fa-notes-medical",
+        "text": "Affordable Care, Flexible Plans."
+      }
     ]
   },
   "features": {
-    "title": "Delivering Dental Excellence to Every Smile",
-    "highlightedText": "Dental Excellence",
+    "title": "Crafting Smiles with Unmatched Dental Mastery",
+    "highlightedText": "Unmatched Dental Mastery",
     "highlightInFront": false,
     "intro": "At Dr. Keith Brown's office, we're committed to high-quality care with a personal touch for the Chicagoland community.",
     "textBlock": [
@@ -48,9 +62,9 @@
     ]
   },
   "doctorSection": {
-    "title": "Dr. Keith A. Brown: A Legacy of Excellence",
-    "highlightedText": "A Legacy of Excellence",
-    "highlightInFront": false,
+    "title": "Dr. Keith A. Brown DDS, FAGD: A Continual Pursuit of Excellence",
+    "highlightedText": "Dr. Keith A. Brown DDS, FAGD:",
+    "highlightInFront": true,
     "textBlock": [
       {
         "text": "With over four decades of dedication, Dr. Keith A. Brown, DDS, FAGD, represents a cornerstone of dental well-being in Naperville, offering unmatched expertise and a personal touch."
@@ -68,7 +82,7 @@
   },
   "mapSection": {
     "title": "Welcoming You to Your Naperville Dental Home",
-    "highlightedText": "Welcoming",
+    "highlightedText": "Welcoming You",
     "highlightInFront": true,
     "textBlock": [
       {
@@ -77,27 +91,25 @@
     ]
   },
   "testimonialSection": {
-    "title": "But Don't Just Take Our Word For It",
+    "title": "But Don't Just Take Our Word For It.",
     "highlightedText": "Word For It",
     "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Hear Directly From Our Patients."
+        "text": "Hear Directly From Our Patients:"
       }
     ]
 }
 ,
   "financialSection": {
-    "title": "Empowering Everyone with Affordable Dental Care",
-    "highlightedText": "Empowering Everyone",
+    "title": "Making World-Class Dental Care Accessible to All",
+    "highlightedText": "Making World-Class",
     "highlightInFront": true,
     "textBlock": [
       {
         "text": "Our clinic prioritizes affordable, accessible dental care. We work with many insurance providers and offer guidance on flexible financing options with low monthly payments."
       },
-      {
-        "text": "Please contact us to confirm your insurance plan's acceptance."
-      },
+
       {
         "text2": "Without insurance or facing coverage gaps? We provide financial services support, offering plans with no or low interest and minimal monthly payments."
       },
@@ -108,8 +120,8 @@
 
   },
   "dentalServicesSection": {
-    "title": "Our Dental Services Are Designed to Meet Your Needs",
-    "highlightedText": "Our Dental Services",
+    "title": "Customized Dental Services to Perfectly Match Your Needs",
+    "highlightedText": "Customized Dental Services",
     "highlightInFront": true,
     "textBlock": [
       {
