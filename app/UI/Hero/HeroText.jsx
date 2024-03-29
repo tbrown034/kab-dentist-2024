@@ -1,8 +1,9 @@
-import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import CallDialogue from "@/app/Dialogues/CallDiallogue";
-import FullTitle from "@/app/UI/Other/FullTitle"; // Adjust the path as necessary
+import FullTitle from "@/app/UI/Other/FullTitle";
 import Link from "next/link";
+import { raleway } from "../../../app/font.js";
+
 const HeroText = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
     sectionContents.heroText;
@@ -11,7 +12,10 @@ const HeroText = () => {
 
   return (
     <div className="flex flex-col items-start justify-center gap-4 md:gap-8 lg:gap-12">
-      <h1 className="text-4xl font-bold leading-tight text-gray-900">
+      <h1
+        className={`${raleway.className}
+      text-3xl  font-bold leading-tight`}
+      >
         <FullTitle
           title={title}
           highlightedText={highlightedText}

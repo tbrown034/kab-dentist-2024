@@ -14,25 +14,31 @@ import drAtReception from "../../../public/images/doctor/drAtReception.jpeg";
 const images = [
   {
     id: 1,
-    src: drWithPatient1, // Assuming src needs to be added
+    src: drWithPatient1,
     alt: "Dr. Brown with a patient and computer",
   },
   {
     id: 2,
-    src: bankExt, // Direct path works but importing optimizes
+    src: bankExt,
     alt: "Exterior view of Fifth Third Bank building housing the dental office",
   },
   {
     id: 3,
-    src: doorWithoutStickers, // Direct path works but importing optimizes
+    src: doorWithoutStickers,
     alt: "Entrance door to the dental office without stickers",
   },
   {
     id: 4,
-    src: drAtReception, // Direct path works but importing optimizes
+    src: drAtReception,
     alt: "Dr. Brown",
   },
 ];
+
+const imageDimensions = {
+  width: 500, // Set your desired width here
+  height: 300, // Set your desired height here
+};
+
 const HeroImgSlider = () => {
   return (
     <Carousel
@@ -46,11 +52,20 @@ const HeroImgSlider = () => {
       <CarouselContent>
         {images.map((image) => (
           <CarouselItem key={image.id}>
-            <Image src={image.src} alt={image.alt} className=" rounded-xl" />
+            <div className="w-full h-full rounded-xl">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                className="object-cover rounded-xl"
+                width={imageDimensions.width}
+                height={imageDimensions.height}
+              />
+            </div>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
   );
 };
+
 export default HeroImgSlider;

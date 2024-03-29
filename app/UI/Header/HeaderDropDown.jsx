@@ -15,7 +15,7 @@ const links = [
 function HeaderDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button className="p-2 px-3 bg-white border-2 border-gray-300 rounded-lg border-opacity-45 hover:bg-gray-200 active:bg-gray-300">
+      <Menu.Button className="">
         <i className="text-teal-900 fa-solid fa-bars"></i>
       </Menu.Button>
       <Transition

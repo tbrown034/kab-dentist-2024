@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link"; // Import Link from Next.js
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure this path is correct based on your project structure
+import { raleway } from "../../../app/font.js";
 
 const Features = () => {
   const { title, intro, textBlock, highlightedText, highlightInFront } =
@@ -9,15 +10,21 @@ const Features = () => {
 
   return (
     <section className="flex flex-col gap-4">
+      <h1
+        className={`${raleway.className}
+      text-3xl  font-bold leading-tight`}
+      ></h1>
       <div className="flex flex-col gap-2">
-        <h2 className="text-3xl font-extrabold tracking-tight">
+        <h2
+          className={`${raleway.className} text-2xl font-extrabold tracking-tight`}
+        >
           <FullTitle
             title={title}
             highlightedText={highlightedText}
             highlightInFront={highlightInFront}
           />
         </h2>
-        <p className="text-xl">{intro}</p>
+        <p>{intro}</p>
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         {textBlock.map((feature, index) => (

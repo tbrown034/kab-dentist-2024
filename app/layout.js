@@ -2,12 +2,12 @@ import "./globals.css";
 import Script from "next/script";
 import Footer from "./UI/Other/Footer";
 import Header from "./UI/Header/Header";
+import { roboto } from "./font";
 
 export const metadata = {
   title: "Keith Brown DDS, Naperville's Trusted Dentist",
   description: "Keith Brown D.D.D.",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
@@ -17,8 +17,7 @@ export default function RootLayout({ children }) {
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
-      <body className="p-3 scroll-smooth text-teal-950 bg-teal-50">
-        {" "}
+      <body className={`${roboto.className} p-3 text-teal-950 bg-teal-50`}>
         <Header />
         {children} <Footer />
       </body>

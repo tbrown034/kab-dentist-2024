@@ -18,8 +18,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        lato: ["Lato", "sans-serif"], // Make sure the name matches the font's name
-        angkor: ["Angkor", "serif"], // Add your custom font here
+        body: ["var(--font-roboto)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
