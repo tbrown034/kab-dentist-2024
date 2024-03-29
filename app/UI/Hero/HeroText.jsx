@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import CallDialogue from "@/app/Dialogues/CallDiallogue";
+import CallDialog from "@/app/DialogBoxes/CallDialog";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import sectionContents from "../../../sectionContent.json";
 
@@ -37,7 +37,7 @@ const HeroText = () => {
           Book Now
         </Link>
         <div className="p-2 text-sm bg-white border-2 border-gray-300 rounded-lg border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
-          <CallDialogue buttonName="Call us at (630) 301-0589" />
+          <CallDialog buttonName="Call us at (630) 301-0589" />
         </div>
       </div>
       <div className="flex flex-col gap-2">

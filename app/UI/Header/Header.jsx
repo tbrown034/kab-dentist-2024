@@ -1,5 +1,5 @@
 // components/Header.jsx
-import CallDiallogue from "@/app/Dialogues/CallDiallogue.jsx";
+import CallDialog from "@/app/DialogBoxes/CallDialog.jsx";
 import HeaderFullNav from "./HeaderFullNav";
 import HeaderDropDown from "./HeaderDropDown";
 import { montserrat } from "../../../app/font.js";
@@ -17,7 +17,7 @@ const Header = () => {
       </div>
       <div className="flex items-center gap-4 text-xs">
         <div className="p-2 text-white bg-teal-600 rounded-xl hover:bg-teal-500 0 active:bg-teal-400">
-          <CallDiallogue buttonName="Contact" />
+          <CallDialog buttonName="Contact" />
         </div>
         <div className="flex md:hidden">
           <HeaderDropDown />

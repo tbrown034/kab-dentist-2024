@@ -1,20 +1,29 @@
-"use client";
+"use client"; // CallDialogue.jsx
 import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import PainSlider from "../UI/Other/PainSlider";
 import Medicaid from "../UI/Other/Medicaid";
+import PainSlider from "../UI/Other/PainSlider";
 
-const CallDialogue = ({ buttonName }) => {
+const CallDialog = ({ buttonName }) => {
   const [dialogContent, setDialogContent] = useState("initial");
 
-  // Handles switching to the second dialog content
   const showSecondDialog = () => {
     setDialogContent("second");
   };
 
-  // Reset dialog content to initial when closing the dialog
   const resetDialog = () => {
     setDialogContent("initial");
+  };
+
+  let phoneNumber = "6303010589";
+  // Function to copy phone number to clipboard
+  const copyPhoneNumber = async () => {
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+      alert("Phone number copied to clipboard!");
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
   };
 
   return (
@@ -22,44 +31,51 @@ const CallDialogue = ({ buttonName }) => {
       <Dialog onDismiss={resetDialog}>
         <DialogTrigger className="btn-primary">{buttonName}</DialogTrigger>
         {dialogContent === "initial" && (
-          <DialogContent className="w-5/6 max-w-md p-4 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold">
+          <DialogContent className="w-5/6 p-4 text-left rounded-lg shadow-lg">
+            <h3 className="text-xl font-extrabold ">
               Contact Dr. Brown's Office
             </h3>
             <p className="mt-2">
               We're happy to take your call! To direct your call appropriately,
               please select an option below.
             </p>
-            <div className="flex flex-col gap-4 mt-4">
-              <button
-                onClick={showSecondDialog}
-                className="flex items-center justify-center gap-2 p-2 px-4 text-white bg-teal-500 rounded-md hover:bg-teal-600"
+            <div className="flex gap-2 ">
+              <a
+                href={`tel:${phoneNumber}`}
+                className="flex items-center gap-2 p-2 px-4 text-white bg-teal-500 rounded-md hover:bg-teal-600 active:bg-teal-700"
               >
-                <div className="flex items-center justify-center gap-4">
-                  <i className="fa-solid fa-phone"></i>
-                  <p>Call Our Office Now</p>
-                </div>
+                <i className="fa-solid fa-phone"></i>
+                <span>Call Our Office</span>
+              </a>
+              <button
+                onClick={copyPhoneNumber}
+                className="flex items-center gap-2 p-2 px-4 text-white bg-teal-500 rounded-md hover:bg-teal-600 active:bg-teal-700"
+              >
+                <i className="fa-solid fa-copy"></i>
+                <span>Copy Phone Number</span>
               </button>
+            </div>
+            <div className="flex ">
               <button
                 onClick={showSecondDialog}
-                className="flex items-center justify-center gap-4 p-2 px-4 text-white bg-red-400 rounded-md hover:bg-red-500"
+                className="flex items-center gap-2 p-2 px-4 text-white bg-red-500 rounded-lg hover:bg-red-600 active:bg-red-700"
               >
                 <i className="fa-solid fa-note-medical"></i>
-                <p>Afterhours & Emergency Care</p>
+                <span>After-hours & Emergency Care</span>
               </button>
-              <Medicaid />
             </div>
+            <Medicaid />
           </DialogContent>
         )}
         {dialogContent === "second" && (
           <DialogContent className="w-5/6 max-w-md p-4 bg-white rounded-md shadow-lg">
             <h3 className="text-xl font-semibold text-red-700">
-              Emergency and Afterhours Care
+              After-hours & Emergency Care
             </h3>
-            <p>
+            <p className="mb-4">
               We are proud to offer 24/7 emergency care to our patients. Please
-              fill out this brief form and we'll send your information to the
-              doctor. You can expect a call or text shortly after.
+              fill out this brief form, and we'll send your information directly
+              to the doctor. You can expect a call or text shortly after.
             </p>
             <form action="#" className="flex flex-col gap-2">
               <div className="flex gap-4">
@@ -166,7 +182,7 @@ const CallDialogue = ({ buttonName }) => {
                   Submit
                 </button>
               </div>
-            </form>
+            </form>{" "}
           </DialogContent>
         )}
       </Dialog>
@@ -174,4 +190,4 @@ const CallDialogue = ({ buttonName }) => {
   );
 };
 
-export default CallDialogue;
+export default CallDialog;
