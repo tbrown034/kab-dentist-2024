@@ -6,20 +6,20 @@ const DoctorFAGD = () => {
   const citation = "— Academy of General Dentistry";
 
   return (
-    <div className="flex flex-col gap-4 p-4 rounded-lg ">
-      <h2 className="text-2xl font-semibold text-teal-900">
-        Not Your Average Dentist
-      </h2>
-      <p className="mb-4 text-teal-900">
+    <div className="flex flex-col gap-4 p-2 px-4 m-4 bg-white rounded-lg shadow-2xl ">
+      <h2 className="text-xl font-semibold">Not Your Average Dentist</h2>
+      <p className="text-teal-900 ">
         Dr. Brown is among the select few who have earned his{" "}
         <span className="font-semibold text-teal-600">
           Fellow of the Academy of General Dentistry (FAGD).
         </span>
       </p>
-      <div className="p-2 bg-white shadow rounded-xl">
+      <div className="">
         <div className="relative p-2 px-6 py-4 mx-4 my-2 border-l-4 border-teal-500 ">
           <i className="text-teal-600 left-2 fa-solid fa-quote-left"></i>
-          <blockquote className="italic rounded-lg ">{quote}</blockquote>
+          <blockquote className="italic text-teal-800 rounded-lg ">
+            {quote}
+          </blockquote>
           <i className="absolute bottom-0 -mb-3 text-teal-600 right-2 fa-solid fa-quote-right"></i>
         </div>
       </div>

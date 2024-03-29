@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
-      <body className={`${roboto.className} p-3 text-teal-950 bg-teal-50`}>
+      <body className={`${roboto.className} p-2 text-teal-950 bg-teal-50`}>
         <Header />
         {children} <Footer />
       </body>

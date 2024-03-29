@@ -56,19 +56,18 @@ const BookAppointmentNew = () => {
             />
           </div>
         </div>
-        <div className="flex gap-4">
-          <div>
-            <label className="mb-2 text-sm font-medium ">Insurance</label>
-            <div className="text-gray-500">
-              {" "}
-              <InsuranceSelect />
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <label className="mb-2 text-sm font-medium ">Requested Date</label>
-            <DatePicker />
+        <div>
+          <label className="mb-2 text-sm font-medium ">Insurance</label>
+          <div className="text-gray-500">
+            {" "}
+            <InsuranceSelect />
           </div>
         </div>
+        <div className="flex flex-col">
+          <label className="mb-2 text-sm font-medium ">Requested Date</label>
+          <DatePicker />
+        </div>
+
         <div>
           <label htmlFor="pain-slider" className="">
             Pain Level

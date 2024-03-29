@@ -76,6 +76,17 @@
       }
     ]
   },
+  "testimonialSection": {
+    "title": "But Don't Just Take Our Word For It",
+    "highlightedText": "Word For It",
+    "highlightInFront": false,
+    "textBlock": [
+      {
+        "text": "Hear Directly From Our Patients."
+      }
+    ]
+}
+,
   "financialSection": {
     "title": "Empowering Everyone with Affordable Dental Care",
     "highlightedText": "Empowering Everyone",

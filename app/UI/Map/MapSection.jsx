@@ -1,16 +1,22 @@
 import React from "react";
 import sectionContents from "../../../sectionContent.json";
-import FullTitle from "@/app/UI/Other/FullTitle"; // Make sure the import path is correct
+import FullTitle from "@/app/UI/Other/FullTitle"; // Confirm this import path is correct
 import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
 import Link from "next/link";
+
 const MapSection = () => {
+  // Destructuring to get the necessary data from sectionContents
   const { title, highlightedText, highlightInFront, textBlock } =
     sectionContents.mapSection;
+
+  // Guard clause to ensure rendering only occurs if data is available
   if (!title || !textBlock || textBlock.length === 0) return null;
+
   return (
     <section className="flex flex-col gap-4" id="locationSection">
-      <h2 className="text-3xl font-extrabold tracking-tight">
+      <h2 className="text-2xl font-extrabold tracking-tight">
+        {/* FullTitle is used here to dynamically render the title with potential highlights */}
         <FullTitle
           title={title}
           highlightedText={highlightedText}
@@ -18,10 +24,7 @@ const MapSection = () => {
         />
       </h2>
       {textBlock.map((block, blockIndex) => (
-        <div
-          key={blockIndex}
-          className="flex flex-col gap-2 text-lg lg:text-xl"
-        >
+        <div key={blockIndex} className="flex flex-col gap-2 ">
           <p>{block.text}</p>
         </div>
       ))}

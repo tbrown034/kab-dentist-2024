@@ -14,7 +14,7 @@ const HeroText = () => {
     <div className="flex flex-col items-start justify-center gap-4 md:gap-8 lg:gap-12">
       <h1
         className={`${raleway.className}
-      text-3xl  font-bold leading-tight`}
+      text-3xl  font-extrabold tracking-tight leading-tight`}
       >
         <FullTitle
           title={title}
@@ -23,11 +23,11 @@ const HeroText = () => {
         />
       </h1>
       {textBlock.map((block, index) => (
-        <p key={index} className="flex flex-col gap-2 text-lg lg:text-xl">
+        <p key={index} className="flex flex-col gap-2 ">
           {block.text}
         </p>
       ))}
-      <div className="flex flex-row items-center gap-4 mt-4">
+      <div className="flex flex-row items-center gap-4 ">
         <Link
           className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400 "
           href="#apptSection"

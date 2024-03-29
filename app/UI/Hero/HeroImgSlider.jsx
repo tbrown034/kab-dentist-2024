@@ -34,11 +34,6 @@ const images = [
   },
 ];
 
-const imageDimensions = {
-  width: 500, // Set your desired width here
-  height: 300, // Set your desired height here
-};
-
 const HeroImgSlider = () => {
   return (
     <Carousel
@@ -57,8 +52,6 @@ const HeroImgSlider = () => {
                 src={image.src}
                 alt={image.alt}
                 className="object-cover rounded-xl"
-                width={imageDimensions.width}
-                height={imageDimensions.height}
               />
             </div>
           </CarouselItem>

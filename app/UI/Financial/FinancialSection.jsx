@@ -1,9 +1,10 @@
 import React from "react";
-import FinancialImgGroup from "./FinancialImgGroup";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
-import FinancialFAQs from "./FinancialFAQs";
+import FinancialImgGroup from "./FinancialImgGroup";
 import FinancialPills from "./FinancialPills";
+import FinancialFAQs from "./FinancialFAQs";
+import { raleway } from "../../../app/font.js";
 
 const FinancialSection = () => {
   const { title, highlightedText, highlightInFront, textBlock } =
@@ -11,30 +12,30 @@ const FinancialSection = () => {
 
   if (!title || !textBlock || textBlock.length === 0) return null;
 
-  const fullTitle = (
-    <FullTitle
-      title={title}
-      highlightedText={highlightedText}
-      highlightInFront={highlightInFront}
-    />
-  );
-
   return (
     <section className="flex flex-col gap-4" id="financialSection">
       <div className="flex flex-col gap-2">
-        <h2 className="text-3xl font-extrabold tracking-tight">{fullTitle}</h2>
+        <h2
+          className={`${raleway.className} text-2xl font-extrabold tracking-tight`}
+        >
+          <FullTitle
+            title={title}
+            highlightedText={highlightedText}
+            highlightInFront={highlightInFront}
+          />
+        </h2>
+        {/* Dynamically rendering text blocks, taking into account the different keys (text, text2, etc.) */}
         {textBlock.map((block, blockIndex) => (
-          <div key={blockIndex} className="flex flex-col gap-2 text-lg">
-            <p>{block.text}</p>
-          </div>
+          <React.Fragment key={blockIndex}>
+            {Object.keys(block).map((key) => (
+              <div key={key} className="flex flex-col gap-2 text-lg lg:text-xl">
+                <p>{block[key]}</p>
+              </div>
+            ))}
+          </React.Fragment>
         ))}
       </div>
       <FinancialImgGroup />
-      {textBlock.map((block, blockIndex) => (
-        <div key={blockIndex} className="flex flex-col gap-2 text-lg">
-          <p>{block.text2}</p>
-        </div>
-      ))}
       <FinancialPills />
       <FinancialFAQs />
     </section>

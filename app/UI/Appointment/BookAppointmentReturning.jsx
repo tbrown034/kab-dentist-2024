@@ -2,19 +2,19 @@ const BookAppointmentReturning = () => {
   return (
     <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
       <form action="#" className="flex flex-col gap-4 mt-4">
-        <div className="flex gap-4">
-          <div className="flex-1">
+        <div className="flex gap-2">
+          <div className="">
             <label
               htmlFor="nameOrId"
-              className="block mb-2 text-sm font-medium"
+              className="flex-wrap block mb-2 text-sm font-medium"
             >
               Name or Patient ID
             </label>
             <input
               type="text"
               id="nameOrId"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-              placeholder="John Doe or 123456"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              placeholder="John Doe"
               required
             />
           </div>
