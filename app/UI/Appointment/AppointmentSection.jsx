@@ -12,7 +12,7 @@ const AppointmentSection = () => {
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-4" id="apptSection">
+    <section className="flex flex-col gap-4">
       <h2
         className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
@@ -39,7 +39,7 @@ const AppointmentSection = () => {
           assistance with billing and financing options, or want to understand
           how we can meet your dental health needs, we're here for you!
         </p>
-        <div className="p-1">
+        <div className="p-1" id="appointmentSection">
           <AppointmentComboTab />
         </div>
       </div>
