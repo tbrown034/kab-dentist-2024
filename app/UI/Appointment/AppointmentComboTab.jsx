@@ -1,20 +1,22 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import BookAppointmentNew from "./BookAppointmentNew";
-import BookAppointmentReturning from "./BookAppointmentReturning";
+import RequestAppointmentForm from "./RequestAppointmentForm";
+import ContactUs from "./ContactUs";
 
 export function AppointmentComboTab() {
   return (
     <section className="">
-      <Tabs defaultValue="new">
+      <Tabs defaultValue="appointment">
         <TabsList>
-          <TabsTrigger value="new">New Patients</TabsTrigger>
-          <TabsTrigger value="password">Returning Patients</TabsTrigger>
+          <TabsTrigger value="appointment">Request Appointment</TabsTrigger>
+          <TabsTrigger value="contact">Contact Us</TabsTrigger>
         </TabsList>
-        <TabsContent value="new">
-          <BookAppointmentNew />
+
+        <TabsContent value="appointment">
+          <RequestAppointmentForm />
         </TabsContent>
-        <TabsContent value="password">
-          <BookAppointmentReturning />
+
+        <TabsContent value="contact">
+          <ContactUs />
         </TabsContent>
       </Tabs>
     </section>

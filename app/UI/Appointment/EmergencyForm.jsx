@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
-export default function ContactUs() {
+export default function EmergencyForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const {
@@ -21,17 +21,19 @@ export default function ContactUs() {
   if (isSubmitted) {
     // Display the success message instead of the form if submitted
     return (
-      <div className="flex flex-col gap-4 pt-4 mt-4 border-t border-teal-50 ">
-        <h3 className="text-xl font-bold ">
-          Your message has been successfully sent!
-        </h3>
+      <div className="flex flex-col pt-4 mt-4 border-t border-teal-900">
+        <h3 className="">Your message has been successfully sent.</h3>
         <p>We will be in touch with you shortly.</p>
+        <p>
+          IMPORTANT: If you are experiencing a life-threatening emergency, call
+          911 immediately or go to the nearest emergency room.
+        </p>
       </div>
     );
   }
 
   return (
-    <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
+    <section className="m">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 mt-4"

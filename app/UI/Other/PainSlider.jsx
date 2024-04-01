@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const PainSlider = () => {
   const [sliderValue, setSliderValue] = useState(5); // Start in the middle of the scale
@@ -20,16 +21,15 @@ const PainSlider = () => {
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
   };
-
   return (
     <div className="flex flex-col">
       <input
         type="range"
         min="1"
         max="10"
-        value={sliderValue}
-        id="myRange"
-        onChange={handleSliderChange}
+        value={value}
+        id="painLevel"
+        onChange={onChange}
         className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
       />
       <div className="flex justify-between w-full mt-2 text-xs">
@@ -37,14 +37,11 @@ const PainSlider = () => {
         <span>Severe Pain</span>
       </div>
       <div className="flex flex-col items-center justify-center gap-2 font-semibold ">
-        <p>Value: {sliderValue}</p>
+        <p>Value: {value}</p>
         <p>
-          {painDescriptions[sliderValue].text}{" "}
-          {painDescriptions[sliderValue].emoji}
+          {painDescriptions[value].text} {painDescriptions[value].emoji}
         </p>
       </div>
     </div>
   );
 };
-
-export default PainSlider;

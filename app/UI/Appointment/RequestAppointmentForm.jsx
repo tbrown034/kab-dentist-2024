@@ -1,21 +1,47 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
-export default function ContactUs() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const RequestAppointmentForm = () => {
+  const [painLevel, setPainLevel] = useState(5); // Default pain level set to 5
+  const [isSubmitted, setIsSubmitted] = useState(false); // New state to manage submission status
 
   const {
     register,
     handleSubmit,
+    setValue, // Import setValue from useForm
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      painLevel: 5, // Set the default value for painLevel
+    },
+  });
 
   const onSubmit = (data) => {
     console.log(data);
-    setIsSubmitted(true);
-    // Handle submitting the form data to a server or API endpoint here
+    setIsSubmitted(true); // Set submission status to true
+
+    // Handle submitting the form data to your server or API endpoint here
+  };
+
+  // Update the painLevel state and sync it with React Hook Form
+  const handlePainLevelChange = (event) => {
+    const value = event.target.value;
+    setPainLevel(value);
+    setValue("painLevel", parseInt(value, 10)); // Sync with React Hook Form
+  };
+
+  const painDescriptions = {
+    1: { text: "No pain", emoji: "😄" },
+    2: { text: "Very mild pain, barely noticeable", emoji: "🙂" },
+    3: { text: "Minor pain", emoji: "😐" },
+    4: { text: "Noticeable pain", emoji: "🙁" },
+    5: { text: "Moderate pain", emoji: "😖" },
+    6: { text: "Moderately strong pain", emoji: "😣" },
+    7: { text: "Strong pain", emoji: "😫" },
+    8: { text: "Very strong pain", emoji: "😡" },
+    9: { text: "A whole lot of pain", emoji: "😵" },
+    10: { text: "Extreme or unbearable pain", emoji: "🤯" },
   };
 
   if (isSubmitted) {
@@ -23,9 +49,10 @@ export default function ContactUs() {
     return (
       <div className="flex flex-col gap-4 pt-4 mt-4 border-t border-teal-50 ">
         <h3 className="text-xl font-bold ">
-          Your message has been successfully sent!
+          Your appointmentrequest has been successfully sent!
         </h3>
         <p>We will be in touch with you shortly.</p>
+        <p>Need immeidate assistance? Call our office at 630-301-089. </p>
       </div>
     );
   }
@@ -38,7 +65,7 @@ export default function ContactUs() {
       >
         {/* Name Field */}
         <div className="flex gap-2">
-          <div className="">
+          <div className="flex-1">
             <label htmlFor="name" className="block mb-2 text-sm font-medium">
               Name
             </label>
@@ -57,7 +84,7 @@ export default function ContactUs() {
 
         {/* Email Field */}
         <div className="flex gap-2">
-          <div className="">
+          <div className="flex-1">
             <label htmlFor="email" className="block mb-2 text-sm font-medium">
               Email Address
             </label>
@@ -82,7 +109,7 @@ export default function ContactUs() {
 
         {/* Phone Field */}
         <div className="flex gap-2">
-          <div className="">
+          <div className="flex-1">
             <label htmlFor="phone" className="block mb-2 text-sm font-medium">
               Phone
             </label>
@@ -103,8 +130,82 @@ export default function ContactUs() {
               <p className="text-red-500">{errors.phone.message}</p>
             )}
           </div>
+
+          {/* Insurance Field */}
+          <div className="flex-1">
+            <label
+              htmlFor="insurance"
+              className="block mb-2 text-sm font-medium"
+            >
+              Insurance
+            </label>
+            <input
+              {...register("insurance")}
+              type="text"
+              id="insurance"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              placeholder="Add if Known"
+            />
+
+            {errors.insurance && (
+              <p className="text-red-500">{errors.insurance.message}</p>
+            )}
+          </div>
         </div>
 
+        {/* Pain Level Field */}
+        <div className="flex flex-col gap-2">
+          <label htmlFor="painLevel" className="block mb-2 text-sm font-medium">
+            Pain Level
+          </label>
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium">Low</span>
+            <input
+              {...register("painLevel")}
+              type="range"
+              min="1"
+              max="10"
+              id="painLevel"
+              value={painLevel}
+              onChange={handlePainLevelChange}
+              className="block w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+            />
+            <span className="text-sm font-medium">Very High</span>
+          </div>
+          <div className="text-center">
+            <p></p>
+            Current Level: {painLevel}
+            <p className="text-sm font-medium">
+              {painDescriptions[painLevel].text}
+            </p>
+            <p></p>
+            {painDescriptions[painLevel].emoji}
+          </div>
+        </div>
+
+        {/* Checkboxes */}
+        <div className="flex gap-4">
+          <div className="flex items-center">
+            <input
+              {...register("returningPatient")}
+              type="checkbox"
+              id="returningPatient"
+            />
+            <label
+              htmlFor="returningPatient"
+              className="ml-2 text-sm font-medium"
+            >
+              Are you a returning patient?
+            </label>
+          </div>
+
+          <div className="flex items-center">
+            <input {...register("emergency")} type="checkbox" id="emergency" />
+            <label htmlFor="emergency" className="ml-2 text-sm font-medium">
+              Is this an emergency?
+            </label>
+          </div>
+        </div>
         {/* Question/Issue Field */}
         <div className="flex gap-2">
           <div className="flex-1">
@@ -138,4 +239,6 @@ export default function ContactUs() {
       </form>
     </section>
   );
-}
+};
+
+export default RequestAppointmentForm;
