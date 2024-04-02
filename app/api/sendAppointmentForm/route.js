@@ -1,4 +1,4 @@
-// app/api/sendApptRequest/route.js
+// app/api/sendAppointmentForm/route.js
 import nodemailer from "nodemailer";
 
 export async function POST(req) {

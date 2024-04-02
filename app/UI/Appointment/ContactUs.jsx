@@ -14,7 +14,7 @@ export default function ContactUs() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("/api/sendContactForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

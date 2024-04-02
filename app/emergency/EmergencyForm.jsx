@@ -32,7 +32,7 @@ export default function EmergencyForm() {
   }
 
   return (
-    <section className="gap-2 p-4 text-white bg-gray-600 rounded-lg ">
+    <section className="gap-2 p-4 text-white bg-gray-700 rounded-lg shadow ">
       <h2 className="text-2xl font-extrabold tracking-tight text-red-500">
         Emergency Hotline
       </h2>

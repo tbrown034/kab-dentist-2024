@@ -53,7 +53,13 @@ const HeroImgSlider = () => {
       <CarouselContent>
         {images.map((image) => (
           <CarouselItem key={image.id}>
-            <Image src={image.src} alt={image.alt} className=" rounded-xl" />
+            <Image
+              src={image.src}
+              alt={image.alt}
+              placeholder="blur"
+              priority={true}
+              className=" rounded-xl"
+            />
           </CarouselItem>
         ))}
       </CarouselContent>

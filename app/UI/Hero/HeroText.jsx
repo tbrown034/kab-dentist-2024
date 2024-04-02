@@ -35,12 +35,12 @@ const HeroText = () => {
       <div className="flex flex-row items-center gap-4">
         <Link
           href="#apptSection"
-          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+          className="p-2 py-4 text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
         >
-          Book Now
+          Book Appointment
         </Link>
-        <div className="p-2 text-sm bg-white border-2 border-gray-300 rounded-lg border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
-          <CallDialog buttonName="Call us at (630) 301-0589" />
+        <div className="p-2 py-4 bg-white border-2 border-gray-300 rounded-lg text border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
+          <CallDialog buttonName="Contact Us" />
         </div>
       </div>
       <div className="flex flex-col gap-2 text-sm lg:flex-row ">

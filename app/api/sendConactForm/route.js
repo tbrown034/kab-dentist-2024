@@ -1,4 +1,4 @@
-// app/api/sendEmail/route.js
+// app/api/sendContactForm/route.js
 
 import nodemailer from "nodemailer";
 

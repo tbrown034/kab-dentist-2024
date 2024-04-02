@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import EmergencyForm from "../UI/Appointment/EmergencyForm";
+import EmergencyForm from "./EmergencyForm";
 import EmergencyImgGroup from "./EmergencyImgGroup";
 import Medicaid from "../UI/Other/Medicaid";
 import { raleway } from "@/lib/fonts";
@@ -35,7 +35,7 @@ const Page = () => {
     <div className="flex flex-col gap-8 p-4 m-1 md:gap-12 lg:gap-16">
       <div className="flex flex-col gap-4 mt-4">
         <h2
-          className={`${raleway.className} text-3xl md:text-3xl font-extrabold tracking-tight`}
+          className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
         >
           <FullTitle
             title={title}
@@ -51,7 +51,6 @@ const Page = () => {
           </div>
         ))}
       </div>
-
       <div className="flex flex-row items-center gap-4">
         <button
           onClick={() => (window.location.href = "tel:630-301-0589")}
@@ -78,5 +77,4 @@ const Page = () => {
     </div>
   );
 };
-
 export default Page;

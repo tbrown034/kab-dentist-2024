@@ -16,7 +16,7 @@ function HeaderDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button className="">
-        <i className="text-lg text-teal-900 fa-solid fa-bars"></i>
+        <i className="text-teal-900  fa-solid fa-bars"></i>
       </Menu.Button>
       <Transition
         as={Fragment}
