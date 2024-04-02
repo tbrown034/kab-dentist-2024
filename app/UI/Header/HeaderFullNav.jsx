@@ -5,7 +5,7 @@ const links = [
   { href: "#doctorSection", label: "Meet the Doctor" },
   { href: "#locationSection", label: "Location" },
   { href: "#servicesSection", label: "Services" },
-  { href: "#apptSection", label: "Appointments" },
+  { href: "#appointmentSection", label: "Appointments" },
   { href: "#financialSection", label: "Financial" }, // Included the "Financial" section
 ];
 

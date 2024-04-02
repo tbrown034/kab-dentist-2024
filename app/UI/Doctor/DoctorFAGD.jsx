@@ -6,7 +6,7 @@ const DoctorFAGD = () => {
   const citation = "— Academy of General Dentistry";
 
   return (
-    <div className="flex flex-col gap-4 p-2 px-4 m-4 bg-white rounded-lg shadow-2xl ">
+    <div className="flex flex-col gap-4 p-2 px-4 m-4 bg-white rounded-lg shadow ">
       <h2 className="text-xl font-semibold">Not Your Average Dentist</h2>
       <p className="text-teal-900 ">
         Dr. Brown is among the select few who have earned his{" "}

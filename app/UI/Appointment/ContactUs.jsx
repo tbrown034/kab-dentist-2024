@@ -53,9 +53,10 @@ export default function ContactUs() {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 mt-4"
       >
-        {/* Name Field */}
+        {/* Name and Phone Fields in the same row */}
         <div className="flex gap-2">
-          <div className="">
+          {/* Name Field */}
+          <div className="flex-1">
             <label htmlFor="name" className="block mb-2 text-sm font-medium">
               Name
             </label>
@@ -63,43 +64,16 @@ export default function ContactUs() {
               {...register("name", { required: "Name is required" })}
               type="text"
               id="name"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
               placeholder="John Doe"
             />
             {errors.name && (
               <p className="text-red-500">{errors.name.message}</p>
             )}
           </div>
-        </div>
 
-        {/* Email Field */}
-        <div className="flex gap-2">
-          <div className="">
-            <label htmlFor="email" className="block mb-2 text-sm font-medium">
-              Email Address
-            </label>
-            <input
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Invalid email address",
-                },
-              })}
-              type="email"
-              id="email"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-              placeholder="name@example.com"
-            />
-            {errors.email && (
-              <p className="text-red-500">{errors.email.message}</p>
-            )}
-          </div>
-        </div>
-
-        {/* Phone Field */}
-        <div className="flex gap-2">
-          <div className="">
+          {/* Phone Field */}
+          <div className="flex-1">
             <label htmlFor="phone" className="block mb-2 text-sm font-medium">
               Phone
             </label>
@@ -113,7 +87,7 @@ export default function ContactUs() {
               })}
               type="tel"
               id="phone"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
               placeholder="(555) 555-5555"
             />
             {errors.phone && (
@@ -122,6 +96,30 @@ export default function ContactUs() {
           </div>
         </div>
 
+        {/* Email Field - Full width */}
+        <div className="flex gap-2">
+          <div className="flex-1">
+            <label htmlFor="email" className="block mb-2 text-sm font-medium">
+              Email Address
+            </label>
+            <input
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "Invalid email address",
+                },
+              })}
+              type="email"
+              id="email"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+              placeholder="name@example.com"
+            />
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
+          </div>
+        </div>
         {/* Question/Issue Field */}
         <div className="flex gap-2">
           <div className="flex-1">
@@ -147,7 +145,7 @@ export default function ContactUs() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-5/6 p-2 text-lg text-white bg-teal-600 border border-teal-500 rounded-lg shadow hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
+            className="w-5/6 p-2 text-lg text-white bg-teal-600 border-2 border-white rounded-lg shadow opacity-80 hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
           >
             Submit
           </button>

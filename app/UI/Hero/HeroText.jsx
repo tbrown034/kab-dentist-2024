@@ -3,6 +3,7 @@ import Link from "next/link";
 import CallDialog from "@/app/DialogBoxes/CallDialog";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import sectionContents from "../../../sectionContent.json";
+import HeroImgSlider from "./HeroImgSlider";
 
 const HeroText = () => {
   const {
@@ -24,6 +25,8 @@ const HeroText = () => {
           highlightInFront={highlightInFront}
         />
       </h1>
+      <HeroImgSlider />
+
       {textBlock.map((block, index) => (
         <p key={index} className="flex flex-col gap-2 lg:text-lg">
           {block.text}
@@ -40,12 +43,23 @@ const HeroText = () => {
           <CallDialog buttonName="Call us at (630) 301-0589" />
         </div>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 text-xs lg:flex-row ">
         {additionalInfo.map((info, index) => (
-          <div key={index} className="flex items-center gap-2">
-            <i className={info.icon}></i>
-            <p>{info.text}</p>
-          </div>
+          <Link
+            href={info.link}
+            key={index}
+            className="flex items-center gap-4 transition-transform duration-200 cursor-pointer hover:scale-105 active:scale-95 "
+          >
+            <div
+              className="flex items-center justify-center rounded-full "
+              aria-hidden="true"
+            >
+              <i className={`fa-solid text-teal-900  ${info.icon} `}></i>
+            </div>
+            <p className="transition-colors duration-200 hover:text-teal-500 active:text-teal-600">
+              {info.text}
+            </p>
+          </Link>
         ))}
       </div>
     </div>

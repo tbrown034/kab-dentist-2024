@@ -1,20 +1,19 @@
 import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
-import AppointmentComboTab from "./AppointmentComboTab";
 import { raleway } from "../../../app/font.js"; // Assuming you want to keep the font styling consistent
 
-const AppointmentSection = () => {
+const EmergencySection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
-    sectionContents.appointmentSection;
+    sectionContents.emergencySection;
 
   // Ensure there's content to display, otherwise return null
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-4" id="appointmentSection">
+    <section className="flex flex-col gap-4 mt-4">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`${raleway.className} text-3xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}
@@ -30,21 +29,8 @@ const AppointmentSection = () => {
           <p>{block.text}</p>
         </div>
       ))}
-      <div className="flex flex-col gap-2 p-4 text-gray-100 bg-teal-600 rounded-lg shadow">
-        <h2 className="text-2xl font-extrabold tracking-tight">
-          Book Your Appointment
-        </h2>
-        <p className="mb-4">
-          Welcome! Whether you have questions about our services, need
-          assistance with billing and financing options, or want to understand
-          how we can meet your dental health needs, we're here for you!
-        </p>
-        <div className="p-1">
-          <AppointmentComboTab />
-        </div>
-      </div>
     </section>
   );
 };
 
-export default AppointmentSection;
+export default EmergencySection;

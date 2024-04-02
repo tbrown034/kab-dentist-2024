@@ -6,9 +6,6 @@ const HeroSection = () => {
       <div className="md:flex-grow md:basis-7/12">
         <HeroText />
       </div>
-      <div className="md:flex-grow md:basis-5/12">
-        <HeroImgSlider />
-      </div>
     </div>
   );
 };

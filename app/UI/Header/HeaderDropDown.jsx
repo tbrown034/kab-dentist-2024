@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const links = [
   { href: "#doctorSection", label: "Meet the Doctor" },
-  { href: "#locationSection", label: "Location" },
-  { href: "#servicesSection", label: "Services" },
-  { href: "#apptSection", label: "Appointments" },
-  { href: "#financialSection", label: "Financial" },
+  { href: "#servicesSection", label: "Dental Services" },
+
+  { href: "#locationSection", label: "Our Location" },
+  { href: "#financialSection", label: "Affordable Care" },
 ];
 
 function HeaderDropdown() {
@@ -32,15 +32,17 @@ function HeaderDropdown() {
             {links.map((link) => (
               <Menu.Item key={link.href}>
                 {({ active }) => (
-                  <Link href={link.href}>
-                    <div
-                      className={`${
-                        active ? "bg-teal-500 text-white" : "text-gray-900"
-                      } hover:text-teal-800 active:text-teal-700 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    >
-                      {link.label}
-                    </div>
-                  </Link>
+                  <>
+                    <Link href={link.href}>
+                      <div
+                        className={`${
+                          active ? "bg-teal-500 text-white" : "text-gray-900"
+                        } hover:text-teal-800 active:text-teal-700 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        {link.label}
+                      </div>
+                    </Link>
+                  </>
                 )}
               </Menu.Item>
             ))}

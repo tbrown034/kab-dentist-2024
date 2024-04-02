@@ -19,12 +19,11 @@ export default function EmergencyForm() {
   };
 
   if (isSubmitted) {
-    // Display the success message instead of the form if submitted
     return (
-      <div className="flex flex-col pt-4 mt-4 border-t border-teal-900">
-        <h3 className="">Your message has been successfully sent.</h3>
-        <p>We will be in touch with you shortly.</p>
-        <p>
+      <div className="flex flex-col pt-4 mt-4 border-t border-red-700">
+        <h3 className="text-white">Your message has been successfully sent.</h3>
+        <p className="text-gray-300">We will be in touch with you shortly.</p>
+        <p className="text-gray-300">
           IMPORTANT: If you are experiencing a life-threatening emergency, call
           911 immediately or go to the nearest emergency room.
         </p>
@@ -33,7 +32,14 @@ export default function EmergencyForm() {
   }
 
   return (
-    <section className="m">
+    <section className="gap-2 p-4 text-white bg-gray-600 rounded-lg ">
+      <h2 className="text-2xl font-extrabold tracking-tight text-red-500">
+        Emergency Hotline
+      </h2>
+      <p className="mb-4">
+        Just fill out these quick details and we'll get the information directly
+        to the doctor!
+      </p>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 mt-4"
@@ -41,14 +47,17 @@ export default function EmergencyForm() {
         {/* Name Field */}
         <div className="flex gap-2">
           <div className="">
-            <label htmlFor="name" className="block mb-2 text-sm font-medium">
+            <label
+              htmlFor="name"
+              className="block mb-2 text-sm font-medium text-gray-400"
+            >
               Name
             </label>
             <input
               {...register("name", { required: "Name is required" })}
               type="text"
               id="name"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               placeholder="John Doe"
             />
             {errors.name && (
@@ -60,7 +69,10 @@ export default function EmergencyForm() {
         {/* Email Field */}
         <div className="flex gap-2">
           <div className="">
-            <label htmlFor="email" className="block mb-2 text-sm font-medium">
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-gray-400"
+            >
               Email Address
             </label>
             <input
@@ -73,8 +85,8 @@ export default function EmergencyForm() {
               })}
               type="email"
               id="email"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-              placeholder="name@example.com"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              placeholder="name@gmail.com"
             />
             {errors.email && (
               <p className="text-red-500">{errors.email.message}</p>
@@ -85,7 +97,10 @@ export default function EmergencyForm() {
         {/* Phone Field */}
         <div className="flex gap-2">
           <div className="">
-            <label htmlFor="phone" className="block mb-2 text-sm font-medium">
+            <label
+              htmlFor="phone"
+              className="block mb-2 text-sm font-medium text-gray-400"
+            >
               Phone
             </label>
             <input
@@ -98,7 +113,7 @@ export default function EmergencyForm() {
               })}
               type="tel"
               id="phone"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               placeholder="(555) 555-5555"
             />
             {errors.phone && (
@@ -112,14 +127,14 @@ export default function EmergencyForm() {
           <div className="flex-1">
             <label
               htmlFor="question"
-              className="block mb-2 text-sm font-medium"
+              className="block mb-2 text-sm font-medium text-gray-400"
             >
               Question/Issue
             </label>
             <textarea
               {...register("question", { required: "This field is required" })}
               id="question"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
               rows="3"
               placeholder="Please describe your question or issue."
             ></textarea>
@@ -132,7 +147,7 @@ export default function EmergencyForm() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-5/6 p-2 text-lg text-white bg-teal-600 border border-teal-500 rounded-lg shadow hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
+            className="w-5/6 p-2 text-lg text-gray-300 border-2 border-red-500 rounded-lg shadow hover:bg-red-500 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-offset-2 active:bg-red-700"
           >
             Submit
           </button>

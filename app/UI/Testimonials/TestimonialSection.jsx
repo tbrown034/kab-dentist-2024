@@ -31,7 +31,7 @@ const TestimonialSection = () => {
             stopOnInteraction: true,
           }),
         ]}
-        className="flex flex-col gap-4 p-2 px-4 m-4 text-white bg-teal-800 rounded-lg shadow-2xl"
+        className="flex flex-col gap-4 p-2 px-4 m-4 text-white bg-teal-800 rounded-lg shadow"
       >
         <CarouselContent>
           {testimonialsEntries.map(({ id, quote, reviewer, city }) => (

@@ -13,18 +13,22 @@
     ],
     "additionalInfo": [
       {
-        "icon": "fa-solid fa-star-of-life",
-        "text": "Now Providing 24/7 Emergency Care."
+        "icon": "fa-solid fa-light-emergency-on",
+        "text": "Now Providing 24/7 Emergency Care.",
+        "link": "/emergency"
       },
       {
-        "icon": "fa-sharp fa-light fa-mask-ventilator",
-        "text": "Free Nitrous for Anxiety and Pain-Free visits."
+        "icon": "fa-solid fa-mask-ventilator",
+        "text": "Free Nitrous for Anxiety and Pain-Free visits.",
+        "link": "/dentalServices"
       },
       {
         "icon": "fa-solid fa-notes-medical",
-        "text": "Affordable Care, Flexible Plans."
+        "text": "Affordable Care, Flexible Plans.",
+        "link": "#financialSection"
       }
     ]
+
   },
   "features": {
     "title": "Crafting Smiles with Unmatched Dental Mastery",
@@ -146,5 +150,21 @@
         "text": "Committed to patient convenience, accessing top-tier dental care has never been simpler."
       }
     ]
+  },
+  "emergencySection": {
+    "title": "Emergency Dentistry: Here for You Day and Night",
+    "highlightedText": "Here for You Day and Night",
+    "highlightInFront": false,
+    "textBlock": [
+      {
+        "text": "Dental emergencies don't clock out. Neither do we. At Keith A. Brown DDS-FAGD Ltd., we're always ready to assist you."
+      },
+      {
+        "text": "Whether it's a weekend mishap or a late-night dental crisis, our doors open the moment you need us in Naperville, IL. Because pain can't wait, and neither should you."
+      }
+
+
+    ]
   }
+
 }
