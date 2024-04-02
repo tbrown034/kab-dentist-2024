@@ -1,5 +1,4 @@
 import HeroText from "./HeroText";
-import HeroImgSlider from "./HeroImgSlider";
 const HeroSection = () => {
   return (
     <div className="flex flex-col gap-4 md:flex-row md:gap-8 ">
@@ -9,5 +8,4 @@ const HeroSection = () => {
     </div>
   );
 };
-
 export default HeroSection;

@@ -49,7 +49,7 @@ export default function EmergencyForm() {
           <div className="">
             <label
               htmlFor="name"
-              className="block mb-2 text-sm font-medium text-gray-400"
+              className="block mb-2 text-sm font-medium text-gray-50"
             >
               Name
             </label>
@@ -71,7 +71,7 @@ export default function EmergencyForm() {
           <div className="">
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-400"
+              className="block mb-2 text-sm font-medium text-gray-50"
             >
               Email Address
             </label>
@@ -99,7 +99,7 @@ export default function EmergencyForm() {
           <div className="">
             <label
               htmlFor="phone"
-              className="block mb-2 text-sm font-medium text-gray-400"
+              className="block mb-2 text-sm font-medium text-gray-50"
             >
               Phone
             </label>
@@ -127,7 +127,7 @@ export default function EmergencyForm() {
           <div className="flex-1">
             <label
               htmlFor="question"
-              className="block mb-2 text-sm font-medium text-gray-400"
+              className="block mb-2 text-sm font-medium text-gray-50"
             >
               Question/Issue
             </label>
@@ -147,7 +147,7 @@ export default function EmergencyForm() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-5/6 p-2 text-lg text-gray-300 border-2 border-red-500 rounded-lg shadow hover:bg-red-500 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-offset-2 active:bg-red-700"
+            className="w-5/6 p-2 text-lg border-2 rounded-lg shadow text-gray-50 opacity-90 hover:bg-gray-500 active:bg-gray-400"
           >
             Submit
           </button>

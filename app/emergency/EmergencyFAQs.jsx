@@ -6,20 +6,20 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import sectionContents from "../../../sectionContent.json";
+import sectionContents from "../../sectionContent.json"; // Adjust the path as needed
 
-const FinancialFAQs = () => {
-  // Extracting the financialFAQs from the sectionContents
-  const financialFAQs = sectionContents.financialSection.financialFAQs;
+const EmergencyFAQs = () => {
+  // Assuming the structure based on previous JSON example
+  const faqs = sectionContents.emergencySection.FAQ;
 
   return (
-    <section className="flex flex-col items-start justify-start px-4 text-left ">
-      <h2 className="mb-2 text-xl font-extrabold tracking-tight">
-        {sectionContents.financialSection.title}
+    <section className="flex flex-col items-start justify-start text-left">
+      <h2 className="mb-2 text-2xl font-bold tracking-tight text-left md:text-3xl md:text-center">
+        Emergency Services FAQs
       </h2>
       <Accordion type="single" collapsible className="w-full">
-        {financialFAQs.map((faq, index) => (
-          <AccordionItem key={index} value={faq.question.replace(/\s+/g, "-")}>
+        {faqs.map((faq, index) => (
+          <AccordionItem key={index} value={faq.question}>
             <AccordionTrigger className="text-left md:text-center">
               {faq.question}
             </AccordionTrigger>
@@ -33,4 +33,4 @@ const FinancialFAQs = () => {
   );
 };
 
-export default FinancialFAQs;
+export default EmergencyFAQs;

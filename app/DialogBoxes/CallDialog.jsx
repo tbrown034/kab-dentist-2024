@@ -48,7 +48,7 @@ const CallDialog = ({ buttonName }) => {
           {buttonName}
         </button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="w-4/5 shadow rounded-xl">
         <DialogHeader>
           <DialogTitle>Let's Get in Touch</DialogTitle>
           <DialogDescription>

@@ -31,23 +31,23 @@ const TestimonialSection = () => {
             stopOnInteraction: true,
           }),
         ]}
-        className="flex flex-col gap-4 p-2 px-4 m-4 text-white bg-teal-800 rounded-lg shadow"
+        className="flex flex-col gap-4 p-2 px-4 m-4 text-white bg-teal-600 rounded-lg shadow"
       >
         <CarouselContent>
           {testimonialsEntries.map(({ id, quote, reviewer, city }) => (
             <CarouselItem key={id} className="flex ">
               <div className="flex flex-col items-center justify-center">
                 <div className="flex justify-center my-2 text-2xl">
-                  <i className="text-teal-500 fa-solid fa-quote-left"></i>
+                  <i className="font-bold text-white fa-solid fa-quote-left"></i>
                 </div>
                 <blockquote className="text-xl font-medium text-center">
                   {quote}
                 </blockquote>
                 <div className="flex justify-center my-2 text-2xl">
-                  <i className="text-teal-500 fa-solid fa-quote-right"></i>
+                  <i className="font-bold text-white fa-solid fa-quote-right"></i>
                 </div>
-                <figcaption className="mt-4 text-lg font-semibold text-center">
-                  {reviewer}
+                <figcaption className="mt-4 font-semibold text-center">
+                  - {reviewer}
                   {city ? `, ${city}` : ""}
                 </figcaption>
               </div>

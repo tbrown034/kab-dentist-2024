@@ -43,7 +43,7 @@ const HeroText = () => {
           <CallDialog buttonName="Call us at (630) 301-0589" />
         </div>
       </div>
-      <div className="flex flex-col gap-2 text-xs lg:flex-row ">
+      <div className="flex flex-col gap-2 text-sm lg:flex-row ">
         {additionalInfo.map((info, index) => (
           <Link
             href={info.link}

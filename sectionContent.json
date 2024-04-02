@@ -105,24 +105,53 @@
     ]
 }
 ,
-  "financialSection": {
-    "title": "Making World-Class Dental Care Accessible to All",
-    "highlightedText": "Making World-Class",
-    "highlightInFront": true,
-    "textBlock": [
-      {
-        "text": "Our clinic prioritizes affordable, accessible dental care. We work with many insurance providers and offer guidance on flexible financing options with low monthly payments."
-      },
-
-      {
-        "text2": "Without insurance or facing coverage gaps? We provide financial services support, offering plans with no or low interest and minimal monthly payments."
-      },
-      {
-        "text3": "Coverage includes preventive care, diagnostics, and medically necessary treatments like cleanings, fillings, and braces."
-      }
-    ]
-
-  },
+"financialSection": {
+  "title": "Making World-Class Dental Care Accessible to All",
+  "highlightedText": "Making World-Class",
+  "highlightInFront": true,
+  "textBlock": [
+    {
+      "text": "Our clinic prioritizes affordable, accessible dental care. We work with many insurance providers and offer guidance on flexible financing options with low monthly payments."
+    },
+    {
+      "text2": "Without insurance or facing coverage gaps? We provide financial services support, offering plans with no or low interest and minimal monthly payments."
+    },
+    {
+      "text3": "Coverage includes preventive care, diagnostics, and medically necessary treatments like cleanings, fillings, and braces."
+    }
+  ],
+  "financialFAQs": [
+    {
+      "question": "What payment options do you offer?",
+      "answer": "We accept all major credit cards, insurance plans, and payment programs. We also offer financing options to make dental care more accessible."
+    },
+    {
+      "question": "Do you offer payment plans?",
+      "answer": "Yes, we provide flexible payment plans for various treatments. Our goal is to make dental care affordable for all our patients."
+    },
+    {
+      "question": "Can I use FSAs or HSAs?",
+      "answer": "Yes, FSAs and HSAs are great options to cover dental expenses with pre-tax dollars. Eligible expenses include preventive care, diagnostics, and medically necessary treatments like cleanings and fillings, reducing your taxable income and saving you money."
+    },
+    {
+      "question": "How does insurance billing work?",
+      "answer": "We direct bill your insurance company when possible, handling the paperwork to ensure you receive the benefits you're entitled to."
+    },
+    {
+      "question": "Are there any hidden fees?",
+      "answer": "Transparency is key in our billing process. We provide detailed estimates before any treatment and discuss all possible costs with you."
+    },
+    {
+      "question": "How can I estimate the cost of my treatment?",
+      "answer": "Our clinic offers free consultations to provide you with a detailed breakdown of potential treatments and associated costs. We strive to ensure you have all the information needed to make informed decisions about your dental care."
+    },
+    {
+      "question": "What should I do if I don’t have dental insurance?",
+      "answer": "We believe everyone deserves access to quality dental care. For patients without insurance, we offer a variety of payment options and plans to accommodate different budgets and needs. Please contact our office to learn more about our financial assistance programs."
+    }
+  ]
+}
+,
   "dentalServicesSection": {
     "title": "Customized Dental Services to Perfectly Match Your Needs",
     "highlightedText": "Customized Dental Services",
@@ -152,19 +181,43 @@
     ]
   },
   "emergencySection": {
-    "title": "Emergency Dentistry: Here for You Day and Night",
-    "highlightedText": "Here for You Day and Night",
+    "title": "Emergency Dentistry: Immediate Care, Any Hour",
+    "highlightedText": "Immediate Care, Any Hour",
     "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Dental emergencies don't clock out. Neither do we. At Keith A. Brown DDS-FAGD Ltd., we're always ready to assist you."
+        "text": "Dental emergencies are unpredictable, but our response isn't. We stand ready around the clock to address your urgent dental needs."
       },
       {
-        "text": "Whether it's a weekend mishap or a late-night dental crisis, our doors open the moment you need us in Naperville, IL. Because pain can't wait, and neither should you."
+        "text": "From sudden toothaches to accidental injuries, our practice is equipped to provide rapid, compassionate care. Just click either option below."
       }
 
-
+    ],
+    "FAQ": [
+      {
+        "question": "What qualifies as a dental emergency that Dr. Brown can address?",
+        "answer": "A dental emergency includes severe pain, a broken or loose tooth, swelling, or bleeding that can't wait for a regular appointment. Dr. Brown is prepared to provide prompt advice and arrange same-day appointments for urgent care."
+      },
+      {
+        "question": "How do I reach Dr. Brown for an emergency dental issue outside regular hours?",
+        "answer": "For immediate assistance during extended hours, click the 'Emergency Hotline' button on our website, and fill out the short form. Dr. Brown will review your submission and contact you directly to arrange care."
+      },
+      {
+        "question": "What happens after I submit my emergency request form?",
+        "answer": "Your request is instantly sent to Dr. Brown, who will evaluate your situation based on the information provided and decide on the best immediate action, which may include a direct call, prescription, or arranging a same-day visit."
+      },
+      {
+        "question": "Can Dr. Brown provide emergency services for any dental issue?",
+        "answer": "Dr. Brown aims to address a wide range of emergency issues. However, the most critical cases, such as severe infections or complex fractures, are prioritized. Always provide detailed information in your emergency form to assess your needs accurately."
+      },
+      {
+        "question": "What are Dr. Brown's hours for emergency dental services?",
+        "answer": "Dr. Brown is dedicated to providing extended care hours for emergencies, including early mornings, evenings, and weekends. Specific availability may vary, so submitting an emergency form or calling is the fastest way to receive help."
+      },
+      {
+        "question": "Is there an additional fee for emergency dental services?",
+        "answer": "While fees for emergency services may vary based on the treatment needed, Dr. Brown's practice prides itself on transparency. Any potential costs will be discussed upfront after assessing your emergency, ensuring no surprises."
+      }
     ]
   }
-
 }
