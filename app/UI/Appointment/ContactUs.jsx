@@ -12,10 +12,27 @@ export default function ContactUs() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setIsSubmitted(true);
-    // Handle submitting the form data to a server or API endpoint here
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+      console.log(responseData.message); // Assuming your API returns a success message
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      // Handle errors here, like setting an error state and displaying it in the UI
+    }
   };
 
   if (isSubmitted) {
