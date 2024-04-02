@@ -31,9 +31,7 @@ const Features = () => {
                 <div
                   className="flex items-center justify-center w-10 h-10 text-white bg-teal-600 rounded-full md:md-4"
                   aria-hidden="true"
-                >
-                  <i className={`fa-solid ${feature.icon} fa-lg`}></i>
-                </div>
+                ></div>
                 <h3 className="ml-4 font-semibold">{feature.title}</h3>
               </div>
             </Link>

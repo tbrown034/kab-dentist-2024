@@ -38,13 +38,13 @@ const TestimonialSection = () => {
             <CarouselItem key={id} className="flex ">
               <div className="flex flex-col items-center justify-center">
                 <div className="flex justify-center my-2 text-2xl">
-                  <i className="font-bold text-white fa-solid fa-quote-left"></i>
+                  {/* <i className="font-bold text-white fa-solid fa-quote-left"></i> */}
                 </div>
                 <blockquote className="text-xl font-medium text-center">
                   {quote}
                 </blockquote>
                 <div className="flex justify-center my-2 text-2xl">
-                  <i className="font-bold text-white fa-solid fa-quote-right"></i>
+                  {/* <i className="font-bold text-white fa-solid fa-quote-right"></i> */}
                 </div>
                 <figcaption className="mt-4 font-semibold text-center">
                   - {reviewer}

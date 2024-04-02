@@ -53,9 +53,7 @@ const HeroText = () => {
             <div
               className="flex items-center justify-center rounded-full "
               aria-hidden="true"
-            >
-              <i className={`fa-solid text-teal-900  ${info.icon} `}></i>
-            </div>
+            ></div>
             <p className="transition-colors duration-200 hover:text-teal-500 active:text-teal-600">
               {info.text}
             </p>

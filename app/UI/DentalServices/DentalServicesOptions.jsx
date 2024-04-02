@@ -9,7 +9,6 @@ const DentalServicesOptions = () => {
       <div className="pt-4 text-left border-t border-teal-800 border-opacity-55">
         <div className="">
           <h3 className="flex items-center mb-2 text-lg font-semibold">
-            <i className="mr-2 fa-solid fa-tooth fa-fw"></i>
             General Dentistry
           </h3>
           <p className="mb-4">
@@ -20,7 +19,6 @@ const DentalServicesOptions = () => {
         </div>
         <div className="mb-6">
           <h3 className="flex items-center mb-2 text-lg font-semibold">
-            <i className="mr-2 fa-solid fa-kit-medical fa-fw"></i>
             <p>Emergency Dentistry</p>
           </h3>
           <p className="mb-4">
@@ -30,7 +28,6 @@ const DentalServicesOptions = () => {
         </div>
         <div className="">
           <h3 className="flex items-center mb-2 text-lg font-semibold">
-            <i className="mr-2 fa-solid fa-smile fa-fw"></i>
             Cosmetic Dentistry
           </h3>
           <p className="">

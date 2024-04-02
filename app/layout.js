@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 import Footer from "./UI/Other/Footer";
 import Header from "./UI/Header/Header";
 import { inter } from "./font";
@@ -12,11 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <Script
-        src="https://kit.fontawesome.com/97ca5b5e4b.js"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
+
       <body
         className={`${inter.className} p-2 text-teal-950 bg-teal-50 lg:text-xl `}
       >

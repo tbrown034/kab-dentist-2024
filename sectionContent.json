@@ -13,17 +13,14 @@
     ],
     "additionalInfo": [
       {
-        "icon": "fa-solid fa-light-emergency-on",
         "text": "Now Providing 24/7 Emergency Care.",
         "link": "/emergency"
       },
       {
-        "icon": "fa-solid fa-mask-ventilator",
         "text": "Free Nitrous for Anxiety and Pain-Free visits.",
         "link": "/dentalServices"
       },
       {
-        "icon": "fa-solid fa-notes-medical",
         "text": "Affordable Care, Flexible Plans.",
         "link": "#financialSection"
       }
@@ -39,27 +36,23 @@
       {
         "title": "Affordable Dental Solutions",
         "text": "Offering the most accessible dental care and financing solutions tailored to meet your needs.",
-        "icon": "fa-hand-holding-medical",
         "link": "#financialSection"
       },
       {
         "title": "Emergency Services Available 24/7",
         "text": "Immediate care when you need it most. Contact us anytime for emergency dental services.",
-        "icon": "fa-kit-medical",
         "link": "#apptSection"
 
       },
       {
         "title": "Conveniently Located",
         "text": "Find us easily on the third floor of the Fifth Third Bank building at the heart of Naperville, Illinois.",
-        "icon": "fa-location-dot",
         "link": "#locationSection"
 
       },
       {
         "title": "A Stress-Free Dental Experience",
         "text": "Experience dental care in a serene environment designed to alleviate the stress of your visit.",
-        "icon": "fa-spa",
         "link": "#servicesSection"
 
       }

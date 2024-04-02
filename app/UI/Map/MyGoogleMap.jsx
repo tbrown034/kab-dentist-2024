@@ -3,9 +3,10 @@ import React, { useState, useCallback } from "react";
 import {
   APIProvider,
   Map,
-  Marker,
+  AdvancedMarker, // Use AdvancedMarker for enhanced features
   InfoWindow,
 } from "@vis.gl/react-google-maps";
+
 function MyGoogleMap() {
   const [infoOpen, setInfoOpen] = useState(false);
   const [cameraProps, setCameraProps] = useState({
@@ -13,12 +14,15 @@ function MyGoogleMap() {
     zoom: 14,
   });
   const address = "1296 Rickert Dr #300, Naperville, IL 60540";
+
   const handleMarkerClick = useCallback(() => {
     setInfoOpen(true);
   }, []);
+
   const handleCameraChange = useCallback((ev) => {
     setCameraProps(ev.detail);
   }, []);
+
   const copyAddressToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(address);
@@ -27,6 +31,7 @@ function MyGoogleMap() {
       console.error("Failed to copy: ", err);
     }
   };
+
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
       <div
@@ -40,8 +45,12 @@ function MyGoogleMap() {
           {...cameraProps}
           onCameraChanged={handleCameraChange}
           style={{ width: "100%", height: "100%" }}
+          mapId="d766611e3b68c09d" // Your custom Map ID
         >
-          <Marker position={cameraProps.center} onClick={handleMarkerClick} />
+          <AdvancedMarker
+            position={cameraProps.center}
+            onClick={handleMarkerClick}
+          />
           {infoOpen && (
             <InfoWindow
               position={cameraProps.center}
@@ -82,4 +91,5 @@ function MyGoogleMap() {
     </APIProvider>
   );
 }
+
 export default MyGoogleMap;
