@@ -10,10 +10,9 @@ export async function POST(req) {
     secure: false, // true for 465, false for other ports
     auth: {
       user: "keithbrowndds@zohomail.com", // Your Zoho Mail email address
-      pass: "19k1NPetp1V2", // Your Zoho Mail password or app-specific passworddddd
+      pass: process.env.NEXT_PUBLIC_DEV_EMAIL_PASS,
     },
   });
-  //success
 
   // Setup email data
   let mailOptions = {
