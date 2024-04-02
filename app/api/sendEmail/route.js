@@ -13,6 +13,7 @@ export async function POST(req) {
       pass: "19k1NPetp1V2", // Your Zoho Mail password or app-specific password
     },
   });
+  //success
 
   // Setup email data
   let mailOptions = {
