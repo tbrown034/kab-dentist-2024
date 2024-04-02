@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import EmergencyForm from "../UI/Appointment/EmergencyForm";
-import EmergencyImgGroup from "./emergencyImgGroup";
+import EmergencyImgGroup from "./EmergencyImgGroup";
 import Medicaid from "../UI/Other/Medicaid";
 import { raleway } from "@/lib/fonts";
 import FullTitle from "../UI/Other/FullTitle";
@@ -24,7 +24,6 @@ const Page = () => {
   const onClick = () => {
     toggleForm();
     if (showForm) {
-      // Assuming you want to scroll to the emergency form
       const formElement = document.getElementById("emergencyForm");
       if (formElement) {
         formElement.scrollIntoView({ behavior: "smooth" });
