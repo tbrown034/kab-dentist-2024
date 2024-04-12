@@ -1,7 +1,7 @@
 // components/Footer.jsx
 const Footer = () => {
   return (
-    <footer className="p-4 text-xs text-gray-400">
+    <footer className="text-xs text-gray-400 ">
       <div className="grid max-w-4xl grid-cols-1 gap-2 mx-auto sm:grid-cols-2 md:grid-cols-4">
         <div className="p-2">
           <p className="font-semibold">Contact</p>

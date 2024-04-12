@@ -34,13 +34,7 @@ function MyGoogleMap() {
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-      <div
-        style={{
-          width: "100%",
-          height: "400px",
-          overflow: "hidden",
-        }}
-      >
+      <div className="w-full overflow-hidden rounded-lg h-96">
         <Map
           {...cameraProps}
           onCameraChanged={handleCameraChange}

@@ -3,6 +3,8 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   { href: "#doctorSection", label: "Meet the Doctor" },
@@ -16,7 +18,8 @@ function HeaderDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button className="">
-        {/* <i className="text-teal-900 fa-solid fa-bars"></i> */}
+        {" "}
+        <FontAwesomeIcon icon={faBars} />
       </Menu.Button>
       <Transition
         as={Fragment}

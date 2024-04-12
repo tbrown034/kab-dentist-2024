@@ -6,7 +6,8 @@ import { montserrat } from "../../../app/font.js";
 const Header = () => {
   return (
     <nav
-      className={`${montserrat.className} flex tracking-tighter text-teal-950 font-body text-2xl  md:gap-6 justify-between p-2`}
+      className={`${montserrat.className} flex text-2xl  tracking-tighter
+        md:gap-6 justify-between`}
     >
       <a href="/" className="font-bold ">
         Dr. Keith Brown DDS

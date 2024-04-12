@@ -1,14 +1,22 @@
 import React from "react";
 import sectionContents from "../../../sectionContent.json";
-import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure the path is correct for your project structure
-import AppointmentComboTab from "./AppointmentComboTab";
-import { raleway } from "../../../app/font.js"; // Assuming you want to keep the font styling consistent
+import FullTitle from "@/app/UI/Other/FullTitle";
+import { raleway } from "../../../app/font.js";
+import RequestAppointmentForm from "./RequestAppointmentForm";
 
 const AppointmentSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
     sectionContents.appointmentSection;
 
-  // Ensure there's content to display, otherwise return null
+  // Create a new date object
+  const currentDate = new Date();
+  // Format the date as a string e.g., "April 12, 2024"
+  const dateString = currentDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
@@ -34,14 +42,16 @@ const AppointmentSection = () => {
         <h2 className="text-2xl font-extrabold tracking-tight">
           Book Your Appointment
         </h2>
-        <p className="mb-4">
-          Welcome! Whether you have questions about our services, need
-          assistance with billing and financing options, or want to understand
-          how we can meet your dental health needs, we're here for you!
+        <p>
+          Welcome! As of {dateString}, we are accepting new patients and
+          returning patients!{" "}
         </p>
-        <div className="p-1">
-          <AppointmentComboTab />
-        </div>
+        <p>
+          Fill out the form below and we'll be in touch shortly to confirm your
+          appointment and answer any questions you might have!
+        </p>
+
+        <RequestAppointmentForm />
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-import React from "react";
-// Import Accordion components from shadcn/ui library
 import {
   Accordion,
   AccordionContent,
@@ -9,9 +7,7 @@ import {
 import sectionContents from "../../../sectionContent.json";
 
 const FinancialFAQs = () => {
-  // Extracting the financialFAQs from the sectionContents
   const financialFAQs = sectionContents.financialSection.financialFAQs;
-
   return (
     <section className="flex flex-col items-start justify-start px-4 text-left ">
       <h2 className="mb-2 text-xl font-extrabold tracking-tight">

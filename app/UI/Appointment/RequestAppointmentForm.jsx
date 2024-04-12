@@ -3,31 +3,26 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 
 const RequestAppointmentForm = () => {
-  const [painLevel, setPainLevel] = useState(5); // Default pain level set to 5
-  const [isSubmitted, setIsSubmitted] = useState(false); // New state to manage submission status
-
+  const [painLevel, setPainLevel] = useState(5);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
-    setValue, // Import setValue from useForm
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      painLevel: 5, // Set the default value for painLevel
+      painLevel: 5,
     },
   });
 
   const onSubmit = async (data) => {
     console.log(data);
-
-    // Adjust the data object if necessary to match your backend expectations,
-    // especially for boolean fields like isReturning and isEmergency
     const formattedData = {
       ...data,
       isReturning: data.returningPatient ? true : false,
       isEmergency: data.emergency ? true : false,
     };
-
     try {
       const response = await fetch("/api/sendApptRequest", {
         method: "POST",
@@ -41,22 +36,18 @@ const RequestAppointmentForm = () => {
         throw new Error("Network response was not ok");
       }
 
-      // Assuming your API returns a message in JSON format
       const responseData = await response.json();
-      console.log(responseData.message); // Logging the response message
-      setIsSubmitted(true); // Set submission status to true if email sent successfully
+      console.log(responseData.message);
+      setIsSubmitted(true);
     } catch (error) {
       console.error("Failed to send appointment request:", error);
-      // Handle errors here, for example by setting an error state and showing it in the UI
-      // This is important for informing the user about the failure
     }
   };
 
-  // Update the painLevel state and sync it with React Hook Form
   const handlePainLevelChange = (event) => {
     const value = event.target.value;
     setPainLevel(value);
-    setValue("painLevel", parseInt(value, 10)); // Sync with React Hook Form
+    setValue("painLevel", parseInt(value, 10));
   };
 
   const painDescriptions = {
@@ -73,9 +64,8 @@ const RequestAppointmentForm = () => {
   };
 
   if (isSubmitted) {
-    // Display the success message instead of the form if submitted
     return (
-      <div className="flex flex-col gap-4 pt-4 mt-4 border-t border-teal-50 ">
+      <div className="flex flex-col gap-4 border-t border-teal-50 ">
         <h3 className="text-xl font-bold ">
           Your appointmentrequest has been successfully sent!
         </h3>
@@ -91,7 +81,6 @@ const RequestAppointmentForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 mt-4"
       >
-        {/* Name and Email Fields */}
         <div className="flex gap-2">
           <div className="flex-1">
             <label htmlFor="name" className="block mb-2 text-sm font-medium">
@@ -131,8 +120,6 @@ const RequestAppointmentForm = () => {
             )}
           </div>
         </div>
-
-        {/* Phone Field */}
         <div className="flex gap-2">
           <div className="flex-1">
             <label htmlFor="phone" className="block mb-2 text-sm font-medium">
@@ -149,14 +136,12 @@ const RequestAppointmentForm = () => {
               type="tel"
               id="phone"
               className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-              placeholder="(555) 555-5555"
+              placeholder="(630) 555-5555"
             />
             {errors.phone && (
               <p className="text-red-500">{errors.phone.message}</p>
             )}
           </div>
-
-          {/* Insurance Field */}
           <div className="flex-1">
             <label
               htmlFor="insurance"
@@ -178,64 +163,6 @@ const RequestAppointmentForm = () => {
           </div>
         </div>
 
-        {/* Pain Level Field */}
-        <div className="flex flex-col gap-2">
-          <label htmlFor="painLevel" className="block text-sm font-medium">
-            Pain Level
-          </label>
-          <div className="flex items-center gap-2 p-2 ">
-            <span className="text-sm font-medium">Low</span>
-            <input
-              {...register("painLevel")}
-              type="range"
-              min="1"
-              max="10"
-              id="painLevel"
-              value={painLevel}
-              onChange={handlePainLevelChange}
-              className="block w-full h-3 text-blue-200 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-            />
-            <span className="text-sm font-medium">Very High</span>
-          </div>
-          <div className="text-center">
-            Current Level: {painLevel}
-            <p className="text-sm font-medium">
-              {painDescriptions[painLevel].text}
-            </p>
-          </div>
-        </div>
-
-        {/* Checkboxes */}
-        <div className="flex gap-2">
-          <div className="flex items-center justify-start flex-1 p-2 border-2 border-white rounded-lg">
-            <input
-              {...register("returningPatient")}
-              type="checkbox"
-              id="returningPatient"
-              className="text-teal-600 border-gray-300 rounded focus:ring-teal-500"
-            />
-            <label
-              htmlFor="returningPatient"
-              className="ml-2 text-sm font-medium"
-            >
-              Are you a returning patient?
-            </label>
-          </div>
-
-          <div className="flex items-center justify-start flex-1 p-2 border-2 border-white rounded-lg">
-            <input
-              {...register("emergency")}
-              type="checkbox"
-              id="emergency"
-              className="text-teal-600 border-gray-300 rounded focus:ring-teal-500"
-            />
-            <label htmlFor="emergency" className="ml-2 text-sm font-medium">
-              Is this an emergency?
-            </label>
-          </div>
-        </div>
-
-        {/* Question/Issue Field */}
         <div className="flex gap-2">
           <div className="flex-1">
             <label
@@ -256,11 +183,10 @@ const RequestAppointmentForm = () => {
             )}
           </div>
         </div>
-
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-5/6 p-2 text-lg text-white bg-teal-600 border-2 border-white rounded-lg shadow opacity-80 hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
+            className="p-2 text-teal-900 bg-white border-2 border-gray-300 rounded-lg text border-opacity-85 hover:bg-gray-200 active:bg-gray-300"
           >
             Submit
           </button>
@@ -269,5 +195,4 @@ const RequestAppointmentForm = () => {
     </section>
   );
 };
-
 export default RequestAppointmentForm;

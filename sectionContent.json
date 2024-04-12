@@ -1,28 +1,31 @@
+
 {
   "heroText": {
-    "title": "Elevate Your Smile: Naperville's Trusted Dental Home",
-    "highlightedText": "Elevate Your Smile:",
-    "highlightInFront": true,
+    "title": "Naperville's Home to Trusted, Modern Dentistry",
+    "highlightedText": "Trusted, Modern Dentistry",
+    "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Decades of dedicated dental care have established Dr. Keith Brown as a linchpin of the dental community in Chicagoland."
-      },
-      {
-        "text": "Whether you need immediate care or are looking for a long-term dental home, our doors are open at the landmark Fifth Third Bank Building."
+        "text": "Serving the Chicagoland area for more than 40 years, Dr. Keith Brown DDS, FAGD delivers expert dental care tailored to your unique needs. "
       }
-    ],
+    ]
+,
     "additionalInfo": [
       {
         "text": "Now Providing 24/7 Emergency Care.",
-        "link": "/emergency"
+        "link": "/emergency",
+        "icon": "faMedkit"
       },
       {
         "text": "Free Nitrous for Anxiety and Pain-Free visits.",
-        "link": "/dentalServices"
+        "link": "/dentalServices",
+        "icon": "faLaughBeam"
+
       },
       {
         "text": "Affordable Care, Flexible Plans.",
-        "link": "#financialSection"
+        "link": "#financialSection",
+        "icon": "faWallet"
       }
     ]
 
@@ -36,24 +39,31 @@
       {
         "title": "Affordable Dental Solutions",
         "text": "Offering the most accessible dental care and financing solutions tailored to meet your needs.",
-        "link": "#financialSection"
+        "link": "#financialSection",
+        "icon": "money"
       },
       {
         "title": "Emergency Services Available 24/7",
         "text": "Immediate care when you need it most. Contact us anytime for emergency dental services.",
-        "link": "#apptSection"
+        "link": "#apptSection",
+        "icon": "emergency"
+
 
       },
       {
         "title": "Conveniently Located",
         "text": "Find us easily on the third floor of the Fifth Third Bank building at the heart of Naperville, Illinois.",
-        "link": "#locationSection"
+        "link": "#locationSection",
+        "icon": "location"
+
 
       },
       {
         "title": "A Stress-Free Dental Experience",
         "text": "Experience dental care in a serene environment designed to alleviate the stress of your visit.",
-        "link": "#servicesSection"
+        "link": "#servicesSection",
+        "icon": "noStress"
+
 
       }
     ]

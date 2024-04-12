@@ -21,7 +21,6 @@ const financialImages = [
 const FinancialImgGroup = () => {
   return (
     <>
-      {/* Carousel for mobile screens */}
       <div className="md:hidden">
         <Carousel
           plugins={[Autoplay({ delay: 8000, stopOnInteraction: true })]}

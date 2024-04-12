@@ -1,4 +1,6 @@
 import React from "react";
+import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DoctorFAGD = () => {
   const quote =
@@ -16,11 +18,17 @@ const DoctorFAGD = () => {
       </p>
       <div className="">
         <div className="relative p-2 px-6 py-4 mx-4 my-2 border-l-4 border-teal-500 ">
-          {/* <i className="text-teal-600 left-2 fa-solid fa-quote-left"></i> */}
+          <FontAwesomeIcon
+            className="my-2 "
+            icon={faQuoteLeft}
+          ></FontAwesomeIcon>
           <blockquote className="italic text-teal-800 rounded-lg ">
             {quote}
           </blockquote>
-          {/* <i className="absolute bottom-0 -mb-3 text-teal-600 right-2 fa-solid fa-quote-right"></i> */}
+          <FontAwesomeIcon
+            className="my-2 "
+            icon={faQuoteRight}
+          ></FontAwesomeIcon>
         </div>
       </div>
       <a
@@ -31,21 +39,10 @@ const DoctorFAGD = () => {
       </a>
       <div className="grid grid-cols-1 gap-4 mt-2 text-center text-md md:grid-cols-3">
         <div className="flex flex-col items-center text-teal-600">
-          {/* <i className="mb-2 text-4xl text-teal-900 fa-solid fa-award"></i> */}
-          <span className="text-lg font-bold">6%</span>
+          <span className="text-lg font-bold">Only 6%</span>
           <span className="text-teal-900">
             OF U.S. DENTISTS BECOME A FELLOW
           </span>
-        </div>
-        <div className="flex flex-col items-center text-teal-600">
-          <span className="text-lg font-bold">500 Hours</span>
-          <span className="text-teal-900">
-            REQUIRED OF CONTINUING EDUCATION
-          </span>
-        </div>
-        <div className="flex flex-col items-center text-teal-600">
-          <span className="text-lg font-bold">350 Hours</span>
-          <span className="text-teal-900">REQUIRED OF LIVE COURSES</span>
         </div>
       </div>
     </div>

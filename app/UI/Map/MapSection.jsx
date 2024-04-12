@@ -42,7 +42,7 @@ const MapSection = () => {
         </button>
       </div>
       <div className="grid items-center grid-cols-1 gap-4 md:grid-cols-2">
-        <div className="m-2 border-2 rounded-2xl">
+        <div className="border-2 rounded-2xl">
           <MyGoogleMap />
         </div>
         <MapImgGroup />

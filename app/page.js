@@ -1,5 +1,5 @@
-import Features from "./UI/Other/Features";
-
+// pages.js
+import FeaturesSection from "./UI/Other/FeaturesSection";
 import HeroSection from "./UI/Hero/HeroSection";
 import DoctorSection from "./UI/Doctor/DoctorSection";
 import TestimonialSection from "./UI/Testimonials/TestimonialSection";
@@ -10,9 +10,9 @@ import DentalServicesSection from "./UI/DentalServices/DentalServicesSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8 p-4 m-1 md:gap-12 lg:gap-16">
+    <div className="flex flex-col gap-8 p-3 md:gap-12 lg:gap-16">
       <HeroSection />
-      <Features />
+      <FeaturesSection />
       <DoctorSection />
       <TestimonialSection />
       <MapSection />
