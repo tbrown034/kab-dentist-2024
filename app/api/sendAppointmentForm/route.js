@@ -20,7 +20,7 @@ export async function POST(req) {
     secure: false, // true for 465, false for other ports
     auth: {
       user: "keithbrowndds@zohomail.com", // Your Zoho Mail email address
-      pass: process.env.NEXT_PUBLIC_DEV_EMAIL_PASS,
+      pass: "2iHjRwLXEZTt",
     },
   });
 

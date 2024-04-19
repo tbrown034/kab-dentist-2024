@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/favicon.ico" sizes="any" />
 
       <body
-        className={`${inter.className} p-4   text-teal-950 bg-teal-50 lg:text-xl`}
+        className={`${inter.className} p-4   text-teal-950  bg-teal-50 bg-opacity-70  lg:text-xl`}
       >
         <Header />
         {children} <Footer />

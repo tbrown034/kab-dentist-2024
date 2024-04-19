@@ -33,7 +33,7 @@ const MapSection = () => {
       <div className="flex flex-row items-center gap-4 py-2">
         <Link
           className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400"
-          href="#apptSection"
+          href="#appointmentSection"
         >
           Book Now
         </Link>
