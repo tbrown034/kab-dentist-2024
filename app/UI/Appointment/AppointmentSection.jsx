@@ -50,7 +50,6 @@ const AppointmentSection = () => {
           Fill out the form below and we'll be in touch shortly to confirm your
           appointment and answer any questions you might have!
         </p>
-
         <RequestAppointmentForm />
       </div>
     </section>
