@@ -2,7 +2,7 @@ import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import { raleway } from "../../../app/font.js";
-import RequestAppointmentForm from "./RequestAppointmentForm";
+import ContactUs from "./ContactUs";
 
 const AppointmentSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
@@ -50,7 +50,7 @@ const AppointmentSection = () => {
           Fill out the form below and we'll be in touch shortly to confirm your
           appointment and answer any questions you might have!
         </p>
-        <RequestAppointmentForm />
+        <ContactUs />
       </div>
     </section>
   );

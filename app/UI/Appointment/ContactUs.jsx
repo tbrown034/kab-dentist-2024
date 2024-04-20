@@ -1,8 +1,9 @@
 "use client";
+
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
-const RequestAppointmentForm = () => {
+export default function ContactUs() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const {
@@ -11,20 +12,37 @@ const RequestAppointmentForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setIsSubmitted(true);
-    // Handle submitting the form data to your server or API endpoint here
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+      console.log(responseData.message); // Assuming your API returns a success message
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      // Handle errors here, like setting an error state and displaying it in the UI
+    }
   };
 
   if (isSubmitted) {
+    // Display the success message instead of the form if submitted
     return (
       <div className="flex flex-col gap-4 pt-4 mt-4 border-t border-teal-50 ">
         <h3 className="text-xl font-bold ">
-          Your appointment request has been successfully sent!
+          Your message has been successfully sent!
         </h3>
         <p>We will be in touch with you shortly.</p>
-        <p>Need immediate assistance? Call our office at 630-301-089.</p>
       </div>
     );
   }
@@ -35,8 +53,9 @@ const RequestAppointmentForm = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 mt-4"
       >
+        {/* Name Field */}
         <div className="flex gap-2">
-          <div className="flex-1">
+          <div className="">
             <label htmlFor="name" className="block mb-2 text-sm font-medium">
               Name
             </label>
@@ -53,8 +72,9 @@ const RequestAppointmentForm = () => {
           </div>
         </div>
 
+        {/* Email Field */}
         <div className="flex gap-2">
-          <div className="flex-1">
+          <div className="">
             <label htmlFor="email" className="block mb-2 text-sm font-medium">
               Email Address
             </label>
@@ -77,8 +97,9 @@ const RequestAppointmentForm = () => {
           </div>
         </div>
 
+        {/* Phone Field */}
         <div className="flex gap-2">
-          <div className="flex-1">
+          <div className="">
             <label htmlFor="phone" className="block mb-2 text-sm font-medium">
               Phone
             </label>
@@ -99,51 +120,9 @@ const RequestAppointmentForm = () => {
               <p className="text-red-500">{errors.phone.message}</p>
             )}
           </div>
-
-          <div className="flex-1">
-            <label
-              htmlFor="insurance"
-              className="block mb-2 text-sm font-medium"
-            >
-              Insurance
-            </label>
-            <input
-              {...register("insurance")}
-              type="text"
-              id="insurance"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-              placeholder="Add if Known"
-            />
-
-            {errors.insurance && (
-              <p className="text-red-500">{errors.insurance.message}</p>
-            )}
-          </div>
         </div>
 
-        <div className="flex gap-4">
-          <div className="flex items-center">
-            <input
-              {...register("returningPatient")}
-              type="checkbox"
-              id="returningPatient"
-            />
-            <label
-              htmlFor="returningPatient"
-              className="ml-2 text-sm font-medium"
-            >
-              Are you a returning patient?
-            </label>
-          </div>
-
-          <div className="flex items-center">
-            <input {...register("emergency")} type="checkbox" id="emergency" />
-            <label htmlFor="emergency" className="ml-2 text-sm font-medium">
-              Is this an emergency?
-            </label>
-          </div>
-        </div>
-
+        {/* Question/Issue Field */}
         <div className="flex gap-2">
           <div className="flex-1">
             <label
@@ -176,6 +155,4 @@ const RequestAppointmentForm = () => {
       </form>
     </section>
   );
-};
-
-export default RequestAppointmentForm;
+}
