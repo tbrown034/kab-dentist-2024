@@ -2,20 +2,11 @@ import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import { raleway } from "../../../app/font.js";
-import ContactUs from "./ContactUs";
+import AppointmentForm from "./AppointmentForm";
 
 const AppointmentSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
     sectionContents.appointmentSection;
-
-  // Create a new date object
-  const currentDate = new Date();
-  // Format the date as a string e.g., "April 12, 2024"
-  const dateString = currentDate.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
   if (!title || !textBlock || textBlock.length === 0) return null;
 
@@ -42,15 +33,12 @@ const AppointmentSection = () => {
         <h2 className="text-2xl font-extrabold tracking-tight">
           Book Your Appointment
         </h2>
-        <p>
-          Welcome! As of {dateString}, we are accepting new patients and
-          returning patients!{" "}
-        </p>
+
         <p>
           Fill out the form below and we'll be in touch shortly to confirm your
           appointment and answer any questions you might have!
         </p>
-        <ContactUs />
+        <AppointmentForm />
       </div>
     </section>
   );
