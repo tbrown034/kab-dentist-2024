@@ -6,12 +6,11 @@ const links = [
   { href: "#locationSection", label: "Location" },
   { href: "#servicesSection", label: "Services" },
   { href: "#appointmentSection", label: "Appointments" },
-  { href: "#financialSection", label: "Financial" }, // Included the "Financial" section
 ];
 
 const HeaderFullNav = () => {
   return (
-    <nav className="flex items-center justify-between gap-4 text-sm text-teal-900 text">
+    <nav className="flex items-center justify-between gap-6 text-base text-teal-900 lg:gap-8 lg:text-lg xl:text-xl text">
       {links.map((link) => (
         <Link
           key={link.href} // Key for each child in a list

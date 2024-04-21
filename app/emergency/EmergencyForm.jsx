@@ -38,7 +38,7 @@ export default function EmergencyForm() {
       </h2>
       <p className="mb-4">
         Just fill out these quick details and we'll get the information directly
-        to the doctor!
+        to Dr. Brown!
       </p>
       <form
         onSubmit={handleSubmit(onSubmit)}

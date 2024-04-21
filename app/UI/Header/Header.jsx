@@ -2,6 +2,9 @@
 import HeaderFullNav from "./HeaderFullNav";
 import HeaderDropDown from "./HeaderDropDown";
 import { montserrat } from "../../../app/font.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
@@ -18,6 +21,9 @@ const Header = () => {
       <div className="flex items-center gap-4">
         <div className="flex md:hidden">
           <HeaderDropDown />
+        </div>
+        <div className="hidden md:flex">
+          <ThemeToggle />
         </div>
       </div>
     </nav>
