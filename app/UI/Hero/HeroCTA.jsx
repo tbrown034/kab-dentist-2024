@@ -8,7 +8,6 @@ const HeroCTA = () => {
     <div className="flex flex-col gap-8 text-lg lg:text-xl ">
       <div className="flex flex-row items-center gap-4 ">
         <Link
-          scroll={true}
           href="#appointmentSection"
           className="p-3 text-white bg-teal-600 border-2 border-teal-600 rounded-xl md:p-4 xl:p-5 hover:bg-teal-500 active:bg-teal-400"
         >
@@ -21,7 +20,7 @@ const HeroCTA = () => {
       </div>
       <Link
         className="flex items-center gap-2 text-teal-600 transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400 "
-        href="#emergencyCareSection"
+        href="/emergency"
       >
         {" "}
         <FontAwesomeIcon icon={faExclamationCircle} size="lg" />

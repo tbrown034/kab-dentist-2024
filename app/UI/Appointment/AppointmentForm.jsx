@@ -14,6 +14,7 @@ export default function AppointmentForm() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    event.preventDefault();
     try {
       const response = await fetch("/api/sendEmail", {
         method: "POST",
