@@ -10,7 +10,7 @@ export async function POST(req) {
     secure: false, // true for 465, false for other ports
     auth: {
       user: "keithbrowndds@zohomail.com",
-      pass: "WUM5Z2CixZ8m",
+      pass: process.env.EMAIL_PASS,
     },
   });
   //success
