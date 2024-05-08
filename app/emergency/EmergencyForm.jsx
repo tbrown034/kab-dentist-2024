@@ -34,11 +34,13 @@ export default function EmergencyForm() {
   return (
     <section className="gap-2 p-4 text-white bg-gray-700 rounded-lg shadow ">
       <h2 className="text-2xl font-extrabold tracking-tight text-red-500">
-        Emergency Hotline
+        Request Emergency Assistance
       </h2>
       <p className="mb-4">
-        Just fill out these quick details and we'll get the information directly
-        to Dr. Brown!
+        If it's afterhours or the weekend and you are experiencing an dental
+        emergnecy, fill out the form below. If Dr. Brown is on-call and
+        available, we offer free phone consolations to discuss your issue and
+        options moving forward.
       </p>
       <form
         onSubmit={handleSubmit(onSubmit)}

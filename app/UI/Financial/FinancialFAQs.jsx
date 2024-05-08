@@ -10,7 +10,7 @@ const FinancialFAQs = () => {
   const financialFAQs = sectionContents.financialSection.financialFAQs;
   return (
     <section className="flex flex-col items-start justify-start px-4 text-left ">
-      <h2 className="mb-2 text-xl font-extrabold tracking-tight">
+      <h2 className="mb-2 text-xl font-extrabold tracking-tight underline underline-offset-2">
         {sectionContents.financialSection.title}
       </h2>
       <Accordion type="single" collapsible className="w-full">

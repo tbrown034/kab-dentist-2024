@@ -45,7 +45,7 @@ const CallDialog = ({ buttonName }) => {
       <DialogContent className="w-4/5 shadow rounded-xl">
         <DialogHeader>
           <DialogTitle className="text-2xl">Let's Get in Touch!</DialogTitle>
-          <DialogDescription className="text-lg">
+          <DialogDescription className="text-left text-md">
             We're happy to take your call! To direct your call appropriately,
             please select an option below.
           </DialogDescription>
@@ -54,30 +54,30 @@ const CallDialog = ({ buttonName }) => {
         <div className="flex flex-col items-start gap-2 ">
           <button
             onClick={() => (window.location.href = "tel:630-301-0589")}
-            className="flex flex-col gap-1 p-4 text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+            className="flex flex-col gap-1 p-2 px-4 text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
           >
             <span>Call Our Office Now</span>
             <p>(630-296-8207)</p>
+          </button>
+
+          <button
+            onClick={handleSectionScrollAndClose}
+            className="p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+          >
+            Request an Appointment
           </button>
           <button
             onClick={() => {
               window.location.href = "/emergency";
               closeDialog();
             }}
-            className="p-4 text-white bg-red-500 rounded-lg hover:bg-red-400 active:bg-red-300"
+            className="p-2 px-4 text-white bg-red-500 rounded-lg hover:bg-red-400 active:bg-red-300"
           >
             After-hours & Emergency Care
           </button>
           <button
-            onClick={handleSectionScrollAndClose}
-            className="p-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
-          >
-            Request an Appointment
-          </button>
-
-          <button
             onClick={closeDialog}
-            className="w-1/2 p-2 mt-4 text-center text-white bg-gray-500 rounded-lg cursor-pointer hover:bg-gray-400 active:bg-gray-300"
+            className="p-2 px-4 mt-4 text-center text-white bg-gray-500 rounded-lg cursor-pointer hover:bg-gray-400 active:bg-gray-300"
           >
             Back
           </button>
