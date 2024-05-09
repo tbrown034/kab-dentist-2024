@@ -1,24 +1,26 @@
 "use client";
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
 
 const ThemeToggle = () => {
-  const [enabled, setEnabled] = useState(false);
+  const [darkMode, setDarkMode] = useState(false); // Correct naming convention
+
+  useEffect(() => {
+    // Apply the 'dark' class to the body tag based on `darkMode`
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
 
   return (
     <Switch
-      checked={enabled}
-      onChange={setEnabled}
-      className={`${
-        enabled ? "bg-blue-600" : "bg-gray-200"
-      } relative inline-flex h-6 w-11 items-center rounded-full`}
+      checked={darkMode}
+      onChange={() => setDarkMode(!darkMode)}
+      className={`${darkMode ? "bg-blue-600" : "bg-gray-200"}
+        relative inline-flex h-6 w-11 items-center rounded-full`}
     >
-      <span className="sr-only">Enable notifications</span>
+      <span className="sr-only">Toggle Dark Mode</span>
       <span
-        className={`${
-          enabled ? "translate-x-6" : "translate-x-1"
-        } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+        className={`${darkMode ? "translate-x-6" : "translate-x-1"}
+          inline-block h-4 w-4 transform rounded-full bg-white transition`}
       />
     </Switch>
   );

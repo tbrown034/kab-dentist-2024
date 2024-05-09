@@ -19,12 +19,12 @@ const HeroCTA = () => {
         </div>
       </div>
       <Link
-        className="flex items-center gap-2 text-teal-600 transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400 "
+        className="flex items-center gap-2 text-teal-600 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400 "
         href="/emergency"
       >
         {" "}
         <FontAwesomeIcon icon={faExclamationCircle} size="lg" />
-        <span className="text-base font-semibold underline md:text-xl lg:text-2xl ">
+        <span className="text-base font-semibold md:text-xl lg:text-2xl ">
           Now Offering 24/7 Emergency Care
         </span>
       </Link>

@@ -55,6 +55,14 @@ const Page = () => {
               Emergency/After Hours Care
             </button>
           </div>
+          <div className="mt-2">
+            <Link
+              href="/"
+              className="p-2 bg-white border-2 border-gray-300 rounded-lg md:p-4 xl:p-5 lg:text-lg border-opacity-85 hover:bg-gray-200 active:bg-gray-300"
+            >
+              Back to Home
+            </Link>
+          </div>
         </div>
 
         {showForm && (

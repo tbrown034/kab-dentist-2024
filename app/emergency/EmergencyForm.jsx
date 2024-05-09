@@ -12,10 +12,35 @@ export default function EmergencyForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setIsSubmitted(true);
-    // Handle submitting the form data to a server or API endpoint here
+  const onSubmit = async (data) => {
+    console.log("Form data:", data);
+
+    try {
+      const response = await fetch("/api/sendText", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: "+16303010589", // The dentist's phone number with country code
+          body: `Message from ${data.name}, Email: ${data.email}, Phone: ${data.phone}, Question/Issue: ${data.question}`,
+        }),
+      });
+
+      console.log("Response status:", response.status);
+
+      const result = await response.json();
+      console.log("Response data:", result);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        console.log("SMS sent:", result);
+      } else {
+        console.error("Failed to send SMS:", result.error);
+      }
+    } catch (error) {
+      console.error("Error sending SMS:", error);
+    }
   };
 
   if (isSubmitted) {
@@ -109,8 +134,9 @@ export default function EmergencyForm() {
               {...register("phone", {
                 required: "Phone number is required",
                 pattern: {
-                  value: /^\d{10}$/,
-                  message: "Invalid phone number, must be 10 digits",
+                  value: /^\+?1?\d{10}$/,
+                  message:
+                    "Invalid phone number, must be 10 digits with optional +1 prefix",
                 },
               })}
               type="tel"

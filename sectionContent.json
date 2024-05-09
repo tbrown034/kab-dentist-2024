@@ -1,4 +1,3 @@
-
 {
   "heroText": {
     "title": "Naperville's Home For Trusted, Modern Dentistry",
@@ -6,65 +5,56 @@
     "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Serving the Chicagoland area for more than 40 years, Dr. Keith Brown DDS, FAGD delivers expert dental care tailored to your unique needs. "
+        "text": "For over 40 years, Dr. Keith Brown DDS, FAGD, has been providing expert dental care tailored to the unique needs of the Chicagoland area."
       }
-    ]
-,
+    ],
     "additionalInfo": [
       {
-        "text": "Now Providing 24/7 Emergency Care.",
+        "text": "We provide 24/7 emergency care.",
         "link": "/emergency",
         "icon": "faMedkit"
       },
       {
-        "text": "Free Nitrous for Anxiety and Pain-Free visits.",
+        "text": "We offer free nitrous oxide for pain-free appointments.",
         "link": "/dentalServices",
         "icon": "faLaughBeam"
-
       },
       {
-        "text": "Affordable Care, Flexible Plans.",
+        "text": "Discover affordable care with our flexible payment plans.",
         "link": "#financialSection",
         "icon": "faWallet"
       }
     ]
-
   },
   "features": {
     "title": "Crafting Smiles with Unmatched Dental Mastery",
     "highlightedText": "Unmatched Dental Mastery",
     "highlightInFront": false,
-    "intro": "At Dr. Keith Brown's office, we're committed to high-quality care with a personal touch for the Chicagoland community.",
+    "intro": "At Dr. Keith Brown's office, we commit to providing high-quality care with a personal touch to the Chicagoland community.",
     "textBlock": [
       {
         "title": "Affordable Dental Solutions",
-        "text": "Offering the most accessible dental care and financing solutions tailored to meet your needs.",
+        "text": "We offer accessible dental care and financing solutions tailored to meet your needs.",
         "link": "#financialSection",
         "icon": "money"
       },
       {
-        "title": "Emergency Services Available 24/7",
-        "text": "Immediate care when you need it most. Contact us anytime for emergency dental services.",
+        "title": "Afterhours and Emergency Services",
+        "text": "Receive a free telephone consultation for any dental emergency from our experts.",
         "link": "#apptSection",
         "icon": "emergency"
-
-
       },
       {
         "title": "Conveniently Located",
-        "text": "Find us easily on the third floor of the Fifth Third Bank building at the heart of Naperville, Illinois.",
+        "text": "Visit us on the third floor of the Fifth Third Bank building at the heart of Naperville, Illinois, complete with ample parking and accessibility.",
         "link": "#locationSection",
         "icon": "location"
-
-
       },
       {
         "title": "A Stress-Free Dental Experience",
-        "text": "Experience dental care in a serene environment designed to alleviate the stress of your visit.",
+        "text": "Enjoy dental care in a serene environment designed to alleviate the stress of your visit.",
         "link": "#servicesSection",
         "icon": "noStress"
-
-
       }
     ]
   },
@@ -74,18 +64,13 @@
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "With over four decades of dedication, Dr. Keith A. Brown, DDS, FAGD, represents a cornerstone of dental well-being in Naperville, offering unmatched expertise and a personal touch."
+        "text": "With a passion spanning four decades, Dr. Keith A. Brown, DDS, FAGD, stands as a pillar of dental well-being in Naperville, offering unmatched expertise with a personal touch."
       },
       {
-        "text": "Embracing the latest in dentistry with a personalized care approach, Dr. Brown delivers an exceptional and tailored dental experience."
+        "text": "Dr. Brown embraces the latest advancements in dentistry, delivering an exceptional, personalized dental experience."
       }
-
     ],
-    "bottomTextBlock": [
-      {
-        "text": "wordse"
-      }
-    ]
+    "bottomTextBlock": []
   },
   "mapSection": {
     "title": "Welcoming You to Your Naperville Dental Home",
@@ -93,7 +78,7 @@
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "Dedicated to enhancing smiles for over 30 years, our Naperville location offers exceptional dental care amidst panoramic views on the third floor of the Fifth Third Bank building."
+        "text": "For over 30 years, our Naperville location has been dedicated to enhancing smiles, offering exceptional dental care from our scenic third-floor office."
       }
     ]
   },
@@ -103,83 +88,73 @@
     "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Hear Directly From Our Patients:"
+        "text": "Hear directly from our patients:"
       }
     ]
-}
-,
-"financialSection": {
-  "title": "Making World-Class Dental Care Accessible to All",
-  "highlightedText": "Making World-Class",
-  "highlightInFront": true,
-  "textBlock": [
-    {
-      "text": "Our clinic prioritizes affordable, accessible dental care. We work with many insurance providers and offer guidance on flexible financing options with low monthly payments."
-    },
-    {
-      "text2": "Without insurance or facing coverage gaps? We provide financial services support, offering plans with no or low interest and minimal monthly payments."
-    },
-    {
-      "text3": "Coverage includes preventive care, diagnostics, and medically necessary treatments like cleanings, fillings, and braces."
-    }
-  ],
-  "financialFAQs": [
-    {
-      "question": "What payment options do you offer?",
-      "answer": "We accept all major credit cards, insurance plans, and payment programs. We also offer financing options to make dental care more accessible."
-    },
-    {
-      "question": "Do you offer payment plans?",
-      "answer": "Yes, we provide flexible payment plans for various treatments. Our goal is to make dental care affordable for all our patients."
-    },
-    {
-      "question": "Can I use FSAs or HSAs?",
-      "answer": "Yes, FSAs and HSAs are great options to cover dental expenses with pre-tax dollars. Eligible expenses include preventive care, diagnostics, and medically necessary treatments like cleanings and fillings, reducing your taxable income and saving you money."
-    },
-    {
-      "question": "How does insurance billing work?",
-      "answer": "We direct bill your insurance company when possible, handling the paperwork to ensure you receive the benefits you're entitled to."
-    },
-    {
-      "question": "Are there any hidden fees?",
-      "answer": "Transparency is key in our billing process. We provide detailed estimates before any treatment and discuss all possible costs with you."
-    },
-    {
-      "question": "How can I estimate the cost of my treatment?",
-      "answer": "Our clinic offers free consultations to provide you with a detailed breakdown of potential treatments and associated costs. We strive to ensure you have all the information needed to make informed decisions about your dental care."
-    },
-    {
-      "question": "What should I do if I don’t have dental insurance?",
-      "answer": "We believe everyone deserves access to quality dental care. For patients without insurance, we offer a variety of payment options and plans to accommodate different budgets and needs. Please contact our office to learn more about our financial assistance programs."
-    }
-  ]
-}
-,
+  },
+  "financialSection": {
+    "title": "Making World-Class Dental Care Accessible to All",
+    "highlightedText": "Making World-Class",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "We prioritize affordable, accessible dental care. Our clinic works with many insurance providers and offers flexible financing options with low monthly payments."
+      },
+      {
+        "text2": "Don't have insurance or facing coverage gaps? Our financial services support includes plans with no or low interest and minimal monthly payments."
+      },
+      {
+        "text3": "Our coverage includes preventive care, diagnostics, and medically necessary treatments like cleanings, fillings, and braces."
+      }
+    ],
+    "financialFAQs": [
+      {
+        "question": "What payment options do you offer?",
+        "answer": "We accept all major credit cards, insurance plans, and payment programs, offering financing options to make dental care more accessible."
+      },
+      {
+        "question": "Do you offer payment plans?",
+        "answer": "Yes, we provide flexible payment plans for various treatments, making dental care affordable for all our patients."
+      },
+      {
+        "question": "Can I use FSAs or HSAs?",
+        "answer": "Absolutely, FSAs and HSAs are great for covering dental expenses with pre-tax dollars, reducing your taxable income and saving you money."
+      },
+      {
+        "question": "How does insurance billing work?",
+        "answer": "We handle the paperwork and direct bill your insurance company, ensuring you receive the benefits you are entitled to."
+      },
+      {
+        "question": "Are there any hidden fees?",
+        "answer": "Our billing process is transparent. We provide detailed estimates before any treatment and discuss all possible costs with you."
+      },
+      {
+        "question": "How can I estimate the cost of my treatment?",
+        "answer": "We offer free consultations to give you a detailed breakdown of potential treatments and associated costs, ensuring you make informed decisions about your dental care."
+      },
+      {
+        "question": "What should I do if I don’t have dental insurance?",
+        "answer": "Contact our office to learn more about our financial assistance programs. We are dedicated to making quality dental care accessible to everyone."
+      }
+    ]
+  },
   "dentalServicesSection": {
     "title": "Customized Dental Services to Perfectly Match Your Needs",
     "highlightedText": "Customized Dental Services",
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "At our practice, we offer a wide range of dental services to cater to your oral health needs."
-      },
-      {
-        "text": "From routine checkups and cleanings to advanced restorative and cosmetic treatments, we are dedicated to providing personalized care for every patient."
+        "text": "Our practice offers a wide range of dental services, from routine checkups to advanced restorative and cosmetic treatments, all tailored to your specific oral health needs."
       }
     ]
-  }
-,
-
+  },
   "appointmentSection": {
     "title": "Simplifying Your Journey with Easy Scheduling",
     "highlightedText": "Simplifying Your Journey",
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "Embark on your journey to a healthier, happier smile with our easy online scheduling."
-      },
-      {
-        "text": "Committed to patient convenience, accessing top-tier dental care has never been simpler."
+        "text": "Embark on your journey to a healthier, happier smile with our easy online scheduling. We ensure top-tier dental care with unmatched patient convenience."
       }
     ]
   },
@@ -189,12 +164,11 @@
     "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Dental emergencies are unpredictable, but our response isn't. We stand ready  to address your urgent dental needs."
+        "text": "Dental emergencies don’t wait, and neither do we. We are always ready to address your urgent dental needs."
       },
       {
-        "text": "Call our office anytime or fill out the emerngey hotline form and we'll send the message right to Dr. Brown."
+        "text": "Call our office anytime or fill out the emergency hotline form, and we'll immediately notify Dr. Brown."
       }
-
     ],
     "FAQ": [
       {
@@ -215,7 +189,7 @@
       },
       {
         "question": "What are Dr. Brown's hours for emergency dental services?",
-        "answer": "Dr. Brown is dedicated to providing extended care hours for emergencies, including early mornings, evenings, and weekends. Specific availability may vary, so submitting an emergency form or calling is the fastest way to receive help."
+        "answer": "Dr. Brown provides extended care hours for emergencies, including early mornings, evenings, and weekends. Specific availability may vary, so submitting an emergency form or calling is the fastest way to receive help."
       },
       {
         "question": "Is there an additional fee for emergency dental services?",
