@@ -14,7 +14,7 @@ const HeroCTA = () => {
           Book Appointment
         </Link>
 
-        <div className="p-3 bg-white border-2 border-gray-300 rounded-xl md:p-4 xl:p-5 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
+        <div className="p-3 bg-white border-2 border-gray-600 rounded-xl md:p-4 xl:p-5 dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
           <CallDialog buttonName="Call Us" />
         </div>
       </div>
@@ -24,7 +24,7 @@ const HeroCTA = () => {
       >
         {" "}
         <FontAwesomeIcon icon={faExclamationCircle} size="lg" />
-        <span className="text-base font-semibold md:text-xl lg:text-2xl ">
+        <span className="text-base font-bold md:text-xl lg:text-2xl ">
           Now Offering 24/7 Emergency Care
         </span>
       </Link>

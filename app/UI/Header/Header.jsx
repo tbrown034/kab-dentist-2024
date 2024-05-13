@@ -1,9 +1,7 @@
-// components/Header.jsx
+// components/Header/Header.jsx
 import HeaderFullNav from "./HeaderFullNav";
 import HeaderDropDown from "./HeaderDropDown";
 import { montserrat } from "../../../app/font.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faToggleOn } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {

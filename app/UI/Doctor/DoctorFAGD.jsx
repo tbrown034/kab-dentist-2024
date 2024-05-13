@@ -4,46 +4,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DoctorFAGD = () => {
   const quote =
-    "If your dentist is a (FAGD or MAGD), they are the best of the best in the field. You can rest assured that your dentist cares about knowing the latest techniques and best practices in dentistry";
+    "If your dentist is a (FAGD or MAGD), they are the best of the best in the field. You can rest assured that your dentist cares about knowing the latest techniques and best practices in dentistry.";
   const citation = "— Academy of General Dentistry";
 
   return (
-    <div className="flex flex-col gap-4 p-2 px-4 m-4 bg-white rounded-lg shadow ">
-      <h2 className="text-xl font-semibold">Not Your Average Dentist</h2>
-      <p className="text-teal-900 ">
-        Dr. Brown is among the select few who have earned his{" "}
-        <span className="font-semibold text-teal-600">
-          Fellow of the Academy of General Dentistry (FAGD).
+    <div className="flex flex-col gap-4 p-4 m-2 ">
+      <h2 className="text-2xl font-bold">Not Your Average Dentist</h2>
+      <p className="text-lg ">
+        Dr. Brown is among the elite{" "}
+        <span className="font-semibold underline">6%</span> of dentists in the
+        U.S. to become a{" "}
+        <span className="font-semibold underline">
+          Fellow of the Academy of General Dentistry (FAGD).<br></br>
+          <br></br>
         </span>
+        This honor reflects his dedication to continuing education and
+        excellence in dentistry.
       </p>
-      <div className="">
-        <div className="relative p-2 px-6 py-4 mx-4 my-2 border-l-4 border-teal-500 ">
-          <FontAwesomeIcon
-            className="my-2 "
-            icon={faQuoteLeft}
-          ></FontAwesomeIcon>
-          <blockquote className="italic text-teal-800 rounded-lg ">
-            {quote}
-          </blockquote>
-          <FontAwesomeIcon
-            className="my-2 "
-            icon={faQuoteRight}
-          ></FontAwesomeIcon>
-        </div>
-      </div>
-      <a
-        href="https://www.agd.org/practice/tools/patient-resources/know-my-dentist/why-choose-an-fagd-or-magd-dentist#:~:text=If%20your%20dentist%20is%20a,2%20percent%20are%20AGD%20Masters"
-        className="mt-2 text-sm italic font-semibold text-center text-teal-900 hover:text-teal-800 active:text-teal-700"
-      >
-        {citation}
-      </a>
-      <div className="grid grid-cols-1 gap-4 mt-2 text-center text-md md:grid-cols-3">
-        <div className="flex flex-col items-center text-teal-600">
-          <span className="text-lg font-bold">Only 6%</span>
-          <span className="text-teal-900">
-            OF U.S. DENTISTS BECOME A FELLOW
-          </span>
-        </div>
+      <div className="flex flex-col items-center p-6 text-white bg-teal-800 rounded-lg shadow-inner ">
+        <FontAwesomeIcon
+          className="text-teal-100 "
+          icon={faQuoteLeft}
+          size="2x"
+        />
+        <blockquote className="text-lg italic text-center">{quote}</blockquote>
+        <FontAwesomeIcon
+          className="text-teal-100 "
+          icon={faQuoteRight}
+          size="2x"
+        />
+        <a
+          href="https://www.agd.org/practice/tools/patient-resources/know-my-dentist/why-choose-an-fagd-or-magd-dentist#:~:text=If%20your%20dentist%20is%20a,2%20percent%20are%20AGD%20Masters"
+          className="mt-4 font-semibold text-center "
+        >
+          {citation}
+        </a>
       </div>
     </div>
   );

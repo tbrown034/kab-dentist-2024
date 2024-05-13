@@ -14,9 +14,9 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <DoctorSection />
-      <TestimonialSection />
       <MapSection />
       <DentalServicesSection />
+      <TestimonialSection />
       <FinancialSection />
       <AppointmentSection />
     </div>

@@ -10,7 +10,7 @@ const links = [
 
 const HeaderFullNav = () => {
   return (
-    <nav className="flex items-center justify-between gap-6 text-base text-teal-900 lg:gap-8 lg:text-lg xl:text-xl text">
+    <nav className="flex items-center justify-between gap-6 text-base lg:gap-8 lg:text-lg dark:text-teal-500 xl:text-xl text">
       {links.map((link) => (
         <Link
           key={link.href} // Key for each child in a list

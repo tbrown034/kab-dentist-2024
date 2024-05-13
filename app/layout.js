@@ -8,16 +8,17 @@ export const metadata = {
   title: "Keith Brown DDS, Naperville's Trusted Dentist",
   description: "Keith Brown D.D.D.",
 };
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth ">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-
       <body
-        className={`${inter.className} p-4 dark:bg-red-800   text-teal-950  bg-teal-50 bg-opacity-70  lg:text-xl`}
+        className={`${inter.className} p-4 bg-teal-50 bg-opacity-70 text-teal-950 lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
       >
         <Header />
-        {children} <Footer />
+        {children}
+        <Footer />
       </body>
     </html>
   );

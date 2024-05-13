@@ -37,7 +37,7 @@ const MapSection = () => {
         >
           Book Now
         </Link>
-        <button className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 active:bg-gray-300">
+        <button className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300">
           Copy Address
         </button>
       </div>

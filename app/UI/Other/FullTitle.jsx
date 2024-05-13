@@ -6,13 +6,13 @@ const FullTitle = ({ title, highlightedText, highlightInFront }) => {
     <>
       {highlightInFront ? (
         <>
-          <span className="text-teal-500">{highlightedText}</span>{" "}
+          <span className="text-teal-600">{highlightedText}</span>{" "}
           {title.replace(highlightedText, "")}
         </>
       ) : (
         <>
           {title.replace(highlightedText, "")}{" "}
-          <span className="text-teal-500">{highlightedText}</span>
+          <span className="text-teal-600">{highlightedText}</span>
         </>
       )}
     </>

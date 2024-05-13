@@ -28,22 +28,24 @@ const TestimonialSection = () => {
             stopOnInteraction: true,
           }),
         ]}
-        className="flex flex-col gap-4 p-2 px-4 mx-2 text-white bg-teal-600 rounded-lg shadow"
+        className="flex flex-col gap-4 p-2 px-4 mx-2 text-white bg-teal-800 rounded-lg shadow"
       >
         <CarouselContent>
           {testimonialsEntries.map(({ id, quote, reviewer, city }) => (
             <CarouselItem key={id} className="flex ">
               <div className="flex flex-col items-center justify-center">
                 <FontAwesomeIcon
-                  className="my-2 text-2xl"
+                  className="my-2 text-teal-100"
                   icon={faQuoteLeft}
+                  size="2x"
                 ></FontAwesomeIcon>
                 <blockquote className="text-xl font-medium text-center">
                   {quote}
                 </blockquote>
                 <FontAwesomeIcon
-                  className="my-2 text-2xl"
+                  className="my-2 text-teal-100"
                   icon={faQuoteRight}
+                  size="2x"
                 ></FontAwesomeIcon>
                 <figcaption className="mt-4 font-semibold text-center">
                   - {reviewer}

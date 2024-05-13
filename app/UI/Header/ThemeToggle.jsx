@@ -1,20 +1,17 @@
+// components/Header/ThemeToggle.jsx
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Switch } from "@headlessui/react";
+import { useDarkMode } from "@/useDarkMode";
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false); // Correct naming convention
-
-  useEffect(() => {
-    // Apply the 'dark' class to the body tag based on `darkMode`
-    document.body.classList.toggle("dark", darkMode);
-  }, [darkMode]);
+  const [darkMode, setDarkMode] = useDarkMode();
 
   return (
     <Switch
       checked={darkMode}
       onChange={() => setDarkMode(!darkMode)}
-      className={`${darkMode ? "bg-blue-600" : "bg-gray-200"}
+      className={`${darkMode ? "bg-teal-600" : "bg-gray-200"}
         relative inline-flex h-6 w-11 items-center rounded-full`}
     >
       <span className="sr-only">Toggle Dark Mode</span>

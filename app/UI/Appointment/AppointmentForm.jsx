@@ -70,7 +70,7 @@ export default function AppointmentForm() {
             {...register("name", { required: "Name is required" })}
             type="text"
             id="name"
-            className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-200 dark:border-gray-600 dark:text-white"
             placeholder="John Doe"
           />
           {errors.name && <p className="text-red-500">{errors.name.message}</p>}
@@ -89,7 +89,7 @@ export default function AppointmentForm() {
             })}
             type="email"
             id="email"
-            className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-200 dark:border-gray-600 dark:text-white"
             placeholder="name@example.com"
           />
           {errors.email && (
@@ -113,7 +113,7 @@ export default function AppointmentForm() {
               })}
               type="tel"
               id="phone"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-200 dark:border-gray-600 dark:text-white"
               placeholder="(555) 555-5555"
             />
             {errors.phone && (
@@ -134,7 +134,7 @@ export default function AppointmentForm() {
             <textarea
               {...register("question", { required: "This field is required" })}
               id="question"
-              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-200 dark:border-gray-600 dark:text-white"
               rows="3"
               placeholder="Please describe your question or issue."
             ></textarea>
@@ -147,7 +147,7 @@ export default function AppointmentForm() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-5/6 p-2 text-lg text-white bg-teal-600 border-4 border-teal-500 rounded-lg shadow hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
+            className="w-5/6 p-2 text-lg text-white bg-teal-600 border-teal-500 rounded-lg shadow hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400 dark:text-white"
           >
             Submit
           </button>
