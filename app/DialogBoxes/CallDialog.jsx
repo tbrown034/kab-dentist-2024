@@ -42,9 +42,11 @@ const CallDialog = ({ buttonName }) => {
           {buttonName}
         </button>
       </DialogTrigger>
-      <DialogContent className="w-4/5 shadow rounded-xl">
+      <DialogContent className="w-4/5 shadow dark:bg-gray-200 rounded-xl">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Let's Get in Touch!</DialogTitle>
+          <DialogTitle className="text-2xl text-black">
+            Let's Get in Touch!
+          </DialogTitle>
           <DialogDescription className="text-left text-md">
             We're happy to take your call! To direct your call appropriately,
             please select an option below.
