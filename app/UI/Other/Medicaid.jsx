@@ -3,7 +3,7 @@ import React from "react";
 const Medicaid = () => {
   return (
     <div>
-      <p className="px-4 text-sm text-black">
+      <p className="px-4 text-sm ">
         <b>* Note:</b> We currently are{" "}
         <span className="italic font-semibold">not accepting Medicaid.</span>{" "}
         However, there are many{" "}

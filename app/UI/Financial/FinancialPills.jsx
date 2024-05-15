@@ -6,7 +6,7 @@ import cityBenefits from "../../../public/images/logos/cityBenefits.png";
 const FinancialPills = () => {
   return (
     <div className="flex flex-col gap-4 p-4 md:flex-row ">
-      <div className="flex flex-col justify-center gap-4 p-4 text-black bg-white border-4 border-teal-800 shadow rounded-xl">
+      <div className="flex flex-col justify-center gap-4 p-4 text-black bg-white border-2 border-teal-800 shadow rounded-xl">
         <Image src={careCredit} alt="care credit"></Image>
         <p>
           CareCredit is a health and wellness credit card with flexible
@@ -21,7 +21,7 @@ const FinancialPills = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-4 p-4 text-black bg-white border-4 border-teal-800 shadow rounded-xl">
+      <div className="flex flex-col justify-center gap-4 p-4 text-black bg-white border-2 border-teal-800 shadow rounded-xl">
         <Image src={cityBenefits} alt="care credit"></Image>
         <p>
           Citi Beneits offers dental plans that support preventive care and
