@@ -27,7 +27,7 @@ const images = [
 
 const DoctorImgGroup = () => {
   return (
-    <div className="flex flex-col gap-4 p-4 px-4 md:px-6 lg:px-10 xl:px-16 md:flex-row ">
+    <div className="flex flex-col gap-4 p-4 px-4 md:px-6 lg:px-16 xl:px-20 md:flex-row ">
       <div className="flex items-center justify-center w-full md:w-1/2">
         <div className="w-full ">
           <Image

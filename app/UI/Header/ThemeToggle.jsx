@@ -1,4 +1,3 @@
-// components/Header/ThemeToggle.jsx
 "use client";
 import React from "react";
 import { Switch } from "@headlessui/react";
@@ -6,6 +5,11 @@ import { useDarkMode } from "@/useDarkMode";
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useDarkMode();
+
+  if (darkMode === null) {
+    // Prevent rendering until darkMode is determined
+    return null;
+  }
 
   return (
     <Switch
