@@ -21,10 +21,10 @@ const Footer = () => {
           <a href="/" className="block hover:underline">
             Home
           </a>
-          <a href="/services" className="block hover:underline">
+          <a href="#servicesSection" className="block hover:underline">
             Services
           </a>
-          <a href="/location" className="block hover:underline">
+          <a href="#locationSection" className="block hover:underline">
             Location
           </a>
         </div>
