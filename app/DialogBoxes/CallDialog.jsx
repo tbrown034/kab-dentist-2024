@@ -43,7 +43,7 @@ const CallDialog = ({ buttonName }) => {
             Let's Get in Touch!
           </DialogTitle>
           <DialogDescription className="text-left ">
-            We're happy to take your call! Give us a ring at (630) 296-8207 or
+            We are happy to take your call! Give us a ring at (630) 296-8207 or
             select one of the options below:
           </DialogDescription>
         </DialogHeader>
