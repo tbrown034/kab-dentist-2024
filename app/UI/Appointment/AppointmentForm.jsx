@@ -56,7 +56,7 @@ export default function AppointmentForm() {
   const onSubmit = async (data, event) => {
     event.preventDefault();
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("/api/appointmentForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

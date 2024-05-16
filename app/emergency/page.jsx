@@ -33,16 +33,16 @@ const Page = () => {
           highlightInFront={highlightInFront}
         />
       </div>
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
-          <h3 className="flex flex-col justify-center gap-2 text-xl md:text-2xl xl:text-3xl xl:gap-16 md:gap-8 lg:gap-12">
+          <h3 className="flex flex-col justify-center gap-2 text-xl md:text-2xl xl:text-3xl xl:gap-10 md:gap-6 lg:gap-8">
             {textBlock.map((block, blockIndex) => (
               <div key={blockIndex} className="flex flex-col lg:text-2xl">
                 <p>{block.text}</p>
               </div>
             ))}
           </h3>
-          <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-row items-center gap-2 mt-2">
             <button
               onClick={() => (window.location.href = "tel:630-301-0589")}
               className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg lg:text-lg hover:bg-teal-500 active:bg-teal-400"
@@ -65,7 +65,7 @@ const Page = () => {
             </Link>
           </div>
         </div>
-        <div id="emergencyForm">
+        <div className="mt-2" id="emergencyForm">
           <EmergencyForm />
         </div>
       </div>

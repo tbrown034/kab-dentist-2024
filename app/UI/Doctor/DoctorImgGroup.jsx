@@ -27,30 +27,26 @@ const images = [
 
 const DoctorImgGroup = () => {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      {/* Dynamic rendering of images */}
-      <div className="flex items-center rounded-xl">
-        <Image
-          src={images[0].src} // First image is treated specially due to its size
-          alt={images[0].alt}
-          className={images[0].className}
-        />
+    <div className="flex flex-col gap-4 p-4 px-4 md:px-6 lg:px-10 xl:px-16 md:flex-row ">
+      <div className="flex items-center justify-center w-full md:w-1/2">
+        <div className="w-full ">
+          <Image
+            src={images[0].src}
+            alt={images[0].alt}
+            className="object-cover w-full h-auto rounded-xl max-h-80 md:max-h-full"
+          />
+        </div>
       </div>
-
-      <div className="flex flex-col gap-4">
-        {images.slice(1).map(
-          (
-            image // Start from the second image
-          ) => (
-            <div key={image.id} className="rounded-xl">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                className={image.className}
-              />
-            </div>
-          )
-        )}
+      <div className="flex flex-col w-full gap-4 md:w-1/2">
+        {images.slice(1).map((image) => (
+          <div key={image.id} className="flex-1">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              className="object-cover w-full h-auto rounded-xl max-h-40 md:max-h-full"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

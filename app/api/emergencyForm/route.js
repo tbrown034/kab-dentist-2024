@@ -37,15 +37,28 @@ export async function POST(req) {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
       to: "keithbrowndds@zohomail.com",
       subject: "New Emergency Form Submission",
-      text: `You received a new submission from:\n
-             Name: ${name}\n
-             Email: ${email}\n
-             Phone: ${phone}\n
-             Message: ${question}\n
-             Pain Level: ${painLevel}\n
-             Returning Patient: ${returningPatient}\n
-             Insurance: ${insurance}`,
-      html: `<h4>You received a new submission from:</h4>
+      text: `Dr. Brown,
+
+You have received an emergency request from ${name}.
+
+They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
+
+They can be reached at ${phone} or via email at ${email}. They mentioned that they have insurance: ${insurance}.
+
+Details:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${question}
+Pain Level: ${painLevel}
+Returning Patient: ${returningPatient}
+Insurance: ${insurance}`,
+      html: `<h2 style="color: #2c7a7b;">Dr. Brown,</h2>
+             <p>You have received an emergency request from <strong>${name}</strong>.</p>
+             <p>They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>.</p>
+             <p>They can be reached at <a href="tel:${phone}">${phone}</a> or via email at <a href="mailto:${email}">${email}</a>. Their reported insurance is: <strong>${insurance}</strong>.</p>
+             <hr>
+             <h4 style="color: #2c7a7b;">Details:</h4>
              <p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Phone:</strong> ${phone}</p>
