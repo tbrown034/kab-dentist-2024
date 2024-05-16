@@ -188,29 +188,31 @@ export default function AppointmentForm() {
             >
               Returning Patient?
             </label>
-            <div className="flex items-center">
-              <input
-                {...register("returningPatient", {
-                  required: "Please select an option",
-                })}
-                type="radio"
-                id="returningPatientYes"
-                value="yes"
-                className="mr-2"
-              />
-              <label htmlFor="returningPatientYes" className="mr-4">
-                Yes
-              </label>
-              <input
-                {...register("returningPatient", {
-                  required: "Please select an option",
-                })}
-                type="radio"
-                id="returningPatientNo"
-                value="no"
-                className="mr-2"
-              />
-              <label htmlFor="returningPatientNo">No</label>
+            <div>
+              <div className="flex items-center">
+                <input
+                  {...register("returningPatient", {
+                    required: "Please select an option",
+                  })}
+                  type="radio"
+                  id="returningPatientYes"
+                  value="yes"
+                  className="mr-2"
+                />
+                <label htmlFor="returningPatientYes" className="mr-4">
+                  Yes
+                </label>
+                <input
+                  {...register("returningPatient", {
+                    required: "Please select an option",
+                  })}
+                  type="radio"
+                  id="returningPatientNo"
+                  value="no"
+                  className="mr-2"
+                />
+                <label htmlFor="returningPatientNo">No</label>
+              </div>
             </div>
             {errors.returningPatient && (
               <p className="text-red-500">{errors.returningPatient.message}</p>

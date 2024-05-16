@@ -8,7 +8,7 @@ const DentalServicesOptions = () => {
       </h2>
       <div className="pt-4 text-left border-t border-teal-800 border-opacity-55">
         <div className="">
-          <h3 className="flex items-center mb-2 text-lg font-semibold">
+          <h3 className="flex items-center mb-2 text-lg font-semibold underline underline-offset-4">
             General Dentistry
           </h3>
           <p className="mb-4">
@@ -18,7 +18,7 @@ const DentalServicesOptions = () => {
           </p>
         </div>
         <div className="mb-6">
-          <h3 className="flex items-center mb-2 text-lg font-semibold">
+          <h3 className="flex items-center mb-2 text-lg font-semibold underline underline-offset-4">
             <p>Emergency Dentistry</p>
           </h3>
           <p className="mb-4">
@@ -27,7 +27,7 @@ const DentalServicesOptions = () => {
           </p>
         </div>
         <div className="">
-          <h3 className="flex items-center mb-2 text-lg font-semibold">
+          <h3 className="flex items-center mb-2 text-lg font-semibold underline underline-offset-4">
             Cosmetic Dentistry
           </h3>
           <p className="">

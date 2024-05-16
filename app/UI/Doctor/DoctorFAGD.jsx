@@ -10,7 +10,7 @@ const DoctorFAGD = () => {
   return (
     <div className="flex flex-col gap-4 p-4 m-2 ">
       <h2 className="text-2xl font-bold">Not Your Average Dentist</h2>
-      <p className="text-lg ">
+      <p className="">
         Dr. Brown is among the elite{" "}
         <span className="font-semibold underline">6%</span> of dentists in the
         U.S. to become a{" "}

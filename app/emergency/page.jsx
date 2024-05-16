@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import EmergencyForm from "./EmergencyForm";
-import EmergencyImgGroup from "./EmergencyImgGroup";
 import Medicaid from "../UI/Other/Medicaid";
 import { raleway } from "@/lib/fonts";
 import FullTitle from "../UI/Other/FullTitle";
@@ -10,15 +9,17 @@ import EmergencyFAQs from "./EmergencyFAQs";
 import Link from "next/link";
 
 const Page = () => {
-  const [showForm, setShowForm] = useState(false);
   const { title, textBlock, highlightedText, highlightInFront } =
     sectionContents.emergencySection;
+  const faqRef = useRef(null);
 
   // Ensure there's content to display, otherwise return null
   if (!title || !textBlock || textBlock.length === 0) return null;
 
-  const toggleForm = () => {
-    setShowForm(!showForm); // Toggles the value of showForm between true and false
+  const scrollToFAQ = () => {
+    if (faqRef.current) {
+      faqRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -32,7 +33,7 @@ const Page = () => {
           highlightInFront={highlightInFront}
         />
       </div>
-      <div className="flex flex-col items-center gap-4 lg:flex-row">
+      <div className="flex flex-col items-center gap-4">
         <div className="flex flex-col gap-4">
           <h3 className="flex flex-col justify-center gap-2 text-xl md:text-2xl xl:text-3xl xl:gap-16 md:gap-8 lg:gap-12">
             {textBlock.map((block, blockIndex) => (
@@ -41,42 +42,34 @@ const Page = () => {
               </div>
             ))}
           </h3>
-          <div className="flex flex-row items-center gap-4">
+          <div className="flex flex-row items-center gap-2">
             <button
               onClick={() => (window.location.href = "tel:630-301-0589")}
               className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg lg:text-lg hover:bg-teal-500 active:bg-teal-400"
             >
-              Call Our Office
+              Call Our Office Now
             </button>
             <button
-              onClick={toggleForm}
+              onClick={scrollToFAQ}
               className="p-2 text-white bg-red-500 border-2 border-red-500 rounded-lg lg:text-lg border-opacity-85 hover:bg-red-400 active:bg-red-300"
             >
-              Emergency/After Hours Care
+              Emergency Services FAQs
             </button>
           </div>
-          <div className="py-6">
+          <div className="">
             <Link
               href="/"
-              className="p-2 bg-white border-2 border-teal-900 rounded-lg md:p-4 xl:p-5 lg:text-lg border-opacity-85 dark:text-black hover:bg-gray-200 active:bg-gray-300"
+              className="p-2 text-black bg-white border-2 border-black rounded-lg bg-teal-white lg:text-lg hover:bg-gray-100 active:bg-gray-400"
             >
               Back to Home
             </Link>
           </div>
         </div>
-
-        {showForm && (
-          <div id="emergencyForm">
-            <EmergencyForm />
-          </div>
-        )}
-        {!showForm && (
-          <div id="img" className="flex flex-col justify-center lg:w-2/5">
-            <EmergencyImgGroup />
-          </div>
-        )}
+        <div id="emergencyForm">
+          <EmergencyForm />
+        </div>
       </div>
-      <div>
+      <div ref={faqRef}>
         <EmergencyFAQs />
       </div>
       <Medicaid />
