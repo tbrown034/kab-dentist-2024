@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-export const config = {
+export const runtime = {
   api: {
     bodyParser: {
       type: "json",
@@ -9,7 +9,7 @@ export const config = {
   },
 };
 
-export async function POST(req, res) {
+export async function POST(req) {
   try {
     const {
       name,
@@ -39,20 +39,20 @@ export async function POST(req, res) {
       subject: "New Appointment Request",
       text: `Dr. Brown,
 
-    You have received a new appointment request from ${name}.
+You have received a new appointment request from ${name}.
 
-    They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
+They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
 
-    They can be reached at ${phone} or via email at ${email}. They mentioned that they have insurance: ${insurance}.
+They can be reached at ${phone} or via email at ${email}. They mentioned that they have insurance: ${insurance}.
 
-    Direct info:
-    Name: ${name}
-    Email: ${email}
-    Phone: ${phone}
-    Message: ${question}
-    Pain Level: ${painLevel}
-    Returning Patient: ${returningPatient}
-    Insurance: ${insurance}`,
+Direct info:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Message: ${question}
+Pain Level: ${painLevel}
+Returning Patient: ${returningPatient}
+Insurance: ${insurance}`,
       html: `<h2 ">Dr. Brown,</h2>
              <p>You have received a new appointment request from <strong>${name}</strong>.</p>
              <p>They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>.</p>
@@ -72,14 +72,14 @@ export async function POST(req, res) {
     let info = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
 
-    return new NextResponse(
-      JSON.stringify({ message: "Email successfully sent!" }),
+    return NextResponse.json(
+      { message: "Email successfully sent!" },
       { status: 200 }
     );
   } catch (error) {
     console.error("Error sending email: ", error);
-    return new NextResponse(
-      JSON.stringify({ message: "Error sending email" }),
+    return NextResponse.json(
+      { message: "Error sending email" },
       { status: 500 }
     );
   }

@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-export const config = {
+export const runtime = {
   api: {
     bodyParser: {
       type: "json",
@@ -72,14 +72,14 @@ Insurance: ${insurance}`,
     let info = await transporter.sendMail(mailOptions);
     console.log("Message sent: %s", info.messageId);
 
-    return new NextResponse(
-      JSON.stringify({ message: "Email successfully sent!" }),
+    return NextResponse.json(
+      { message: "Email successfully sent!" },
       { status: 200 }
     );
   } catch (error) {
     console.error("Error sending email: ", error);
-    return new NextResponse(
-      JSON.stringify({ message: "Error sending email" }),
+    return NextResponse.json(
+      { message: "Error sending email" },
       { status: 500 }
     );
   }
