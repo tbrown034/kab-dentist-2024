@@ -34,13 +34,13 @@
     "textBlock": [
       {
         "title": "Affordable Dental Solutions",
-        "text": "We offer accessible dental care and financing solutions tailored to meet your needs.",
+        "text": "Accessible dental care and financing solutions tailored to you.",
         "link": "#financialSection",
         "icon": "money"
       },
       {
         "title": "Afterhours and Emergency Services",
-        "text": "Receive a free telephone consultation for any dental emergency from our experts.",
+        "text": "Offering free consultations even when emergencies strike.",
         "link": "#apptSection",
         "icon": "emergency"
       },

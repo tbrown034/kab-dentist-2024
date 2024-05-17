@@ -9,7 +9,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#doctorSection", label: "Meet the Doctor" },
-  { href: "#servicesSection", label: "Dental Services" },
+  { href: "/dentalservices", label: "Dental Services" },
   { href: "#locationSection", label: "Our Location" },
   { href: "#financialSection", label: "Affordable Care" },
 ];
