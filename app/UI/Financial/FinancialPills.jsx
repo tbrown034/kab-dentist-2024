@@ -21,21 +21,6 @@ const FinancialPills = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-4 p-4 text-black bg-white border-2 border-teal-800 shadow rounded-xl">
-        <Image src={cityBenefits} alt="care credit"></Image>
-        <p>
-          Citi Beneits offers dental plans that support preventive care and
-          offer additional benefits.
-        </p>
-        <div>
-          <a
-            href="https://www.citibenefits.com/Health/Dental"
-            className="p-2 px-6 text-white bg-teal-600 rounded-lg shadow hover:bg-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-700"
-          >
-            See Plans
-          </a>
-        </div>
-      </div>
     </div>
   );
 };

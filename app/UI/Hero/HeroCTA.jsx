@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CallDialog from "@/app/DialogBoxes/CallDialog";
+import HeroHighlights from "./HeroHighlights";
 
 const HeroCTA = () => {
   return (
@@ -15,6 +16,7 @@ const HeroCTA = () => {
           <CallDialog buttonName="Call Us" />
         </div>
       </div>
+      <HeroHighlights />
     </div>
   );
 };

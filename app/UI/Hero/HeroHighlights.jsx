@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExclamationCircle,
@@ -8,7 +9,7 @@ import {
 
 const HeroHighlights = () => {
   return (
-    <div className="flex flex-col gap-2 mt-2">
+    <div className="flex flex-col gap-3 mt-2">
       <Link
         className="flex items-center gap-2 text-teal-700 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400"
         href="/emergency"
@@ -32,8 +33,8 @@ const HeroHighlights = () => {
         </span>
       </Link>
       <div className="text-sm md:text-base lg:text-lg">
-        Enjoy a comfortable and sedated experience with complimentary nitrous
-        oxide (laughing gas).
+        Don't stress. We offer complimentary nitrous oxide (laughing gas) with
+        any visit.
       </div>
 
       <Link
@@ -42,12 +43,12 @@ const HeroHighlights = () => {
       >
         <FontAwesomeIcon icon={faPhone} size="lg" />
         <div className="text-base font-bold md:text-xl lg:text-2xl">
-          Give Us a Ring at (630) 301-0589
+          Give Us a Ring at (630) 296-0589
         </div>
       </Link>
       <span className="text-sm md:text-base lg:text-lg">
-        We offer a wide range of dental services to meet all your needs. Our
-        team is equipped to handle everything with expert care.
+        We offer a wide range of dental services. If it can be done, we probably
+        can do it.
       </span>
     </div>
   );
