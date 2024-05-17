@@ -4,8 +4,9 @@ import Link from "next/link";
 const links = [
   { href: "#doctorSection", label: "Meet the Doctor" },
   { href: "#locationSection", label: "Location" },
-  { href: "#servicesSection", label: "Services" },
+  { href: "/dentalservices", label: "Services" },
   { href: "#appointmentSection", label: "Appointments" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const HeaderFullNav = () => {
