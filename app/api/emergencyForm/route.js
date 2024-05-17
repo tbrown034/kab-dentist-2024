@@ -32,7 +32,7 @@ export async function POST(req) {
       },
     });
 
-    // Setup email data
+    // Setup email data for Dr. Brown
     let mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
       to: "keithbrowndds@zohomail.com",
@@ -68,18 +68,29 @@ Insurance: ${insurance}`,
              <p><strong>Insurance:</strong> ${insurance}</p>`,
     };
 
+    // Setup email data for SMS
+    let smsOptions = {
+      from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
+      to: "6303010589@txt.att.net",
+      text: `New emergency request from ${name}. Check your email for details.`,
+    };
+
     // Send the email
-    let info = await transporter.sendMail(mailOptions);
-    console.log("Message sent: %s", info.messageId);
+    let emailInfo = await transporter.sendMail(mailOptions);
+    console.log("Email sent: %s", emailInfo.messageId);
+
+    // Send the SMS
+    let smsInfo = await transporter.sendMail(smsOptions);
+    console.log("SMS sent: %s", smsInfo.messageId);
 
     return NextResponse.json(
-      { message: "Email successfully sent!" },
+      { message: "Email and SMS successfully sent!" },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error sending email: ", error);
+    console.error("Error sending email or SMS: ", error);
     return NextResponse.json(
-      { message: "Error sending email" },
+      { message: "Error sending email or SMS" },
       { status: 500 }
     );
   }

@@ -7,11 +7,14 @@ import ThemeToggle from "./ThemeToggle";
 const Header = () => {
   return (
     <nav
-      className={`${montserrat.className} flex text-2xl  tracking-tighter
+      className={`${montserrat.className} flex text-2xl  tracking-tighter items-center
         md:gap-6 justify-between`}
     >
-      <a href="/" className="font-bold ">
-        Dr. Keith Brown DDS
+      <a
+        href="/"
+        className="font-bold hover:text-teal-800 active:-textteal-700 "
+      >
+        Dr. Keith A. Brown DDS
       </a>
       <div className="hidden md:flex">
         <HeaderFullNav />
