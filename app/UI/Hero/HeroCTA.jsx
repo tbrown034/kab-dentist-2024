@@ -27,7 +27,7 @@ const HeroCTA = () => {
             Offering 24/7 Emergency Care
           </span>
         </Link>
-        <span className="text-sm text-gray-600 md:text-base lg:text-lg">
+        <span className="text-sm md:text-base lg:text-lg">
           We are available around the clock for your urgent dental needs.
         </span>
       </div>
@@ -41,7 +41,7 @@ const HeroCTA = () => {
             Relaxation with Nitrous Oxide
           </span>
         </Link>
-        <span className="text-sm text-gray-600 md:text-base lg:text-lg">
+        <span className="text-sm md:text-base lg:text-lg">
           Enjoy a comfortable and sedated experience with complimentary nitrous
           oxide (laughing gas).
         </span>
