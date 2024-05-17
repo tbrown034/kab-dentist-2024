@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./UI/Other/Footer";
 import Header from "./UI/Header/Header";
 import { inter } from "./font";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Keith Brown DDS, Naperville's Trusted Dentist",
@@ -18,6 +19,8 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Analytics />
+
         <Footer />
       </body>
     </html>
