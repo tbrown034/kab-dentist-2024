@@ -49,11 +49,11 @@ const ServicesSearch = ({ onSelectService }) => {
         <input
           type="text"
           placeholder={
-            selectedService ? "Enter other issues" : "Enter dental issue"
+            selectedService ? "Search other services" : "Search our services"
           }
           value={searchQuery}
           onChange={handleSearch}
-          className="px-2 py-1 border rounded-md"
+          className="px-2 py-1 border border-teal-800 rounded-md dark:border-white"
         />
         {!selectedService && searchQuery && (
           <button

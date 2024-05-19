@@ -34,8 +34,9 @@ const DentalServices = () => {
           </div>
         ))}
       </div>
-      <ServicesSearch onSelectService={setSelectedService} />
       <ServicesSeparator />
+
+      <ServicesSearch onSelectService={setSelectedService} />
       <FAQs />
     </section>
   );
