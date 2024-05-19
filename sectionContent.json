@@ -158,6 +158,7 @@
       }
     ]
   },
+
   "emergencySection": {
     "title": "Emergency Dentistry: Immediate Care, Any Hour",
     "highlightedText": "Immediate Care, Any Hour",
@@ -196,5 +197,28 @@
         "answer": "While fees for emergency services may vary based on the treatment needed, Dr. Brown's practice prides itself on transparency. Any potential costs will be discussed upfront after assessing your emergency, ensuring no surprises."
       }
     ]
+  },
+  "blog": {
+    "title": "From the Desk of Keith A. Brown DDS",
+    "highlightedText": "Keith A. Brown DDS",
+    "highlightInFront": false,
+    "textBlock": [
+      {
+        "text": "In my 40+ years in the field, I know a thing or two about taking care of you teeth. Read below for tips, news and advice in my occassional blog series!"
+      }
+    ]
+  },
+  "dentalServicesPage": {
+    "title": "Your One-Stop Dental Care Center",
+    "highlightedText": "Your One-Stop",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "We offer everything from emergency dental care to cosmetic procedures like Invisalign, as well as general checkups, extractions, and more. Our goal is to provide comprehensive dental services to meet all your needs in one place."
+      }
+    ]
   }
+
+
 }
+

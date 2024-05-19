@@ -11,6 +11,7 @@ const Header = () => {
         md:gap-6 justify-between`}
     >
       <a
+        id="#home"
         href="/"
         className="font-bold hover:text-teal-800 active:-textteal-700 "
       >

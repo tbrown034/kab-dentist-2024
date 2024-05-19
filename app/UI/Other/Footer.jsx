@@ -5,6 +5,7 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,9 +19,9 @@ const Footer = () => {
         </div>
         <div className="space-y-1">
           <h2 className="text-lg font-bold">Quick Links</h2>
-          <a href="/" className="block hover:underline">
+          <Link href="#home" className="block hover:underline">
             Home
-          </a>
+          </Link>
           <a href="#servicesSection" className="block hover:underline">
             Services
           </a>
