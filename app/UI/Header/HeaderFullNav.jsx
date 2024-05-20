@@ -2,7 +2,7 @@ import Link from "next/link";
 
 // Define the links to be used in the navigation
 const links = [
-  { href: "#doctorSection", label: "Meet the Doctor" },
+  { href: "#doctorSection", label: "About" },
   { href: "#locationSection", label: "Location" },
   { href: "/dentalservices", label: "Services" },
   { href: "#appointmentSection", label: "Appointments" },

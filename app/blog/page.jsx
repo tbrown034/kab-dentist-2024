@@ -1,4 +1,3 @@
-// app/blog/page.js
 "use client";
 import Entries from "./Entries";
 import sectionContents from "../../sectionContent.json";
@@ -14,7 +13,7 @@ export default function BlogPage() {
   return (
     <section className="flex flex-col gap-4 mt-6" id="locationSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold  tracking-tight`}
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}
@@ -27,7 +26,6 @@ export default function BlogPage() {
           <p>{block.text}</p>
         </div>
       ))}
-
       <Entries />
     </section>
   );
