@@ -1,201 +1,167 @@
 [
-  {
-      "id": "general-dentistry",
-      "title": "General Dentistry",
-      "text": "We provide a wide range of general dentistry services to maintain and restore your oral health. From routine cleanings to complex procedures, our team is equipped to handle all your dental needs.",
-      "details": [
-          {
-              "title": "Routine Cleanings",
-              "description": "Our routine cleanings help in maintaining oral hygiene and preventing dental issues. We meticulously remove plaque and tartar buildup to prevent cavities and gum disease. Regular cleanings every six months are essential to keep your smile healthy and vibrant.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/cleanings-and-prevention",
-              "tags": ["cleanings", "oral hygiene", "preventive care", "dental maintenance"]
-          },
-          {
-            "title": "Periodontics",
-            "description": "Our periodontal treatments focus on preventing, diagnosing, and treating gum disease. We offer scaling and root planing, periodontal surgeries, and maintenance care to keep your gums healthy and your smile intact. Regular periodontal care is essential for overall oral health.",
-            "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/periodontal-diseases",
-            "tags": ["periodontics", "gum disease", "scaling and root planing", "periodontal surgery", "gum health"]
-          },
-          {
-            "title": "Endodontics & Root Canals",
-            "description": "We perform root canal treatments using the latest state-of-the-art technology to save your natural teeth. Our one-visit root canals eliminate bacteria from the infected root canal, prevent reinfection, and save the natural tooth, often a preferred alternative to extraction.",
-            "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/root-canals",
-            "tags": ["endodontics", "root canals", "tooth preservation", "infection control", "one-visit root canal"]
-          }
-
-,
-          {
-              "title": "Fillings",
-              "description": "We provide high-quality fillings to restore decayed teeth and prevent further decay. Using tooth-colored materials, we ensure a natural appearance. The procedure involves removing the decayed portion of the tooth and filling it with a durable material, restoring both function and aesthetics.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/fillings",
-              "tags": ["fillings", "tooth decay", "restoration", "dental care"]
-          },
-          {
-              "title": "Root Canals",
-              "description": "Our root canal treatments eliminate bacteria from the infected root canal, prevent reinfection, and save the natural tooth. Dr. Keith Brown's expertise ensures a pain-free procedure that preserves your tooth structure, often a preferred alternative to extraction.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/root-canals",
-              "tags": ["root canal", "infection", "tooth preservation", "endodontics"]
-          },
-          {
-              "title": "Extractions",
-              "description": "We perform extractions to remove teeth that are damaged or decayed beyond repair. This procedure is done under local anesthesia to ensure your comfort. Post-extraction, we provide detailed instructions for proper healing and discuss options for replacing the extracted tooth if necessary.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/tooth-extractions",
-              "tags": ["extractions", "tooth removal", "oral surgery", "dental care"]
-          },
-          {
-              "title": "Crowns",
-              "description": "Our custom-made crowns restore the shape, size, and strength of teeth. They cover damaged or decayed teeth, providing protection and restoring function. Crowns are matched to the color and shape of your natural teeth for a seamless look.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/crowns",
-              "tags": ["crowns", "tooth restoration", "dental caps", "protective covers"]
-          },
-          {
-              "title": "Bridges",
-              "description": "We offer bridges to replace one or more missing teeth. This procedure involves placing crowns on the adjacent teeth and attaching artificial teeth to fill the gap. Bridges help maintain facial structure and distribute bite forces properly.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/bridges",
-              "tags": ["bridges", "tooth replacement", "dental prosthetics", "oral health"]
-          },
-          {
-              "title": "Dentures",
-              "description": "Our dentures are removable appliances that replace missing teeth and surrounding tissues. Available in complete and partial forms, our dentures are custom-fitted for comfort and functionality. They improve your ability to chew and speak while enhancing your smile's appearance.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dentures",
-              "tags": ["dentures", "tooth replacement", "prosthetics", "oral health"]
-          },
-          {
-              "title": "Sealants",
-              "description": "We apply sealants as a preventive treatment to protect teeth from cavities. A thin, protective coating is applied to the chewing surfaces of the back teeth, keeping food particles and bacteria out of the grooves. This significantly reduces the risk of decay.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/sealants",
-              "tags": ["sealants", "cavity prevention", "protective coating", "oral health"]
-          }
-      ]
-  },
-  {
-      "id": "cosmetic-dentistry",
-      "title": "Cosmetic Dentistry",
-      "text": "Our cosmetic dentistry services enhance the appearance of your smile. From teeth whitening to veneers, we offer a variety of treatments to help you achieve the smile you've always wanted.",
-      "details": [
-          {
-              "title": "Teeth Whitening",
-              "description": "Our professional teeth whitening ensures you leave our office looking and feeling great! We use advanced whitening agents that can lighten your teeth several shades in one visit. This treatment removes stains caused by coffee, tea, smoking, and aging, giving you a brighter, more youthful smile.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/teeth-whitening",
-              "tags": ["teeth whitening", "bright smile", "stain removal", "cosmetic dentistry"]
-          },
-          {
-              "title": "Veneers",
-              "description": "Our veneers improve the appearance of your front teeth with thin shells of porcelain or composite resin. Custom-made to match the natural look of your teeth, veneers correct imperfections like chips, gaps, and discoloration, ensuring a flawless smile.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/veneers",
-              "tags": ["veneers", "cosmetic improvement", "tooth covers", "smile makeover"]
-          },
-          {
-              "title": "Bonding",
-              "description": "Our bonding treatment repairs chipped or cracked teeth using a tooth-colored resin. The resin is applied to the damaged area and hardened with a special light, restoring the tooth's appearance and function. Bonding is a cost-effective alternative to other cosmetic treatments.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/bonding",
-              "tags": ["bonding", "tooth repair", "resin application", "cosmetic dentistry"]
-          },
-          {
-              "title": "Inlays and Onlays",
-              "description": "Inlays and onlays are used to restore decayed or damaged teeth. Made from durable materials like porcelain or composite resin, inlays fit inside the tooth cusps while onlays extend over one or more cusps, providing strength and protection to your teeth.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/inlays-and-onlays",
-              "tags": ["inlays", "onlays", "tooth restoration", "durable fillings"]
-          },
-          {
-              "title": "Gum Contouring",
-              "description": "Our gum contouring reshapes the gums to improve the appearance of your smile. This procedure corrects uneven gum lines, making teeth look more uniform and enhancing the overall aesthetics of your smile. Often combined with other cosmetic treatments, gum contouring offers optimal results.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/gum-contouring",
-              "tags": ["gum contouring", "smile enhancement", "gum reshaping", "cosmetic dentistry"]
-          },
-          {
-              "title": "Clear Aligners",
-              "description": "Clear aligners are a discreet alternative to traditional braces for straightening teeth. Nearly invisible and removable for eating and cleaning, aligners gradually shift teeth into the desired position. They offer a comfortable and effective orthodontic treatment option.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/orthodontics",
-              "tags": ["clear aligners", "teeth straightening", "invisible braces", "orthodontics"]
-          },
-          {
-              "title": "Smile Makeovers",
-              "description": "Our smile makeovers involve a combination of cosmetic procedures to transform your smile. We tailor treatments such as whitening, veneers, and bonding to your unique goals, ensuring a beautiful, confident smile that reflects your personality.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/smile-makeovers",
-              "tags": ["smile makeover", "cosmetic transformation", "dental aesthetics", "personalized care"]
-          },
-          {
-              "title": "Dental Implants",
-              "description": "Dental implants replace missing teeth with a durable, long-lasting solution. The implant is a titanium post acting as a tooth root, topped with a crown. Implants look and function like natural teeth, helping to preserve the jawbone and enhance oral health.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dental-implants",
-              "tags": ["dental implants", "tooth replacement", "jawbone preservation", "long-lasting solution"]
-          }
-      ]
-  },
-  {
-      "id": "emergency-dentistry",
-      "title": "Emergency Dentistry",
-      "text": "Our emergency dentistry services are designed to address urgent dental issues promptly. Whether you're dealing with a toothache, a broken tooth, or another dental emergency, we're here to help.",
-      "details": [
-          {
-              "title": "Toothache Relief",
-              "description": "We provide immediate relief for toothaches and other dental emergencies. Our prompt diagnosis and effective treatments alleviate discomfort and prevent further complications. Your oral health and comfort are our top priorities.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/toothaches",
-              "tags": ["toothache relief", "emergency dental care", "pain management", "urgent care"]
-          },
-          {
-            "title": "24-Hour Emergency Services",
-            "description": "We provide 24-hour emergency dental services for urgent dental issues. Whether it's a toothache, broken tooth, or any dental emergency, our team is ready to assist you day or night. Quick intervention can prevent further complications and ensure your oral health.",
-            "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
-            "tags": ["24-hour emergency services", "emergency dental care", "urgent care", "toothache relief", "dental emergencies"]
-          }
-,
-{
-  "title": "Talk to a Dentist Now",
-  "description": "Need immediate dental advice? Our 'Talk to a Dentist Now' service provides instant access to professional dental consultations. Whether you have a dental emergency or need advice on oral health, our dentists are here to help you right away.",
-  "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dental-consultation",
-  "tags": ["talk to a dentist", "dental consultation", "immediate advice", "oral health advice", "emergency consultation"]
-}
-, {
-  "title": "Emergency Pain Relief",
-  "description": "We offer immediate pain relief for dental emergencies. Our treatments are designed to alleviate pain quickly and effectively, ensuring your comfort and preventing further issues. Don't let dental pain disrupt your life—our emergency services are here to help.",
-  "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/toothaches",
-  "tags": ["emergency pain relief", "dental pain", "urgent care", "pain management", "immediate relief"]
-}
-,
-          {
-              "title": "Broken Tooth Repair",
-              "description": "We offer quick repair for broken or cracked teeth. Using bonding, crowns, or veneers, we restore the tooth's appearance and function. Immediate treatment reduces the risk of further damage and infection, ensuring your smile remains intact.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
-              "tags": ["broken tooth", "tooth repair", "emergency care", "dental restoration"]
-          },
-          {
-              "title": "Knocked-Out Tooth",
-              "description": "Emergency care for knocked-out teeth increases the chances of saving them. If handled quickly, we can reinsert and stabilize the tooth. Proper care and follow-up treatment are essential for recovery and preserving your smile.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
-              "tags": ["knocked-out tooth", "emergency dental care", "tooth reinsertion", "urgent care"]
-          },
-          {
-              "title": "Lost Filling or Crown",
-              "description": "We replace lost fillings or crowns to restore the tooth's function. Temporary solutions protect the tooth until a permanent restoration is placed. Our goal is to ensure comfort and functionality during the interim period.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
-              "tags": ["lost filling", "lost crown", "emergency dental care", "tooth restoration"]
-          },
-          {
-              "title": "Abscess Treatment",
-              "description": "Our abscess treatment prevents infection and alleviates pain. Abscesses are serious infections that can spread if not treated promptly. We drain the abscess and prescribe antibiotics to manage the infection, ensuring your oral health is restored.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
-              "tags": ["abscess treatment", "infection control", "pain relief", "emergency dental care"]
-          },
-          {
-              "title": "Soft Tissue Injury",
-              "description": "We provide care for injuries to the gums, cheeks, tongue, and lips. Immediate attention stops bleeding, reduces pain, and prevents infection. Our gentle approach ensures a comfortable experience and promotes quick healing.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
-              "tags": ["soft tissue injury", "emergency dental care", "injury care", "oral health"]
-          },
-          {
-              "title": "Emergency Extractions",
-              "description": "Emergency extractions remove severely damaged or infected teeth. This procedure is done quickly to alleviate pain and prevent further issues. We provide post-extraction care instructions for proper healing and recovery.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-extractions",
-              "tags": ["emergency extractions", "tooth removal", "pain relief", "urgent care"]
-          },
-          {
-              "title": "Emergency Root Canals",
-              "description": "Our emergency root canal treatments save infected teeth. This procedure relieves pain and removes infection from the tooth's pulp. Immediate treatment helps prevent the need for extraction and preserves your natural tooth.",
-              "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-root-canals",
-              "tags": ["emergency root canal", "infection control", "pain relief", "tooth preservation"]
-          }
-      ]
-  }
+    {
+        "id": "general-dentistry",
+        "title": "General Dentistry",
+        "text": "We provide a wide range of general dentistry services to maintain and restore your oral health. From routine cleanings to complex procedures, our team is equipped to handle all your dental needs.",
+        "details": [
+            {
+                "title": "Routine Cleanings",
+                "description": "Routine cleanings help in maintaining oral hygiene and preventing dental issues. During these cleanings, we remove plaque and tartar build-up, which can lead to cavities and gum disease. We recommend cleanings every six months to keep your smile healthy.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/cleanings-and-prevention",
+                "symptoms": ["bad breath", "plaque", "tartar"]
+            },
+            {
+                "title": "Fillings",
+                "description": "Fillings are used to restore decayed teeth and prevent further decay. We use tooth-colored materials to ensure a natural appearance. The procedure involves removing the decayed portion of the tooth and filling it with a durable material.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/fillings",
+                "symptoms": ["cavity", "toothache", "sensitivity"]
+            },
+            {
+                "title": "Root Canals",
+                "description": "Root canal treatment eliminates bacteria from the infected root canal, prevents reinfection, and saves the natural tooth. This procedure involves removing the infected pulp, cleaning, and sealing the tooth. It's often a preferred alternative to extraction.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/root-canals",
+                "symptoms": ["severe toothache", "swelling", "infection"]
+            },
+            {
+                "title": "Extractions",
+                "description": "Extractions remove teeth that are damaged or decayed beyond repair. This procedure is done under local anesthesia to ensure comfort. Post-extraction, we provide instructions for proper healing and discuss options for replacing the extracted tooth if necessary.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/tooth-extractions",
+                "symptoms": ["severe decay", "broken tooth", "crowded teeth"]
+            },
+            {
+                "title": "Crowns",
+                "description": "Crowns restore the shape, size, and strength of teeth. They are used to cover damaged or decayed teeth, protecting them and restoring their function. Crowns are custom-made to match the color and shape of your natural teeth.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/crowns",
+                "symptoms": ["weak tooth", "cracked tooth", "discolored tooth"]
+            },
+            {
+                "title": "Bridges",
+                "description": "Bridges replace one or more missing teeth. This involves placing crowns on the adjacent teeth and attaching artificial teeth to fill the gap. Bridges help maintain the shape of your face and alleviate the stress on your bite.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/bridges",
+                "symptoms": ["missing teeth", "gap", "shifting teeth"]
+            },
+            {
+                "title": "Dentures",
+                "description": "Dentures are removable appliances that replace missing teeth and surrounding tissues. They come in complete and partial forms, tailored to your specific needs. Dentures improve your ability to chew and speak while restoring the appearance of your smile.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dentures",
+                "symptoms": ["missing teeth", "difficulty chewing", "speech issues"]
+            },
+            {
+                "title": "Sealants",
+                "description": "Sealants are a preventive treatment to protect teeth from cavities. A thin, protective coating is applied to the chewing surfaces of the back teeth. This coating keeps food particles and bacteria out of the grooves, reducing the risk of decay.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/sealants",
+                "symptoms": ["deep grooves", "cavity-prone", "decay prevention"]
+            }
+        ]
+    },
+    {
+        "id": "cosmetic-dentistry",
+        "title": "Cosmetic Dentistry",
+        "text": "Our cosmetic dentistry services enhance the appearance of your smile. From teeth whitening to veneers, we offer a variety of treatments to help you achieve the smile you've always wanted.",
+        "details": [
+            {
+                "title": "Teeth Whitening",
+                "description": "Professional teeth whitening to brighten your smile. We use safe and effective whitening agents that can lighten the color of your teeth several shades in just one visit. This treatment removes stains caused by coffee, tea, smoking, and aging.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/teeth-whitening",
+                "symptoms": ["stained teeth", "discoloration", "yellow teeth"]
+            },
+            {
+                "title": "Veneers",
+                "description": "Veneers improve the appearance of the front teeth. These thin shells of porcelain or composite resin cover the front surface of teeth, correcting imperfections like chips, gaps, and discoloration. Veneers are custom-made to match the natural look of your teeth.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/veneers",
+                "symptoms": ["chipped tooth", "gaps", "discolored teeth"]
+            },
+            {
+                "title": "Bonding",
+                "description": "Bonding repairs chipped or cracked teeth. This involves applying a tooth-colored resin to the damaged area and hardening it with a special light. Bonding can improve the appearance of teeth and is a cost-effective alternative to other cosmetic treatments.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/bonding",
+                "symptoms": ["cracked tooth", "chipped tooth", "gaps"]
+            },
+            {
+                "title": "Inlays and Onlays",
+                "description": "Inlays and onlays restore decayed or damaged teeth. These are made from porcelain or composite resin and are more durable than regular fillings. Inlays fit inside the tooth cusps, while onlays extend over one or more cusps of the tooth.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/inlays-and-onlays",
+                "symptoms": ["large cavities", "broken tooth", "damaged tooth"]
+            },
+            {
+                "title": "Gum Contouring",
+                "description": "Gum contouring reshapes the gums to improve the appearance of your smile. This procedure can correct uneven gum lines, making teeth look more uniform. It's often combined with other cosmetic treatments for optimal results.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/gum-contouring",
+                "symptoms": ["uneven gums", "gummy smile", "receding gums"]
+            },
+            {
+                "title": "Clear Aligners",
+                "description": "Clear aligners are an alternative to traditional braces for straightening teeth. They are nearly invisible and can be removed for eating and cleaning. Aligners gradually shift teeth into the desired position, offering a discreet option for orthodontic treatment.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/orthodontics",
+                "symptoms": ["crooked teeth", "overbite", "underbite"]
+            },
+            {
+                "title": "Smile Makeovers",
+                "description": "Smile makeovers involve a combination of cosmetic procedures to transform your smile. This could include whitening, veneers, bonding, and more. We tailor each makeover to your unique goals, ensuring a beautiful and confident smile.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/smile-makeovers",
+                "symptoms": ["discolored teeth", "crooked teeth", "gaps"]
+            },
+            {
+                "title": "Dental Implants",
+                "description": "Dental implants replace missing teeth with a durable, long-lasting solution. The implant is a titanium post that acts as a tooth root, topped with a crown. Implants look and function like natural teeth and help preserve the jawbone.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dental-implants",
+                "symptoms": ["missing teeth", "loose dentures", "bone loss"]
+            }
+        ]
+    },
+    {
+        "id": "emergency-dentistry",
+        "title": "Emergency Dentistry",
+        "text": "Our emergency dentistry services are designed to address urgent dental issues promptly. Whether you're dealing with a toothache, a broken tooth, or another dental emergency, we're here to help.",
+        "details": [
+            {
+                "title": "Toothache Relief",
+                "description": "Immediate relief for toothaches and other dental emergencies. We diagnose the cause of the pain and provide effective treatment to alleviate discomfort. Prompt attention can prevent further complications.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/toothaches",
+                "symptoms": ["tooth pain", "sensitivity", "infection"]
+            },
+            {
+                "title": "Broken Tooth Repair",
+                "description": "Quick repair of broken or cracked teeth. Using bonding, crowns, or veneers, we restore the tooth's appearance and function. Immediate treatment reduces the risk of further damage and infection.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
+                "symptoms": ["broken tooth", "cracked tooth", "pain"]
+            },
+            {
+                "title": "Knocked-Out Tooth",
+                "description": "Emergency care for knocked-out teeth to increase the chances of saving them. If handled quickly, we can reinsert and stabilize the tooth. Proper care and follow-up treatment are essential for recovery.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
+                "symptoms": ["knocked-out tooth", "severe pain", "bleeding"]
+            },
+            {
+                "title": "Lost Filling or Crown",
+                "description": "Replacement of lost fillings or crowns to restore the tooth's function. Temporary solutions can protect the tooth until a permanent restoration is placed. We ensure comfort and functionality during the interim period.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
+                "symptoms": ["lost filling", "lost crown", "pain"]
+            },
+            {
+                "title": "Abscess Treatment",
+                "description": "Treatment of dental abscesses to prevent infection and alleviate pain. Abscesses are serious infections that can spread if not treated promptly. We drain the abscess and prescribe antibiotics to manage the infection.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
+                "symptoms": ["abscess", "swelling", "pain"]
+            },
+            {
+                "title": "Soft Tissue Injury",
+                "description": "Care for injuries to the gums, cheeks, tongue, and lips. We provide immediate attention to stop bleeding, reduce pain, and prevent infection. Our gentle approach ensures a comfortable experience.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-care",
+                "symptoms": ["gum injury", "cheek injury", "lip injury"]
+            },
+            {
+                "title": "Emergency Extractions",
+                "description": "Extractions performed during emergencies to remove severely damaged or infected teeth. This procedure is done quickly to alleviate pain and prevent further issues. We provide post-extraction care instructions for proper healing.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-extractions",
+                "symptoms": ["severe infection", "severe decay", "broken tooth"]
+            },
+            {
+                "title": "Emergency Root Canals",
+                "description": "Emergency root canal treatment to save infected teeth. This procedure relieves pain and removes infection from the tooth's pulp. Immediate treatment helps prevent the need for extraction.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-root-canals",
+                "symptoms": ["severe pain", "infection", "swelling"]
+            }
+        ]
+    }
 ]

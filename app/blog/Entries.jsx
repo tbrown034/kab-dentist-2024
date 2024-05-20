@@ -61,11 +61,11 @@ const Entries = () => {
                   />
                   <AvatarFallback>KB</AvatarFallback>
                 </Avatar>
-                <span className="font-medium text-white">By {post.author}</span>
+                <span className="text-sm text-white">By {post.author}</span>
               </div>
               <button
                 onClick={() => toggleExpand(index)}
-                className="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                className="inline-flex items-center text-sm font-medium text-primary-600 dark:text-primary-500 hover:underline"
               >
                 {expandedPosts.includes(index) ? "Read Less" : "Read More"}
                 <svg
