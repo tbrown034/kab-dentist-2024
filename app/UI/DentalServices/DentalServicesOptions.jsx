@@ -1,39 +1,53 @@
 import React from "react";
+import Link from "next/link";
 
 const DentalServicesOptions = () => {
   return (
-    <section className="p-2 px-4 ">
-      <h2 className="mb-2 text-xl font-extrabold tracking-tight ">
+    <section className="p-4 rounded-lg shadow-2xl bg-teal-50">
+      <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-center text-teal-800">
         Our Services
       </h2>
-      <div className="pt-4 text-left border-t border-teal-800 border-opacity-55">
-        <h3 className="flex items-center mb-2 text-lg font-semibold underline underline-offset-4">
-          General Dentistry
-        </h3>
-        <p className="mb-4">
-          Offering a comprehensive range of services for the whole family, from
-          routine cleanings to advanced treatments, all aimed at maintaining
-          your oral health.
-        </p>
-        <div className="mb-6">
-          <h3 className="flex items-center mb-2 text-lg font-semibold underline underline-offset-4">
-            <p>Emergency Dentistry</p>
+      <div className="space-y-6">
+        <div>
+          <h3 className="flex items-center mb-2 text-lg font-semibold text-teal-700">
+            General Dentistry
           </h3>
-          <p className="mb-4">
+          <p className="mb-4 dark:text-black">
+            Offering a comprehensive range of services for the whole family,
+            from routine cleanings to advanced treatments, all aimed at
+            maintaining and improving your oral health.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="flex items-center mb-2 text-lg font-semibold text-teal-700">
+            Emergency Dentistry
+          </h3>
+          <p className="mb-4 dark:text-black ">
             Ready to handle dental emergencies with prompt, effective care to
             alleviate pain and prevent further complications.
           </p>
         </div>
+
         <div>
-          <h3 className="flex items-center mb-2 text-lg font-semibold underline underline-offset-4">
+          <h3 className="flex items-center mb-2 text-lg font-semibold text-teal-700">
             Cosmetic Dentistry
           </h3>
-          <p>
+          <p className="dark:text-black">
             Enhancing your smile with treatments designed to improve the
             appearance of your teeth, giving you the confidence to show off your
             smile.
           </p>
         </div>
+      </div>
+
+      <div className="flex justify-center mt-8">
+        <Link
+          href="/dentalservices"
+          className="px-4 py-2 text-sm font-semibold text-white bg-teal-800 rounded-lg hover:bg-teal-700 active:bg-teal-900"
+        >
+          Read More
+        </Link>
       </div>
     </section>
   );

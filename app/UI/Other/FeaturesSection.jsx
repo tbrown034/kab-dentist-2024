@@ -11,12 +11,11 @@ import {
   faSmileBeam,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Assuming "money", "emergency", "location", "noStress" are represented by these icons
 const iconMapping = {
-  money: faMoneyBill, // Assuming "money" represents financial affordability
-  emergency: faExclamationCircle, // Assuming "emergency" represents urgent care
-  location: faMapLocation, // Standard location icon
-  noStress: faSmileBeam, // Assuming "noStress" is represented by a smiley face for a stress-free experience
+  money: faMoneyBill,
+  emergency: faExclamationCircle,
+  location: faMapLocation,
+  noStress: faSmileBeam,
 };
 
 const FeaturesSection = () => {

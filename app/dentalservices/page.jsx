@@ -6,6 +6,7 @@ import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import ServicesSeparator from "./ServicesSeparator";
 import ServicesSearch from "./ServicesSearch";
+import DocBot from "./DocBot";
 
 const DentalServices = () => {
   const { title, highlightedText, highlightInFront, textBlock } =
@@ -35,6 +36,7 @@ const DentalServices = () => {
         ))}
       </div>
       <ServicesSeparator />
+      <DocBot />
 
       <ServicesSearch onSelectService={setSelectedService} />
       <FAQs />
