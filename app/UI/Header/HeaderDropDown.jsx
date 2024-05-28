@@ -12,6 +12,7 @@ const links = [
   { href: "/dentalservices", label: "Dental Services" },
   { href: "#locationSection", label: "Our Location" },
   { href: "#financialSection", label: "Affordable Care" },
+  { href: "/docbot", label: "Doc Bot" },
   { href: "/blog", label: "From Dr. Brown's Desk" },
 ];
 

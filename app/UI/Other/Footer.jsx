@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="space-y-1">
           <h2 className="text-lg font-bold">Contact</h2>
           <p>1295 Rickert Drive, Naperville, IL 60564</p>
-          <p>(630) 555-5555</p>
+          <p>630-296-8702</p>
           <p>kabdds@aol.com</p>
         </div>
         <div className="space-y-1">

@@ -40,12 +40,12 @@ const ServicesSearch = ({ onSelectService }) => {
 
   return (
     <div
-      className={`relative flex flex-col gap-2 mb-4 ${
+      className={`relative flex flex-col gap-2  ${
         selectedService ? "mt-4" : ""
       }`}
     >
       <div className="flex items-center gap-2">
-        <label className="font-semibold">Search:</label>
+        <label className="font-semibold">Search Our Services:</label>
         <input
           type="text"
           placeholder={
