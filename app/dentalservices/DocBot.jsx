@@ -65,7 +65,7 @@ const DocBot = () => {
       </h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <label htmlFor="query" className="font-semibold">
-          Ask a dental question:
+          Ask a question:
         </label>
         <input
           type="text"
