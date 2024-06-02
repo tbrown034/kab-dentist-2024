@@ -13,9 +13,20 @@ const Footer = () => {
       <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
         <div className="space-y-1">
           <h2 className="text-lg font-bold">Contact</h2>
-          <p>1295 Rickert Drive, Naperville, IL 60564</p>
-          <p>630-296-8702</p>
-          <p>kabdds@aol.com</p>
+          <a
+            href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
+            className="block hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            1295 Rickert Drive, Naperville, IL 60564
+          </a>
+          <a href="tel:630-296-8702" className="block hover:underline">
+            630-296-8702
+          </a>
+          <a href="mailto:kabdds@aol.com" className="block hover:underline">
+            kabdds@aol.com
+          </a>
         </div>
         <div className="space-y-1">
           <h2 className="text-lg font-bold">Quick Links</h2>
@@ -32,13 +43,21 @@ const Footer = () => {
         <div className="space-y-1">
           <h2 className="text-lg font-bold">Follow Us</h2>
           <div className="flex justify-start space-x-4">
-            <a href="https://facebook.com" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/KeithABrownDDS/about_details"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faFacebookF} size="lg" />
             </a>
-            <a href="https://twitter.com" aria-label="Twitter">
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
-            </a>
-            <a href="https://instagram.com" aria-label="Instagram">
+
+            <a
+              href="https://www.linkedin.com/in/keith-brown-2055826b/"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </a>
           </div>

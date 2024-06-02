@@ -18,7 +18,7 @@ const PainSlider = ({ register, value }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-8">
       <input
         type="range"
         min="1"

@@ -50,7 +50,7 @@ const CallDialog = ({ buttonName }) => {
         {/* Dialog content and actions */}
         <div className="flex flex-col gap-2 ">
           <button
-            onClick={() => (window.location.href = "tel:630-301-0589")}
+            onClick={() => (window.location.href = "tel:630-296-0589")}
             className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
           >
             Call Our Office Now
