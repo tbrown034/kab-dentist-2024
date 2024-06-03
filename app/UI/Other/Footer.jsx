@@ -64,8 +64,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-4 mt-8 text-center border-t border-gray-300">
-        © 2023 Keith Brown DDS FAGD. Website Created and Maintained by TB Web
-        and Design
+        © 2023 Keith Brown DDS FAGD. Website Created and Maintained by{" "}
+        <Link href="https://trevorthewebdeveloper.com/">TB Web and Design</Link>
       </div>
     </footer>
   );

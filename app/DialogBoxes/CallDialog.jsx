@@ -43,14 +43,14 @@ const CallDialog = ({ buttonName }) => {
             Let's Get in Touch!
           </DialogTitle>
           <DialogDescription className="text-left ">
-            We are happy to take your call! Give us a ring at (630) 296-8207 or
+            We are happy to take your call! Give us a ring at (630) 357-9358 or
             select one of the options below:
           </DialogDescription>
         </DialogHeader>
         {/* Dialog content and actions */}
         <div className="flex flex-col gap-2 ">
           <button
-            onClick={() => (window.location.href = "tel:630-296-0589")}
+            onClick={() => (window.location.href = "tel:630-357-9358")}
             className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
           >
             Call Our Office Now

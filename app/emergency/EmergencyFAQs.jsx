@@ -15,7 +15,7 @@ const EmergencyFAQs = () => {
   return (
     <section className="flex flex-col items-start justify-start text-left">
       <h2 className="mb-2 text-2xl font-bold tracking-tight text-left underline underline-offset-4 md:text-3xl md:text-center">
-        Emergency Services FAQs
+        FAQs
       </h2>
       <Accordion type="single" collapsible className="w-full">
         {faqs.map((faq, index) => (
