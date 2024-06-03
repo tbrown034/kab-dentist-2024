@@ -21,7 +21,7 @@ const DoctorFAGD = () => {
         This honor reflects his dedication to continuing education and
         excellence in dentistry.
       </p>
-      <div className="flex flex-col items-center p-6 mx-4 text-white bg-teal-800 rounded-lg shadow-inner ">
+      <div className="flex flex-col items-center p-6 text-white bg-teal-800 rounded-lg shadow-inner ">
         <FontAwesomeIcon
           className="text-teal-100 "
           icon={faQuoteLeft}

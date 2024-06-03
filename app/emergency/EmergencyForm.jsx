@@ -206,6 +206,18 @@ export default function EmergencyForm() {
               </div>
               <div>
                 <label
+                  htmlFor="painLevel"
+                  className="block mb-2 text-sm font-medium"
+                >
+                  Pain Level
+                </label>
+                <PainSlider register={register} value={painLevel} />
+                {errors.painLevel && (
+                  <p className="text-red-500">{errors.painLevel.message}</p>
+                )}
+              </div>
+              <div>
+                <label
                   htmlFor="returningPatient"
                   className="block mb-2 text-sm font-medium"
                 >
@@ -261,18 +273,7 @@ export default function EmergencyForm() {
                   <p className="text-red-500">{errors.insurance.message}</p>
                 )}
               </div>
-              <div>
-                <label
-                  htmlFor="painLevel"
-                  className="block mb-2 text-sm font-medium"
-                >
-                  Pain Level
-                </label>
-                <PainSlider register={register} value={painLevel} />
-                {errors.painLevel && (
-                  <p className="text-red-500">{errors.painLevel.message}</p>
-                )}
-              </div>
+
               <div className="flex justify-center">
                 <button
                   type="submit"

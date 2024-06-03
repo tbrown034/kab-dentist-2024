@@ -51,7 +51,7 @@ const Page = () => {
             </button>
             <button
               onClick={scrollToFAQ}
-              className="p-2 text-white bg-teal-800 border-2 rounded-lg lg:text-lg border-opacity-85 hover:bg-red-400 active:bg-red-300"
+              className="p-2 text-white bg-teal-900 border-2 border-teal-900 rounded-lg lg:text-lg hover:bg-teal-800 active:bg-teal-600"
             >
               Emegency FAQs
             </button>
@@ -71,7 +71,9 @@ const Page = () => {
       <div ref={faqRef}>
         <EmergencyFAQs />
       </div>
-      <Medicaid />
+      <div className="text-black dark:text-white">
+        <Medicaid />
+      </div>
       <div className="flex justify-center">
         <Link
           className="p-2 bg-white border-2 border-teal-900 rounded-lg md:p-4 xl:p-5 lg:text-lg border-opacity-85 dark:text-black hover:bg-gray-200 active:bg-gray-300"
