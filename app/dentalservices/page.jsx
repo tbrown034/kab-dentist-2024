@@ -18,7 +18,7 @@ const DentalServices = () => {
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-6 mt-6">
+    <section className="flex flex-col gap-8 px-4 mt-6">
       <div className="flex flex-col gap-2">
         <h2
           className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
