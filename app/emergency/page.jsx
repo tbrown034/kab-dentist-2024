@@ -42,30 +42,29 @@ const Page = () => {
               </div>
             ))}
           </h3>
-          <div className="flex flex-row items-center gap-2 mt-2">
+          <div className="flex flex-row items-center gap-2 mt-2 text-xs md:text-base">
             <button
               onClick={() => (window.location.href = "tel:630-301-0589")}
               className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg lg:text-lg hover:bg-teal-500 active:bg-teal-400"
             >
-              Call Our Office Now
+              Emegency Call
             </button>
             <button
               onClick={scrollToFAQ}
-              className="p-2 text-white bg-red-500 border-2 border-red-500 rounded-lg lg:text-lg border-opacity-85 hover:bg-red-400 active:bg-red-300"
+              className="p-2 text-white bg-teal-800 border-2 rounded-lg lg:text-lg border-opacity-85 hover:bg-red-400 active:bg-red-300"
             >
-              Emergency Services FAQs
+              Emegency FAQs
             </button>
-          </div>
-          <div className="">
             <Link
               href="/"
-              className="p-2 text-black bg-white border-2 border-black rounded-lg bg-teal-white lg:text-lg hover:bg-gray-100 active:bg-gray-400"
+              className="p-2 text-black bg-white border-2 border-black rounded-lg bg-teal-white hover:bg-gray-100 active:bg-gray-400"
             >
               Back to Home
             </Link>
           </div>
+          <div className=""></div>
         </div>
-        <div className="mt-2" id="emergencyForm">
+        <div className="mx-4 mt-2" id="emergencyForm">
           <EmergencyForm />
         </div>
       </div>

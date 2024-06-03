@@ -42,9 +42,12 @@ const CallDialog = ({ buttonName }) => {
           <DialogTitle className="text-2xl text-black">
             Let's Get in Touch!
           </DialogTitle>
-          <DialogDescription className="text-left ">
-            We are happy to take your call! Give us a ring at (630) 357-9358 or
-            select one of the options below:
+          <DialogDescription className="text-left">
+            We are happy to take your call! Give us a ring at{" "}
+            <a href="tel:+16303579358" className="text-blue-500 underline">
+              (630) 357-9358
+            </a>{" "}
+            or select one of the options below:
           </DialogDescription>
         </DialogHeader>
         {/* Dialog content and actions */}

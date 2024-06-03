@@ -8,7 +8,7 @@ const DoctorFAGD = () => {
   const citation = "— Academy of General Dentistry";
 
   return (
-    <div className="flex flex-col gap-4 p-4 m-2 ">
+    <div className="flex flex-col gap-4 p-4 ">
       <h2 className="text-2xl font-bold">Not Your Average Dentist</h2>
       <p className="">
         Dr. Brown is among the elite{" "}
