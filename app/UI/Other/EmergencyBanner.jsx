@@ -11,8 +11,8 @@ const EmergencyBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-20 flex items-center w-full px-4 py-3 bg-teal-800 border-t border-gray-200 dark:border-gray-700">
-      <p className="flex-1 text-sm font-light text-white">
+    <div className="fixed bottom-0 left-0 z-20 flex items-center w-full gap-2 px-2 py-3 text-xs sm:text-sm lg;text-lg bg-teal-800 border-t border-gray-200 sm:gap-2 dark:border-gray-700">
+      <p className="flex-1 font-light text-white">
         Need urgent dental care? Take advantage of our{" "}
         <Link
           href="/emergency"
@@ -23,7 +23,7 @@ const EmergencyBanner = () => {
       </p>
       <div className="flex items-center gap-4">
         <Link href="tel:630-296-8702">
-          <div className="flex items-center p-2 text-sm text-teal-800 bg-white border border-gray-600 rounded-xl dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
+          <div className="flex items-center p-2 bg-white border border-gray-600 gitext-teal-800 rounded-xl dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
             <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
             <span>Call</span>
             <span className="ml-1">630-296-8702</span>
