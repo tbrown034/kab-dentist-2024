@@ -11,7 +11,7 @@ const EmergencyBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-20 flex items-center w-full gap-2 px-2 py-3 text-xs sm:text-sm lg;text-lg bg-teal-800 border-t border-gray-200 sm:gap-2 dark:border-gray-700">
+    <div className="fixed bottom-0 left-0 z-20 flex items-center w-full gap-4 px-6 py-3 text-xs sm:text-sm lg;text-lg bg-teal-800 border-t border-gray-200 sm:gap-2 dark:border-gray-700 rounded-xl">
       <p className="flex-1 font-light text-white">
         Need urgent dental care? Take advantage of our{" "}
         <Link
