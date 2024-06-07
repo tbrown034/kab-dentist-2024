@@ -47,13 +47,13 @@ const Page = () => {
               onClick={() => (window.location.href = "tel:630-301-0589")}
               className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg lg:text-lg hover:bg-teal-500 active:bg-teal-400"
             >
-              Emegency Call
+              Emergency Call
             </button>
             <button
               onClick={scrollToFAQ}
               className="p-2 text-white bg-teal-900 border-2 border-teal-900 rounded-lg lg:text-lg hover:bg-teal-800 active:bg-teal-600"
             >
-              Emegency FAQs
+              Emergency FAQs
             </button>
             <Link
               href="/"

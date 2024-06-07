@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { newPatientNumber, returningPatientNumber } from "@/lib/constants";
+import { officeNumber, trackingNumber } from "@/lib/constants";
 import {
   Dialog,
   DialogContent,
@@ -10,16 +10,20 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import Medicaid from "../UI/Other/Medicaid";
+
 const CallDialog = ({ buttonName }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   // Opens the dialog
   const openDialog = () => {
     setIsDialogOpen(true);
   };
+
   // Closes the dialog
   const closeDialog = () => {
     setIsDialogOpen(false);
   };
+
   const handleSectionScrollAndClose = () => {
     closeDialog();
     setTimeout(() => {
@@ -31,6 +35,7 @@ const CallDialog = ({ buttonName }) => {
       }
     }, 350);
   };
+
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
@@ -44,34 +49,40 @@ const CallDialog = ({ buttonName }) => {
             Let's Get in Touch!
           </DialogTitle>
           <DialogDescription className="text-left">
-            We are happy to take your call! Give us a ring at{" "}
-            <a href="tel:+16303579358" className="text-blue-500 underline">
-              (630) 357-9358
+            We are happy to take your call! Give us a ring at our office at{" "}
+            <a href={`tel:${officeNumber}`} className="text-blue-500 underline">
+              {officeNumber}
+            </a>{" "}
+            or our after-hours service at{" "}
+            <a
+              href={`tel:${trackingNumber}`}
+              className="text-blue-500 underline"
+            >
+              {trackingNumber}
             </a>{" "}
             or select one of the options below:
           </DialogDescription>
         </DialogHeader>
-        {/* Dialog content and actions */}
-        <div className="flex flex-col gap-2 ">
-          <div>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             <button
-              onClick={() => (window.location.href = "tel:630-357-9358")}
+              onClick={() => (window.location.href = `tel:${officeNumber}`)}
               className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
             >
               Call (New Patients)
             </button>
             <button
-              onClick={() => (window.location.href = "tel:${newPa}")}
-              className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+              onClick={() => (window.location.href = `tel:${trackingNumber}`)}
+              className="gap-1 p-2 px-4 text-center text-white bg-teal-700 rounded-lg hover:bg-teal-600 active:bg-teal-500"
             >
               Call (Returning Patients)
             </button>
           </div>
           <button
             onClick={handleSectionScrollAndClose}
-            className="p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+            className="p-2 px-4 text-center text-white bg-teal-800 rounded-lg hover:bg-teal-700 active:bg-teal-600"
           >
-            Request an Appointment
+            Request an Appointment Online
           </button>
           <button
             onClick={() => {
@@ -84,12 +95,14 @@ const CallDialog = ({ buttonName }) => {
           </button>
           <button
             onClick={closeDialog}
-            className="p-2 px-4 text-center text-white bg-gray-500 rounded-lg cursor-pointer hover:bg-gray-400 active:bg-gray-300"
+            className="p-2 px-4 text-center text-black bg-white border-2 border-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 active:bg-gray-200"
           >
             Back
           </button>
         </div>
-        <Medicaid />
+        <div className="dark:text-black">
+          <Medicaid />
+        </div>
       </DialogContent>
     </Dialog>
   );
