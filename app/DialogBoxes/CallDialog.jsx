@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { newPatientNumber, returningPatientNumber } from "@/lib/constants";
 import {
   Dialog,
   DialogContent,
@@ -52,13 +53,20 @@ const CallDialog = ({ buttonName }) => {
         </DialogHeader>
         {/* Dialog content and actions */}
         <div className="flex flex-col gap-2 ">
-          <button
-            onClick={() => (window.location.href = "tel:630-357-9358")}
-            className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
-          >
-            Call Our Office Now
-          </button>
-
+          <div>
+            <button
+              onClick={() => (window.location.href = "tel:630-357-9358")}
+              className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+            >
+              Call (New Patients)
+            </button>
+            <button
+              onClick={() => (window.location.href = "tel:630-357-9358")}
+              className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+            >
+              Call (Returning Patients)
+            </button>
+          </div>
           <button
             onClick={handleSectionScrollAndClose}
             className="p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"

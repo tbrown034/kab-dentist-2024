@@ -16,27 +16,27 @@ const images = [
   {
     id: 1,
     src: drWithPatientRelaxed,
-    alt: "Dr. Brown with a patient and computer",
+    alt: "Dr. Keith A. Brown DDS, FAGD, talks with a satisfied patient after a dental visit.",
   },
   {
     id: 2,
     src: bank1,
-    alt: "Exterior view of Fifth Third Bank building housing the dental office",
+    alt: "Exterior view of the Fifth Third Bank building at 1295 Rickert Drive, 3rd floor, Naperville, IL, housing Dr. Brown's dental office.",
   },
   {
     id: 3,
     src: drFramesBackground,
-    alt: "Exterior view of Fifth Third Bank building housing the dental office",
+    alt: "Dr. Keith A. Brown DDS, FAGD, standing in front of framed certificates with the Fifth Third Bank building at 1295 Rickert Drive, 3rd floor, Naperville, IL, in the background.",
   },
   {
     id: 4,
     src: doorWithoutStickers,
-    alt: "Entrance door to the dental office without stickers",
+    alt: "Dr. Keith A. Brown DDS, FAGD, standing with arms crossed in his office at 1295 Rickert Drive, 3rd floor, Naperville, IL, while a staff member is seated at a desk in the background.",
   },
   {
     id: 5,
     src: drAtReception1,
-    alt: "Dr. Brown",
+    alt: "Dr. Keith A. Brown DDS, FAGD, at the dental office reception desk in Naperville, IL.",
   },
 ];
 

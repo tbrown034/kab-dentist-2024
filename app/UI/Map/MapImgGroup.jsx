@@ -16,23 +16,22 @@ const images = [
   {
     id: 1,
     src: bankExt2,
-    alt: "Extended exterior view of the Fifth Third Bank building",
+    alt: "Extended exterior view of the Fifth Third Bank building at 1295 Rickert Drive, Naperville, IL, housing Dr. Brown's dental office.",
   },
   {
     id: 2,
     src: bankExtClose,
-    alt: "Close-up view of the Fifth Third Bank building exterior",
+    alt: "Close-up view of the Fifth Third Bank building at 1295 Rickert Drive, Naperville, IL, showing the entrance to Dr. Brown's dental office.",
   },
-
   {
     id: 3,
     src: officeViewWithBirds,
-    alt: "Office view with birds visible through the window",
+    alt: "View from Dr. Brown's dental office window with bird decorations hanging in the foreground and the Fifth Third Bank building at 1295 Rickert Drive, Naperville, IL, visible outside.",
   },
   {
     id: 4,
     src: officeWaitingRoom,
-    alt: "Office view with birds visible through the window",
+    alt: "View of the waiting room in Dr. Brown's dental office at 1295 Rickert Drive, Naperville, IL.",
   },
 ];
 

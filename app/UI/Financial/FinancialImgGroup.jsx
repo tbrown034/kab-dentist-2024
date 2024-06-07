@@ -12,12 +12,27 @@ import toothbrushes from "../../../public/images/stock/toothbrushes.jpg";
 import womanSmiling from "../../../public/images/stock/womanSmiling.jpg";
 
 const financialImages = [
-  { id: 1, src: retainer, alt: "A dental retainer" },
-  { id: 2, src: teeth2, alt: "More teeth models showcasing dental issues" },
-  { id: 3, src: toothbrushes, alt: "Assortment of toothbrushes" },
-  { id: 4, src: womanSmiling, alt: "Woman smiling, showcasing dental work" },
+  {
+    id: 1,
+    src: retainer,
+    alt: "A close-up of a dental retainer being placed in the mouth, used in orthodontic treatment",
+  },
+  {
+    id: 2,
+    src: teeth2,
+    alt: "A dental model showcasing different types of braces and orthodontic issues on a desk",
+  },
+  {
+    id: 3,
+    src: toothbrushes,
+    alt: "An assortment of colorful toothbrushes with bamboo handles, promoting eco-friendly dental hygiene",
+  },
+  {
+    id: 4,
+    src: womanSmiling,
+    alt: "A woman with curly hair smiling broadly, showcasing her perfect white teeth after dental treatment",
+  },
 ];
-
 const FinancialImgGroup = () => {
   return (
     <>

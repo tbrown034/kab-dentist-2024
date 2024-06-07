@@ -8,19 +8,19 @@ const images = [
   {
     id: "portrait",
     src: drVertical1,
-    alt: "Portrait of Keith Brown",
+    alt: "Portrait of Dr. Keith A. Brown DDS, FAGD, with a view of the Fifth Third Bank building and surrounding area in Naperville, IL, from the third floor.",
     className: "rounded-xl",
   },
   {
     id: "patientClose",
     src: drWithPatientClose,
-    alt: "Dr. with Patient Close-up",
+    alt: "Close-up of Dr. Keith A. Brown DDS, FAGD, performing a dental procedure on a patient.",
     className: "rounded-xl",
   },
   {
     id: "patientComputer",
     src: drWithPatientandComputer,
-    alt: "Dr. with Patient and Computer",
+    alt: "Dr. Keith A. Brown DDS, FAGD, with a patient and a computer displaying dental images in the background.",
     className: "rounded-xl",
   },
 ];
