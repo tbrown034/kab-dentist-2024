@@ -62,7 +62,6 @@ const Page = () => {
               Back to Home
             </Link>
           </div>
-          <div className=""></div>
         </div>
         <div className="mx-4 mt-2" id="emergencyForm">
           <EmergencyForm />

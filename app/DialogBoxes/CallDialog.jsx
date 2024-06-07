@@ -61,7 +61,7 @@ const CallDialog = ({ buttonName }) => {
               Call (New Patients)
             </button>
             <button
-              onClick={() => (window.location.href = "tel:630-357-9358")}
+              onClick={() => (window.location.href = "tel:${newPa}")}
               className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
             >
               Call (Returning Patients)

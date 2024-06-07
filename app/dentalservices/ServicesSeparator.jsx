@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ServicesSeparator = () => {
   return (
-    <section className="flex my-2">
+    <section className="flex my-2" id="browseServices">
       <div className="flex">
         <Link
           href="#general-dentistry"
