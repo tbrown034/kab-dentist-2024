@@ -61,7 +61,7 @@ const DocBot = () => {
   return (
     <section
       id="docBot"
-      className="p-6 mt-8 bg-gray-100 rounded-lg shadow-md dark:text-black"
+      className="p-6 bg-gray-100 rounded-lg shadow-md dark:text-black"
     >
       <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
         Ask the Doc Bot

@@ -55,9 +55,9 @@ const DentalServices = () => {
           Back to Home
         </Link>
       </div>
-      <ServicesSeparator />
-
       <ServicesSearch onSelectService={setSelectedService} />
+
+      <ServicesSeparator />
 
       <FAQs />
       <DocBot />

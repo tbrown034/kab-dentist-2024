@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const FAQs = () => {
   return (
-    <div className="mt-6">
+    <div className="mt-2">
       {servicesContent.map((service, index) => (
         <div key={index} id={service.id} className="mb-8">
           <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>

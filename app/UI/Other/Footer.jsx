@@ -1,17 +1,13 @@
-// components/Footer.jsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import { address, trackingNumber, officeNumber, email } from "@/lib/constants";
 
 const Footer = () => {
   return (
-    <footer className="px-10 py-8 text-gray-600 dark:text-gray-200">
-      <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
-        <div className="space-y-1">
+    <footer className="px-10 py-12 text-gray-600 bg-gray-100 dark:text-gray-200 dark:bg-gray-800">
+      <div className="grid grid-cols-1 gap-8 ">
+        <div className="space-y-4">
           <h2 className="text-lg font-bold">Contact</h2>
           <a
             href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
@@ -19,53 +15,67 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            1295 Rickert Drive, Naperville, IL 60564
+            {address}
           </a>
-          <a href="tel:630-296-8702" className="block hover:underline">
-            630-296-8702
-          </a>
-          <a href="mailto:kabdds@aol.com" className="block hover:underline">
-            kabdds@aol.com
+          <div className="flex flex-col gap-2">
+            <a href={`tel:${officeNumber}`} className="hover:underline">
+              Office Number: {officeNumber}
+            </a>
+            <a href={`tel:${trackingNumber}`} className="hover:underline">
+              New Patient and Afterhours Number: {trackingNumber}
+            </a>
+          </div>
+          <a href={`mailto:${email}`} className="block hover:underline">
+            {email}
           </a>
         </div>
-        <div className="space-y-1">
+        <div className="space-y-4">
           <h2 className="text-lg font-bold">Quick Links</h2>
-          <Link href="#home" className="block hover:underline">
-            Home
+          <Link href="#home">
+            <span className="block hover:underline">Home</span>
           </Link>
-          <a href="#servicesSection" className="block hover:underline">
-            Services
-          </a>
-          <a href="#locationSection" className="block hover:underline">
-            Location
-          </a>
+          <Link href="#servicesSection">
+            <span className="block hover:underline">Dental Services</span>
+          </Link>
+          <Link href="#servicesSection">
+            <span className="block hover:underline">Emergency Care</span>
+          </Link>
+          <Link href="#locationSection">
+            <span className="block hover:underline">Location</span>
+          </Link>
+          <Link href="#appointmentSection">
+            <span className="block hover:underline">Appointment</span>
+          </Link>
         </div>
-        <div className="space-y-1">
+        <div className="space-y-4">
           <h2 className="text-lg font-bold">Follow Us</h2>
-          <div className="flex justify-start space-x-4">
+          <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/KeithABrownDDS/about_details"
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-blue-600"
             >
               <FontAwesomeIcon icon={faFacebookF} size="lg" />
             </a>
-
             <a
               href="https://www.linkedin.com/in/keith-brown-2055826b/"
-              aria-label="Instagram"
+              aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-blue-600"
             >
-              <FontAwesomeIcon icon={faInstagram} size="lg" />
+              <FontAwesomeIcon icon={faLinkedin} size="lg" />
             </a>
           </div>
         </div>
       </div>
-      <div className="py-4 mt-8 text-center border-t border-gray-300">
-        © 2023 Keith Brown DDS FAGD. Website Created and Maintained by{" "}
-        <Link href="https://trevorthewebdeveloper.com/">TB Web and Design</Link>
+      <div className="py-4 mt-8 text-center border-t border-gray-300 dark:border-gray-700">
+        © 2024 Keith Brown DDS FAGD. Website Created and Maintained by{" "}
+        <Link href="https://trevorthewebdeveloper.com/">
+          <span className="hover:underline">TB Web and Design</span>
+        </Link>
       </div>
     </footer>
   );
