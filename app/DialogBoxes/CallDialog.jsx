@@ -1,5 +1,6 @@
+// components/DialogBoxes/CallDialog.jsx
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { officeNumber, trackingNumber } from "@/lib/constants";
 import {
   Dialog,
@@ -11,17 +12,19 @@ import {
 } from "@/components/ui/dialog";
 import Medicaid from "../UI/Other/Medicaid";
 
-const CallDialog = ({ buttonName }) => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+const CallDialog = ({ buttonName, openExternal, onExternalClose }) => {
+  const [isDialogOpen, setIsDialogOpen] = useState(openExternal || false);
 
-  // Opens the dialog
-  const openDialog = () => {
-    setIsDialogOpen(true);
-  };
+  useEffect(() => {
+    if (openExternal !== undefined) {
+      setIsDialogOpen(openExternal);
+    }
+  }, [openExternal]);
 
   // Closes the dialog
   const closeDialog = () => {
     setIsDialogOpen(false);
+    if (onExternalClose) onExternalClose();
   };
 
   const handleSectionScrollAndClose = () => {
@@ -39,7 +42,7 @@ const CallDialog = ({ buttonName }) => {
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <button onClick={openDialog} className="btn-primary">
+        <button onClick={() => setIsDialogOpen(true)} className="btn-primary">
           {buttonName}
         </button>
       </DialogTrigger>
@@ -78,12 +81,7 @@ const CallDialog = ({ buttonName }) => {
               Call (Returning Patients)
             </button>
           </div>
-          <button
-            onClick={handleSectionScrollAndClose}
-            className="p-2 px-4 text-center text-white bg-teal-800 rounded-lg hover:bg-teal-700 active:bg-teal-600"
-          >
-            Request an Appointment Online
-          </button>
+
           <button
             onClick={() => {
               window.location.href = "/emergency";
@@ -91,7 +89,7 @@ const CallDialog = ({ buttonName }) => {
             }}
             className="p-2 px-4 text-white bg-red-500 rounded-lg hover:bg-red-400 active:bg-red-300"
           >
-            After-hours/Emergency Care
+            Emergency Care
           </button>
           <button
             onClick={closeDialog}

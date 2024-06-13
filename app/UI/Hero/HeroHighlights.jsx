@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,8 +7,9 @@ import {
   faSpa,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import { officeNumber, trackingNumber } from "@/lib/constants";
 
-const HeroHighlights = () => {
+const HeroHighlights = ({ onPhoneClick }) => {
   return (
     <div className="flex flex-col gap-3 mt-2">
       <Link
@@ -33,22 +35,34 @@ const HeroHighlights = () => {
         </span>
       </Link>
       <div className="text-sm md:text-base lg:text-lg">
-        Don't stress. We offer complimentary nitrous oxide (laughing gas) with
-        any visit.
+        Don't stress. We offer complimentary laughing gas with all visit.
       </div>
 
-      <Link
+      <button
         className="flex items-center gap-2 text-teal-600 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400"
-        href="tel:6303010589"
+        onClick={onPhoneClick}
       >
         <FontAwesomeIcon icon={faPhone} size="lg" />
         <div className="text-base font-bold md:text-xl lg:text-2xl">
-          Give Us a Ring at (630) 296-0589
+          Give Us a Ring Anytime
         </div>
-      </Link>
+      </button>
       <span className="text-sm md:text-base lg:text-lg">
-        We offer a wide range of dental services. If it can be done, we probably
-        can do it.
+        Returning patients can call{" "}
+        <Link
+          href={`tel:${officeNumber}`}
+          className="text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+        >
+          {officeNumber}
+        </Link>
+        . New patients or emergency cases can reach us at{" "}
+        <Link
+          href={`tel:${trackingNumber}`}
+          className="text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+        >
+          {trackingNumber}
+        </Link>{" "}
+        24/7.
       </span>
     </div>
   );
