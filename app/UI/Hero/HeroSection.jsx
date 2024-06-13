@@ -1,15 +1,12 @@
+"use client";
 import HeroImgSlider from "./HeroImgSlider";
 import HeroCTA from "./HeroCTA";
+import Link from "next/link";
 
 const HeroSection = () => {
   const title = "Naperville's Home For Trusted, Modern Dentistry";
   const highlightedText = "Trusted, Modern Dentistry";
   const highlightInFront = false;
-
-  const textBlock = [
-    "For decades, Dr. Keith A. Brown DDS, FAGD, has provided expert care for Naperville and the Chicagoland area",
-    "Start your journey towards excellent care today!",
-  ];
 
   return (
     <section className="flex flex-col gap-8 lg:gap-10 xl:gap-12 md:flex-row">
@@ -27,12 +24,19 @@ const HeroSection = () => {
             </>
           )}
         </div>
-        <div className="flex flex-col justify-center gap-3 text-xl font-medium md:text-2xl xl:text-3xl xl:gap-12 md:gap-4 lg:gap-8">
-          {textBlock.map((text, index) => (
-            <p key={index} className="flex flex-col gap-2">
-              {text}
-            </p>
-          ))}
+        <div className="">
+          <h2 className="text-xl font-medium md:text-2xl xl:text-3xl ">
+            For decades,{" "}
+            <Link
+              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+              href="#doctorSection"
+            >
+              Dr. Keith A. Brown DDS, FAGD
+            </Link>{" "}
+            has provided expert care for Naperville and the Chicagoland area.
+            Start your journey towards excellent care today!
+          </h2>
+          <p className=""></p>
         </div>
         <HeroCTA />
       </div>

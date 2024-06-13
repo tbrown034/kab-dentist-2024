@@ -62,7 +62,7 @@ const HeroHighlights = ({ onPhoneClick }) => {
         >
           {trackingNumber}
         </Link>{" "}
-        24/7.
+        anytime.
       </span>
     </div>
   );
