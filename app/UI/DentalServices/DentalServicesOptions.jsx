@@ -9,9 +9,12 @@ const DentalServicesOptions = () => {
       </h2>
       <div className="space-y-6">
         <div>
-          <h3 className="flex items-center mb-2 text-lg font-semibold text-teal-700">
+          <Link
+            href="/dentalservices#general-dentistry"
+            className="flex items-center mb-2 text-lg font-semibold text-teal-700"
+          >
             General Dentistry
-          </h3>
+          </Link>
           <p className="mb-4 dark:text-black">
             Offering a comprehensive range of services for the whole family,
             from routine cleanings to advanced treatments, all aimed at
@@ -20,9 +23,12 @@ const DentalServicesOptions = () => {
         </div>
 
         <div>
-          <h3 className="flex items-center mb-2 text-lg font-semibold text-teal-700">
+          <Link
+            href="/dentalservices#emergency-dentistry"
+            className="flex items-center mb-2 text-lg font-semibold text-teal-700"
+          >
             Emergency Dentistry
-          </h3>
+          </Link>
           <p className="mb-4 dark:text-black ">
             Ready to handle dental emergencies with prompt, effective care to
             alleviate pain and prevent further complications.
@@ -30,9 +36,12 @@ const DentalServicesOptions = () => {
         </div>
 
         <div>
-          <h3 className="flex items-center mb-2 text-lg font-semibold text-teal-700">
+          <Link
+            href="/dentalservices#cosmetic-dentistry"
+            className="flex items-center mb-2 text-lg font-semibold text-teal-700"
+          >
             Cosmetic Dentistry
-          </h3>
+          </Link>
           <p className="dark:text-black">
             Enhancing your smile with treatments designed to improve the
             appearance of your teeth, giving you the confidence to show off your

@@ -8,10 +8,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "#doctorSection", label: "Meet the Doctor" },
+  { href: "/#doctorSection", label: "Meet the Doctor" },
   { href: "/dentalservices", label: "Dental Services" },
-  { href: "#locationSection", label: "Our Location" },
-  { href: "#financialSection", label: "Affordable Care" },
+  { href: "/#locationSection", label: "Our Location" },
+  { href: "/#financialSection", label: "Affordable Care" },
   { href: "/docbot", label: "Doc Bot" },
   { href: "/blog", label: "From Dr. Brown's Desk" },
 ];

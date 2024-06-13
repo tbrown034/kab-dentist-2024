@@ -1,10 +1,9 @@
 import Link from "next/link";
 
-// Define the links to be used in the navigation
 const links = [
-  { href: "#locationSection", label: "Location" },
+  { href: "/#locationSection", label: "Location" },
   { href: "/dentalservices", label: "Services" },
-  { href: "#appointmentSection", label: "Appointments" },
+  { href: "/#appointmentSection", label: "Appointments" },
   { href: "/emergency", label: "Emergency" },
 ];
 
@@ -13,7 +12,7 @@ const HeaderFullNav = () => {
     <nav className="flex items-center justify-between gap-6 text-base lg:gap-8 lg:text-lg dark:text-teal-500 xl:text-xl text">
       {links.map((link) => (
         <Link
-          key={link.href} // Key for each child in a list
+          key={link.href}
           href={link.href}
           className="hover:text-teal-800 active:text-teal-700"
         >
