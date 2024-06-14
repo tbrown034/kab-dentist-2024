@@ -72,13 +72,13 @@ const CallDialog = ({ buttonName, openExternal, onExternalClose }) => {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <button
-              onClick={() => (window.location.href = `tel:${officeNumber}`)}
+              onClick={() => (window.location.href = `tel:${trackingNumber}`)}
               className="gap-1 p-2 px-4 text-center text-white bg-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
             >
               Call (New Patients)
             </button>
             <button
-              onClick={() => (window.location.href = `tel:${trackingNumber}`)}
+              onClick={() => (window.location.href = `tel:${officeNumber}`)}
               className="gap-1 p-2 px-4 text-center text-white bg-teal-700 rounded-lg hover:bg-teal-600 active:bg-teal-500"
             >
               Call (Returning Patients)
