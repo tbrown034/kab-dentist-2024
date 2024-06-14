@@ -44,7 +44,7 @@ const ServicesSearch = ({ onSelectService }) => {
         selectedService ? "mt-4" : ""
       }`}
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-4">
         <label className="font-semibold">Search Our Services:</label>
         <input
           type="text"
@@ -53,7 +53,7 @@ const ServicesSearch = ({ onSelectService }) => {
           }
           value={searchQuery}
           onChange={handleSearch}
-          className="px-2 py-1 border border-teal-800 rounded-md dark:border-white"
+          className="p-2 px-4 border border-teal-800 rounded-md dark:border-white"
         />
         {!selectedService && searchQuery && (
           <button

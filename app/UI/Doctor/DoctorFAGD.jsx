@@ -1,6 +1,7 @@
 import React from "react";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 const DoctorFAGD = () => {
   const quote =
@@ -8,18 +9,24 @@ const DoctorFAGD = () => {
   const citation = "— Academy of General Dentistry";
 
   return (
-    <div className="flex flex-col gap-4 p-4 ">
+    <div className="flex flex-col gap-2 p-4 ">
       <h2 className="text-2xl font-bold">Not Your Average Dentist</h2>
       <p className="">
         Dr. Brown is among the elite{" "}
-        <span className="font-semibold underline">6%</span> of dentists in the
-        U.S. to become a{" "}
-        <span className="font-semibold underline">
+        <Link
+          href="https://www.agd.org/education/awards-recognition/become-an-agd-fellow"
+          className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+        >
+          6%
+        </Link>{" "}
+        of dentists in the U.S. to become a{" "}
+        <Link
+          href="https://www.agd.org/education/awards-recognition/become-an-agd-fellow"
+          className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+        >
           Fellow of the Academy of General Dentistry (FAGD).<br></br>
           <br></br>
-        </span>
-        This honor reflects his dedication to continuing education and
-        excellence in dentistry.
+        </Link>
       </p>
       <div className="flex flex-col items-center p-6 text-white bg-teal-800 rounded-lg shadow-inner ">
         <FontAwesomeIcon

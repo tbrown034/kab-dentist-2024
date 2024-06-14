@@ -1,4 +1,3 @@
-// components/DialogBoxes/CallDialog.jsx
 "use client";
 import React, { useState, useEffect } from "react";
 import { officeNumber, trackingNumber } from "@/lib/constants";
@@ -11,6 +10,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import Medicaid from "../UI/Other/Medicaid";
+import Link from "next/link";
 
 const CallDialog = ({ buttonName, openExternal, onExternalClose }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(openExternal || false);
@@ -53,16 +53,19 @@ const CallDialog = ({ buttonName, openExternal, onExternalClose }) => {
           </DialogTitle>
           <DialogDescription className="text-left">
             We are happy to take your call! Give us a ring at our office at{" "}
-            <a href={`tel:${officeNumber}`} className="text-blue-500 underline">
+            <Link
+              href={`tel:${officeNumber}`}
+              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+            >
               {officeNumber}
-            </a>{" "}
+            </Link>{" "}
             or our after-hours service at{" "}
-            <a
+            <Link
               href={`tel:${trackingNumber}`}
-              className="text-blue-500 underline"
+              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
             >
               {trackingNumber}
-            </a>{" "}
+            </Link>{" "}
             or select one of the options below:
           </DialogDescription>
         </DialogHeader>
@@ -81,7 +84,12 @@ const CallDialog = ({ buttonName, openExternal, onExternalClose }) => {
               Call (Returning Patients)
             </button>
           </div>
-
+          <button
+            onClick={handleSectionScrollAndClose}
+            className="p-2 px-4 text-center text-white bg-teal-800 rounded-lg hover:bg-teal-700 active:bg-teal-600"
+          >
+            Request an Appointment Online
+          </button>
           <button
             onClick={() => {
               window.location.href = "/emergency";

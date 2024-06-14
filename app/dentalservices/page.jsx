@@ -35,22 +35,22 @@ const DentalServices = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-row items-center gap-2 mt-2 text-xs md:text-base">
+      <div className="flex flex-row items-center gap-2 mt-2 md:text-base">
         <Link
           href="#browseServices"
-          className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg lg:text-lg hover:bg-teal-500 active:bg-teal-400"
+          className="p-4 text-white bg-teal-600 border-2 border-teal-600 rounded-xl md:p-4 xl:p-5 hover:bg-teal-500 active:bg-teal-400"
         >
           Browse Services
         </Link>
         <Link
           href="#docBot"
-          className="p-2 text-white bg-teal-900 border-2 border-teal-900 rounded-lg lg:text-lg hover:bg-teal-800 active:bg-teal-600"
+          className="p-4 text-white bg-teal-900 border-2 border-teal-900 rounded-lg lg:text-lg hover:bg-teal-800 active:bg-teal-600"
         >
           Doc Bot
         </Link>
         <Link
           href="/"
-          className="p-2 text-black bg-white border-2 border-black rounded-lg bg-teal-white hover:bg-gray-100 active:bg-gray-400"
+          className="p-4 text-black bg-white border-2 border-black rounded-lg bg-teal-white hover:bg-gray-100 active:bg-gray-400"
         >
           Back to Home
         </Link>

@@ -5,7 +5,7 @@ import { address, trackingNumber, officeNumber, email } from "@/lib/constants";
 
 const Footer = () => {
   return (
-    <footer className="px-10 py-12 text-gray-600 bg-gray-100 dark:text-gray-200 dark:bg-gray-800">
+    <footer className="px-10 py-12 text-gray-600 dark:text-gray-200 ">
       <div className="grid grid-cols-1 gap-8 ">
         <div className="space-y-4">
           <h2 className="text-lg font-bold">Contact</h2>

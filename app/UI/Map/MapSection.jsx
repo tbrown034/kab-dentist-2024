@@ -1,23 +1,20 @@
 import React from "react";
-import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Confirm this import path is correct
 import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
 import Link from "next/link";
 import { raleway } from "../../../app/font.js";
-// Import section contents
-const MapSection = () => {
-  // Destructuring to get the necessary data from sectionContents
-  const { title, highlightedText, highlightInFront, textBlock } =
-    sectionContents.mapSection;
 
-  // Guard clause to ensure rendering only occurs if data is available
-  if (!title || !textBlock || textBlock.length === 0) return null;
+const MapSection = () => {
+  // Hardcoded data for the section
+  const title = "Welcoming You to Your Naperville Dental Home";
+  const highlightedText = "Welcoming You";
+  const highlightInFront = true;
 
   return (
     <section className="flex flex-col gap-4" id="locationSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold  tracking-tight`}
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}
@@ -25,14 +22,24 @@ const MapSection = () => {
           highlightInFront={highlightInFront}
         />
       </h2>
-      {textBlock.map((block, blockIndex) => (
-        <div key={blockIndex} className="flex flex-col gap-2 ">
-          <p>{block.text}</p>
-        </div>
-      ))}
+      <div className="flex flex-col gap-2">
+        <p>
+          For over 30 years, our Naperville location has been dedicated to
+          enhancing smiles, offering exceptional dental care from the scenic
+          third-floor of{" "}
+          <Link
+            href="https://www.google.com/maps/place/Keith+A.+Brown,+DDS,+FAGD/@41.7477667,-88.16735,19z/data=!4m6!3m5!1s0x880e57ffb6eb6c69:0xbc5292dc03318948!8m2!3d41.7482219!4d-88.166756!16s%2Fg%2F1tfq57bq?entry=ttu"
+            className="font-semibold text-teal-700 underline hover:text-teal-500 active:text-teal-400"
+          >
+            Naperville's Fifth Third Bank Building at Rickert Drive and 75th
+            Street
+          </Link>
+          .
+        </p>
+      </div>
       <div className="flex flex-row items-center gap-4 py-2">
         <Link
-          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 0 active:bg-teal-400"
+          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
           href="#appointmentSection"
         >
           Book Now

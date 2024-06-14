@@ -1,21 +1,20 @@
 import React from "react";
-import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import FinancialImgGroup from "./FinancialImgGroup";
 import FinancialPills from "./FinancialPills";
 import FinancialFAQs from "./FinancialFAQs";
 import { raleway } from "../../../app/font.js";
+import Medicaid from "../Other/Medicaid";
 
 const FinancialSection = () => {
-  const { title, highlightedText, highlightInFront, textBlock } =
-    sectionContents.financialSection;
-
-  if (!title || !textBlock || textBlock.length === 0) return null;
+  const title = "Making World-Class Dental Care Accessible to All";
+  const highlightedText = "Making World-Class";
+  const highlightInFront = true;
 
   return (
     <section className="flex flex-col gap-4" id="financialSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl  font-extrabold tracking-tight`}
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}
@@ -23,18 +22,22 @@ const FinancialSection = () => {
           highlightInFront={highlightInFront}
         />
       </h2>
-      {textBlock.map((block, blockIndex) => (
-        <React.Fragment key={blockIndex}>
-          {Object.keys(block).map((key) => (
-            <div key={key} className="flex flex-col gap-2 ">
-              <p>{block[key]}</p>
-            </div>
-          ))}
-        </React.Fragment>
-      ))}
+      <div className="flex flex-col gap-2">
+        <p>
+          We prioritize affordable, accessible dental care. Our clinic works
+          with many insurance providers and offers flexible financing options
+          with low monthly payments.
+        </p>
+        <p>
+          Don't have insurance or facing coverage gaps? Our financial services
+          support includes plans with no or low interest and minimal monthly
+          payments.
+        </p>
+      </div>
       <FinancialImgGroup />
       <FinancialPills />
       <FinancialFAQs />
+      <Medicaid />
     </section>
   );
 };
