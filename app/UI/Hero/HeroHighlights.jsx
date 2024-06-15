@@ -35,7 +35,7 @@ const HeroHighlights = ({ onPhoneClick }) => {
         </span>
       </Link>
       <div className="text-sm md:text-base lg:text-lg">
-        Don't stress. We offer complimentary laughing gas with all visit.
+        Don't stress. We offer complimentary laughing gas with all visits.
       </div>
 
       <button

@@ -17,26 +17,36 @@ const images = [
     id: 1,
     src: drWithPatientRelaxed,
     alt: "Dr. Keith A. Brown DDS, FAGD, talks with a satisfied patient after a dental visit.",
+    width: 800,
+    height: 600,
   },
   {
     id: 2,
     src: bank1,
     alt: "Exterior view of the Fifth Third Bank building at 1295 Rickert Drive, 3rd floor, Naperville, IL, housing Dr. Brown's dental office.",
+    width: 800,
+    height: 600,
   },
   {
     id: 3,
     src: drFramesBackground,
     alt: "Dr. Keith A. Brown DDS, FAGD, standing in front of framed certificates with the Fifth Third Bank building at 1295 Rickert Drive, 3rd floor, Naperville, IL, in the background.",
+    width: 800,
+    height: 600,
   },
   {
     id: 4,
     src: doorWithoutStickers,
     alt: "Dr. Keith A. Brown DDS, FAGD, standing with arms crossed in his office at 1295 Rickert Drive, 3rd floor, Naperville, IL, while a staff member is seated at a desk in the background.",
+    width: 800,
+    height: 600,
   },
   {
     id: 5,
     src: drAtReception1,
     alt: "Dr. Keith A. Brown DDS, FAGD, at the dental office reception desk in Naperville, IL.",
+    width: 800,
+    height: 600,
   },
 ];
 
@@ -56,9 +66,11 @@ const HeroImgSlider = () => {
             <Image
               src={image.src}
               alt={image.alt}
+              width={image.width}
+              height={image.height}
               placeholder="blur"
               priority={true}
-              className=" rounded-xl"
+              className="rounded-xl"
             />
           </CarouselItem>
         ))}

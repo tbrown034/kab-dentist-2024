@@ -1,4 +1,3 @@
-// components/Hero/HeroCTA.jsx
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -26,7 +25,9 @@ const HeroCTA = () => {
           Book Appointment
         </Link>
         <div className="p-2 bg-white border border-gray-600 rounded-xl md:p-4 xl:p-5 dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
-          <button onClick={openCallDialog} className="btn-primary"></button>
+          <button onClick={openCallDialog} className="btn-primary">
+            Call Us
+          </button>
           <CallDialog
             buttonName="Call Us"
             openExternal={isCallDialogOpen}

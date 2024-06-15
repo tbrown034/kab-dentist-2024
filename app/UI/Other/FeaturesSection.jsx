@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link";
 import sectionContents from "../../../sectionContent.json";
-import FullTitle from "@/app/UI/Other/FullTitle"; // Ensure this path is correct based on your project structure
+import FullTitle from "@/app/UI/Other/FullTitle";
 import { raleway } from "../../font.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,10 +23,10 @@ const FeaturesSection = () => {
     sectionContents.features;
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4" aria-labelledby="features-title">
       <h2
-        className={`${raleway.className}
-      text-2xl md:text-3xl  font-extrabold tracking-tight leading-tight`}
+        id="features-title"
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight leading-tight`}
       >
         <FullTitle
           title={title}
@@ -40,13 +40,13 @@ const FeaturesSection = () => {
       <div className="grid gap-4 md:grid-cols-2">
         {textBlock.map((feature, index) => (
           <article className="flex flex-col" key={index}>
-            <Link href={feature.link} className="cursor-pointer">
+            <Link
+              href={feature.link}
+              className="cursor-pointer"
+              aria-label={feature.title}
+            >
               <div className="flex items-center mb-4 transition-transform duration-200 hover:scale-105 active:scale-95">
-                <div
-                  className="flex items-center justify-center w-10 h-10 text-white bg-teal-600 rounded-full"
-                  aria-hidden="true"
-                >
-                  {/* Render the FontAwesome icon */}
+                <div className="flex items-center justify-center w-10 h-10 text-white bg-teal-600 rounded-full">
                   <FontAwesomeIcon icon={iconMapping[feature.icon]} size="lg" />
                 </div>
                 <h3 className="ml-4 font-semibold">{feature.title}</h3>

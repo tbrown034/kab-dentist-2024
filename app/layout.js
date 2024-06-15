@@ -6,10 +6,25 @@ import { inter } from "./font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// Define static metadata for the site
 export const metadata = {
   title: "Keith Brown DDS - Naperville's Trusted Dentist",
   description:
-    "Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas.",
+    "Comprehensive dental care, including emergency services, provided by Keith Brown, D.D.S., serving Naperville and surrounding areas.",
+  openGraph: {
+    title: "Keith Brown DDS - Naperville's Trusted Dentist",
+    description:
+      "Comprehensive dental care, including emergency services, provided by Keith Brown, D.D.S., serving Naperville and surrounding areas.",
+    url: "https://www.keithbrowndds.com",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 800,
+        height: 600,
+        alt: "Keith Brown DDS",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -19,7 +34,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta
           name="description"
-          content="Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
+          content="Comprehensive dental care, including emergency services, provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
         />
         <meta
           property="og:title"
@@ -27,10 +42,12 @@ export default function RootLayout({ children }) {
         />
         <meta
           property="og:description"
-          content="Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
+          content="Comprehensive dental care, including emergency services, provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
         />
         <meta property="og:image" content="/og-image.jpg" />
         <meta property="og:url" content="https://www.keithbrowndds.com" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
         className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
