@@ -48,7 +48,13 @@ const MapImgGroup = () => {
       <CarouselContent>
         {images.map((image) => (
           <CarouselItem key={image.id}>
-            <Image src={image.src} alt={image.alt} className="rounded-xl" />
+            <Image
+              width={800}
+              height={600}
+              src={image.src}
+              alt={image.alt}
+              className="rounded-xl"
+            />
           </CarouselItem>
         ))}
       </CarouselContent>
