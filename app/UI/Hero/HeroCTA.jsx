@@ -29,7 +29,6 @@ const HeroCTA = () => {
             Call Us
           </button>
           <CallDialog
-            buttonName="Call Us"
             openExternal={isCallDialogOpen}
             onExternalClose={closeCallDialog}
           />
