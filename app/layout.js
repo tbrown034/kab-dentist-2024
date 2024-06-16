@@ -50,36 +50,21 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta
-          name="description"
-          content="Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
-        />
-        <meta
-          property="og:title"
-          content="Keith Brown DDS - Naperville's Trusted Dentist"
-        />
+        <meta name="description" content={metadata.description} />
+        <meta property="og:title" content={metadata.openGraph.title} />
         <meta
           property="og:description"
-          content="Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
+          content={metadata.openGraph.description}
         />
-        <meta
-          property="og:image"
-          content={`${metadataBase.href}/og-image.jpg`}
-        />
-        <meta property="og:url" content={metadataBase.href} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Keith Brown DDS - Naperville's Trusted Dentist"
-        />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta name="twitter:card" content={metadata.twitter.card} />
+        <meta name="twitter:title" content={metadata.twitter.title} />
         <meta
           name="twitter:description"
-          content="Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas."
+          content={metadata.twitter.description}
         />
-        <meta
-          name="twitter:image"
-          content={`${metadataBase.href}/twitter-image.jpg`}
-        />
+        <meta name="twitter:image" content={metadata.twitter.images[0].url} />
       </head>
       <body
         className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
