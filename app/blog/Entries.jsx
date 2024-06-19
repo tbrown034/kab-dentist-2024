@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import blogContent from "./blogContent.json";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -58,6 +57,7 @@ const Entries = () => {
                     layout="fill"
                     objectFit="cover"
                     className="rounded-full"
+                    loading="lazy"
                   />
                   <AvatarFallback>KB</AvatarFallback>
                 </Avatar>

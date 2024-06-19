@@ -4,6 +4,8 @@ const links = [
   { href: "/#locationSection", label: "Location" },
   { href: "/dentalservices", label: "Services" },
   { href: "/#appointmentSection", label: "Appointments" },
+  { href: "/blog", label: "Blog" },
+
   { href: "/emergency", label: "Emergency" },
 ];
 

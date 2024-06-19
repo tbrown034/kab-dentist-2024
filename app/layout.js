@@ -6,17 +6,19 @@ import { inter } from "./font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const metadataBase = new URL("https://www.keithbrowndds.com");
+const metadataBase = new URL("https://keithbrowndds.com");
 
 export const metadata = {
-  title: "Keith Brown DDS - Naperville's Trusted Dentist",
+  title:
+    "Keith Brown DDS - Comprehensive and Emergency Dental Care in Naperville",
   description:
-    "Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas.",
-  metadataBase, // Add this line
+    "Visit Keith Brown, DDS for trusted dental care in Naperville. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
+  metadataBase,
   openGraph: {
-    title: "Keith Brown DDS - Naperville's Trusted Dentist",
+    title:
+      "Keith Brown DDS - Comprehensive and Emergency Dental Care in Naperville",
     description:
-      "Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas.",
+      "Visit Keith Brown, DDS for trusted dental care in Naperville. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
     url: metadataBase.href,
     siteName: "Keith Brown DDS",
     images: [
@@ -24,7 +26,7 @@ export const metadata = {
         url: new URL("/og-image.jpg", metadataBase).href,
         width: 800,
         height: 600,
-        alt: "Keith Brown DDS",
+        alt: "Keith Brown DDS - Comprehensive and Emergency Dental Care",
       },
     ],
     locale: "en_US",
@@ -33,13 +35,14 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@yourTwitterHandle",
-    title: "Keith Brown DDS - Naperville's Trusted Dentist",
+    title:
+      "Keith Brown DDS - Comprehensive and Emergency Dental Care in Naperville",
     description:
-      "Comprehensive dental care provided by Keith Brown, D.D.S., serving Naperville and surrounding areas.",
+      "Visit Keith Brown, DDS for trusted dental care in Naperville. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
     images: [
       {
         url: new URL("/twitter-image.jpg", metadataBase).href,
-        alt: "Keith Brown DDS",
+        alt: "Keith Brown DDS - Comprehensive and Emergency Dental Care",
       },
     ],
   },
@@ -65,6 +68,9 @@ export default function RootLayout({ children }) {
           content={metadata.twitter.description}
         />
         <meta name="twitter:image" content={metadata.twitter.images[0].url} />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href={metadataBase.href} />
       </head>
       <body
         className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
