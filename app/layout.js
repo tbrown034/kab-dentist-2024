@@ -32,20 +32,6 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@yourTwitterHandle",
-    title:
-      "Keith Brown DDS - Comprehensive and Emergency Dental Care in Naperville",
-    description:
-      "Visit Keith Brown, DDS for trusted dental care in Naperville. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
-    images: [
-      {
-        url: new URL("/twitter-image.jpg", metadataBase).href,
-        alt: "Keith Brown DDS - Comprehensive and Emergency Dental Care",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({ children }) {
@@ -61,13 +47,6 @@ export default function RootLayout({ children }) {
         />
         <meta property="og:image" content={metadata.openGraph.images[0].url} />
         <meta property="og:url" content={metadata.openGraph.url} />
-        <meta name="twitter:card" content={metadata.twitter.card} />
-        <meta name="twitter:title" content={metadata.twitter.title} />
-        <meta
-          name="twitter:description"
-          content={metadata.twitter.description}
-        />
-        <meta name="twitter:image" content={metadata.twitter.images[0].url} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href={metadataBase.href} />
