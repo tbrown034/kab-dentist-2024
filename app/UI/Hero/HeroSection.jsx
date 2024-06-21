@@ -24,20 +24,16 @@ const HeroSection = () => {
             </>
           )}
         </h1>
-        <div className="">
-          <h2 className="text-xl font-medium md:text-2xl xl:text-3xl ">
-            For decades,{" "}
-            <Link
-              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
-              href="#doctorSection"
-            >
-              Dr. Keith A. Brown DDS, FAGD
-            </Link>{" "}
-            has provided expert care for Naperville and the Chicagoland area.
-            Start your journey towards excellent care today!
-          </h2>
-          <p className=""></p>
-        </div>
+        <h2 className="text-xl font-medium md:text-2xl xl:text-3xl ">
+          <Link
+            className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+            href="#doctorSection"
+          >
+            Dr. Keith A. Brown DDS, FAGD
+          </Link>{" "}
+          has provided expert care for Naperville and the Chicagoland area.
+          Start your journey towards excellent care today!
+        </h2>
         <HeroCTA />
       </div>
       <div className="flex flex-col justify-center md:w-2/5">

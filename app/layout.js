@@ -11,20 +11,22 @@ const metadataBase = new URL("https://keithbrowndds.com");
 
 export const metadata = {
   title:
-    "Keith Brown DDS - Comprehensive and Emergency Dental Care in Naperville",
+    "Keith Brown DDS, FAGD | Naperville's Trusted Family & Emergency Dentist",
   description:
-    "Visit Keith Brown, DDS for trusted dental care in Naperville. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
+    "Visit Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
+  keywords:
+    "Keith Brown, DDS, FAGD, Keith A. Brown, dentist, emergency, Chicagoland, Aurora, Bolingbrook, weekend, weekend dentist, urgent dental, Naperville",
   metadataBase,
   openGraph: {
     title:
-      "Keith Brown DDS - Comprehensive and Emergency Dental Care in Naperville",
+      "Keith Brown DDS, FAGD | Naperville's Trusted Family & Emergency Dentist",
     description:
-      "Visit Keith Brown, DDS for trusted dental care in Naperville. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
+      "Visit Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
     url: metadataBase.href,
     siteName: "Keith Brown DDS",
     images: [
       {
-        url: new URL("/og-image.jpg", metadataBase).href,
+        url: `${metadataBase.href}/og-image.jpg`,
         width: 800,
         height: 600,
         alt: "Keith Brown DDS - Comprehensive and Emergency Dental Care",
@@ -36,22 +38,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  console.log("GA Measurement ID:", process.env.NEXT_PUBLIC_MEASUREMENT_ID); // Check if the ID is loaded correctly
   return (
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="description" content={metadata.description} />
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href={metadataBase.href} />
       </head>
       <body
         className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}

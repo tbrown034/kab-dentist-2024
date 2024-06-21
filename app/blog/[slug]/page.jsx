@@ -1,0 +1,96 @@
+import React from "react";
+import { notFound } from "next/navigation";
+import blogContent from "../blogContent.json";
+import { raleway } from "../../font.js";
+import Image from "next/image";
+import Link from "next/link";
+
+export async function generateStaticParams() {
+  return blogContent.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+const BlogPostPage = ({ params }) => {
+  const { slug } = params;
+
+  // Find the blog post based on the slug
+  const post = blogContent.find((item) => item.slug === slug);
+
+  if (!post) {
+    return notFound();
+  }
+
+  return (
+    <section className="flex flex-col gap-6 px-4 mt-8">
+      <h1
+        className={`${raleway.className} text-3xl md:text-4xl font-extrabold tracking-tight text-teal-900`}
+      >
+        {post.headline}
+      </h1>
+      <p className="text-xl text-teal-700 capitalize">{post.subhead}</p>
+      <div className="flex items-center gap-4 mt-2 text-gray-600">
+        <Image
+          src="/images/doctor/avatar.jpeg"
+          alt="Dr. Keith A. Brown"
+          width={40}
+          height={40}
+          className="rounded-full"
+        />
+        <div>
+          <p className="text-lg">By {post.author}</p>
+          <p className="text-sm">{new Date(post.date).toLocaleDateString()}</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2 mt-4">
+        {post.tags.map((tag, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 text-sm font-medium text-white bg-teal-600 rounded-full"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+      <article className="text-lg prose text-teal-800 max-w-none">
+        {post.body.split("\n\n").map((paragraph, index) => (
+          <p key={index} className="mb-4">
+            {paragraph}
+          </p>
+        ))}
+      </article>
+      {post.further_reading && post.further_reading.length > 0 && (
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold text-teal-800">Further Reading</h2>
+          <ul className="list-disc list-inside">
+            {post.further_reading.map((item, index) => (
+              <li key={index}>
+                <Link
+                  href={item.url}
+                  className="text-teal-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <div className="flex gap-4 mt-6">
+        <Link
+          href="/blog"
+          className="px-4 py-2 text-white bg-teal-700 rounded-lg"
+        >
+          Back to Blog
+        </Link>
+        <Link href="/" className="px-4 py-2 text-white bg-teal-700 rounded-lg">
+          Back to Home
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default BlogPostPage;
