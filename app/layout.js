@@ -5,6 +5,7 @@ import EmergencyBanner from "./UI/Other/EmergencyBanner";
 import { inter } from "./font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const metadataBase = new URL("https://keithbrowndds.com");
 
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
         <EmergencyBanner />
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics gaId="G-SYZ1GNH4F" />
       </body>
     </html>
   );
