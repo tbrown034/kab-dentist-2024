@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import careCredit from "../../../public/images/logos/careCredit.png";
-import cityBenefits from "../../../public/images/logos/cityBenefits.png";
 
 const FinancialPills = () => {
   return (

@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
         <EmergencyBanner />
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId="G-SYZ1GNH4F" />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       </body>
     </html>
   );
