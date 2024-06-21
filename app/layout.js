@@ -36,6 +36,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  console.log("GA Measurement ID:", process.env.NEXT_PUBLIC_MEASUREMENT_ID); // Check if the ID is loaded correctly
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -61,7 +62,7 @@ export default function RootLayout({ children }) {
         <EmergencyBanner />
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID} />
       </body>
     </html>
   );
