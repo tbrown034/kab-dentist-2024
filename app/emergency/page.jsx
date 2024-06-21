@@ -55,7 +55,7 @@ const Page = () => {
         <meta property="og:site_name" content="Keith Brown DDS" />
       </Head>
       <div className="flex flex-col gap-8 mt-6">
-        <div
+        <h1
           className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
         >
           <FullTitle
@@ -63,7 +63,7 @@ const Page = () => {
             highlightedText={highlightedText}
             highlightInFront={highlightInFront}
           />
-        </div>
+        </h1>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
             <h3 className="flex flex-col justify-center gap-2 text-xl md:text-2xl xl:text-3xl xl:gap-10 md:gap-6 lg:gap-8">
