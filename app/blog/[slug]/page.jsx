@@ -14,15 +14,44 @@ export async function generateStaticParams() {
 const BlogPostPage = ({ params }) => {
   const { slug } = params;
 
-  // Find the blog post based on the slug
   const post = blogContent.find((item) => item.slug === slug);
 
   if (!post) {
     return notFound();
   }
 
+  const metadata = {
+    title: `${post.headline} | Keith Brown DDS`,
+    description: post.subhead,
+    keywords: post.tags.join(", "),
+    openGraph: {
+      title: post.headline,
+      description: post.subhead,
+      url: `https://keithbrowndds.com/blog/${post.slug}`,
+      siteName: "Keith Brown DDS",
+      images: [
+        {
+          url: "https://keithbrowndds.com/og-blog.jpg",
+          width: 800,
+          height: 600,
+          alt: post.headline,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+    },
+  };
+
   return (
     <section className="flex flex-col gap-6 px-4 mt-8 dark:bg-gray-800 dark:text-gray-100">
+      <div className="flex items-center justify-between mb-4">
+        <Link
+          href="/blog"
+          className="text-teal-700 hover:underline dark:text-teal-400"
+        >
+          &larr; Back to Blog
+        </Link>
+      </div>
       <h1
         className={`${raleway.className} text-3xl md:text-4xl font-extrabold tracking-tight text-teal-900 dark:text-gray-100`}
       >
@@ -45,14 +74,9 @@ const BlogPostPage = ({ params }) => {
         </div>
       </div>
       <div className="flex flex-wrap gap-2 mt-4">
-        {post.tags.map((tag, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 text-sm font-medium text-white bg-teal-600 rounded-full dark:bg-teal-500 dark:text-gray-800"
-          >
-            {tag}
-          </span>
-        ))}
+        <span className="px-3 py-1 text-sm font-medium text-white bg-teal-600 rounded-full dark:bg-teal-500 dark:text-gray-800">
+          {post.category}
+        </span>
       </div>
       <article className="text-lg prose text-teal-800 max-w-none dark:prose-dark dark:text-gray-300">
         {post.body.split("\n\n").map((paragraph, index) => (

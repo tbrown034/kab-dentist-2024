@@ -7,18 +7,21 @@ import Link from "next/link";
 
 const Entries = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [sortOrder, setSortOrder] = useState("desc");
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value.toLowerCase());
   };
 
-  const handleFilterClick = (filter) => {
-    setSelectedFilters((prevFilters) =>
-      prevFilters.includes(filter)
-        ? prevFilters.filter((f) => f !== filter)
-        : [...prevFilters, filter]
+  const handleCategoryClick = (category) => {
+    setSelectedCategory((prevCategory) =>
+      prevCategory === category ? "" : category
     );
+  };
+
+  const handleSortChange = (event) => {
+    setSortOrder(event.target.value);
   };
 
   const getFilteredPosts = () => {
@@ -29,31 +32,18 @@ const Entries = () => {
         post.tags.some((tag) => tag.toLowerCase().includes(searchTerm)) ||
         post.category.toLowerCase().includes(searchTerm);
 
-      const matchesFilters =
-        selectedFilters.length === 0 ||
-        selectedFilters.every(
-          (filter) => post.tags.includes(filter) || post.category === filter
-        );
+      const matchesCategory =
+        !selectedCategory || post.category === selectedCategory;
 
-      return matchesSearchTerm && matchesFilters;
+      return matchesSearchTerm && matchesCategory;
     });
 
-    return filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    return filteredPosts.sort((a, b) =>
+      sortOrder === "desc"
+        ? new Date(b.date) - new Date(a.date)
+        : new Date(a.date) - new Date(b.date)
+    );
   };
-
-  const uniqueTags = useMemo(() => {
-    const tagCounts = blogContent.reduce((acc, post) => {
-      post.tags.forEach((tag) => {
-        acc[tag] = (acc[tag] || 0) + 1;
-      });
-      return acc;
-    }, {});
-
-    return Object.entries(tagCounts)
-      .sort(([, a], [, b]) => b - a)
-      .slice(0, 12)
-      .map(([tag]) => tag);
-  }, []);
 
   const uniqueCategories = useMemo(() => {
     const categoryCounts = blogContent.reduce((acc, post) => {
@@ -63,7 +53,7 @@ const Entries = () => {
 
     return Object.entries(categoryCounts)
       .sort(([, a], [, b]) => b - a)
-      .slice(0, 12)
+      .slice(0, 10)
       .map(([category]) => category);
   }, []);
 
@@ -83,33 +73,33 @@ const Entries = () => {
           </button>
         </div>
         <div className="flex flex-wrap gap-2">
-          {uniqueTags.map((tag, index) => (
-            <button
-              key={index}
-              onClick={() => handleFilterClick(tag)}
-              className={`px-4 py-2 border rounded-lg ${
-                selectedFilters.includes(tag)
-                  ? "bg-gray-200 dark:bg-gray-400 text-teal-700"
-                  : "bg-white text-teal-700"
-              }`}
-            >
-              {tag} {selectedFilters.includes(tag) && <span>&times;</span>}
-            </button>
-          ))}
           {uniqueCategories.map((category, index) => (
             <button
               key={index}
-              onClick={() => handleFilterClick(category)}
+              onClick={() => handleCategoryClick(category)}
               className={`px-4 py-2 border rounded-lg ${
-                selectedFilters.includes(category)
+                selectedCategory === category
                   ? "bg-teal-200 text-teal-700"
                   : "bg-white text-teal-700"
               }`}
             >
-              {category}{" "}
-              {selectedFilters.includes(category) && <span>&times;</span>}
+              {category} {selectedCategory === category && <span>&times;</span>}
             </button>
           ))}
+        </div>
+        <div className="flex items-center gap-2">
+          <label htmlFor="sortOrder" className="text-teal-700">
+            Sort by Date:
+          </label>
+          <select
+            id="sortOrder"
+            value={sortOrder}
+            onChange={handleSortChange}
+            className="px-4 py-2 border rounded-lg"
+          >
+            <option value="desc">Newest First</option>
+            <option value="asc">Oldest First</option>
+          </select>
         </div>
       </div>
       <div className="grid gap-8 lg:grid-cols-2">
@@ -120,7 +110,10 @@ const Entries = () => {
           >
             <div className="flex items-center justify-between mb-5 text-gray-400">
               <span className="bg-gray-200 text-teal-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
-                <Link href={`/categories/${post.category}`}>
+                <Link
+                  href={`/blog?category=${post.category}`}
+                  onClick={() => handleCategoryClick(post.category)}
+                >
                   {post.category}
                 </Link>
               </span>
