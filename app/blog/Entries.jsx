@@ -1,23 +1,128 @@
-"use client";
+import React, { useState, useMemo } from "react";
 import blogContent from "./blogContent.json";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import drAvatar from "../../public/images/doctor/avatar.jpeg";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const Entries = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value.toLowerCase());
+  };
+
+  const handleFilterClick = (filter) => {
+    setSelectedFilters((prevFilters) =>
+      prevFilters.includes(filter)
+        ? prevFilters.filter((f) => f !== filter)
+        : [...prevFilters, filter]
+    );
+  };
+
+  const getFilteredPosts = () => {
+    const filteredPosts = blogContent.filter((post) => {
+      const matchesSearchTerm =
+        post.headline.toLowerCase().includes(searchTerm) ||
+        post.subhead.toLowerCase().includes(searchTerm) ||
+        post.tags.some((tag) => tag.toLowerCase().includes(searchTerm)) ||
+        post.category.toLowerCase().includes(searchTerm);
+
+      const matchesFilters =
+        selectedFilters.length === 0 ||
+        selectedFilters.every(
+          (filter) => post.tags.includes(filter) || post.category === filter
+        );
+
+      return matchesSearchTerm && matchesFilters;
+    });
+
+    return filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  };
+
+  const uniqueTags = useMemo(() => {
+    const tagCounts = blogContent.reduce((acc, post) => {
+      post.tags.forEach((tag) => {
+        acc[tag] = (acc[tag] || 0) + 1;
+      });
+      return acc;
+    }, {});
+
+    return Object.entries(tagCounts)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 12)
+      .map(([tag]) => tag);
+  }, []);
+
+  const uniqueCategories = useMemo(() => {
+    const categoryCounts = blogContent.reduce((acc, post) => {
+      acc[post.category] = (acc[post.category] || 0) + 1;
+      return acc;
+    }, {});
+
+    return Object.entries(categoryCounts)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 12)
+      .map(([category]) => category);
+  }, []);
+
   return (
     <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      <div className="flex flex-col gap-4 mb-6">
+        <div className="flex w-full gap-2">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="flex-grow px-4 py-2 border rounded-lg"
+          />
+          <button className="px-4 py-2 text-white bg-teal-700 rounded-lg">
+            Search
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {uniqueTags.map((tag, index) => (
+            <button
+              key={index}
+              onClick={() => handleFilterClick(tag)}
+              className={`px-4 py-2 border rounded-lg ${
+                selectedFilters.includes(tag)
+                  ? "bg-gray-200 dark:bg-gray-400 text-teal-700"
+                  : "bg-white text-teal-700"
+              }`}
+            >
+              {tag} {selectedFilters.includes(tag) && <span>&times;</span>}
+            </button>
+          ))}
+          {uniqueCategories.map((category, index) => (
+            <button
+              key={index}
+              onClick={() => handleFilterClick(category)}
+              className={`px-4 py-2 border rounded-lg ${
+                selectedFilters.includes(category)
+                  ? "bg-teal-200 text-teal-700"
+                  : "bg-white text-teal-700"
+              }`}
+            >
+              {category}{" "}
+              {selectedFilters.includes(category) && <span>&times;</span>}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="grid gap-8 lg:grid-cols-2">
-        {blogContent.map((post, index) => (
+        {getFilteredPosts().map((post, index) => (
           <article
             key={index}
             className="p-6 bg-teal-800 border border-gray-200 rounded-lg shadow-md dark:border-gray-700"
           >
             <div className="flex items-center justify-between mb-5 text-gray-400">
               <span className="bg-gray-200 text-teal-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
-                {post.category.charAt(0).toUpperCase() + post.category.slice(1)}
+                <Link href={`/categories/${post.category}`}>
+                  {post.category}
+                </Link>
               </span>
               <span className="text-sm text-gray-300 dark:text-gray-400">
                 {new Date(post.date).toLocaleDateString()}

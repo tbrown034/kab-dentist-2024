@@ -51,14 +51,14 @@ const HeroHighlights = ({ onPhoneClick }) => {
         Returning patients can call{" "}
         <Link
           href={`tel:${officeNumber}`}
-          className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+          className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
         >
           {officeNumber}
         </Link>
         . New patients or emergency cases can reach us at{" "}
         <Link
           href={`tel:${trackingNumber}`}
-          className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+          className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
         >
           {trackingNumber}
         </Link>

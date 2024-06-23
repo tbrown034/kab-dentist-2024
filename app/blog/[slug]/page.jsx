@@ -22,14 +22,16 @@ const BlogPostPage = ({ params }) => {
   }
 
   return (
-    <section className="flex flex-col gap-6 px-4 mt-8">
+    <section className="flex flex-col gap-6 px-4 mt-8 dark:bg-gray-800 dark:text-gray-100">
       <h1
-        className={`${raleway.className} text-3xl md:text-4xl font-extrabold tracking-tight text-teal-900`}
+        className={`${raleway.className} text-3xl md:text-4xl font-extrabold tracking-tight text-teal-900 dark:text-gray-100`}
       >
         {post.headline}
       </h1>
-      <p className="text-xl text-teal-700 capitalize">{post.subhead}</p>
-      <div className="flex items-center gap-4 mt-2 text-gray-600">
+      <p className="text-xl text-teal-700 capitalize dark:text-teal-400">
+        {post.subhead}
+      </p>
+      <div className="flex items-center gap-4 mt-2 text-gray-600 dark:text-gray-400">
         <Image
           src="/images/doctor/avatar.jpeg"
           alt="Dr. Keith A. Brown"
@@ -46,13 +48,13 @@ const BlogPostPage = ({ params }) => {
         {post.tags.map((tag, index) => (
           <span
             key={index}
-            className="px-3 py-1 text-sm font-medium text-white bg-teal-600 rounded-full"
+            className="px-3 py-1 text-sm font-medium text-white bg-teal-600 rounded-full dark:bg-teal-500 dark:text-gray-800"
           >
             {tag}
           </span>
         ))}
       </div>
-      <article className="text-lg prose text-teal-800 max-w-none">
+      <article className="text-lg prose text-teal-800 max-w-none dark:prose-dark dark:text-gray-300">
         {post.body.split("\n\n").map((paragraph, index) => (
           <p key={index} className="mb-4">
             {paragraph}
@@ -61,13 +63,15 @@ const BlogPostPage = ({ params }) => {
       </article>
       {post.further_reading && post.further_reading.length > 0 && (
         <div className="mt-6">
-          <h2 className="text-2xl font-bold text-teal-800">Further Reading</h2>
+          <h2 className="text-2xl font-bold text-teal-800 dark:text-gray-200">
+            Further Reading
+          </h2>
           <ul className="list-disc list-inside">
             {post.further_reading.map((item, index) => (
               <li key={index}>
                 <Link
                   href={item.url}
-                  className="text-teal-600 hover:underline"
+                  className="text-teal-600 hover:underline dark:text-teal-400"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -81,11 +85,14 @@ const BlogPostPage = ({ params }) => {
       <div className="flex gap-4 mt-6">
         <Link
           href="/blog"
-          className="px-4 py-2 text-white bg-teal-700 rounded-lg"
+          className="px-4 py-2 text-white bg-teal-700 rounded-lg dark:bg-teal-500"
         >
           Back to Blog
         </Link>
-        <Link href="/" className="px-4 py-2 text-white bg-teal-700 rounded-lg">
+        <Link
+          href="/"
+          className="px-4 py-2 text-white bg-teal-700 rounded-lg dark:bg-teal-500"
+        >
           Back to Home
         </Link>
       </div>

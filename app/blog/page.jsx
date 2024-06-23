@@ -65,7 +65,7 @@ export default function BlogPage() {
           />
         </h1>
         {textBlock.map((block, blockIndex) => (
-          <article key={blockIndex} className="flex flex-col gap-2 capitalize">
+          <article key={blockIndex} className="flex flex-col gap-2 ">
             <p>{block.text}</p>
           </article>
         ))}
