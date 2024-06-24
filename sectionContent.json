@@ -165,9 +165,9 @@
   },
 
   "emergencySection": {
-    "title": "Emergency Dentistry: Immediate Care, Any Hour",
-    "highlightedText": "Immediate Care, Any Hour",
-    "highlightInFront": false,
+    "title": "Emergency Dentistry: Weekend and After-Hour Care Available",
+    "highlightedText": "Emergency Dentistry:",
+    "highlightInFront": true,
     "textBlock": [
       {
         "text": "Dental emergencies don’t wait, and neither do we. Dr. Brown provides extended care hours for emergencies, including early mornings, evenings, and weekends."
@@ -219,7 +219,7 @@
     ]
   },
   "dentalServicesPage": {
-    "title": "Your New One-Stop Shop For All Your Dental Needs",
+    "title": "Your One-Stop Shop For All Your Dental Needs",
     "highlightedText": "Your One-Stop Shop",
     "highlightInFront": true,
     "textBlock": [
