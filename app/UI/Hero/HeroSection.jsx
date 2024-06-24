@@ -4,7 +4,7 @@ import HeroCTA from "./HeroCTA";
 import Link from "next/link";
 
 const HeroSection = () => {
-  const title = "Naperville's Home For Trusted, Modern Dentistry";
+  const title = "Naperville's Home For Modern, Trusted Dentistry";
   const highlightedText = "Trusted, Modern Dentistry";
   const highlightInFront = false;
 
