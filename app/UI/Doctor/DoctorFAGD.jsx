@@ -9,24 +9,25 @@ const DoctorFAGD = () => {
   const citation = "— Academy of General Dentistry";
 
   return (
-    <div className="flex flex-col gap-2 p-4 ">
+    <div className="flex flex-col gap-4 p-4 ">
       <h2 className="text-2xl font-bold">Not Your Average Dentist</h2>
       <p className="">
         Dr. Brown is among the elite{" "}
         <Link
           href="https://www.agd.org/education/awards-recognition/become-an-agd-fellow"
-          className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+          className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
         >
           6%
         </Link>{" "}
         of dentists in the U.S. to become a{" "}
         <Link
           href="https://www.agd.org/education/awards-recognition/become-an-agd-fellow"
-          className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+          className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
         >
-          Fellow of the Academy of General Dentistry (FAGD).<br></br>
-          <br></br>
+          Fellow of the Academy of General Dentistry (FAGD)
         </Link>
+        . This prestigious designation requires over 500 hours of continuing
+        education among other requirements.
       </p>
       <div className="flex flex-col items-center p-6 text-white bg-teal-800 rounded-lg shadow-inner ">
         <FontAwesomeIcon

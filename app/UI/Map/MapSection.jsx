@@ -22,19 +22,22 @@ const MapSection = () => {
           highlightInFront={highlightInFront}
         />
       </h2>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-4">
         <p>
           For over 30 years, our Naperville location has been dedicated to
           enhancing smiles, offering exceptional dental care from the scenic
           third-floor of{" "}
           <Link
             href="https://www.google.com/maps/place/Keith+A.+Brown,+DDS,+FAGD/@41.7477667,-88.16735,19z/data=!4m6!3m5!1s0x880e57ffb6eb6c69:0xbc5292dc03318948!8m2!3d41.7482219!4d-88.166756!16s%2Fg%2F1tfq57bq?entry=ttu"
-            className="font-semibold text-teal-700 underline hover:text-teal-500 active:text-teal-400"
+            className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-500 active:text-teal-400"
           >
             Naperville's Fifth Third Bank Building at Rickert Drive and 75th
             Street
           </Link>
           .
+        </p>
+        <p>
+          We offer free, designated parking and elevator access to our office.
         </p>
       </div>
       <div className="flex flex-row items-center gap-4 py-2">
@@ -42,7 +45,7 @@ const MapSection = () => {
           className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
           href="#appointmentSection"
         >
-          Book Now
+          Get Directions
         </Link>
         <button className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300">
           Copy Address

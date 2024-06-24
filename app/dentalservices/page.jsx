@@ -45,41 +45,35 @@ const DentalServices = () => {
     sectionContents.dentalServicesPage;
 
   if (!title || !textBlock || textBlock.length === 0) return null;
-
   return (
-    <section className="flex flex-col gap-8 px-4 mt-6">
-      <div className="flex flex-col gap-2">
-        <h1
-          className={`${raleway.className} text-3xl md:text-4xl font-extrabold tracking-tight`}
-        >
-          <FullTitle
-            title={title}
-            highlightedText={highlightedText}
-            highlightInFront={highlightInFront}
-          />
-        </h1>
+    <section className="flex flex-col gap-4 px-4 mt-6" id="servicesSection">
+      <h1
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+      >
+        <FullTitle
+          title={title}
+          highlightedText={highlightedText}
+          highlightInFront={highlightInFront}
+        />
+      </h1>
+      <div className="flex flex-col gap-4">
         {textBlock.map((block, blockIndex) => (
-          <div key={blockIndex} className="flex flex-col gap-2 text-lg">
-            <p>{block.text}</p>
-          </div>
+          <p key={blockIndex} className="text-lg">
+            {block.text}
+          </p>
         ))}
       </div>
-      <div className="flex flex-row items-center gap-2 mt-2 md:text-base">
+      <div className="flex flex-row items-center gap-4 py-2">
         <Link
           href="#browseServices"
-          className="p-4 text-white bg-teal-600 border-2 border-teal-600 rounded-xl md:p-4 xl:p-5 hover:bg-teal-500 active:bg-teal-400"
+          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
         >
           Browse Services
         </Link>
-        <Link
-          href="#docBot"
-          className="p-4 text-white bg-teal-900 border-2 border-teal-900 rounded-lg lg:text-lg hover:bg-teal-800 active:bg-teal-600"
-        >
-          Doc Bot
-        </Link>
+
         <Link
           href="/"
-          className="p-4 text-black bg-white border-2 border-black rounded-lg bg-teal-white hover:bg-gray-100 active:bg-gray-400"
+          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
         >
           Back to Home
         </Link>

@@ -46,9 +46,8 @@ const Page = () => {
 
   // Ensure there's content to display, otherwise return null
   if (!title || !textBlock || textBlock.length === 0) return null;
-
   return (
-    <div className="flex flex-col gap-8 mt-6">
+    <section className="flex flex-col gap-4 px-4 mt-6" id="emergencySection">
       <h1
         className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
@@ -59,19 +58,34 @@ const Page = () => {
         />
       </h1>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-4">
-          <h3 className="flex flex-col justify-center gap-2 text-xl md:text-2xl xl:text-3xl xl:gap-10 md:gap-6 lg:gap-8">
-            {textBlock.map((block, blockIndex) => (
-              <div key={blockIndex} className="flex flex-col lg:text-2xl">
-                <p>{block.text}</p>
-              </div>
-            ))}
-          </h3>
-          <EmergencyActions />
-        </div>
-        <div className="mx-4 mt-2" id="emergencyForm">
-          <EmergencyForm />
-        </div>
+        {textBlock.map((block, blockIndex) => (
+          <p key={blockIndex} className="text-lg">
+            {block.text}
+          </p>
+        ))}
+      </div>
+      <div className="flex flex-row items-center gap-4 py-2">
+        <Link
+          href="#emergencyForm"
+          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+        >
+          Emergency Form
+        </Link>
+        <Link
+          href="#emergencyFAQs"
+          className="p-2 text-sm text-white bg-teal-900 border-2 border-teal-900 rounded-lg hover:bg-teal-800 active:bg-teal-600"
+        >
+          Emergency FAQs
+        </Link>
+        <Link
+          href="/"
+          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
+        >
+          Back to Home
+        </Link>
+      </div>
+      <div className="mx-4 mt-2" id="emergencyForm">
+        <EmergencyForm />
       </div>
       <div id="faqSection">
         <EmergencyFAQs />
@@ -87,7 +101,7 @@ const Page = () => {
           Back Home
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

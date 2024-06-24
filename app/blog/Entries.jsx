@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useMemo } from "react";
 import blogContent from "./blogContent.json";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -79,7 +80,7 @@ const Entries = () => {
               onClick={() => handleCategoryClick(category)}
               className={`px-4 py-2 border rounded-lg ${
                 selectedCategory === category
-                  ? "bg-teal-200 text-teal-700"
+                  ? "bg-gray-300 text-teal-800"
                   : "bg-white text-teal-700"
               }`}
             >
@@ -88,14 +89,14 @@ const Entries = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <label htmlFor="sortOrder" className="text-teal-700">
-            Sort by Date:
+          <label htmlFor="sortOrder" className="font-semibold">
+            Sort:
           </label>
           <select
             id="sortOrder"
             value={sortOrder}
             onChange={handleSortChange}
-            className="px-4 py-2 border rounded-lg"
+            className="px-4 py-2 border rounded-lg dark:text-black"
           >
             <option value="desc">Newest First</option>
             <option value="asc">Oldest First</option>

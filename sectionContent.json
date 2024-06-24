@@ -67,10 +67,7 @@
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "With over four decades of experience, Dr. Keith A. Brown, DDS, FAGD, is a trusted name in Naperville, delivering unmatched expertise and personalized dental care."
-      },
-      {
-        "text": "Dr. Brown embraces the latest advancements in dentistry, delivering an exceptional, personalized dental experience."
+     "text": "With over four decades of experience, Dr. Keith A. Brown, DDS, FAGD, is a trusted name in Naperville, delivering unmatched expertise and personalized dental care.\n\nA Chicagoland native, Dr. Brown graduated from Naperville's North Central College and is a member of the [American Dental Association](https://www.ada.org/), the [Chicago Dental Society](https://www.cds.org/), and the [American Equilibration Society](https://www.aes-tmj.org/)."
       }
     ],
     "bottomTextBlock": []
@@ -148,6 +145,10 @@
     "textBlock": [
       {
         "text": "Our practice offers a wide range of dental services, from routine checkups to advanced restorative and cosmetic treatments, all tailored to your specific oral health needs."
+
+      },
+      {
+        "text": "If it can be done, we can likely do it. "
       }
     ]
   },
@@ -159,6 +160,7 @@
       {
         "text": "Embark on your journey to a healthier, happier smile with our easy online scheduling. We ensure top-tier dental care with unmatched patient convenience."
       }
+
     ]
   },
 
@@ -168,10 +170,10 @@
     "highlightInFront": false,
     "textBlock": [
       {
-        "text": "Dental emergencies don’t wait, and neither do we. Dr. Brown provides extended care hours for emergencies, including early mornings, evenings, and weekends. Specific availability may vary, so submitting an emergency form or calling is the fastest way to receive help."
+        "text": "Dental emergencies don’t wait, and neither do we. Dr. Brown provides extended care hours for emergencies, including early mornings, evenings, and weekends."
       },
       {
-        "text": "Your request is instantly sent to Dr. Brown, who will evaluate your situation based on the information provided and decide on the best immediate action, which may include a direct call, prescription, or arranging a same-day visit."
+        "text": "Specific availability may vary, so calling or submitting an emergency form is the fastest way to receive help. Once Dr. Brown is notified, we'll set up a free consulation."
       }
     ],
     "FAQ": [
@@ -202,26 +204,30 @@
     ]
   },
   "blog": {
-    "title": "From the Desk of Keith A. Brown DDS",
-    "highlightedText": "Keith A. Brown DDS",
-    "highlightInFront": false,
+    "title": "From the Desk of Keith Brown DDS | A Dental Health Blog",
+    "highlightedText": "From the Desk of Keith Brown DDS",
+    "highlightInFront": true,
     "textBlock": [
       {
-        "text": "With over 40 years of experience in the field, I have learned a great deal about taking care of your teeth. In this occasional blog series, you'll find valuable tips, the latest news, and expert advice to help you maintain a healthy smile. Read on for insights and guidance on all things dental!"
+        "text": "With over 40 years of experience in the field, I have learned a great deal about taking care of your teeth."
+
+      },
+      {
+        "text": "In this occasional blog series, you'll find valuable tips, the latest news, and expert advice to help you maintain a healthy smile!"
 
       }
     ]
   },
   "dentalServicesPage": {
-    "title": "Your One-Stop Dental Care Center",
-    "highlightedText": "Your One-Stop",
+    "title": "Your New One-Stop Shop For All Your Dental Needs",
+    "highlightedText": "Your One-Stop Shop",
     "highlightInFront": true,
     "textBlock": [
       {
-        "text": "We offer everything from emergency dental care to cosmetic procedures like Invisalign, as well as general checkups, extractions, and more. Our goal is to provide comprehensive dental services to meet all your needs in one place."
+        "text": "We provide a full range of dental services, from emergency care to cosmetic procedures, along with general checkups, extractions and more. Our goal is to offer all the dental care you need in one place."
       },
       {
-        "text": "If you have more questions please give us a call at (630) 296-0589 or try out our experimental AI Doc Bot*."
+        "text": "Browse our services below. If you don't see what you need, contact us to learn more."
       }
     ]
   }

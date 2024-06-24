@@ -2,6 +2,7 @@ import Entries from "./Entries";
 import sectionContents from "../../sectionContent.json";
 import FullTitle from "../UI/Other/FullTitle";
 import { raleway } from "../font.js";
+import Link from "next/link";
 
 export const metadata = {
   title: "Blog | Keith Brown DDS",
@@ -16,9 +17,8 @@ export default function BlogPage() {
     sectionContents.blog;
 
   if (!title || !textBlock || textBlock.length === 0) return null;
-
   return (
-    <section className="flex flex-col gap-4 mt-6" id="blogSection">
+    <section className="flex flex-col gap-4 px-4 mt-6" id="blogSection">
       <h1
         className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
@@ -28,11 +28,14 @@ export default function BlogPage() {
           highlightInFront={highlightInFront}
         />
       </h1>
-      {textBlock.map((block, blockIndex) => (
-        <article key={blockIndex} className="flex flex-col gap-2">
-          <p>{block.text}</p>
-        </article>
-      ))}
+      <p className="flex flex-col gap-4">
+        {textBlock.map((block, blockIndex) => (
+          <p key={blockIndex} className="text-lg">
+            {block.text}
+          </p>
+        ))}
+      </p>
+
       <Entries />
     </section>
   );

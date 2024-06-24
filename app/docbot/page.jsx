@@ -1,50 +1,86 @@
 import React from "react";
+import { raleway } from "../font";
+import FullTitle from "../UI/Other/FullTitle";
 import DocBot from "../dentalservices/DocBot";
-import Head from "next/head";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Meet DocBot | Virtual Dental Assistant | Keith Brown DDS",
+  description:
+    "Meet DocBot, your virtual dental assistant at Keith Brown DDS. Get instant answers to your dental questions and learn more about our services in Naperville.",
+  keywords:
+    "virtual dental assistant, DocBot, Keith Brown DDS, dental services, dental care",
+  openGraph: {
+    title: "Meet DocBot | Virtual Dental Assistant | Keith Brown DDS",
+    description:
+      "Meet DocBot, your virtual dental assistant at Keith Brown DDS. Get instant answers to your dental questions and learn more about our services in Naperville.",
+    url: "https://keithbrowndds.com/docbot",
+    images: [
+      {
+        url: "https://keithbrowndds.com/og-docbot.jpg",
+        width: 800,
+        height: 600,
+        alt: "Keith Brown DDS - Virtual Dental Assistant",
+      },
+    ],
+    site_name: "Keith Brown DDS",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meet DocBot | Virtual Dental Assistant | Keith Brown DDS",
+    description:
+      "Meet DocBot, your virtual dental assistant at Keith Brown DDS. Get instant answers to your dental questions and learn more about our services in Naperville.",
+    image: "https://keithbrowndds.com/twitter-docbot.jpg",
+  },
+};
 
 const DocBotPage = () => {
+  const title = "Meet DocBot, Your Virtual Dental Assistant";
+  const highlightedText = "Meet DocBot";
+  const textBlock = [
+    {
+      text: "Get instant answers to your dental questions and learn more about the services offered at Keith Brown DDS in Naperville.",
+    },
+  ];
+
   return (
-    <>
-      <Head>
-        <title>DocBot - Virtual Dental Assistant | Keith Brown DDS</title>
-        <meta
-          name="description"
-          content="Meet DocBot, your virtual dental assistant. Get instant answers to your dental questions and find out more about our services at Keith Brown DDS in Naperville."
+    <section className="flex flex-col gap-4 px-4 mt-6" id="docBotSection">
+      <h1
+        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+      >
+        <FullTitle
+          title={title}
+          highlightedText={highlightedText}
+          highlightInFront={true}
         />
-        <meta
-          name="keywords"
-          content="virtual dental assistant, DocBot, dental questions, Keith Brown DDS, Naperville dentist"
-        />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href="https://keithbrowndds.com/docbot" />
-        <meta
-          property="og:title"
-          content="DocBot - Virtual Dental Assistant | Keith Brown DDS"
-        />
-        <meta
-          property="og:description"
-          content="Meet DocBot, your virtual dental assistant. Get instant answers to your dental questions and find out more about our services at Keith Brown DDS in Naperville."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://keithbrowndds.com/docbot" />
-        <meta
-          property="og:image"
-          content="https://keithbrowndds.com/og-docbot.jpg"
-        />
-        <meta property="og:site_name" content="Keith Brown DDS" />
-      </Head>
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-50 dark:bg-gray-800">
-        <h1 className="mb-4 text-4xl font-extrabold text-center text-teal-600 dark:text-teal-400">
-          Meet DocBot, Your Virtual Dental Assistant
-        </h1>
-        <p className="mb-8 text-lg text-center text-gray-700 dark:text-gray-200">
-          Get instant answers to your dental questions and learn more about the
-          services offered at Keith Brown DDS in Naperville.
-        </p>
+      </h1>
+      <div className="flex flex-col gap-4">
+        {textBlock.map((block, blockIndex) => (
+          <p key={blockIndex} className="text-lg">
+            {block.text}
+          </p>
+        ))}
+      </div>
+      <div className="flex flex-row items-center gap-4 py-2">
+        <Link
+          href="/dentalservices"
+          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+        >
+          Browse Services
+        </Link>
+        <Link
+          href="/"
+          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
+        >
+          Back to Home
+        </Link>
+      </div>
+      <div className="flex justify-center w-full p-8">
         <DocBot />
       </div>
-    </>
+    </section>
   );
 };
 

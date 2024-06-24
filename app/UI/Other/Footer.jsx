@@ -3,6 +3,13 @@ import { faFacebookF, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { address, trackingNumber, officeNumber, email } from "@/lib/constants";
 
+const footerLinks = [
+  { href: "/#home", label: "Home" },
+  { href: "/dentalservices", label: "Dental Services" },
+  { href: "/emergency", label: "Emergency Care" },
+  { href: "/#appointmentSection", label: "Appointment" },
+];
+
 const Footer = () => {
   return (
     <footer className="px-10 py-12 text-gray-600 dark:text-gray-200 ">
@@ -31,21 +38,11 @@ const Footer = () => {
         </div>
         <div className="space-y-4">
           <h2 className="text-lg font-bold">Quick Links</h2>
-          <Link href="#home">
-            <span className="block hover:underline">Home</span>
-          </Link>
-          <Link href="#servicesSection">
-            <span className="block hover:underline">Dental Services</span>
-          </Link>
-          <Link href="#servicesSection">
-            <span className="block hover:underline">Emergency Care</span>
-          </Link>
-          <Link href="#locationSection">
-            <span className="block hover:underline">Location</span>
-          </Link>
-          <Link href="#appointmentSection">
-            <span className="block hover:underline">Appointment</span>
-          </Link>
+          {footerLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span className="block hover:underline">{link.label}</span>
+            </Link>
+          ))}
         </div>
         <div className="space-y-4">
           <h2 className="text-lg font-bold">Follow Us</h2>
