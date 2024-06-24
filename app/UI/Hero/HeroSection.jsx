@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   const title = "Naperville's Home For Modern, Trusted Dentistry";
-  const highlightedText = "Trusted, Modern Dentistry";
+  const highlightedText = "Modern, Trusted Dentistry";
   const highlightInFront = false;
 
   return (

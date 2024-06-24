@@ -87,7 +87,7 @@ const Page = () => {
       <div className="mx-4 mt-2" id="emergencyForm">
         <EmergencyForm />
       </div>
-      <div id="faqSection">
+      <div id="emergencyFAQs">
         <EmergencyFAQs />
       </div>
       <div className="text-black dark:text-white">

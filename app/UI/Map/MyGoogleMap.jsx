@@ -1,9 +1,10 @@
-"use client";
+"use client"; // Ensures client-side rendering for the component
+
 import React, { useState, useCallback } from "react";
 import {
   APIProvider,
   Map,
-  AdvancedMarker, // Use AdvancedMarker for enhanced features
+  AdvancedMarker,
   InfoWindow,
 } from "@vis.gl/react-google-maps";
 
@@ -40,6 +41,7 @@ function MyGoogleMap() {
           onCameraChanged={handleCameraChange}
           style={{ width: "100%", height: "100%" }}
           mapId="d766611e3b68c09d" // Your custom Map ID
+          options={{ gestureHandling: "cooperative" }} // This option allows the map to handle gestures more cooperatively
         >
           <AdvancedMarker
             position={cameraProps.center}

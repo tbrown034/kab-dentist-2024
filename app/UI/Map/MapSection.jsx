@@ -1,3 +1,5 @@
+"use client"; // Ensures client-side rendering for the component
+
 import React from "react";
 import FullTitle from "@/app/UI/Other/FullTitle"; // Confirm this import path is correct
 import MapImgGroup from "./MapImgGroup";
@@ -6,7 +8,6 @@ import Link from "next/link";
 import { raleway } from "../../../app/font.js";
 
 const MapSection = () => {
-  // Hardcoded data for the section
   const title = "Welcoming You to Your Naperville Dental Home";
   const highlightedText = "Welcoming You";
   const highlightInFront = true;
@@ -24,7 +25,7 @@ const MapSection = () => {
       </h2>
       <div className="flex flex-col gap-4">
         <p>
-          For over 30 years, our Naperville location has been dedicated to
+          For over 40 years, our Naperville location has been dedicated to
           enhancing smiles, offering exceptional dental care from the scenic
           third-floor of{" "}
           <Link
@@ -47,7 +48,10 @@ const MapSection = () => {
         >
           Get Directions
         </Link>
-        <button className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300">
+        <button
+          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
+          onClick={copyAddressToClipboard}
+        >
           Copy Address
         </button>
       </div>
@@ -59,6 +63,16 @@ const MapSection = () => {
       </div>
     </section>
   );
+};
+
+const copyAddressToClipboard = async () => {
+  const address = "1296 Rickert Dr #300, Naperville, IL 60540";
+  try {
+    await navigator.clipboard.writeText(address);
+    alert("Address copied to clipboard!");
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+  }
 };
 
 export default MapSection;
