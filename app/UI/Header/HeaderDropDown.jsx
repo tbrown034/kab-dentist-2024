@@ -8,13 +8,14 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "/emergency", label: "Emergency/Urgent Care" },
-  { href: "/#doctorSection", label: "Meet the Doctor" },
-  { href: "/dentalservices", label: "Dental Services" },
-  { href: "/#locationSection", label: "Our Location" },
-  { href: "/#financialSection", label: "Affordable Care" },
-  { href: "/docbot", label: "Doc Bot" },
-  { href: "/blog", label: "From Dr. Brown's Desk" },
+  { href: "/emergency", label: "Emergency & Urgent Care" },
+  { href: "/dentalservices", label: " Services" },
+
+  { href: "/#doctorSection", label: "About" },
+
+  { href: "/#financialSection", label: "Insurance" },
+  { href: "/blog", label: "Blog" },
+  { href: "/docbot", label: "Virtual Dental Assistant" },
 ];
 
 function HeaderDropdown() {

@@ -67,7 +67,7 @@ const Entries = () => {
             placeholder="Search..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className="flex-grow px-4 py-2 border rounded-lg"
+            className="flex-grow px-4 py-2 border border-teal-800 rounded-lg"
           />
           <button className="px-4 py-2 text-white bg-teal-700 rounded-lg">
             Search
