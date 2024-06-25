@@ -24,7 +24,7 @@ export const metadata = {
         url: "https://keithbrowndds.com/og-dentalservices.jpg",
         width: 800,
         height: 600,
-        alt: "Keith Brown DDS - Comprehensive and Emergency Dental Care",
+        alt: "Dental Services - Naperville | Keith Brown DDS",
       },
     ],
     site_name: "Keith Brown DDS",
