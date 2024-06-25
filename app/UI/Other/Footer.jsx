@@ -7,6 +7,8 @@ const footerLinks = [
   { href: "/#home", label: "Home" },
   { href: "/dentalservices", label: "Dental Services" },
   { href: "/emergency", label: "Emergency Care" },
+  { href: "/docbot", label: "Digital Assistant" },
+
   { href: "/make-an-appointment", label: "Appointment" },
 ];
 

@@ -111,12 +111,7 @@ const Entries = () => {
           >
             <div className="flex items-center justify-between mb-5 text-gray-400">
               <span className="bg-gray-200 text-teal-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
-                <Link
-                  href={`/blog?category=${post.category}`}
-                  onClick={() => handleCategoryClick(post.category)}
-                >
-                  {post.category}
-                </Link>
+                {post.category}
               </span>
               <span className="text-sm text-gray-300 dark:text-gray-400">
                 {new Date(post.date).toLocaleDateString()}

@@ -8,12 +8,12 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "/emergency", label: "Emergency & Urgent Care" },
-  { href: "/dentalservices", label: " Services" },
-
   { href: "/#doctorSection", label: "About" },
-
+  { href: "/dentalservices", label: "  Dental Services" },
   { href: "/#financialSection", label: "Insurance" },
+  { href: "/emergency", label: "Emergencies" },
+  { href: "/emergency", label: "Make an Appoitment" },
+
   { href: "/blog", label: "Blog" },
   { href: "/docbot", label: "Virtual Dental Assistant" },
 ];
