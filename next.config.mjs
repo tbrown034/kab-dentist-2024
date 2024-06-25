@@ -1,5 +1,7 @@
 // @ts-check
 
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true, // Enables React's Strict Mode to catch potential issues in the app.
@@ -22,4 +24,6 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+})(nextConfig);
