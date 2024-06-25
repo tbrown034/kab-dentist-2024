@@ -164,6 +164,7 @@
     ]
   },
 
+
   "emergencySection": {
     "title": "Emergency Dentistry: Weekend and After-Hour Care Available",
     "highlightedText": "Emergency Dentistry:",
@@ -215,6 +216,18 @@
       {
         "text": "In this occasional blog series, you'll find valuable tips, the latest news, and expert advice to help you maintain a healthy smile!"
 
+      }
+    ]
+  },  "makeAnAppointmentSection": {
+    "title": "Make an Appointment: Schedule Your Visit Today",
+    "highlightedText": "Make an Appointment:",
+    "highlightInFront": true,
+    "textBlock": [
+      {
+        "text": "We look forward to seeing you! Dr. Brown and the team are dedicated to providing top-quality dental care for all our patients. Fill out the form below to schedule your appointment."
+      },
+      {
+        "text": "Please provide as much detail as possible to help us prepare for your visit. Once we receive your form, a member of our team will contact you to confirm your appointment."
       }
     ]
   },
