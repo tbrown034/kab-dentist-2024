@@ -2,7 +2,6 @@ import Entries from "./Entries";
 import sectionContents from "../../sectionContent.json";
 import FullTitle from "../UI/Other/FullTitle";
 import { raleway } from "../font.js";
-import Link from "next/link";
 
 export const metadata = {
   title: "Blog | Keith Brown DDS",
