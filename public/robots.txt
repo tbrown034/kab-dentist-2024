@@ -12,5 +12,4 @@ Allow: /maps/api/js
 Allow: /$rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService/GetViewportInfo
 Allow: /maps/api/js/StaticMapService.GetMapImage
 
-User-agent: *
 Sitemap: https://keithbrowndds.com/sitemap.xml
