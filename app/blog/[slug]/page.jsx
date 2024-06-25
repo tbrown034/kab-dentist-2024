@@ -11,16 +11,14 @@ export async function generateStaticParams() {
   }));
 }
 
-const BlogPostPage = ({ params }) => {
-  const { slug } = params;
-
-  const post = blogContent.find((item) => item.slug === slug);
+export async function generateMetadata({ params }) {
+  const post = blogContent.find((item) => item.slug === params.slug);
 
   if (!post) {
     return notFound();
   }
 
-  const metadata = {
+  return {
     title: `${post.headline} | Keith Brown DDS`,
     description: post.subhead,
     keywords: post.tags.join(", "),
@@ -41,6 +39,16 @@ const BlogPostPage = ({ params }) => {
       type: "article",
     },
   };
+}
+
+const BlogPostPage = ({ params }) => {
+  const { slug } = params;
+
+  const post = blogContent.find((item) => item.slug === slug);
+
+  if (!post) {
+    return notFound();
+  }
 
   return (
     <section className="flex flex-col gap-6 px-4 mt-8 dark:bg-gray-800 dark:text-gray-100">
