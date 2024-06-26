@@ -36,7 +36,14 @@ const DoctorSection = () => {
           >
             North Central College
           </Link>{" "}
-          and is a member of the{" "}
+          and{" "}
+          <Link
+            href="https://www.luc.edu/archives/schoolofdentistry/"
+            className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
+          >
+            Loyola's School of Dentistry
+          </Link>{" "}
+          in Maywood, IL. He is a member of the{" "}
           <Link
             href="https://www.ada.org/"
             className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
@@ -50,6 +57,13 @@ const DoctorSection = () => {
           >
             Chicago Dental Society
           </Link>{" "}
+          ,
+          <Link
+            href="https://www.aes-tmj.org/"
+            className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
+          >
+            American Equilibration Society
+          </Link>
           and the{" "}
           <Link
             href="https://www.aes-tmj.org/"

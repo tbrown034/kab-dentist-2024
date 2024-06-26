@@ -32,7 +32,7 @@ const HeroSection = () => {
             Dr. Keith A. Brown DDS, FAGD
           </Link>{" "}
           has provided expert care for Naperville and the Chicagoland area for
-          more than 30 years. Start your journey towards excellent care today!
+          more than 40 years. Start your journey towards excellent care today!
         </h2>
         <HeroCTA />
       </div>
