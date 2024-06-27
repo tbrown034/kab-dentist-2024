@@ -5,13 +5,13 @@ import DocBot from "../dentalservices/DocBot";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Meet DocBot | Virtual Dental Assistant | Keith Brown DDS",
+  title: "Virtual Dental Assistant | Dr. Keith Brown DDS",
   description:
     "Meet DocBot, your virtual dental assistant at Keith Brown DDS. Get instant answers to your dental questions and learn more about our services in Naperville.",
   keywords:
     "virtual dental assistant, DocBot, Keith Brown DDS, dental services, dental care",
   openGraph: {
-    title: "Meet DocBot | Virtual Dental Assistant | Keith Brown DDS",
+    title: "Virtual Dental Assistant | Dr. Keith Brown DDS",
     description:
       "Meet DocBot, your virtual dental assistant at Keith Brown DDS. Get instant answers to your dental questions and learn more about our services in Naperville.",
     url: "https://keithbrowndds.com/docbot",

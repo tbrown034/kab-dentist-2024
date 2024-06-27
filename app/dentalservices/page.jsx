@@ -9,13 +9,13 @@ import DocBot from "./DocBot";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Dental Services - Naperville | Keith Brown DDS",
+  title: "Dental Services - Naperville | Dr. Keith Brown DDS",
   description:
     "Explore the wide range of dental services offered by Keith Brown DDS in Naperville. From routine check-ups to advanced procedures, we provide comprehensive dental care for the whole family.",
   keywords:
     "dental services Naperville, comprehensive dental care, family dentist, routine check-ups, advanced dental procedures, Keith Brown DDS",
   openGraph: {
-    title: "Dental Services - Naperville | Keith Brown DDS",
+    title: "Dental Services - Naperville | Dr. Keith Brown DDS",
     description:
       "Explore the wide range of dental services offered by Keith Brown DDS in Naperville. From routine check-ups to advanced procedures, we provide comprehensive dental care for the whole family.",
     url: "https://keithbrowndds.com/dentalservices",

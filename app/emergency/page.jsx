@@ -6,16 +6,15 @@ import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import EmergencyFAQs from "./EmergencyFAQs";
 import Link from "next/link";
-import EmergencyActions from "./EmergencyActions";
 
 export const metadata = {
-  title: "Emergency Dental Services in Naperville | Keith Brown DDS",
+  title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
   description:
-    "Need emergency dental care in Naperville? Contact Keith Brown DDS for urgent dental services, including weekends. We're here to help you with your dental emergencies.",
+    "Need emergency dental care in Naperville? Contact Dr. Keith Brown DDS FAGD for urgent dental services, including weekends. We're here to help you with your dental emergencies.",
   keywords:
     "emergency dental care, urgent dental services, weekend dentist, dental emergency Naperville, Keith Brown DDS",
   openGraph: {
-    title: "Emergency Dental Services in Naperville | Keith Brown DDS",
+    title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
     description:
       "Need emergency dental care in Naperville? Contact Keith Brown DDS for urgent dental services, including weekends. We're here to help you with your dental emergencies.",
     url: "https://keithbrowndds.com/emergency",

@@ -7,13 +7,13 @@ import CallOptions from "./CallOptions";
 import { officeNumber, trackingNumber } from "@/lib/constants";
 
 export const metadata = {
-  title: "Call Us Now | Keith Brown DDS",
+  title: "Call Us Now | Dr. Keith Brown DDS",
   description:
     "Get in touch with Keith Brown DDS for all your dental needs. Call us now for immediate assistance.",
   keywords:
     "call now, contact, dentist, Keith Brown DDS, Naperville dental care",
   openGraph: {
-    title: "Call Us Now | Keith Brown DDS",
+    title: "Call Us Now | Dr. Keith Brown DDS",
     description:
       "Get in touch with Keith Brown DDS for all your dental needs. Call us now for immediate assistance.",
     url: "https://keithbrowndds.com/call-now",

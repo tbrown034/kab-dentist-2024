@@ -7,7 +7,7 @@ import sectionContents from "../../sectionContent.json";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Make an Appointment | Keith Brown DDS",
+  title: "Make an Appointment | Dr. Keith Brown DDS",
   description:
     "Schedule your appointment with Dr. Keith Brown, DDS, FAGD, today. Fill out the form to get started.",
   keywords: "appointment, dentist, Keith Brown DDS, Naperville, dental care",

@@ -10,18 +10,16 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const metadataBase = new URL("https://keithbrowndds.com");
 
 export const metadata = {
-  title:
-    "Keith Brown DDS, FAGD | Naperville's Trusted Family & Emergency Dentist",
+  title: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
   description:
-    "Visit Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
+    "Visit Dr. Keith Brown, DDS, FAGD's dental office for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
   keywords:
-    "Keith Brown, DDS, FAGD, Keith A. Brown, dentist, emergency, Chicagoland, Aurora, Bolingbrook, weekend, weekend dentist, urgent dental, Naperville",
+    "Keith Brown, DDS, FAGD, Keith A. Brown, dentist, emergency, Chicagoland, Aurora, Bolingbrook, weekend, weekend dentist, urgent dental, Naperville, dentist near me, emergency dentist, dr, dr.",
   metadataBase,
   openGraph: {
-    title:
-      "Keith Brown DDS, FAGD | Naperville's Trusted Family & Emergency Dentist",
+    title: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
     description:
-      "Visit Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends, to ensure your dental health is prioritized.",
+      "Visit Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
     url: metadataBase.href,
     siteName: "Keith Brown DDS",
     images: [
@@ -29,7 +27,7 @@ export const metadata = {
         url: `${metadataBase.href}/og-image.jpg`,
         width: 800,
         height: 600,
-        alt: "Keith Brown DDS - Comprehensive and Emergency Dental Care",
+        alt: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
       },
     ],
     locale: "en_US",

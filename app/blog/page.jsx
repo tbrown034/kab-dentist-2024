@@ -4,7 +4,7 @@ import FullTitle from "../UI/Other/FullTitle";
 import { raleway } from "../font.js";
 
 export const metadata = {
-  title: "Blog | Keith Brown DDS",
+  title: "Blog | Dr. Keith Brown DDS",
   description:
     "Explore the Keith Brown DDS blog for insightful articles, updates, and tips related to dental care and health. Stay informed with our latest posts.",
   keywords:
