@@ -162,7 +162,29 @@ export default function AppointmentForm() {
                 <p className="text-red-500">{errors.phone.message}</p>
               )}
             </div>
+            <div>
+              <label htmlFor="city" className="block mb-2 text-sm font-medium">
+                City
+              </label>
+              <input
+                {...register("city", {
+                  required: "City is required",
+                  pattern: {
+                    value: /^[a-zA-Z\s]+$/,
+                    message: "Invalid city name",
+                  },
+                })}
+                type="text"
+                id="city"
+                className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                placeholder="Naperville"
+              />
+              {errors.city && (
+                <p className="text-red-500">{errors.city.message}</p>
+              )}
+            </div>
           </div>
+
           <div>
             <label
               htmlFor="question"

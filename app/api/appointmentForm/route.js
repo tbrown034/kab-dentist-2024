@@ -15,6 +15,7 @@ export async function POST(req) {
       name,
       email,
       phone,
+      city,
       question,
       painLevel,
       returningPatient,
@@ -43,12 +44,13 @@ You have received a new appointment request from ${name}.
 
 They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
 
-They can be reached at ${phone} or via email at ${email}. They mentioned that they have insurance: ${insurance}.
+They can be reached at ${phone} or via email at ${email} and they live in ${city}. They mentioned that they have insurance: ${insurance}.
 
 Direct info:
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
+City: ${city}
 Message: ${question}
 Pain Level: ${painLevel}
 Returning Patient: ${returningPatient}
@@ -62,6 +64,8 @@ Insurance: ${insurance}`,
              <p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Phone:</strong> ${phone}</p>
+                          <p><strong>Phone:</strong> ${city}</p>
+
              <p><strong>Message:</strong> ${question}</p>
              <p><strong>Pain Level:</strong> ${painLevel}</p>
              <p><strong>Returning Patient:</strong> ${returningPatient}</p>

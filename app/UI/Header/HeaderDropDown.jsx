@@ -12,7 +12,7 @@ const links = [
   { href: "/dentalservices", label: "  Dental Services" },
   { href: "/#financialSection", label: "Insurance" },
   { href: "/emergency", label: "Emergencies" },
-  { href: "/emergency", label: "Make an Appoitment" },
+  { href: "/make-an-appointment", label: "Make an Appoitment" },
 
   { href: "/blog", label: "Blog" },
   { href: "/docbot", label: "Virtual Dental Assistant" },

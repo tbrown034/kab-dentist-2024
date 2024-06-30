@@ -15,6 +15,7 @@ export async function POST(req) {
       name,
       email,
       phone,
+      city,
       question,
       painLevel,
       returningPatient,
@@ -43,12 +44,13 @@ You have received an emergency request from ${name}.
 
 They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
 
-They can be reached at ${phone} or via email at ${email}. They mentioned that they have insurance: ${insurance}.
+They can be reached at ${phone} or via email at ${email} and live in ${city}. They mentioned that they have insurance: ${insurance}.
 
 Details:
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
+City: ${city}
 Message: ${question}
 Pain Level: ${painLevel}
 Returning Patient: ${returningPatient}
