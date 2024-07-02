@@ -1,14 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-export const runtime = {
-  api: {
-    bodyParser: {
-      type: "json",
-    },
-  },
-};
-
 export async function POST(req) {
   try {
     const {
@@ -36,7 +28,7 @@ export async function POST(req) {
     // Setup email data
     let mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
-      to: "keithbrowndds@zohomail.com",
+      to: ["keithbrowndds@zohomail.com", "kabdds@aol.com"], // Array of recipients
       subject: "New Appointment Request",
       text: `Dr. Brown,
 
@@ -55,7 +47,7 @@ Message: ${question}
 Pain Level: ${painLevel}
 Returning Patient: ${returningPatient}
 Insurance: ${insurance}`,
-      html: `<h2 ">Dr. Brown,</h2>
+      html: `<h2>Dr. Brown,</h2>
              <p>You have received a new appointment request from <strong>${name}</strong>.</p>
              <p>They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>.</p>
              <p>They can be reached at <a href="tel:${phone}">${phone}</a> or via email at <a href="mailto:${email}">${email}</a>. Their reported insurance is: <strong>${insurance}</strong>.</p>
@@ -64,8 +56,7 @@ Insurance: ${insurance}`,
              <p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Phone:</strong> ${phone}</p>
-                          <p><strong>Phone:</strong> ${city}</p>
-
+             <p><strong>City:</strong> ${city}</p>
              <p><strong>Message:</strong> ${question}</p>
              <p><strong>Pain Level:</strong> ${painLevel}</p>
              <p><strong>Returning Patient:</strong> ${returningPatient}</p>

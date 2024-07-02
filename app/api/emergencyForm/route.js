@@ -33,10 +33,10 @@ export async function POST(req) {
       },
     });
 
-    // Setup email data for Dr. Brown
+    // Setup email data for Dr. Brown and kabdds
     let mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
-      to: "keithbrowndds@zohomail.com",
+      to: ["keithbrowndds@zohomail.com", "kabdds@aol.com"], // Array of recipients
       subject: "New Emergency Form Submission",
       text: `Dr. Brown,
 
@@ -64,6 +64,7 @@ Insurance: ${insurance}`,
              <p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Phone:</strong> ${phone}</p>
+             <p><strong>City:</strong> ${city}</p>
              <p><strong>Message:</strong> ${question}</p>
              <p><strong>Pain Level:</strong> ${painLevel}</p>
              <p><strong>Returning Patient:</strong> ${returningPatient}</p>
