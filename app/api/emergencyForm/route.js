@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { format } from "date-fns";
 
 export const runtime = {
   api: {
@@ -8,6 +9,35 @@ export const runtime = {
     },
   },
 };
+
+function getCentralTime() {
+  const now = new Date();
+
+  // Use Intl.DateTimeFormat to get the current time in Central Time
+  const centralTimeFormatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chicago",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+
+  const parts = centralTimeFormatter.formatToParts(now);
+  const formattedParts = {};
+  parts.forEach(({ type, value }) => {
+    formattedParts[type] = value;
+  });
+
+  return new Date(
+    formattedParts.year,
+    formattedParts.month - 1,
+    formattedParts.day,
+    (formattedParts.hour % 12) + (formattedParts.dayPeriod === "PM" ? 12 : 0),
+    formattedParts.minute
+  );
+}
 
 export async function POST(req) {
   try {
@@ -33,14 +63,24 @@ export async function POST(req) {
       },
     });
 
+    // Get the current date and time in Central Time
+    const centralTimeDate = getCentralTime();
+    const timestamp = format(centralTimeDate, "h:mm a M-d");
+
     // Setup email data for Dr. Brown and kabdds
     let mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
-      to: ["keithbrowndds@zohomail.com", "kabdds@aol.com"], // Array of recipients
-      subject: "New Emergency Form Submission",
+      to: [
+        "keithbrowndds@zohomail.com",
+        "kabdds@aol.com",
+        "kbdds@sbcglobal.net",
+      ], // Array of recipients
+      subject: `New Emergency Request From ${name} at ${timestamp}`,
       text: `Dr. Brown,
 
 You have received an emergency request from ${name}.
+
+Timestamp: ${timestamp}
 
 They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
 
@@ -57,6 +97,7 @@ Returning Patient: ${returningPatient}
 Insurance: ${insurance}`,
       html: `<h2 style="color: #2c7a7b;">Dr. Brown,</h2>
              <p>You have received an emergency request from <strong>${name}</strong>.</p>
+             <p><strong>Timestamp:</strong> ${timestamp}</p>
              <p>They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>.</p>
              <p>They can be reached at <a href="tel:${phone}">${phone}</a> or via email at <a href="mailto:${email}">${email}</a>. Their reported insurance is: <strong>${insurance}</strong>.</p>
              <hr>
@@ -71,6 +112,12 @@ Insurance: ${insurance}`,
              <p><strong>Insurance:</strong> ${insurance}</p>`,
     };
 
+    // Log the email options for testing
+    console.log(mailOptions);
+
+    let emailInfo = await transporter.sendMail(mailOptions);
+    console.log("Email sent: %s", emailInfo.messageId);
+
     // Setup email data for SMS
     let smsOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
@@ -78,22 +125,18 @@ Insurance: ${insurance}`,
       text: `New emergency request from ${name}. Check your email for details.`,
     };
 
-    // Send the email
-    let emailInfo = await transporter.sendMail(mailOptions);
-    console.log("Email sent: %s", emailInfo.messageId);
-
     // Send the SMS
     let smsInfo = await transporter.sendMail(smsOptions);
     console.log("SMS sent: %s", smsInfo.messageId);
 
     return NextResponse.json(
-      { message: "Email and SMS successfully sent!" },
+      { message: "Email and SMS options logged successfully!" },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error sending email or SMS: ", error);
+    console.error("Error logging email options: ", error);
     return NextResponse.json(
-      { message: "Error sending email or SMS" },
+      { message: "Error logging email options" },
       { status: 500 }
     );
   }

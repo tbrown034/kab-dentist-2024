@@ -28,7 +28,11 @@ export async function POST(req) {
     // Setup email data
     let mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
-      to: ["keithbrowndds@zohomail.com", "kabdds@aol.com"], // Array of recipients
+      to: [
+        "keithbrowndds@zohomail.com",
+        "kabdds@aol.com",
+        "kbdds@sbcglobal.net",
+      ], // Array of recipients
       subject: "New Appointment Request",
       text: `Dr. Brown,
 
