@@ -235,22 +235,19 @@
     "title": "We'll Help Find You the Right Financing Options",
     "highlightedText": "We'll Help Find You",
     "highlightInFront": true,
-    "policy": [
-      "We welcome you to our dental practice and are here to assist you with your dental needs.",
-      "Unfortunately, we do not accept Medicaid at this time. However, we do offer flexible payment plans to ensure that you can receive the care you need.",
-      "We accept most insurance plans and would be glad to research your benefits. Please call our office to speak with our insurance specialist who can help you understand your coverage and provide an estimate of your out-of-pocket expenses.",
-      "Thank you for considering us for your dental care. We look forward to serving you!"
+    "shortPolicy": ["We accept most insurance plans but not Medicaid (Blue Cross Community, Meridian, Aetna, Children's Health Insurance Program IllinoisAll Kids, DentaQuest and Molina Healthcare)  or Medicare."
     ],
-    "acceptedInsurance": [
+    "policy": [
+      "Dr. Brown's office accepts most insurance plans, but we do not accept Medicaid or Medicare, including Medicaid plans from Blue Cross Community, Meridian, Aetna Better Health, CHIP, Illinois All Kids, DentaQuest, and Molina Healthcare.", "For details about your specific coverage, please call our office to speak with our insurance specialist. We offer flexible payment plans, including Care Credit, to help manage your out-of-pocket expenses.", "We are committed to assisting you with your dental needs and ensuring you receive the care you require."
+    ],
+    "MedicaidInsurance": [
       "Blue Cross Community",
       "Meridian",
       "Aetna Better Health",
       "CHIP (Children's Health Insurance Program)",
       "Illinois All Kids",
       "DentaQuest",
-      "Molina Healthcare",
-      "Medicaid",
-      "Other"
+      "Molina Healthcare"
     ]
   },
   "dentalServicesPage": {

@@ -2,46 +2,8 @@
 
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-
-const PainSlider = ({ register, value }) => {
-  const painDescriptions = {
-    1: { text: "No pain", emoji: "😄" },
-    2: { text: "Very mild pain, barely noticeable", emoji: "🙂" },
-    3: { text: "Minor pain", emoji: "😐" },
-    4: { text: "Noticeable pain", emoji: "🙁" },
-    5: { text: "Moderate pain", emoji: "😖" },
-    6: { text: "Moderately strong pain", emoji: "😣" },
-    7: { text: "Strong pain", emoji: "😫" },
-    8: { text: "Very strong pain", emoji: "😡" },
-    9: { text: "A whole lot of pain", emoji: "😵" },
-    10: { text: "Extreme or unbearable pain", emoji: "🤯" },
-  };
-
-  return (
-    <div className="flex flex-col px-8">
-      <input
-        type="range"
-        min="1"
-        max="10"
-        value={value}
-        id="painLevel"
-        {...register("painLevel")}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-      />
-      <div className="flex justify-between w-full mt-2 text-xs">
-        <span>No Pain</span>
-        <span>Severe Pain</span>
-      </div>
-      <div className="flex flex-col items-center justify-center gap-2 font-semibold">
-        <p>Value: {value}</p>
-        <p>
-          {painDescriptions[value]?.text} {painDescriptions[value]?.emoji}
-        </p>
-      </div>
-    </div>
-  );
-};
-
+import PainSlider from "../UI/Other/PainSlider";
+import EmergencyFormText from "./EmergencyFormText";
 export default function EmergencyForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -59,15 +21,11 @@ export default function EmergencyForm() {
     try {
       const response = await fetch("/api/emergencyForm", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      if (!response.ok) throw new Error("Network response was not ok");
 
       const responseData = await response.json();
       console.log(responseData.message);
@@ -83,27 +41,8 @@ export default function EmergencyForm() {
 
   return (
     <div className="flex flex-col gap-2 p-4 text-white bg-teal-800 rounded-lg shadow">
-      <h2 className="text-2xl font-extrabold tracking-tight">
-        Request Emergency Consultation
-      </h2>
-      <p>
-        If it's after hours or the weekend and you are experiencing a dental
-        emergency, fill out the form below. If Dr. Brown is on-call and
-        available, we offer free phone consultations to discuss your issue and
-        options moving forward.
-      </p>
-      {isSubmitted ? (
-        <div className="flex flex-col gap-4 pt-4 mt-4 border-t border-green-50">
-          <h3 className="text-xl font-bold">
-            Your message has been successfully sent!
-          </h3>
-          <p>We will be in touch with you shortly.</p>
-          <p>
-            IMPORTANT: If you are experiencing a life-threatening emergency,
-            call 911 immediately or go to the nearest emergency room.
-          </p>
-        </div>
-      ) : (
+      <EmergencyFormText isSubmitted={isSubmitted} />
+      {!isSubmitted && (
         <FormProvider {...methods}>
           <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
             {errorMessage && (
@@ -117,29 +56,23 @@ export default function EmergencyForm() {
               className="flex flex-col gap-4 mt-4"
             >
               <div>
-                <label
-                  htmlFor="name"
-                  className="block mb-2 text-sm font-medium"
-                >
+                <label htmlFor="name" className="block mb-2 font-medium">
                   Name
                 </label>
                 <input
                   {...register("name", { required: "Name is required" })}
                   type="text"
                   id="name"
-                  className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                  className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
                   placeholder="John Doe"
                 />
                 {errors.name && (
                   <p className="text-red-500">{errors.name.message}</p>
                 )}
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium"
-                  >
+                  <label htmlFor="email" className="block mb-2 font-medium">
                     Email
                   </label>
                   <input
@@ -152,18 +85,15 @@ export default function EmergencyForm() {
                     })}
                     type="email"
                     id="email"
-                    className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="name@example.com"
+                    className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                    placeholder="email@example.com"
                   />
                   {errors.email && (
                     <p className="text-red-500">{errors.email.message}</p>
                   )}
                 </div>
                 <div>
-                  <label
-                    htmlFor="phone"
-                    className="block mb-2 text-sm font-medium"
-                  >
+                  <label htmlFor="phone" className="block mb-2 font-medium">
                     Phone
                   </label>
                   <input
@@ -176,7 +106,7 @@ export default function EmergencyForm() {
                     })}
                     type="tel"
                     id="phone"
-                    className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                    className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
                     placeholder="(555) 555-5555"
                   />
                   {errors.phone && (
@@ -184,10 +114,7 @@ export default function EmergencyForm() {
                   )}
                 </div>
                 <div>
-                  <label
-                    htmlFor="city"
-                    className="block mb-2 text-sm font-medium"
-                  >
+                  <label htmlFor="city" className="block mb-2 font-medium">
                     City
                   </label>
                   <input
@@ -200,7 +127,7 @@ export default function EmergencyForm() {
                     })}
                     type="text"
                     id="city"
-                    className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                    className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
                     placeholder="Naperville"
                   />
                   {errors.city && (
@@ -209,10 +136,24 @@ export default function EmergencyForm() {
                 </div>
               </div>
               <div>
-                <label
-                  htmlFor="question"
-                  className="block mb-2 text-sm font-medium"
-                >
+                <label htmlFor="insurance" className="block mb-2 font-medium">
+                  Insurance
+                </label>
+                <input
+                  {...register("insurance", {
+                    required: "Insurance is required",
+                  })}
+                  type="text"
+                  id="insurance"
+                  className="block w-full p-3 mt-2 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                  placeholder="Insurance Provider"
+                />
+                {errors.insurance && (
+                  <p className="text-red-500">{errors.insurance.message}</p>
+                )}
+              </div>
+              <div>
+                <label htmlFor="question" className="block mb-2 font-medium">
                   Question/Issue
                 </label>
                 <textarea
@@ -220,7 +161,7 @@ export default function EmergencyForm() {
                     required: "This field is required",
                   })}
                   id="question"
-                  className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                  className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
                   rows="3"
                   placeholder="Please describe your question or issue."
                 ></textarea>
@@ -229,10 +170,7 @@ export default function EmergencyForm() {
                 )}
               </div>
               <div>
-                <label
-                  htmlFor="painLevel"
-                  className="block mb-2 text-sm font-medium"
-                >
+                <label htmlFor="painLevel" className="block mb-2 font-medium">
                   Pain Level
                 </label>
                 <PainSlider register={register} value={painLevel} />
@@ -243,11 +181,11 @@ export default function EmergencyForm() {
               <div>
                 <label
                   htmlFor="returningPatient"
-                  className="block mb-2 text-sm font-medium"
+                  className="block mb-2 font-medium"
                 >
                   Returning Patient?
                 </label>
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
                   <input
                     {...register("returningPatient", {
                       required: "Please select an option",
@@ -255,11 +193,9 @@ export default function EmergencyForm() {
                     type="radio"
                     id="returningPatientYes"
                     value="yes"
-                    className="mr-2"
+                    className=""
                   />
-                  <label htmlFor="returningPatientYes" className="mr-4">
-                    Yes
-                  </label>
+                  Yes
                   <input
                     {...register("returningPatient", {
                       required: "Please select an option",
@@ -267,45 +203,23 @@ export default function EmergencyForm() {
                     type="radio"
                     id="returningPatientNo"
                     value="no"
-                    className="mr-2"
+                    className=""
                   />
-                  <label htmlFor="returningPatientNo">No</label>
+                  No
+                  {errors.returningPatient && (
+                    <p className="text-red-500">
+                      {errors.returningPatient.message}
+                    </p>
+                  )}
                 </div>
-                {errors.returningPatient && (
-                  <p className="text-red-500">
-                    {errors.returningPatient.message}
-                  </p>
-                )}
-              </div>
-              <div>
-                <label
-                  htmlFor="insurance"
-                  className="block mb-2 text-sm font-medium"
-                >
-                  Insurance
-                </label>
-                <input
-                  {...register("insurance", {
-                    required: "Insurance is required",
-                  })}
-                  type="text"
-                  id="insurance"
-                  className="block w-full p-3 text-sm text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                  placeholder="Insurance Provider"
-                />
-                {errors.insurance && (
-                  <p className="text-red-500">{errors.insurance.message}</p>
-                )}
               </div>
 
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="w-5/6 p-2 text-lg text-white bg-teal-600 border-teal-500 rounded-lg shadow hover:bg-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-offset-2 active:bg-teal-400"
-                >
-                  Submit
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="px-4 py-2 text-white bg-teal-600 rounded hover:bg-teal-700"
+              >
+                Submit
+              </button>
             </form>
           </section>
         </FormProvider>

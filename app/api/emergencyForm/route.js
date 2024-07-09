@@ -72,8 +72,8 @@ export async function POST(req) {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
       to: [
         "keithbrowndds@zohomail.com",
-        "kabdds@aol.com",
-        "kbdds@sbcglobal.net",
+        // "kabdds@aol.com",
+        // "kbdds@sbcglobal.net",
       ], // Array of recipients
       subject: `New Emergency Request From ${name} at ${timestamp}`,
       text: `Dr. Brown,

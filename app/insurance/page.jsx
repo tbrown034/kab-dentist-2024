@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
+import FinancialPills from "../UI/Financial/FinancialPills";
+import FinancialFAQs from "../UI/Financial/FinancialFAQs";
 
 export const metadata = {
   title: "Insurance Information - Naperville | Dr. Keith Brown DDS",
@@ -63,12 +65,9 @@ const Page = () => {
           </p>
         ))}
       </div>
-      <h3 className="mb-2 text-lg font-bold">Accepted Insurance Includes:</h3>
-      <ul className="mb-4 list-disc list-inside">
-        {acceptedInsurance.map((insurance, index) => (
-          <li key={index}>{insurance}</li>
-        ))}
-      </ul>
+      <FinancialPills />
+      <FinancialFAQs />
+
       <div className="flex flex-row items-center gap-4 py-2">
         <Link
           href="/"
