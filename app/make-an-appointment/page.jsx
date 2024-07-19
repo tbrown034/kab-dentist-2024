@@ -1,10 +1,10 @@
 // app/make-an-appointment/page.jsx
 import React from "react";
-import AppointmentForm from "../UI/Appointment/AppointmentForm";
 import { raleway } from "../font.js";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import Link from "next/link";
+import UnifiedForm from "../UI/Forms/UnifiedForm";
 
 export const metadata = {
   title: "Make an Appointment | Dr. Keith Brown DDS",
@@ -45,7 +45,7 @@ const MakeAnAppointmentPage = () => {
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
-    <section className="flex flex-col gap-4 px-4 mt-6" id="appointmentSection">
+    <section className="flex flex-col gap-8 px-4 mt-6" id="appointmentSection">
       <h1
         className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
@@ -86,15 +86,7 @@ const MakeAnAppointmentPage = () => {
         id="appointmentForm"
         className="flex flex-col gap-2 p-4 mx-4 text-white bg-teal-800 rounded-lg shadow px-text-white"
       >
-        <h2 className="text-2xl font-extrabold tracking-tight">
-          Book Your Appointment
-        </h2>
-
-        <p>
-          Fill out the form below and we'll be in touch shortly to confirm your
-          appointment and answer any questions you might have!
-        </p>
-        <AppointmentForm />
+        <UnifiedForm />
       </div>
     </section>
   );

@@ -1,11 +1,11 @@
 import React from "react";
-import EmergencyForm from "./EmergencyForm";
 import Medicaid from "../UI/Other/Medicaid";
 import { raleway } from "@/lib/fonts";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import EmergencyFAQs from "./EmergencyFAQs";
 import Link from "next/link";
+import UnifiedForm from "../UI/Forms/UnifiedForm";
 
 export const metadata = {
   title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
@@ -46,7 +46,7 @@ const Page = () => {
   // Ensure there's content to display, otherwise return null
   if (!title || !textBlock || textBlock.length === 0) return null;
   return (
-    <section className="flex flex-col gap-4 px-4 mt-6" id="emergencySection">
+    <section className="flex flex-col gap-8 px-4 mt-6" id="emergencySection">
       <h1
         className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
@@ -56,7 +56,7 @@ const Page = () => {
           highlightInFront={highlightInFront}
         />
       </h1>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
         {textBlock.map((block, blockIndex) => (
           <p key={blockIndex} className="text-lg">
             {block.text}
@@ -84,7 +84,7 @@ const Page = () => {
         </Link>
       </div>
       <div className="mx-4 mt-2" id="emergencyForm">
-        <EmergencyForm />
+        <UnifiedForm formType="emergency" />
       </div>
       <div id="emergencyFAQs">
         <EmergencyFAQs />

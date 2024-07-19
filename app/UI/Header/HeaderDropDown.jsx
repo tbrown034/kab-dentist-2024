@@ -10,8 +10,8 @@ import ThemeToggle from "./ThemeToggle";
 const links = [
   { href: "/#doctorSection", label: "About" },
   { href: "/dentalservices", label: "  Dental Services" },
-  { href: "/#financialSection", label: "Insurance" },
-  { href: "/emergency", label: "Emergencies" },
+  { href: "/insurance", label: "Insurance" },
+  { href: "/emergency", label: "Emegency" },
   { href: "/make-an-appointment", label: "Make an Appoitment" },
 
   { href: "/blog", label: "Blog" },

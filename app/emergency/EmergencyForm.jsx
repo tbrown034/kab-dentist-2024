@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import PainSlider from "../UI/Other/PainSlider";
 import EmergencyFormText from "./EmergencyFormText";
+import DialogBox from "../DialogBoxes/DialogBox";
+
 export default function EmergencyForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -137,7 +139,7 @@ export default function EmergencyForm() {
               </div>
               <div>
                 <label htmlFor="insurance" className="block mb-2 font-medium">
-                  Insurance
+                  Insurance <DialogBox />
                 </label>
                 <input
                   {...register("insurance", {
@@ -213,7 +215,6 @@ export default function EmergencyForm() {
                   )}
                 </div>
               </div>
-
               <button
                 type="submit"
                 className="px-4 py-2 text-white bg-teal-600 rounded hover:bg-teal-700"

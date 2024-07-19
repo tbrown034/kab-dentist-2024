@@ -2,7 +2,7 @@ import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import { raleway } from "../../../app/font.js";
-import AppointmentForm from "./AppointmentForm";
+import UnifiedForm from "../Forms/UnifiedForm";
 
 const AppointmentSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
@@ -30,15 +30,7 @@ const AppointmentSection = () => {
         </div>
       ))}
       <div className="flex flex-col gap-2 p-4 mx-4 text-white bg-teal-800 rounded-lg shadow px-text-white">
-        <h2 className="text-2xl font-extrabold tracking-tight">
-          Book Your Appointment
-        </h2>
-
-        <p>
-          Fill out the form below and we'll be in touch shortly to confirm your
-          appointment and answer any questions you might have!
-        </p>
-        <AppointmentForm />
+        <UnifiedForm />
       </div>
     </section>
   );
