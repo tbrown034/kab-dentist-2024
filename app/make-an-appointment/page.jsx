@@ -65,19 +65,19 @@ const MakeAnAppointmentPage = () => {
       <div className="flex flex-row items-center gap-4 py-2">
         <Link
           href="#appointmentForm"
-          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+          className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
         >
           Appointment Form
         </Link>
         <Link
           href="/call-now"
-          className="p-2 text-sm text-white bg-teal-900 border-2 border-teal-900 rounded-lg hover:bg-teal-800 active:bg-teal-600"
+          className="p-2 text-white bg-teal-900 border-2 border-teal-900 rounded-lg hover:bg-teal-800 active:bg-teal-600"
         >
           Call Now
         </Link>
         <Link
           href="/"
-          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
+          className="p-2 bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
         >
           Back to Home
         </Link>

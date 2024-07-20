@@ -61,9 +61,9 @@ const DocBot = () => {
   return (
     <section
       id="docBot"
-      className="p-6 bg-gray-100 rounded-lg shadow-md dark:text-black"
+      className="p-4 bg-gray-100 rounded-lg shadow-md dark:text-black md:p-6"
     >
-      <h2 className="mb-4 text-2xl font-extrabold tracking-tight">
+      <h2 className="mb-4 text-xl font-extrabold tracking-tight md:text-2xl">
         Ask the Doc Bot
       </h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -76,7 +76,7 @@ const DocBot = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Type your question here..."
-          className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600"
+          className="p-2 border rounded-md min-h-40 focus:outline-none focus:ring-2 focus:ring-teal-600"
         />
 
         <Transition
@@ -90,24 +90,16 @@ const DocBot = () => {
         >
           {response && (
             <div className="p-4 mt-4 bg-white border rounded-md">
-              <h3 className="text-xl font-semibold">Response:</h3>
+              <h3 className="text-lg font-semibold md:text-xl">Response:</h3>
               <p>{response}</p>
-              <a
-                href="https://www.ada.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline"
-              >
-                More info from the ADA
-              </a>
             </div>
           )}
         </Transition>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-2 md:flex-row md:gap-4">
           <button
             type="submit"
-            className="flex items-center px-4 py-2 text-white bg-teal-800 rounded-lg hover:bg-teal-700"
+            className="flex items-center justify-center px-4 py-2 text-white bg-teal-800 rounded-lg hover:bg-teal-700"
           >
             {loading ? (
               <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
@@ -121,7 +113,7 @@ const DocBot = () => {
           <button
             type="button"
             onClick={handleClear}
-            className="flex items-center px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-red-500"
+            className="flex items-center justify-center px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-red-500"
           >
             Clear
             <FontAwesomeIcon icon={faTimes} className="ml-2" />
@@ -130,7 +122,7 @@ const DocBot = () => {
       </form>
       {error && (
         <div className="p-4 mt-4 text-red-800 bg-red-100 border rounded-md">
-          <h3 className="text-xl font-semibold">Error:</h3>
+          <h3 className="text-lg font-semibold md:text-xl">Error:</h3>
           <p>{error}</p>
         </div>
       )}

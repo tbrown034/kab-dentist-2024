@@ -6,6 +6,7 @@ import sectionContents from "../../sectionContent.json";
 import EmergencyFAQs from "./EmergencyFAQs";
 import Link from "next/link";
 import UnifiedForm from "../UI/Forms/UnifiedForm";
+import EmergencyActions from "./EmergencyActions";
 
 export const metadata = {
   title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
@@ -43,7 +44,6 @@ const Page = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
     sectionContents.emergencySection;
 
-  // Ensure there's content to display, otherwise return null
   if (!title || !textBlock || textBlock.length === 0) return null;
   return (
     <section className="flex flex-col gap-8 px-4 mt-6" id="emergencySection">
@@ -63,26 +63,7 @@ const Page = () => {
           </p>
         ))}
       </div>
-      <div className="flex flex-row items-center gap-4 py-2">
-        <Link
-          href="#emergencyForm"
-          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
-        >
-          Emergency Form
-        </Link>
-        <Link
-          href="#emergencyFAQs"
-          className="p-2 text-sm text-white bg-teal-900 border-2 border-teal-900 rounded-lg hover:bg-teal-800 active:bg-teal-600"
-        >
-          Emergency FAQs
-        </Link>
-        <Link
-          href="/"
-          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
-        >
-          Back to Home
-        </Link>
-      </div>
+      <EmergencyActions />
       <div className="mx-4 mt-2" id="emergencyForm">
         <UnifiedForm formType="emergency" />
       </div>
@@ -91,14 +72,6 @@ const Page = () => {
       </div>
       <div className="text-black dark:text-white">
         <Medicaid />
-      </div>
-      <div className="flex justify-center">
-        <Link
-          className="p-2 bg-white border-2 border-teal-900 rounded-lg md:p-4 xl:p-5 lg:text-lg border-opacity-85 dark:text-black hover:bg-gray-200 active:bg-gray-300"
-          href="/"
-        >
-          Back Home
-        </Link>
       </div>
     </section>
   );

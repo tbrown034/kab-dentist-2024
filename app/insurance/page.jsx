@@ -37,15 +37,9 @@ export const metadata = {
   },
 };
 
-const Page = () => {
-  const {
-    title,
-    textBlock,
-    highlightedText,
-    highlightInFront,
-    policy,
-    acceptedInsurance,
-  } = sectionContents.insurancePage;
+const InsurancePage = () => {
+  const { title, textBlock, highlightedText, highlightInFront, policy } =
+    sectionContents.insurancePage;
 
   if (!title || !policy || policy.length === 0) return null;
 
@@ -71,7 +65,7 @@ const Page = () => {
       <div className="flex flex-row items-center gap-4 py-2">
         <Link
           href="/"
-          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
+          className="p-2 bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
         >
           Back to Home
         </Link>
@@ -80,4 +74,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default InsurancePage;

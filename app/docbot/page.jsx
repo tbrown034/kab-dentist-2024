@@ -66,18 +66,18 @@ const DocBotPage = () => {
       <div className="flex flex-row items-center gap-4 py-2">
         <Link
           href="/dentalservices"
-          className="p-2 text-sm text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
+          className="p-2 text-white bg-teal-600 border-2 border-teal-600 rounded-lg hover:bg-teal-500 active:bg-teal-400"
         >
-          Browse Services
+          Browse Dental Services
         </Link>
         <Link
           href="/"
-          className="p-2 text-sm bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
+          className="p-2 bg-white border-2 border-gray-400 rounded-lg hover:bg-gray-200 dark:text-black active:bg-gray-300"
         >
           Back to Home
         </Link>
       </div>
-      <div className="flex justify-center w-full p-8">
+      <div className="p-4">
         <DocBot />
       </div>
     </section>

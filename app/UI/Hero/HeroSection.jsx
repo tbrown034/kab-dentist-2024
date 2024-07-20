@@ -14,13 +14,13 @@ const HeroSection = () => {
         <h1 className="text-3xl font-extrabold leading-tight tracking-tight xl:text-5xl 2xl:text-6xl md:text-4xl">
           {highlightInFront ? (
             <>
-              <span className="text-teal-600">{highlightedText}</span>{" "}
+              <span className="mr-1 text-teal-600">{highlightedText}</span>
               {title.replace(highlightedText, "")}
             </>
           ) : (
             <>
-              {title.replace(highlightedText, "")}{" "}
-              <span className="text-teal-600">{highlightedText}</span>
+              {title.replace(highlightedText, "")}
+              <span className="ml-1 text-teal-600">{highlightedText}</span>
             </>
           )}
         </h1>

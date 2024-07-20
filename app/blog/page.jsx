@@ -27,13 +27,13 @@ export default function BlogPage() {
           highlightInFront={highlightInFront}
         />
       </h1>
-      <p className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         {textBlock.map((block, blockIndex) => (
           <p key={blockIndex} className="text-lg">
             {block.text}
           </p>
         ))}
-      </p>
+      </div>
 
       <Entries />
     </section>
