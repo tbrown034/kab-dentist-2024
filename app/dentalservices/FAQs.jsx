@@ -26,13 +26,6 @@ const FAQs = () => {
                 </AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-2 text-left ">
                   <p>{detail.description}</p>
-                  <Link
-                    href={detail.moreInfo}
-                    target="_blank"
-                    className="text-blue-400 hover:underline"
-                  >
-                    More info
-                  </Link>
                 </AccordionContent>
               </AccordionItem>
             ))}
