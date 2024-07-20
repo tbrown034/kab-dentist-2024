@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { format } from "date-fns";
+import { generateEmailContent } from "./EmailTemplate";
 
 export const runtime = {
   api: {
@@ -63,80 +64,20 @@ export async function POST(req) {
     });
 
     const centralTimeDate = getCentralTime();
-    const timestamp = format(centralTimeDate, "h:mm a M-d");
+    const timestamp = format(centralTimeDate, "h:mm a M/d/yy");
 
-    let subject, text, html;
-
-    if (formType === "emergency") {
-      subject = `New Emergency Request From ${name} at ${timestamp}`;
-      text = `Dr. Brown,
-
-  You have received an emergency request from ${name}.
-
-  Timestamp: ${timestamp}
-
-  They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
-
-  They can be reached at ${phone} or via email at ${email} and live in ${city}. They mentioned that they have insurance: ${insurance}.
-
-  Details:
-  Name: ${name}
-  Email: ${email}
-  Phone: ${phone}
-  City: ${city}
-  Message: ${question}
-  Pain Level: ${painLevel}
-  Returning Patient: ${returningPatient}
-  Insurance: ${insurance}`;
-      html = `<h2 style="color: #2c7a7b;">Dr. Brown,</h2>
-               <p>You have received an emergency request from <strong>${name}</strong>.</p>
-               <p><strong>Timestamp:</strong> ${timestamp}</p>
-               <p>They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>.</p>
-               <p>They can be reached at <a href="tel:${phone}">${phone}</a> or via email at <a href="mailto:${email}">${email}</a>. Their reported insurance is: <strong>${insurance}</strong>.</p>
-               <hr>
-               <h4 style="color: #2c7a7b;">Details:</h4>
-               <p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Phone:</strong> ${phone}</p>
-               <p><strong>City:</strong> ${city}</p>
-               <p><strong>Message:</strong> ${question}</p>
-               <p><strong>Pain Level:</strong> ${painLevel}</p>
-               <p><strong>Returning Patient:</strong> ${returningPatient}</p>
-               <p><strong>Insurance:</strong> ${insurance}</p>`;
-    } else {
-      subject = "New Appointment Request";
-      text = `Dr. Brown,
-
-  You have received a new appointment request from ${name}.
-
-  They report the following issue: ${question} and are experiencing a pain level of ${painLevel}/10.
-
-  They can be reached at ${phone} or via email at ${email} and they live in ${city}. They mentioned that they have insurance: ${insurance}.
-
-  Details:
-  Name: ${name}
-  Email: ${email}
-  Phone: ${phone}
-  City: ${city}
-  Message: ${question}
-  Pain Level: ${painLevel}
-  Returning Patient: ${returningPatient}
-  Insurance: ${insurance}`;
-      html = `<h2>Dr. Brown,</h2>
-               <p>You have received a new appointment request from <strong>${name}</strong>.</p>
-               <p>They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>.</p>
-               <p>They can be reached at <a href="tel:${phone}">${phone}</a> or via email at <a href="mailto:${email}">${email}</a>. Their reported insurance is: <strong>${insurance}</strong>.</p>
-               <hr>
-               <h4 style="color: #2c7a7b;">Details:</h4>
-               <p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Phone:</strong> ${phone}</p>
-               <p><strong>City:</strong> ${city}</p>
-               <p><strong>Message:</strong> ${question}</p>
-               <p><strong>Pain Level:</strong> ${painLevel}</p>
-               <p><strong>Returning Patient:</strong> ${returningPatient}</p>
-               <p><strong>Insurance:</strong> ${insurance}</p>`;
-    }
+    const { subject, text, html } = generateEmailContent({
+      name,
+      email,
+      phone,
+      city,
+      question,
+      painLevel,
+      returningPatient,
+      insurance,
+      formType,
+      timestamp,
+    });
 
     const mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
