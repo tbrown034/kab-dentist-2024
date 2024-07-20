@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import servicesContent from "./servicesContent.json";
 
-const ServicesSearch = ({ onSelectService }) => {
+const ServicesSearch = ({ onSelectService = () => {} }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedService, setSelectedService] = useState(null);
 
@@ -41,7 +41,7 @@ const ServicesSearch = ({ onSelectService }) => {
 
   return (
     <div
-      className={`relative flex flex-col gap-2  ${
+      className={`relative flex flex-col gap-2 ${
         selectedService ? "mt-4" : ""
       }`}
     >
@@ -54,7 +54,7 @@ const ServicesSearch = ({ onSelectService }) => {
           }
           value={searchQuery}
           onChange={handleSearch}
-          className="p-2 px-4 border border-teal-800 rounded-md dark:border-white"
+          className="p-2 px-4 border border-teal-800 rounded-md dark:text-black dark:border-white"
         />
         {!selectedService && searchQuery && (
           <button
@@ -88,16 +88,6 @@ const ServicesSearch = ({ onSelectService }) => {
           </button>
           <h3 className="text-xl font-semibold">{selectedService.title}</h3>
           <p className="mt-2">{selectedService.description}</p>
-          {selectedService.moreInfo && (
-            <a
-              href={selectedService.moreInfo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              More info
-            </a>
-          )}
         </div>
       )}
     </div>
