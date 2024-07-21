@@ -81,7 +81,11 @@ export async function POST(req) {
 
     const mailOptions = {
       from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
-      to: ["keithbrowndds@zohomail.com", "trevorbrown.web@gmail.com"],
+      to: [
+        "keithbrowndds@zohomail.com",
+        "trevorbrown.web@gmail.com",
+        // "kabdds@aol.com",
+      ],
       subject,
       text,
       html,
@@ -92,17 +96,8 @@ export async function POST(req) {
     const emailInfo = await transporter.sendMail(mailOptions);
     console.log("Email sent: %s", emailInfo.messageId);
 
-    const smsOptions = {
-      from: '"Keith Brown DDS" <keithbrowndds@zohomail.com>',
-      to: "6303010589@txt.att.net",
-      text: `New ${formType} request from ${name}. Check your email for details.`,
-    };
-
-    const smsInfo = await transporter.sendMail(smsOptions);
-    console.log("SMS sent: %s", smsInfo.messageId);
-
     return NextResponse.json(
-      { message: "Email and SMS sent successfully!" },
+      { message: "Email sent successfully!" },
       { status: 200 }
     );
   } catch (error) {

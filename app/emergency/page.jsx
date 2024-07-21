@@ -4,7 +4,6 @@ import { raleway } from "@/lib/fonts";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import EmergencyFAQs from "./EmergencyFAQs";
-import Link from "next/link";
 import UnifiedForm from "../UI/Forms/UnifiedForm";
 import EmergencyActions from "./EmergencyActions";
 

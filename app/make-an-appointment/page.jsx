@@ -7,7 +7,7 @@ import Link from "next/link";
 import UnifiedForm from "../UI/Forms/UnifiedForm";
 
 export const metadata = {
-  title: "Make an Appointment | Dr. Keith Brown DDS",
+  title: "Make an Appointment | Dr. Keith Brown DDS, FAGD",
   description:
     "Schedule your appointment with Dr. Keith Brown, DDS, FAGD, today. Fill out the form to get started.",
   keywords: "appointment, dentist, Keith Brown DDS, Naperville, dental care",

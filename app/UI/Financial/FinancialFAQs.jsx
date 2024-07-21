@@ -16,10 +16,10 @@ const FinancialFAQs = () => {
       <Accordion type="single" collapsible className="w-full">
         {financialFAQs.map((faq, index) => (
           <AccordionItem key={index} value={faq.question.replace(/\s+/g, "-")}>
-            <AccordionTrigger className="text-left md:text-center">
+            <AccordionTrigger className="text-left ">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-left md:text-center">
+            <AccordionContent className="text-left ">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>
