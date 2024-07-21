@@ -84,7 +84,7 @@ export async function POST(req) {
       to: [
         "keithbrowndds@zohomail.com",
         "trevorbrown.web@gmail.com",
-        // "kabdds@aol.com",
+        "kabdds@aol.com",
       ],
       subject,
       text,
