@@ -2,12 +2,17 @@
 
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true, // Enables React's Strict Mode to catch potential issues in the app.
   swcMinify: true, // Enables SWC-based minification for faster builds.
-
-  // Defines URL redirects to ensure all variations of the site URL use HTTPS.
+  env: {
+    NEXT_PUBLIC_MEASUREMENT_ID: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
+    OPENAIAPI: process.env.OPENAIAPI,
+    EMAIL_PASS: process.env.EMAIL_PASS,
+    ZOHO_MAIL_USER: process.env.ZOHO_MAIL_USER,
+    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  },
   async redirects() {
     return [
       {
