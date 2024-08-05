@@ -225,18 +225,18 @@ export default function UnifiedForm({ formType }) {
                   required
                 ></textarea>
               </div>
-              {formType === "emergency" && (
-                <div>
-                  <label htmlFor="painLevel" className="block mb-2 font-medium">
-                    Pain Level
-                  </label>
-                  <PainSlider
-                    name="painLevel"
-                    value={formData.painLevel}
-                    onChange={handlePainLevelChange}
-                  />
-                </div>
-              )}
+
+              <div>
+                <label htmlFor="painLevel" className="block mb-2 font-medium">
+                  Pain Level
+                </label>
+                <PainSlider
+                  name="painLevel"
+                  value={formData.painLevel}
+                  onChange={handlePainLevelChange}
+                />
+              </div>
+
               <div>
                 <label
                   htmlFor="returningPatient"
