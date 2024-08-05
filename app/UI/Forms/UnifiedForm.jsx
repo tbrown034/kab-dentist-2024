@@ -3,10 +3,13 @@ import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import PainSlider from "../../UI/Other/PainSlider";
 import DialogBox from "../../DialogBoxes/DialogBox";
+import { restrictedTerms } from "../../insurance/restrictedTerms";
+import DialogCheck from "../../DialogBoxes/DialogCheck";
 
 export default function UnifiedForm({ formType }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [showDialog, setShowDialog] = useState(false);
   const methods = useForm({ defaultValues: { painLevel: 5, formType } });
   const {
     handleSubmit,
@@ -16,8 +19,41 @@ export default function UnifiedForm({ formType }) {
     register,
   } = methods;
 
+  const checkRestrictedTerms = (insuranceValue) => {
+    return restrictedTerms.some((term) =>
+      insuranceValue.toLowerCase().includes(term.toLowerCase())
+    );
+  };
+
   const onSubmit = async (data, event) => {
     event.preventDefault();
+    if (checkRestrictedTerms(data.insurance)) {
+      setShowDialog(true);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/submitForm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      const responseData = await response.json();
+      console.log(responseData.message);
+      setIsSubmitted(true);
+      reset(); // Clear the form fields after successful submission
+    } catch (error) {
+      setErrorMessage(error.message);
+      console.error("Failed to send email:", error);
+    }
+  };
+
+  const handleContinue = async () => {
+    setShowDialog(false);
+    const data = methods.getValues();
     try {
       const response = await fetch("/api/submitForm", {
         method: "POST",
@@ -247,6 +283,12 @@ export default function UnifiedForm({ formType }) {
             ? "Thank you for contacting us regarding your dental emergency. We will get back to you shortly. If you do not hear from us immediately, please call our office at 630-296-8702. If this is a medical emergency, please call 911."
             : "Thank you for requesting an appointment with us! We will get back to you shortly to confirm your appointment, set up a time, and answer any questions you might have. Please call our office at 630-296-8702 if you don't hear back immediately or if this is urgent or an emergency."}
         </p>
+      )}
+      {showDialog && (
+        <DialogCheck
+          onContinue={handleContinue}
+          onClose={() => setShowDialog(false)}
+        />
       )}
     </div>
   );
