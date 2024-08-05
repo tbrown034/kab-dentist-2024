@@ -1,6 +1,6 @@
 "use client";
 
-const PainSlider = ({ register, value }) => {
+const PainSlider = ({ value, onChange }) => {
   const painDescriptions = {
     1: { text: "No pain", emoji: "😄" },
     2: { text: "Very mild pain, barely noticeable", emoji: "🙂" },
@@ -22,7 +22,7 @@ const PainSlider = ({ register, value }) => {
         max="10"
         value={value}
         id="painLevel"
-        {...register("painLevel")}
+        onChange={(e) => onChange(e.target.value)}
         className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
       />
       <div className="flex justify-between w-full mt-2 text-xs">

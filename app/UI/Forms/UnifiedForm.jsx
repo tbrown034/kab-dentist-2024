@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useForm, FormProvider } from "react-hook-form";
 import PainSlider from "../../UI/Other/PainSlider";
 import DialogBox from "../../DialogBoxes/DialogBox";
 import { restrictedTerms } from "../../insurance/restrictedTerms";
@@ -10,24 +9,43 @@ export default function UnifiedForm({ formType }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [showDialog, setShowDialog] = useState(false);
-  const methods = useForm({ defaultValues: { painLevel: 5, formType } });
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    watch,
-    register,
-  } = methods;
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+    insurance: "",
+    question: "",
+    painLevel: 5,
+    returningPatient: "",
+    formType: formType,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handlePainLevelChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      painLevel: value,
+    }));
+  };
 
   const checkRestrictedTerms = (insuranceValue) => {
+    const lowerCaseInsuranceValue = insuranceValue.toLowerCase();
     return restrictedTerms.some((term) =>
-      insuranceValue.toLowerCase().includes(term.toLowerCase())
+      lowerCaseInsuranceValue.includes(term.toLowerCase())
     );
   };
 
-  const onSubmit = async (data, event) => {
-    event.preventDefault();
-    if (checkRestrictedTerms(data.insurance)) {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (checkRestrictedTerms(formData.insurance)) {
       setShowDialog(true);
       return;
     }
@@ -36,7 +54,7 @@ export default function UnifiedForm({ formType }) {
       const response = await fetch("/api/submitForm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) throw new Error("Network response was not ok");
@@ -44,7 +62,17 @@ export default function UnifiedForm({ formType }) {
       const responseData = await response.json();
       console.log(responseData.message);
       setIsSubmitted(true);
-      reset(); // Clear the form fields after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        insurance: "",
+        question: "",
+        painLevel: 5,
+        returningPatient: "",
+        formType: formType,
+      });
     } catch (error) {
       setErrorMessage(error.message);
       console.error("Failed to send email:", error);
@@ -53,12 +81,11 @@ export default function UnifiedForm({ formType }) {
 
   const handleContinue = async () => {
     setShowDialog(false);
-    const data = methods.getValues();
     try {
       const response = await fetch("/api/submitForm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
       if (!response.ok) throw new Error("Network response was not ok");
@@ -66,14 +93,22 @@ export default function UnifiedForm({ formType }) {
       const responseData = await response.json();
       console.log(responseData.message);
       setIsSubmitted(true);
-      reset(); // Clear the form fields after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        insurance: "",
+        question: "",
+        painLevel: 5,
+        returningPatient: "",
+        formType: formType,
+      });
     } catch (error) {
       setErrorMessage(error.message);
       console.error("Failed to send email:", error);
     }
   };
-
-  const painLevel = watch("painLevel");
 
   return (
     <div className="flex flex-col gap-2 p-4 text-white bg-teal-800 rounded-lg shadow">
@@ -89,193 +124,155 @@ export default function UnifiedForm({ formType }) {
               ? "Please fill out the form below to request an emergency consultation."
               : "Fill out the form below and we'll be in touch shortly to confirm your appointment and answer any questions you might have!"}
           </p>
-          <FormProvider {...methods}>
-            <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
-              {errorMessage && (
-                <p className="p-2 text-red-800">
-                  Error: {errorMessage}. Sorry we are having an issue, please
-                  try again or call our office at 630-296-8702
-                </p>
-              )}
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="flex flex-col gap-4 mt-4"
-              >
+          <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
+            {errorMessage && (
+              <p className="p-2 text-red-800">
+                Error: {errorMessage}. Sorry we are having an issue, please try
+                again or call our office at 630-296-8702
+              </p>
+            )}
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4">
+              <input type="hidden" name="formType" value={formType} />
+              <div>
+                <label htmlFor="name" className="block mb-2 font-medium">
+                  Name
+                </label>
                 <input
-                  type="hidden"
-                  {...register("formType")}
-                  value={formType}
+                  name="name"
+                  type="text"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                  placeholder="John Doe"
+                  required
                 />
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <div>
-                  <label htmlFor="name" className="block mb-2 font-medium">
-                    Name
+                  <label htmlFor="email" className="block mb-2 font-medium">
+                    Email
                   </label>
                   <input
-                    {...register("name", { required: "Name is required" })}
-                    type="text"
-                    id="name"
+                    name="email"
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="John Doe"
+                    placeholder="email@example.com"
+                    required
                   />
-                  {errors.name && (
-                    <p className="text-red-500">{errors.name.message}</p>
-                  )}
-                </div>
-                <div className="flex flex-col gap-4 sm:flex-row">
-                  <div>
-                    <label htmlFor="email" className="block mb-2 font-medium">
-                      Email
-                    </label>
-                    <input
-                      {...register("email", {
-                        required: "Email is required",
-                        pattern: {
-                          value: /^\S+@\S+$/i,
-                          message: "Invalid email address",
-                        },
-                      })}
-                      type="email"
-                      id="email"
-                      className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                      placeholder="email@example.com"
-                    />
-                    {errors.email && (
-                      <p className="text-red-500">{errors.email.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block mb-2 font-medium">
-                      Phone
-                    </label>
-                    <input
-                      {...register("phone", {
-                        required: "Phone number is required",
-                        pattern: {
-                          value: /^\d{10}$/,
-                          message: "Invalid phone number, must be 10 digits",
-                        },
-                      })}
-                      type="tel"
-                      id="phone"
-                      className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                      placeholder="(555) 555-5555"
-                    />
-                    {errors.phone && (
-                      <p className="text-red-500">{errors.phone.message}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label htmlFor="city" className="block mb-2 font-medium">
-                      City
-                    </label>
-                    <input
-                      {...register("city", {
-                        required: "City is required",
-                        pattern: {
-                          value: /^[a-zA-Z\s]+$/,
-                          message: "Invalid city name",
-                        },
-                      })}
-                      type="text"
-                      id="city"
-                      className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                      placeholder="Naperville"
-                    />
-                    {errors.city && (
-                      <p className="text-red-500">{errors.city.message}</p>
-                    )}
-                  </div>
                 </div>
                 <div>
-                  <label htmlFor="insurance" className="block mb-2 font-medium">
-                    Insurance <DialogBox />
+                  <label htmlFor="phone" className="block mb-2 font-medium">
+                    Phone
                   </label>
                   <input
-                    {...register("insurance", {
-                      required: "Insurance is required",
-                    })}
-                    type="text"
-                    id="insurance"
-                    className="block w-full p-3 mt-2 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                    placeholder="Insurance Provider"
-                  />
-                  {errors.insurance && (
-                    <p className="text-red-500">{errors.insurance.message}</p>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="question" className="block mb-2 font-medium">
-                    Question/Issue
-                  </label>
-                  <textarea
-                    {...register("question", {
-                      required: "This field is required",
-                    })}
-                    id="question"
+                    name="phone"
+                    type="tel"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
-                    rows="3"
-                    placeholder="Please describe your question or issue."
-                  ></textarea>
-                  {errors.question && (
-                    <p className="text-red-500">{errors.question.message}</p>
-                  )}
+                    placeholder="(555) 555-5555"
+                    required
+                  />
                 </div>
-                {formType === "emergency" && (
-                  <div>
-                    <label
-                      htmlFor="painLevel"
-                      className="block mb-2 font-medium"
-                    >
-                      Pain Level
-                    </label>
-                    <PainSlider register={register} value={painLevel} />
-                    {errors.painLevel && (
-                      <p className="text-red-500">{errors.painLevel.message}</p>
-                    )}
-                  </div>
-                )}
                 <div>
-                  <label
-                    htmlFor="returningPatient"
-                    className="block mb-2 font-medium"
-                  >
-                    Returning Patient?
+                  <label htmlFor="city" className="block mb-2 font-medium">
+                    City
                   </label>
-                  <div className="flex items-center gap-2">
-                    <input
-                      {...register("returningPatient", {
-                        required: "Please select an option",
-                      })}
-                      type="radio"
-                      id="returningPatientYes"
-                      value="yes"
-                    />
-                    Yes
-                    <input
-                      {...register("returningPatient", {
-                        required: "Please select an option",
-                      })}
-                      type="radio"
-                      id="returningPatientNo"
-                      value="no"
-                    />
-                    No
-                    {errors.returningPatient && (
-                      <p className="text-red-500">
-                        {errors.returningPatient.message}
-                      </p>
-                    )}
-                  </div>
+                  <input
+                    name="city"
+                    type="text"
+                    id="city"
+                    value={formData.city}
+                    onChange={handleInputChange}
+                    className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                    placeholder="Naperville"
+                    required
+                  />
                 </div>
-                <button
-                  type="submit"
-                  className="px-4 py-2 text-white bg-teal-600 rounded hover:bg-teal-700"
+              </div>
+              <div>
+                <label htmlFor="insurance" className="block mb-2 font-medium">
+                  Insurance <DialogBox />
+                </label>
+                <input
+                  name="insurance"
+                  type="text"
+                  id="insurance"
+                  value={formData.insurance}
+                  onChange={handleInputChange}
+                  className="block w-full p-3 mt-2 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                  placeholder="Insurance Provider"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="question" className="block mb-2 font-medium">
+                  Question/Issue
+                </label>
+                <textarea
+                  name="question"
+                  id="question"
+                  value={formData.question}
+                  onChange={handleInputChange}
+                  className="block w-full p-3 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-teal-500 focus:border-teal-500"
+                  rows="3"
+                  placeholder="Please describe your question or issue."
+                  required
+                ></textarea>
+              </div>
+              {formType === "emergency" && (
+                <div>
+                  <label htmlFor="painLevel" className="block mb-2 font-medium">
+                    Pain Level
+                  </label>
+                  <PainSlider
+                    name="painLevel"
+                    value={formData.painLevel}
+                    onChange={handlePainLevelChange}
+                  />
+                </div>
+              )}
+              <div>
+                <label
+                  htmlFor="returningPatient"
+                  className="block mb-2 font-medium"
                 >
-                  Submit
-                </button>
-              </form>
-            </section>
-          </FormProvider>
+                  Returning Patient?
+                </label>
+                <div className="flex items-center gap-2">
+                  <input
+                    name="returningPatient"
+                    type="radio"
+                    id="returningPatientYes"
+                    value="yes"
+                    checked={formData.returningPatient === "yes"}
+                    onChange={handleInputChange}
+                  />
+                  Yes
+                  <input
+                    name="returningPatient"
+                    type="radio"
+                    id="returningPatientNo"
+                    value="no"
+                    checked={formData.returningPatient === "no"}
+                    onChange={handleInputChange}
+                  />
+                  No
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="px-4 py-2 text-white bg-teal-600 rounded hover:bg-teal-700"
+              >
+                Submit
+              </button>
+            </form>
+          </section>
         </>
       ) : (
         <p className="p-4 text-white">
