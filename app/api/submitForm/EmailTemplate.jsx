@@ -14,10 +14,8 @@ export function generateEmailContent({
   const isEmergency = formType === "emergency" || painLevel >= 8;
 
   // Enhanced subject for iPhone VIP notifications
-  const urgencyPrefix = isEmergency
-    ? "🔴 Emergency Patient Request"
-    : "🗓️ New Patient Request";
-  const subject = `${urgencyPrefix}: ${name} (Pain ${painLevel}/10) - ${phone} at ${timestamp}`;
+  const urgencyPrefix = isEmergency ? "🔴 Urgent" : "🗓️ New";
+  const subject = `${urgencyPrefix}: ${name} (Pain ${painLevel}/10) - ${phone} @ ${timestamp}`;
 
   const introText = `You have received a new ${
     isEmergency ? "<strong>emergency</strong> " : ""
