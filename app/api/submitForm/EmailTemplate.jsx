@@ -9,33 +9,51 @@ export function generateEmailContent({
   insurance,
   formType,
   timestamp,
+  isTest,
 }) {
-  const isEmergency = formType === "emergency";
-  const subject = isEmergency
-    ? `New Emergency Request From ${name} at ${timestamp}`
-    : `New Appointment Request From ${name} at ${timestamp}`;
+  const isEmergency = formType === "emergency" || painLevel >= 8;
+
+  // Enhanced subject for iPhone VIP notifications
+  const urgencyPrefix = isEmergency ? "🔴 Urgent" : "🗓️ New";
+  const subject = `${urgencyPrefix}: ${name} (Pain ${painLevel}/10) - ${phone} at ${timestamp}`;
+
   const introText = `You have received a new ${
     isEmergency ? "<strong>emergency</strong> " : ""
   }appointment request from <strong>${name}</strong> at <strong>${timestamp}</strong>. They report the following issue: <strong>${question}</strong> and are experiencing a pain level of <strong>${painLevel}/10</strong>. ${
-    isEmergency ? "<strong>It is an emergency request.</strong> " : ""
+    isEmergency
+      ? "<strong>⚡ EMERGENCY REQUEST - RESPOND IMMEDIATELY!</strong> "
+      : ""
   }They can be reached at <strong>${phone}</strong> or via email at <strong>${email}</strong>. Their reported insurance is: <strong>${insurance}</strong>.`;
 
-  const text = `Dr. Brown,
+  let annotatedIntroText = introText;
+  if (isTest) {
+    annotatedIntroText =
+      `<p style="color: red;"><strong>[TEST EMAIL - NOT A REAL PATIENT]</strong></p>` +
+      annotatedIntroText;
+  }
 
-  ${introText}
+  let text = `Dr. Brown,
+`;
+  if (isTest) {
+    text = `[TEST EMAIL - NOT A REAL PATIENT]\n\n` + text;
+  }
 
-  Details:
-  Name: ${name}
-  Email: ${email}
-  Phone: ${phone}
-  City: ${city}
-  Message: ${question}
-  Pain Level: ${painLevel}
-  Returning Patient: ${returningPatient}
-  Insurance: ${insurance}`;
+  text += `
+
+${annotatedIntroText}
+
+Details:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+City: ${city}
+Message: ${question}
+Pain Level: ${painLevel}
+Returning Patient: ${returningPatient}
+Insurance: ${insurance}`;
 
   const html = `<h2>Dr. Brown,</h2>
-      <p>${introText}</p>
+      <p>${annotatedIntroText}</p>
       <hr>
       <h4>Details:</h4>
       <table style="border-collapse: collapse; width: 100%; margin-top: 10px;">
