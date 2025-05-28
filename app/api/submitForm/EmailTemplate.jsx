@@ -1,4 +1,4 @@
-export function generateEmailContent({
+export function EmailTemplate({
   name,
   email,
   phone,
@@ -14,8 +14,10 @@ export function generateEmailContent({
   const isEmergency = formType === "emergency" || painLevel >= 8;
 
   // Enhanced subject for iPhone VIP notifications
-  const urgencyPrefix = isEmergency ? "🔴 Urgent" : "🗓️ New";
-  const subject = `${urgencyPrefix}: ${name} (Pain ${painLevel}/10) - ${phone} @ ${timestamp}`;
+  const urgencyPrefix = isEmergency
+    ? "🔴 New Emergency Request"
+    : "🗓️ New Appointment Request";
+  const subject = `${urgencyPrefix} from ${name} • ${phone} @ ${timestamp}`;
 
   const introText = `You have received a new ${
     isEmergency ? "<strong>emergency</strong> " : ""
@@ -52,44 +54,52 @@ Pain Level: ${painLevel}
 Returning Patient: ${returningPatient}
 Insurance: ${insurance}`;
 
-  const html = `<h2>Dr. Brown,</h2>
-      <p>${annotatedIntroText}</p>
-      <hr>
-      <h4>Details:</h4>
-      <table style="border-collapse: collapse; width: 100%; margin-top: 10px;">
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Name:</td>
-          <td style="padding: 8px;">${name}</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Email:</td>
-          <td style="padding: 8px;"><a href="mailto:${email}">${email}</a></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Phone:</td>
-          <td style="padding: 8px;"><a href="tel:${phone}">${phone}</a></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">City:</td>
-          <td style="padding: 8px;">${city}</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Message:</td>
-          <td style="padding: 8px;">${question}</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Pain Level:</td>
-          <td style="padding: 8px;">${painLevel}</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Returning Patient:</td>
-          <td style="padding: 8px;">${returningPatient}</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 8px; font-weight: bold;">Insurance:</td>
-          <td style="padding: 8px;">${insurance}</td>
-        </tr>
-      </table>`;
+  const html = `
+  <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 16px; line-height: 1.5; color: #222; padding: 0 16px; max-width: 600px; margin: auto;">
+
+    <p style="margin-bottom: 8px; font-size: 14px; font-weight: 600; color: ${
+      isEmergency ? "#b30000" : "#1a73e8"
+    };">
+      ${
+        isEmergency ? "🚨 Emergency Request" : "🗓️ Appointment Request"
+      } submitted at ${timestamp}
+    </p>
+
+    <h2 style="margin-top: 0; margin-bottom: 8px;">New Patient Intake</h2>
+
+    <section style="margin: 24px 0;">
+      <h3 style="margin-bottom: 4px;">Patient</h3>
+      <p style="margin: 0;"><strong>Name:</strong> ${name}<br>
+      <strong>City:</strong> ${city}<br>
+      <strong>Returning Patient:</strong> ${returningPatient}</p>
+    </section>
+
+    <section style="margin: 24px 0;">
+      <div style="background: #f2f2f2; padding: 12px 16px; border-left: 4px solid #333; border-radius: 4px;">
+        <strong>Concern</strong><br>
+        <div style="margin-top: 6px;">
+          ${question}<br>
+          <strong>Pain Level:</strong> ${painLevel}/10<br>
+          <strong>Insurance:</strong> ${insurance}
+        </div>
+      </div>
+    </section>
+
+    <section style="margin: 24px 0;">
+      <h3 style="margin-bottom: 4px;">Contact</h3>
+      <p style="margin: 0;">
+        Phone: <a href="tel:${phone}" style="color: #1a73e8;">${phone}</a><br>
+        Email: <a href="mailto:${email}" style="color: #1a73e8;">${email}</a><br>
+        City: ${city}<br>
+        Returning Patient: ${returningPatient}
+      </p>
+    </section>
+
+    <footer style="margin-top: 40px; text-align: center; font-size: 12px; color: #888;">
+      Submitted via <a href="https://keithbrowndds.com" style="color: #888;">keithbrowndds.com</a>
+    </footer>
+  </div>
+`;
 
   return { subject, text, html };
 }
