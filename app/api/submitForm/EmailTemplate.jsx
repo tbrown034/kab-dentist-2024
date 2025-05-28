@@ -15,7 +15,7 @@ export function generateEmailContent({
 
   // Enhanced subject for iPhone VIP notifications
   const urgencyPrefix = isEmergency ? "🔴 Urgent" : "🗓️ New";
-  const subject = `${urgencyPrefix}: ${name} (Pain ${painLevel}/10) - ${phone} at ${timestamp}`;
+  const subject = `${urgencyPrefix}: ${name} (Pain ${painLevel}/10) - ${phone} @ ${timestamp}`;
 
   const introText = `You have received a new ${
     isEmergency ? "<strong>emergency</strong> " : ""
