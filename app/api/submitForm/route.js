@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { format } from "date-fns";
-import { generateEmailContent } from "./EmailTemplate";
+import { EmailTemplate } from "./EmailTemplate";
 export const runtime = {
   api: {
     bodyParser: {
@@ -44,6 +44,34 @@ export async function POST(req) {
   const isTest = url.searchParams.get("test") === "true";
   const testType = url.searchParams.get("type") || "normal"; // 'normal' or 'emergency'
 
+  // TEST PAYLOADS constant as per instructions
+  const TEST_PAYLOADS = {
+    emergency: {
+      testName: "Test Emergency",
+      name: "John Doe",
+      email: "johndoe.emergency@example.com",
+      phone: "555-982-1001",
+      city: "Chicago",
+      question: "My tooth is killing me! It's swollen and I can't sleep.",
+      painLevel: 9,
+      returningPatient: "no",
+      insurance: "Delta Dental",
+      formType: "emergency",
+    },
+    normal: {
+      testName: "Test Regular",
+      name: "Jane Smith",
+      email: "janesmith.routine@example.com",
+      phone: "555-293-8442",
+      city: "Naperville",
+      question: "Just need a routine cleaning and checkup.",
+      painLevel: 2,
+      returningPatient: "yes",
+      insurance: "MetLife",
+      formType: "appointment",
+    },
+  };
+
   try {
     console.log("=== FORM SUBMISSION START ===", {
       timestamp: new Date().toISOString(),
@@ -56,32 +84,8 @@ export async function POST(req) {
     // TEST MODE - Use predefined test data
     if (isTest) {
       console.log("=== TEST MODE ACTIVATED ===");
-
-      if (testType === "emergency") {
-        formData = {
-          name: "Test Emergency Patient",
-          email: "test.emergency@example.com",
-          phone: "555-EMERGENCY",
-          city: "Test City",
-          question: "Severe tooth pain - EMERGENCY TEST",
-          painLevel: 9,
-          returningPatient: "no",
-          insurance: "Test Insurance",
-          formType: "emergency",
-        };
-      } else {
-        formData = {
-          name: "Test Regular Patient",
-          email: "test.regular@example.com",
-          phone: "555-REGULAR",
-          city: "Test City",
-          question: "Routine cleaning - NORMAL TEST",
-          painLevel: 2,
-          returningPatient: "yes",
-          insurance: "Test Insurance",
-          formType: "appointment",
-        };
-      }
+      formData =
+        TEST_PAYLOADS[testType === "emergency" ? "emergency" : "normal"];
     } else {
       // REAL MODE - Use actual form data
       formData = await req.json();
@@ -127,7 +131,7 @@ export async function POST(req) {
     const centralTimeDate = getCentralTime();
     const timestamp = format(centralTimeDate, "h:mm a M/d/yy");
 
-    const { subject, text, html } = generateEmailContent({
+    const { subject, text, html } = EmailTemplate({
       name,
       email,
       phone,
