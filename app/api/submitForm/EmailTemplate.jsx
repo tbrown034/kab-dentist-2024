@@ -15,8 +15,8 @@ export function EmailTemplate({
 
   // Enhanced subject for iPhone VIP notifications
   const urgencyPrefix = isEmergency
-    ? "🔴 New Emergency Request"
-    : "🗓️ New Appointment Request";
+    ? "🔴  New Emergency Request"
+    : "🗓️  New Appointment Request";
   const subject = `${urgencyPrefix} from ${name} • ${phone} @ ${timestamp}`;
 
   const introText = `You have received a new ${
