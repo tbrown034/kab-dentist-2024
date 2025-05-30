@@ -2,13 +2,7 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { format } from "date-fns";
 import { EmailTemplate } from "./EmailTemplate";
-export const runtime = {
-  api: {
-    bodyParser: {
-      type: "json",
-    },
-  },
-};
+export const runtime = "nodejs";
 
 function getCentralTime() {
   const now = new Date();
