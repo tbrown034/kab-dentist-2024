@@ -1,6 +1,5 @@
 import React from "react";
 import FAQs from "./FAQs";
-import { raleway } from "../font";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import ServicesSeparator from "./ServicesSeparator";
@@ -48,7 +47,7 @@ const DentalServices = () => {
   return (
     <section className="flex flex-col gap-4 px-4 mt-6" id="servicesSection">
       <h1
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

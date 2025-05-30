@@ -1,6 +1,5 @@
 // app/call-now/page.jsx
 import React from "react";
-import { raleway } from "../font.js";
 import FullTitle from "../UI/Other/FullTitle";
 import Link from "next/link";
 import CallOptions from "./CallOptions";
@@ -93,7 +92,7 @@ const CallNowPage = () => {
   return (
     <section className="flex flex-col gap-4 px-4 mt-6" id="callNowSection">
       <h1
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

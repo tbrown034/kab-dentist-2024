@@ -1,6 +1,5 @@
 // app/make-an-appointment/page.jsx
 import React from "react";
-import { raleway } from "../font.js";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import Link from "next/link";
@@ -47,7 +46,7 @@ const MakeAnAppointmentPage = () => {
   return (
     <section className="flex flex-col gap-8 px-4 mt-6" id="appointmentSection">
       <h1
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

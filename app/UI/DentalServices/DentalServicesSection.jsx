@@ -3,7 +3,6 @@ import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import DentalServicesImgGroup from "./DentalServicesImgGroup";
 import DentalServicesOptions from "./DentalServicesOptions";
-import { raleway } from "../../../app/font.js";
 
 const DentalServicesSection = () => {
   const { title, textBlock, highlightedText, highlightInFront } =
@@ -14,7 +13,7 @@ const DentalServicesSection = () => {
   return (
     <section className="flex flex-col gap-4" id="servicesSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

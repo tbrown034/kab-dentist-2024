@@ -1,5 +1,4 @@
 import React from "react";
-import { raleway } from "../font";
 import FullTitle from "../UI/Other/FullTitle";
 import DocBot from "../dentalservices/DocBot";
 import Link from "next/link";
@@ -48,7 +47,7 @@ const DocBotPage = () => {
   return (
     <section className="flex flex-col gap-4 px-4 mt-6" id="docBotSection">
       <h1
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

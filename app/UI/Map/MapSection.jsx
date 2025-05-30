@@ -5,7 +5,6 @@ import FullTitle from "@/app/UI/Other/FullTitle"; // Confirm this import path is
 import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
 import Link from "next/link";
-import { raleway } from "../../../app/font.js";
 
 const MapSection = () => {
   const title = "Welcoming You to Your Naperville Dental Home";
@@ -15,7 +14,7 @@ const MapSection = () => {
   return (
     <section className="flex flex-col gap-4" id="locationSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

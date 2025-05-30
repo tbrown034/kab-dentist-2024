@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
-import { raleway } from "../../font.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMoneyBill,
@@ -26,7 +25,7 @@ const FeaturesSection = () => {
     <section className="flex flex-col gap-4" aria-labelledby="features-title">
       <h2
         id="features-title"
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight leading-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight leading-tight`}
       >
         <FullTitle
           title={title}

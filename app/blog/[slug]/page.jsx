@@ -1,7 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import blogContent from "../blogContent.json";
-import { raleway } from "../../font.js";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -61,7 +60,7 @@ const BlogPostPage = ({ params }) => {
         </Link>
       </div>
       <h1
-        className={`${raleway.className} text-3xl md:text-4xl font-extrabold tracking-tight text-teal-900 dark:text-gray-100`}
+        className={`font-header text-3xl md:text-4xl font-extrabold tracking-tight text-teal-900 dark:text-gray-100`}
       >
         {post.headline}
       </h1>
