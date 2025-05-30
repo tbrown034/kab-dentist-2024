@@ -7,7 +7,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import testimonialsEntries from "./testimonialEntries.js";
-import { raleway } from "../../../app/font.js";
 import sectionContents from "../../../sectionContent.json";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +16,7 @@ const TestimonialSection = () => {
   return (
     <section className="flex flex-col gap-4">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         {title} <span className="text-teal-500">{textBlock[0].text}</span>
       </h2>

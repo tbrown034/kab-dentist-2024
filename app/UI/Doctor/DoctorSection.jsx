@@ -3,7 +3,6 @@ import Link from "next/link";
 import DoctorImgGroup from "./DoctorImgGroup";
 import FullTitle from "@/app/UI/Other/FullTitle";
 import DoctorFAGD from "./DoctorFAGD";
-import { raleway } from "../../../app/font.js";
 
 const DoctorSection = () => {
   const title =
@@ -14,7 +13,7 @@ const DoctorSection = () => {
   return (
     <section className="flex flex-col gap-4" id="doctorSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

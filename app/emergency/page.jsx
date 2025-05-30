@@ -1,6 +1,5 @@
 import React from "react";
 import Medicaid from "../UI/Other/Medicaid";
-// Remove this line: import { raleway } from "@/lib/fonts";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import EmergencyFAQs from "./EmergencyFAQs";

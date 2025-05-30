@@ -3,7 +3,6 @@ import FullTitle from "@/app/UI/Other/FullTitle";
 import FinancialImgGroup from "./FinancialImgGroup";
 import FinancialPills from "./FinancialPills";
 import FinancialFAQs from "./FinancialFAQs";
-import { raleway } from "../../../app/font.js";
 import Medicaid from "../Other/Medicaid";
 
 const FinancialSection = () => {
@@ -14,7 +13,7 @@ const FinancialSection = () => {
   return (
     <section className="flex flex-col gap-4" id="financialSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}

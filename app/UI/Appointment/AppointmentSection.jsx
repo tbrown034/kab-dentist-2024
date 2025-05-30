@@ -1,7 +1,6 @@
 import React from "react";
 import sectionContents from "../../../sectionContent.json";
 import FullTitle from "@/app/UI/Other/FullTitle";
-import { raleway } from "../../../app/font.js";
 import UnifiedForm from "../Forms/UnifiedForm";
 
 const AppointmentSection = () => {
@@ -13,7 +12,7 @@ const AppointmentSection = () => {
   return (
     <section className="flex flex-col gap-4" id="appointmentSection">
       <h2
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
+        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
       >
         <FullTitle
           title={title}
