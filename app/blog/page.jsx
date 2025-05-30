@@ -1,7 +1,6 @@
 import Entries from "./Entries";
 import sectionContents from "../../sectionContent.json";
 import FullTitle from "../UI/Other/FullTitle";
-import { raleway } from "../font.js";
 
 export const metadata = {
   title: "Blog | Dr. Keith Brown DDS",
@@ -18,9 +17,7 @@ export default function BlogPage() {
   if (!title || !textBlock || textBlock.length === 0) return null;
   return (
     <section className="flex flex-col gap-4 px-4 mt-6" id="blogSection">
-      <h1
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
-      >
+      <h1 className="text-2xl font-extrabold tracking-tight font-header md:text-3xl">
         <FullTitle
           title={title}
           highlightedText={highlightedText}

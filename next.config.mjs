@@ -4,7 +4,7 @@ import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig = {
   reactStrictMode: true, // Enables React's Strict Mode to catch potential issues in the app.
-  swcMinify: true, // Enables SWC-based minification for faster builds.
+  // swcMinify removed - it's default in Next.js 15
   env: {
     NEXT_PUBLIC_MEASUREMENT_ID: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
     OPENAIAPI: process.env.OPENAIAPI,

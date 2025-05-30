@@ -2,7 +2,7 @@ import "./globals.css";
 import Footer from "./UI/Other/Footer";
 import Header from "./UI/Header/Header";
 import EmergencyBanner from "./UI/Other/EmergencyBanner";
-import { inter } from "./font";
+import { inter, raleway } from "./font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -37,7 +37,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className={`scroll-smooth ${inter.variable} ${raleway.variable}`}
+    >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>

@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* globals.css */
 @import url("@fortawesome/fontawesome-svg-core/styles.css");
 
 html {
@@ -78,5 +77,11 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter), sans-serif;
+  }
+  
+  /* Header font classes */
+  .font-header {
+    font-family: var(--font-raleway), sans-serif;
   }
 }
