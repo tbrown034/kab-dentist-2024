@@ -1,6 +1,6 @@
 import React from "react";
 import Medicaid from "../UI/Other/Medicaid";
-import { raleway } from "@/lib/fonts";
+// Remove this line: import { raleway } from "@/lib/fonts";
 import FullTitle from "../UI/Other/FullTitle";
 import sectionContents from "../../sectionContent.json";
 import EmergencyFAQs from "./EmergencyFAQs";
@@ -46,9 +46,7 @@ const Page = () => {
   if (!title || !textBlock || textBlock.length === 0) return null;
   return (
     <section className="flex flex-col gap-8 px-4 mt-6" id="emergencySection">
-      <h1
-        className={`${raleway.className} text-2xl md:text-3xl font-extrabold tracking-tight`}
-      >
+      <h1 className="text-2xl font-extrabold tracking-tight font-header md:text-3xl">
         <FullTitle
           title={title}
           highlightedText={highlightedText}

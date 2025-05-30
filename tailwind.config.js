@@ -18,7 +18,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        body: ["var(--font-roboto)", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        header: ["var(--font-raleway)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
