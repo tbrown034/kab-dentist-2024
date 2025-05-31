@@ -1,12 +1,11 @@
-import FeaturesSection from "./UI/Other/FeaturesSection";
-import HeroSection from "./UI/Hero/HeroSection";
-import DoctorSection from "./UI/Doctor/DoctorSection";
-import TestimonialSection from "./UI/Testimonials/TestimonialSection";
-import MapSection from "./UI/Map/MapSection";
-import AppointmentSection from "./UI/Appointment/AppointmentSection";
-import FinancialSection from "./UI/Financial/FinancialSection";
-import DentalServicesSection from "./UI/DentalServices/DentalServicesSection";
-// c
+import FeaturesSection from "@/components/layout/FeaturesSection";
+import HeroSection from "@/components/sections/hero/HeroSection";
+import DoctorSection from "@/components/sections/doctor/DoctorSection";
+import TestimonialSection from "@/components/sections/hero/TestimonialSection";
+import MapSection from "@/components/sections/map/MapSection";
+import AppointmentSection from "@/components/sections/appointment/AppointmentSection";
+import FinancialSection from "@/components/sections/financial/FinancialSection";
+import DentalServicesSection from "@/components/sections/dentalservices/DentalServicesSection";
 export default function Home() {
   return (
     <main className="flex flex-col gap-8 p-3 py-5 md:py-10 md:gap-10 lg:gap-12">
