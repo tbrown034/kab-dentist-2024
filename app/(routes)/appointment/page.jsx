@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { FullTitle } from "@/components/shared";
-import { UnifiedForm } from "@/components/forms";
-import sectionContents from "@/sectionContent.json";
-import AppointmentSection from "@/components/sections/appointment/AppointmentSection";
+import FullTitle from "@/components/shared/FullTitle";
+import UnifiedForm from "@/components/forms/UnifiedForm";
+import sectionContents from "@/lib/content/sectionContent.json";
 
 export const metadata = {
   title: "Make an Appointment | Dr. Keith Brown DDS, FAGD",

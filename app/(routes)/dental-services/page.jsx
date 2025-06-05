@@ -6,7 +6,6 @@ import ServicesSeparator from "@/components/sections/dentalservices/ServicesSepa
 import ServicesSearch from "@/components/sections/dentalservices/ServicesSearch";
 import DocBot from "@/components/sections/dentalservices/DocBot";
 import Link from "next/link";
-import ServicesClient from "@/components/sections/dentalservices/ServicesClient";
 
 export const metadata = {
   title: "Dental Services - Naperville | Dr. Keith Brown DDS",
