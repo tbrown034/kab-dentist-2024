@@ -1,8 +1,8 @@
 import "./globals.css";
-import Footer from "./UI/Other/Footer";
-import Header from "./UI/Header/Header";
-import EmergencyBanner from "./UI/Other/EmergencyBanner";
-import { inter, raleway } from "./font";
+import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/Footer";
+import EmergencyBanner from "@/components/layout/extra/EmergencyBanner";
+import { inter, raleway } from "@/app/font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
         <EmergencyBanner />
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID || ""} />
       </body>
     </html>
   );

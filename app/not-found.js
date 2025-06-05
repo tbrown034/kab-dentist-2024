@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import confusedTooth from "../public/images/logos/confusedTooth.png";
+import confusedTooth from "@/public/images/logos/confusedTooth.png"; // Use @/ alias
 
 export default function NotFound() {
   return (
@@ -16,8 +16,8 @@ export default function NotFound() {
         <Image
           src={confusedTooth}
           alt="Confused Tooth"
-          width={300} // Set the desired width
-          height={300} // Set the desired height
+          width={300}
+          height={300}
           className="rounded-2xl"
         />
       </div>
