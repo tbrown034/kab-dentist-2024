@@ -1,8 +1,7 @@
 import Image from "next/image";
-
-import nitrous from "../../../public/images/office/officeEquipmentNitrous.jpeg";
-import officeStuff from "../../../public/images/office/officeEquipmentPc1000.jpeg";
-import verticalChair from "../../../public/images/office/verticalChair.jpeg";
+import nitrous from "@/public/images/office/equipmentNitrous.jpeg";
+import officeStuff from "@/public/images/office/equipmentPc1000.jpeg";
+import verticalChair from "@/public/images/office/chairVertical.jpeg";
 
 const DentalServicesImgGroup = () => {
   return (

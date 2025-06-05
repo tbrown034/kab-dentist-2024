@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useMemo } from "react";
-import blogContent from "./blogContent.json";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import drAvatar from "../../public/images/doctor/avatar.jpeg";
+import blogContent from "@/lib/content/blogContent.json";
+import { Avatar, AvatarFallback } from "@/components/shadcn-ui/avatar";
+import drAvatar from "@/public/images/doctor/avatar.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 

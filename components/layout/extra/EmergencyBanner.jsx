@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { trackingNumber } from "@/lib/constants/constants";
-
 const EmergencyBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
 

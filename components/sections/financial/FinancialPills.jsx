@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import careCredit from "../../../public/images/logos/careCredit.png";
+import careCredit from "@/public/images/logos/careCredit.png";
 
 const FinancialPills = () => {
   return (

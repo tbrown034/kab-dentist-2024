@@ -20,7 +20,7 @@ const DocBot = () => {
     setError(null);
 
     try {
-      const result = await fetch("/api/DocBot", {
+      const result = await fetch("/api/docbot", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

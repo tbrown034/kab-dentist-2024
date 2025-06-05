@@ -1,6 +1,6 @@
-import Entries from "./BlogContainer";
-import sectionContents from "../../sectionContent.json";
-import FullTitle from "../../../components/shared/FullTitle";
+import BlogContainer from "./BlogContainer";
+import sectionContents from "@/lib/content/sectionContent.json";
+import FullTitle from "@/components/shared/FullTitle";
 
 export const metadata = {
   title: "Blog | Dr. Keith Brown DDS",
@@ -32,7 +32,7 @@ export default function BlogPage() {
         ))}
       </div>
 
-      <Entries />
+      <BlogContainer />
     </section>
   );
 }

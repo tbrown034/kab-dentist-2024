@@ -1,4 +1,5 @@
 import React from "react";
+import DialogBox from "@/components/dialogs/InsuranceDialog"; // Added missing import
 
 export const NameInput = ({ value, onChange }) => (
   <div>

@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import FullTitle from "../../../components/shared/FullTitle";
-import sectionContents from "../../sectionContent.json";
-import FinancialPills from "../UI/Financial/FinancialPills";
-import FinancialFAQs from "../UI/Financial/FinancialFAQs";
+import FullTitle from "@/components/shared/FullTitle";
+import sectionContents from "@/lib/content/sectionContent.json";
+import FinancialPills from "@/components/sections/financial/FinancialPills";
+import FinancialFAQs from "@/components/sections/financial/FinancialFAQs";
 
 export const metadata = {
   title: "Insurance Information - Naperville | Dr. Keith Brown DDS",

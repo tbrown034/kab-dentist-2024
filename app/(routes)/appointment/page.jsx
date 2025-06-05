@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FullTitle } from "@/components/shared";
 import { UnifiedForm } from "@/components/forms";
 import sectionContents from "@/sectionContent.json";
+import AppointmentSection from "@/components/sections/appointment/AppointmentSection";
 
 export const metadata = {
   title: "Make an Appointment | Dr. Keith Brown DDS, FAGD",

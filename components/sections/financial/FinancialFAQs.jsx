@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/shadcn-ui/accordion";
-import sectionContents from "../../../sectionContent.json";
+import sectionContents from "@/lib/content/sectionContent.json";
 
 const FinancialFAQs = () => {
   const financialFAQs = sectionContents.financialSection.financialFAQs;

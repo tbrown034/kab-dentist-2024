@@ -1,5 +1,4 @@
 "use client";
-
 import { Dialog } from "@headlessui/react";
 
 export default function InsuranceValidation({ isOpen, onClose, onSubmit }) {

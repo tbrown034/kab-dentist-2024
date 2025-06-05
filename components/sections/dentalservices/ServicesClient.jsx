@@ -1,10 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import servicesContent from "./servicesContent.json";
-
+import servicesContent from "@/lib/content/servicesContent.json";
 const ServicesSearch = ({ onSelectService }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedService, setSelectedService] = useState(null);

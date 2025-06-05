@@ -5,12 +5,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
-import drWithPatientRelaxed from "../../../public/images/doctor/drWithPatientRelaxed.jpeg";
-import bank1 from "../../../public/images/office/bank1.jpeg";
-import doorWithoutStickers from "../../../public/images/office/doorWithoutStickers.jpeg";
-import drAtReception1 from "../../../public/images/doctor/drAtReception1.jpeg";
-import drFramesBackground from "../../../public/images/doctor/drFramesBackground.jpeg";
+} from "@/components/shadcn-ui/carousel";
+import drWithPatientRelaxed from "@/public/images/doctor/drWithPatientRelaxed.jpeg";
+import bank1 from "@/public/images/office/bank1.jpeg";
+import doorWithoutStickers from "@/public/images/office/doorWithoutStickers.jpeg";
+import drAtReception1 from "@/public/images/doctor/drAtReception1.jpeg";
+import drFramesBackground from "@/public/images/doctor/drFramesBackground.jpeg";
 
 const images = [
   {

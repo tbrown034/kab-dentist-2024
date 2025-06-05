@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import PainSlider from "../../../components/forms/PainSlider";
+import PainSlider from "@/components/forms/PainSlider";
 import EmergencyFormText from "./EmergencyFormText";
 import DialogBox from "@/components/dialogs/InsuranceDialog";
 

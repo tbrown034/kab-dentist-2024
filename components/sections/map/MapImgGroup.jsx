@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
-import bankExt2 from "../../../public/images/office/bankExt2.jpeg";
-import bankExtClose from "../../../public/images/office/bankExtClose.jpeg";
-import officeViewWithBirds from "../../../public/images/office/offficeViewWithBirds.jpeg";
-import officeWaitingRoom from "../../../public/images/office/officeWaitingRoom.jpeg";
+import bankExt2 from "@/public/images/office/bankExt2.jpeg";
+import bankExtClose from "@/public/images/office/bankExtClose.jpeg";
+import officeViewWithBirds from "@/public/images/office/offficeViewWithBirds.jpeg";
+import officeWaitingRoom from "@/public/images/office/officeWaitingRoom.jpeg";
 
-import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
+} from "@/components/shadcn-ui/carousel";
 
 const images = [
   {

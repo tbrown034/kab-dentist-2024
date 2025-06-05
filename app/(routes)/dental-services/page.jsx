@@ -1,11 +1,12 @@
 import React from "react";
-import FAQs from "../../../components/sections/dentalservices/FAQs";
-import FullTitle from "../../../components/shared/FullTitle";
-import sectionContents from "../../sectionContent.json";
-import ServicesSeparator from "../../../components/sections/dentalservices/ServicesSeparator";
-import ServicesSearch from "../../../components/sections/dentalservices/ServicesSearch";
-import DocBot from "../../../components/sections/dentalservices/DocBot";
+import FAQs from "@/components/sections/dentalservices/FAQs";
+import FullTitle from "@/components/shared/FullTitle";
+import sectionContents from "@/lib/content/sectionContent.json";
+import ServicesSeparator from "@/components/sections/dentalservices/ServicesSeparator";
+import ServicesSearch from "@/components/sections/dentalservices/ServicesSearch";
+import DocBot from "@/components/sections/dentalservices/DocBot";
 import Link from "next/link";
+import ServicesClient from "@/components/sections/dentalservices/ServicesClient";
 
 export const metadata = {
   title: "Dental Services - Naperville | Dr. Keith Brown DDS",

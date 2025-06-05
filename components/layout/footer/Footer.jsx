@@ -10,11 +10,10 @@ import {
 
 const footerLinks = [
   { href: "/#home", label: "Home" },
-  { href: "/dentalservices", label: "Dental Services" },
+  { href: "/dental-services", label: "Dental Services" }, // Updated route name
   { href: "/emergency", label: "Emergency Care" },
   { href: "/docbot", label: "Digital Assistant" },
-
-  { href: "/make-an-appointment", label: "Appointment" },
+  { href: "/appointment", label: "Appointment" }, // Updated route name
 ];
 
 const Footer = () => {

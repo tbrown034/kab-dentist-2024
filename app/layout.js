@@ -1,7 +1,8 @@
 import "./globals.css";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header/Header";
-import EmergencyBanner from "@/components/layout/EmergencyBanner";
+import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/Footer";
+import { Toaster } from "@/components/shadcn-ui/toaster";
+import EmergencyBanner from "@/components/layout/extra/EmergencyBanner";
 import { inter, raleway } from "@/app/font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID || ""} />
+        <Toaster />
       </body>
     </html>
   );

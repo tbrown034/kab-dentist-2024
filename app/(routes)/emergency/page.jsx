@@ -1,10 +1,10 @@
 import React from "react";
-import Medicaid from "../../../components/shared/Medicaid";
-import FullTitle from "../../../components/shared/FullTitle";
-import sectionContents from "../../sectionContent.json";
-import EmergencyFAQs from "./EmergencyFAQs";
-import UnifiedForm from "../../../components/forms/UnifiedForm";
-import EmergencyActions from "./EmergencyActions";
+import Medicaid from "@/components/shared/Medicaid";
+import FullTitle from "@/components/shared/FullTitle";
+import sectionContents from "@/lib/content/sectionContent.json";
+import EmergencyFAQs from "@/components/sections/emergency/EmergencyFAQs";
+import UnifiedForm from "@/components/forms/UnifiedForm";
+import EmergencyActions from "@/components/sections/emergency/EmergencyActions";
 
 export const metadata = {
   title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",

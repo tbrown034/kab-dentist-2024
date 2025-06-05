@@ -5,11 +5,11 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "../../../components/ui/carousel.jsx";
-import retainer from "../../../public/images/stock/retainer.jpg";
-import teeth2 from "../../../public/images/stock/teeth2.jpg";
-import toothbrushes from "../../../public/images/stock/toothbrushes.jpg";
-import womanSmiling from "../../../public/images/stock/womanSmiling.jpg";
+} from "@/components/shadcn-ui/carousel";
+import retainer from "@/public/images/stock/retainer.jpg";
+import teeth2 from "@/public/images/stock/teeth2.jpg";
+import toothbrushes from "@/public/images/stock/toothbrushes.jpg";
+import womanSmiling from "@/public/images/stock/womanSmiling.jpg";
 
 const financialImages = [
   {

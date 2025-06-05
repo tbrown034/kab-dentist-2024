@@ -1,6 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import blogContent from "../blogContent.json";
+import blogContent from "@/lib/content/blogContent.json";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -4,8 +4,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import sectionContents from "../../sectionContent.json"; // Adjust the path as needed
+} from "@/components/shadcn-ui/accordion";
+import sectionContents from "@/lib/content/sectionContent.json"; // Adjust the path as needed
 
 const EmergencyFAQs = () => {
   const faqs = sectionContents.emergencySection.FAQ;

@@ -3,7 +3,7 @@ import FullTitle from "@/components/shared/FullTitle";
 import FinancialImgGroup from "./FinancialImgGroup";
 import FinancialPills from "./FinancialPills";
 import FinancialFAQs from "./FinancialFAQs";
-import Medicaid from "../../shared/Medicaid";
+import Medicaid from "@/components/shared/Medicaid";
 
 const FinancialSection = () => {
   const title = "Making World-Class Dental Care Accessible to All";

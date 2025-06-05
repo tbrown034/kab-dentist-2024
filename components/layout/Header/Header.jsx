@@ -1,7 +1,7 @@
-// components/Header/Header.jsx
-import HeaderFullNav from "./HeaderFullNav";
-import HeaderDropDown from "./HeaderDropDown";
-import ThemeToggle from "./ThemeToggle";
+// components/layout/header/Header.jsx
+import HeaderFullNav from "@/components/layout/header/HeaderFullNav";
+import HeaderDropDown from "@/components/layout/header/HeaderDropDown";
+import ThemeToggle from "@/components/layout/header/ThemeToggle";
 
 const Header = () => {
   return (

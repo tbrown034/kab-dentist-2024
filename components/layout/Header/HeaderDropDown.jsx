@@ -1,21 +1,17 @@
 "use client";
-
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "@/components/layout/header/ThemeToggle";
 
 const links = [
-  { href: "/#doctorSection", label: "About" },
-  { href: "/dentalservices", label: "  Dental Services" },
-  { href: "/insurance", label: "Insurance" },
-  { href: "/emergency", label: "Emegency" },
-  { href: "/make-an-appointment", label: "Make an Appoitment" },
-
+  { href: "/#locationSection", label: "Location" },
+  { href: "/dental-services", label: "Services" }, // Fixed route name
+  { href: "/#appointmentSection", label: "Appointments" },
   { href: "/blog", label: "Blog" },
-  { href: "/docbot", label: "Virtual Dental Assistant" },
+  { href: "/emergency", label: "Emergency" },
 ];
 
 function HeaderDropdown() {

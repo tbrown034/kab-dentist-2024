@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import PainSlider from "./PainSlider";
+import PainSlider from "@/components/forms/PainSlider"; // Fixed: Use @/ alias instead of relative
 import DialogBox from "@/components/dialogs/InsuranceDialog";
-import { restrictedTerms } from "../../lib/constants/restrictedInsuranceTerms";
+import { restrictedTerms } from "@/lib/constants/restrictedInsuranceTerms"; // Fixed: Use @/ alias
 import DialogCheck from "@/components/dialogs/InsuranceCheck";
 
 export default function UnifiedForm({ formType }) {

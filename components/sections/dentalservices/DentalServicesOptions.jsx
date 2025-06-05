@@ -10,7 +10,7 @@ const DentalServicesOptions = () => {
       <div className="space-y-6">
         <div>
           <Link
-            href="/dentalservices#general-dentistry"
+            href="/dental-services#general-dentistry"
             className="flex items-center mb-2 text-lg font-semibold text-teal-700"
           >
             General Dentistry
@@ -24,7 +24,7 @@ const DentalServicesOptions = () => {
 
         <div>
           <Link
-            href="/dentalservices#emergency-dentistry"
+            href="/dental-services#emergency-dentistry"
             className="flex items-center mb-2 text-lg font-semibold text-teal-700"
           >
             Emergency Dentistry
@@ -37,7 +37,7 @@ const DentalServicesOptions = () => {
 
         <div>
           <Link
-            href="/dentalservices#cosmetic-dentistry"
+            href="/dental-services#cosmetic-dentistry"
             className="flex items-center mb-2 text-lg font-semibold text-teal-700"
           >
             Cosmetic Dentistry
@@ -52,7 +52,7 @@ const DentalServicesOptions = () => {
 
       <div className="flex justify-center mt-8">
         <Link
-          href="/dentalservices"
+          href="/dental-services"
           className="px-4 py-2 text-sm font-semibold text-white bg-teal-800 rounded-lg hover:bg-teal-700 active:bg-teal-900"
         >
           Read More
