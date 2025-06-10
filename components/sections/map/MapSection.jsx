@@ -1,8 +1,9 @@
-"use client"; // Ensures client-side rendering for the component
-
+"use client";
 import React from "react";
-import FullTitle from "@/components/shared/FullTitle"; // Confirm this import path is correct
-import MapImgGroup from "./MapImgGroup";
+import FullTitle from "@/components/shared/FullTitle";
+import Image from "next/image";
+import bankExt2 from "@/public/images/office/bankExt2.jpeg";
+// import MapImgGroup from "./MapImgGroup";
 import MyGoogleMap from "./MyGoogleMap";
 import Link from "next/link";
 
@@ -58,7 +59,13 @@ const MapSection = () => {
         <div className="border-2 rounded-2xl">
           <MyGoogleMap />
         </div>
-        <MapImgGroup />
+        <Image
+          src={bankExt2}
+          alt="Exterior view of the Fifth Third Bank building at 1296 Rickert Drive, Naperville, IL"
+          width={800}
+          height={600}
+          className="rounded-xl"
+        />
       </div>
     </section>
   );
