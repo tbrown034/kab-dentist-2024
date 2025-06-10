@@ -1,8 +1,7 @@
 "use client";
-import HeroImgSlider from "./HeroImgSlider";
 import HeroCTA from "./HeroCTA";
 import Link from "next/link";
-
+import HeroMainImage from "./HeroMainImage";
 const HeroSection = () => {
   const title = "Naperville's Home For Modern, Trusted Dentistry";
   const highlightedText = "Modern, Trusted Dentistry";
@@ -37,7 +36,7 @@ const HeroSection = () => {
         <HeroCTA />
       </div>
       <div className="flex flex-col justify-center md:w-2/5">
-        <HeroImgSlider />
+        <HeroMainImage />
       </div>
     </section>
   );
