@@ -6,7 +6,7 @@ import MapSection from "@/components/sections/map/MapSection";
 import AppointmentSection from "@/components/sections/appointment/AppointmentSection";
 export default function Home() {
   return (
-    <main className="flex flex-col gap-8 p-3 py-5 md:py-10 md:gap-10 lg:gap-12">
+    <main className="flex flex-col p-2 gap-8">
       <HeroSection />
       <FeaturesSection />
       <DoctorSection />
