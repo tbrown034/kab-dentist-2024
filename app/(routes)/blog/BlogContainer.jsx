@@ -2,7 +2,7 @@
 import React, { useState, useMemo } from "react";
 import blogContent from "@/lib/content/blogContent.json";
 import { Avatar, AvatarFallback } from "@/components/shadcn-ui/avatar";
-import drAvatar from "../../../src/assets/images/doctor/dr-avatar.jpeg"; // test
+import drAvatar from "../../../src/assets/images/doctor/dr-avatar.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 
