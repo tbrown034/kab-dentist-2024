@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { CalendarDaysIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import CallDialog from "@/components/dialogs/CallDialog";
-import HeroHighlights from "./HeroHighlights";
 
 const HeroCTA = () => {
   const [isCallDialogOpen, setIsCallDialogOpen] = useState(false);
@@ -28,7 +27,7 @@ const HeroCTA = () => {
           aria-label="Book a dental appointment"
         >
           <CalendarDaysIcon className="w-5 h-5" />
-          Book Appointment!
+          Book Appointment
         </Link>
 
         {/* Secondary CTA - Call Us */}
@@ -47,9 +46,6 @@ const HeroCTA = () => {
         openExternal={isCallDialogOpen}
         onExternalClose={closeCallDialog}
       />
-
-      {/* Hero Highlights */}
-      <HeroHighlights onPhoneClick={openCallDialog} />
     </div>
   );
 };

@@ -1,82 +1,39 @@
-"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/shadcn-ui/carousel";
-import drWithPatientRelaxed from "@/public/images/doctor/drWithPatientRelaxed.jpeg";
-import bank1 from "@/public/images/office/bank1.jpeg";
-import doorWithoutStickers from "@/public/images/office/doorWithoutStickers.jpeg";
-import drAtReception1 from "@/public/images/doctor/drAtReception1.jpeg";
-import drFramesBackground from "@/public/images/doctor/drFramesBackground.jpeg";
 
-const images = [
-  {
-    id: 1,
-    src: drWithPatientRelaxed,
-    alt: "Dr. Keith A. Brown DDS, FAGD, talks with a satisfied patient after a dental visit.",
-    width: 800,
-    height: 600,
-  },
-  {
-    id: 2,
-    src: bank1,
-    alt: "Exterior view of the Fifth Third Bank building at 1295 Rickert Drive, 3rd floor, Naperville, IL, housing Dr. Brown's dental office.",
-    width: 800,
-    height: 600,
-  },
-  {
-    id: 3,
-    src: drFramesBackground,
-    alt: "Dr. Keith A. Brown DDS, FAGD, standing in front of framed certificates with the Fifth Third Bank building at 1295 Rickert Drive, 3rd floor, Naperville, IL, in the background.",
-    width: 800,
-    height: 600,
-  },
-  {
-    id: 4,
-    src: doorWithoutStickers,
-    alt: "Dr. Keith A. Brown DDS, FAGD, standing with arms crossed in his office at 1295 Rickert Drive, 3rd floor, Naperville, IL, while a staff member is seated at a desk in the background.",
-    width: 800,
-    height: 600,
-  },
-  {
-    id: 5,
-    src: drAtReception1,
-    alt: "Dr. Keith A. Brown DDS, FAGD, at the dental office reception desk in Naperville, IL.",
-    width: 800,
-    height: 600,
-  },
-];
+const HeroMainImage = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
-const HeroImgSlider = () => {
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const mobileImage = "/images/doctor/dr-avatar.jpeg";
+  const desktopImage = "/images/doctor/dr-horizontal-primary.jpeg";
+
   return (
-    <Carousel
-      plugins={[
-        Autoplay({
-          delay: 8000,
-          stopOnInteraction: true,
-        }),
-      ]}
-    >
-      <CarouselContent>
-        {images.map((image) => (
-          <CarouselItem key={image.id}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              placeholder="blur"
-              priority={true}
-              className="rounded-xl"
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <div className="relative w-full h-64 md:h-80 lg:h-96 xl:h-[28rem] 2xl:h-[32rem]">
+      <div className="relative w-full h-full overflow-hidden rounded-lg shadow-lg">
+        <Image
+          src={isMobile ? mobileImage : desktopImage}
+          alt="Dr. Keith A. Brown DDS, FAGD, dental office imagery"
+          fill
+          className="object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 35vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+      </div>
+      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-teal-100 rounded-full opacity-20 blur-xl" />
+      <div className="absolute -top-4 -left-4 w-16 h-16 bg-teal-200 rounded-full opacity-30 blur-lg" />
+    </div>
   );
 };
 
-export default HeroImgSlider;
+export default HeroMainImage;
