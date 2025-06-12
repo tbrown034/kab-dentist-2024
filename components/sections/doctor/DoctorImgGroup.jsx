@@ -1,7 +1,7 @@
 import Image from "next/image";
-import drWithPatientClose from "@/public/images/doctor/drWithPatientClose.jpeg";
-import drWithPatientandComputer from "@/public/images/doctor/drWithPatientandComputer.jpeg";
-import drVertical1 from "@/public/images/doctor/drVertical1.jpeg";
+import drWithPatientClose from "@/public/images/doctor/dr-horizontal-primary.jpeg";
+import drWithPatientandComputer from "@/public/images/doctor/dr-with-computer.jpeg";
+import drVertical1 from "@/public/images/doctor/dr-vertical-primary.jpeg";
 
 // Organize images into an array of objects
 const images = [

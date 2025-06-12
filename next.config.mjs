@@ -2,9 +2,9 @@
 
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Enables React's Strict Mode to catch potential issues in the app.
-  // swcMinify removed - it's default in Next.js 15
+  reactStrictMode: true,
   env: {
     NEXT_PUBLIC_MEASUREMENT_ID: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
     OPENAIAPI: process.env.OPENAIAPI,
@@ -18,12 +18,12 @@ const nextConfig = {
       {
         source: "/www.keithbrowndds.com/:path*",
         destination: "https://keithbrowndds.com/:path*",
-        permanent: true, // Permanent redirect (HTTP 308)
+        permanent: true,
       },
       {
         source: "/keithbrowndds.com/:path*",
         destination: "https://keithbrowndds.com/:path*",
-        permanent: true, // Permanent redirect (HTTP 308)
+        permanent: true,
       },
     ];
   },
