@@ -1,6 +1,5 @@
 import React from "react";
 import FullTitle from "@/components/shared/FullTitle";
-import FinancialImgGroup from "./FinancialImgGroup";
 import FinancialPills from "./FinancialPills";
 import FinancialFAQs from "./FinancialFAQs";
 import Medicaid from "@/components/shared/Medicaid";
@@ -33,7 +32,6 @@ const FinancialSection = () => {
           payments.
         </p>
       </div>
-      <FinancialImgGroup />
       <FinancialPills />
       <FinancialFAQs />
       <Medicaid />
