@@ -9,15 +9,15 @@ import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
 import sectionContents from "@/lib/content/sectionContent.json";
 
 export const metadata = {
-  title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
+  title: "Emergency Dentist in Naperville | Dr. Keith A. Brown DDS, FAGD",
   description:
-    "Need emergency dental care in Naperville? Contact Dr. Keith Brown DDS FAGD for urgent dental services, including weekends. We're here to help you with your dental emergencies.",
+    "Looking for an emergency dentist in Naperville? Dr. Keith A. Brown DDS, FAGD offers same-day and after-hours dental care. Call now or request a consultation online.",
   keywords:
-    "emergency dental care, urgent dental services, weekend dentist, dental emergency Naperville, Keith Brown DDS",
+    "emergency dentist Naperville, same-day dental care, after-hours dental, urgent dentist, Dr. Keith Brown DDS",
   openGraph: {
-    title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
+    title: "Emergency Dentist in Naperville | Dr. Keith A. Brown DDS, FAGD",
     description:
-      "Need emergency dental care in Naperville? Contact Keith Brown DDS for urgent dental services, including weekends. We're here to help you with your dental emergencies.",
+      "Looking for an emergency dentist in Naperville? Dr. Keith A. Brown DDS, FAGD offers same-day and after-hours dental care. Call now or request a consultation online.",
     url: "https://keithbrowndds.com/emergency",
     images: [
       {
@@ -33,9 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
+    title: "Emergency Dentist in Naperville | Dr. Keith A. Brown DDS, FAGD",
     description:
-      "Need emergency dental care in Naperville? Contact Keith Brown DDS for urgent dental services, including weekends. We're here to help you with your dental emergencies.",
+      "Looking for an emergency dentist in Naperville? Dr. Keith A. Brown DDS, FAGD offers same-day and after-hours dental care. Call now or request a consultation online.",
     image: "https://keithbrowndds.com/twitter-emergency.jpg",
   },
 };
@@ -55,7 +55,7 @@ const Page = () => {
       >
         {/* Image */}
         <div className="w-full xl:w-1/2">
-          <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] rounded-lg shadow-lg overflow-hidden">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[5/3] lg:aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
             <Image
               src={drWithPatientAfter}
               alt="Dr. Keith A. Brown providing emergency dental care"
@@ -71,8 +71,8 @@ const Page = () => {
         <div className="flex flex-col justify-center gap-6 w-full xl:w-1/2">
           <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
             <FullTitle
-              title={title}
-              highlightedText={highlightedText}
+              title="Emergency Dentist in Naperville"
+              highlightedText="Emergency Dentist"
               highlightInFront={highlightInFront}
             />
           </h1>
@@ -85,10 +85,13 @@ const Page = () => {
               >
                 Dr. Keith A. Brown DDS, FAGD
               </Link>{" "}
-              offers emergency dental care in Naperville with free same-day and
-              after-hours consultations.
+              provides trusted emergency dental care in Naperville — including
+              nights and weekends.
             </p>
-            <p className="text-xl">Call now or request a same-day consult.</p>
+            <p className="text-xl">
+              Whether you’re in pain or unsure what to do, we’ll help you
+              quickly.
+            </p>
           </div>
 
           {/* CTAs */}
@@ -108,20 +111,34 @@ const Page = () => {
               aria-label="Request emergency consultation"
             >
               <DocumentTextIcon className="w-5 h-5 text-teal-600" />
-              Request Consultation
+              Request Emergency Consultation
             </Link>
           </div>
+
+          {/* FAQ Teaser */}
+          <p className="text-lg xl:text-xl">
+            <Link
+              href="#emergencyFAQs"
+              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+            >
+              Check out our Emergency FAQs
+            </Link>{" "}
+            for answers about pain, insurance, or what to do next.
+          </p>
         </div>
       </section>
 
-      <div className="mx-4 mt-2" id="emergencyForm">
+      {/* Emergency Form */}
+      <div className="" id="emergencyForm">
         <UnifiedForm formType="emergency" />
       </div>
 
+      {/* FAQs */}
       <div id="emergencyFAQs">
         <EmergencyFAQs />
       </div>
 
+      {/* Medicaid Info */}
       <div className="text-black dark:text-white">
         <Medicaid />
       </div>
