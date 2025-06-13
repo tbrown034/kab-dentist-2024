@@ -71,8 +71,8 @@ const Page = () => {
         <div className="flex flex-col justify-center gap-6 w-full xl:w-1/2">
           <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
             <FullTitle
-              title="Emergency Dentist in Naperville"
-              highlightedText="Emergency Dentist"
+              title="Trusted Emergency Dentistry in Naperville"
+              highlightedText="Emergency Dentistry"
               highlightInFront={highlightInFront}
             />
           </h1>
@@ -86,11 +86,32 @@ const Page = () => {
                 Dr. Keith A. Brown DDS, FAGD
               </Link>{" "}
               provides trusted emergency dental care in Naperville — including
-              nights and weekends.
+              free night and weekend consultations to help you get treated as
+              soon as possible.
             </p>
             <p className="text-xl">
-              Whether you’re in pain or unsure what to do, we’ll help you
-              quickly.
+              In pain or unsure what to do? Don’t wait –{" "}
+              <a
+                href="tel:6302968702"
+                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+              >
+                call now
+              </a>
+              ,{" "}
+              <Link
+                href="#emergencyForm"
+                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+              >
+                fill out the form below
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="#emergencyFAQs"
+                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+              >
+                learn more
+              </Link>
+              .
             </p>
           </div>
 
@@ -117,13 +138,14 @@ const Page = () => {
 
           {/* FAQ Teaser */}
           <p className="text-lg xl:text-xl">
+            See our{" "}
             <Link
               href="#emergencyFAQs"
               className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
             >
-              Check out our Emergency FAQs
+              Emergency FAQs
             </Link>{" "}
-            for answers about pain, insurance, or what to do next.
+            for answers about pain, insurance or what to do next.
           </p>
         </div>
       </section>
