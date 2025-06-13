@@ -39,7 +39,7 @@ const HeroSection = () => {
           </h1>
           <h2 className="text-lg sm:text-xl xl:text-2xl font-medium">
             <Link
-              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+              className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
               href="#doctorSection"
             >
               Dr. Keith A. Brown DDS, FAGD
@@ -50,7 +50,7 @@ const HeroSection = () => {
             Located at{" "}
             <a
               href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
-              className="text-teal-700 underline hover:text-teal-600 active:text-teal-400"
+              className="text-teal-700 dark:text-teal-500 underline hover:text-teal-600 active:text-teal-400"
               target="_blank"
               rel="noopener noreferrer"
             >

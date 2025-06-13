@@ -1,5 +1,37 @@
 User-agent: *
-Disallow: /private/
-Allow: /
 
+# Block Next.js build and system files
+Disallow: /.next/
+Disallow: /_next/static/chunks/
+Disallow: /api/
+
+# Block any admin or private areas (if you add them later)
+Disallow: /admin/
+Disallow: /private/
+
+# Block common non-content files
+Disallow: /*.json$
+Disallow: /components/
+Disallow: /lib/
+Disallow: /contexts/
+
+# Allow all important pages (explicit for clarity)
+Allow: /
+Allow: /appointment
+Allow: /emergency
+Allow: /dental-services
+Allow: /insurance
+Allow: /blog
+Allow: /blog/*
+
+# Allow essential static assets
+Allow: /_next/static/
+Allow: /images/
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# Sitemap location
 Sitemap: https://keithbrowndds.com/sitemap.xml
+
+# Crawl delay (optional - can help with server load)
+# Crawl-delay: 1
