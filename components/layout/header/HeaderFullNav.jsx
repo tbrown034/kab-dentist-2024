@@ -3,7 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/#locationSection", label: "Location" },
   { href: "/dental-services", label: "Services" }, // Fixed route name
-  { href: "/#appointmentSection", label: "Appointments" },
+  { href: "/#appointment", label: "Appointments" },
   { href: "/blog", label: "Blog" },
   { href: "/emergency", label: "Emergency" },
 ];

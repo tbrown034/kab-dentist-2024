@@ -1,45 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Primary Conversion Funnels - Equal Priority -->
   <url>
     <loc>https://keithbrowndds.com/</loc>
-    <lastmod>2024-06-24</lastmod>
+    <lastmod>2025-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://keithbrowndds.com/blog</loc>
-    <lastmod>2024-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://keithbrowndds.com/dentalservices</loc>
-    <lastmod>2024-06-24</lastmod>
+    <loc>https://keithbrowndds.com/appointment</loc>
+    <lastmod>2025-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://keithbrowndds.com/emergency</loc>
-    <lastmod>2024-06-24</lastmod>
+    <lastmod>2025-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://keithbrowndds.com/docbot</loc>
-    <lastmod>2024-06-24</lastmod>
+    <loc>https://keithbrowndds.com/dental-services</loc>
+    <lastmod>2025-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>1.0</priority>
   </url>
+
+  <!-- Supporting Pages -->
+
+  <!-- Supporting Pages -->
   <url>
-    <loc>https://keithbrowndds.com/make-an-appointment</loc>
-    <lastmod>2024-06-24</lastmod>
+    <loc>https://keithbrowndds.com/insurance</loc>
+    <lastmod>2025-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
+
+  <!-- Blog Section -->
   <url>
-    <loc>https://keithbrowndds.com/call-now</loc>
-    <lastmod>2024-06-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://keithbrowndds.com/blog</loc>
+    <lastmod>2025-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Individual Blog Posts -->
+  <url>
+    <loc>https://keithbrowndds.com/blog/gum-heart-connection</loc>
+    <lastmod>2024-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/growing-teeth</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/importance-of-night-guards-for-sleeping</loc>
+    <lastmod>2024-03-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/importance-of-fagd-dentists</loc>
+    <lastmod>2024-01-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/nitrous-oxide-in-dental-care</loc>
+    <lastmod>2024-03-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/fluoride-debate</loc>
+    <lastmod>2023-11-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/do-you-hate-flossing</loc>
+    <lastmod>2023-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/how-often-should-you-visit-your-dentist</loc>
+    <lastmod>2023-06-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/how-tech-has-changed-dentistry</loc>
+    <lastmod>2023-03-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://keithbrowndds.com/blog/dentistry-evolution</loc>
+    <lastmod>2023-01-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
