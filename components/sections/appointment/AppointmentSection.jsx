@@ -28,7 +28,7 @@ const AppointmentSection = () => {
           <p>{block.text}</p>
         </div>
       ))}
-      <div className="flex flex-col gap-2 p-4 mx-4 text-white bg-teal-800 rounded-lg shadow px-text-white">
+      <div className="p-4 ">
         <UnifiedForm />
       </div>
     </section>

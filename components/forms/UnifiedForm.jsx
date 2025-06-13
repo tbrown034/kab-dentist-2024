@@ -124,7 +124,7 @@ export default function UnifiedForm({ formType }) {
               ? "Please fill out the form below to request an emergency consultation."
               : "Fill out the form below and we'll be in touch shortly to confirm your appointment and answer any questions you might have!"}
           </p>
-          <section className="mt-8 border-t border-opacity-55 border-teal-50 text-teal-50">
+          <section className="p-4 border-t border-opacity-55 border-teal-50 text-teal-50">
             {errorMessage && (
               <p className="p-2 text-red-800">
                 Error: {errorMessage}. Sorry we are having an issue, please try

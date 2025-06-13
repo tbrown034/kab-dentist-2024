@@ -12,7 +12,6 @@ const footerLinks = [
   { href: "/#home", label: "Home" },
   { href: "/dental-services", label: "Dental Services" }, // Updated route name
   { href: "/emergency", label: "Emergency Care" },
-  { href: "/docbot", label: "Digital Assistant" },
   { href: "/appointment", label: "Appointment" }, // Updated route name
 ];
 
@@ -75,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-4 mt-8 text-center border-t border-gray-300 dark:border-gray-700">
-        © 2024 Keith Brown DDS FAGD. Website Created and Maintained by{" "}
+        © 2025 Keith Brown DDS FAGD. Website Created and Maintained by{" "}
         <Link href="https://trevorthewebdeveloper.com/">
           <span className="hover:underline">TB Web and Design</span>
         </Link>

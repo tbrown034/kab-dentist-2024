@@ -23,7 +23,7 @@ const FeaturesSection = () => {
 
   return (
     <section className="flex flex-col gap-4" aria-labelledby="features-title">
-      <h2
+      {/* <h2
         id="features-title"
         className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight leading-tight`}
       >
@@ -32,9 +32,9 @@ const FeaturesSection = () => {
           highlightedText={highlightedText}
           highlightInFront={highlightInFront}
         />
-      </h2>
+      </h2> */}
 
-      <p>{intro}</p>
+      {/* <p>{intro}</p> */}
 
       <div className="grid gap-4 md:grid-cols-2">
         {textBlock.map((feature, index) => (
