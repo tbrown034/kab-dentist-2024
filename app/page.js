@@ -1,4 +1,3 @@
-import FeaturesSection from "@/components/layout/extra/FeaturesSection";
 import HeroSection from "@/components/sections/hero/HeroSection";
 import DoctorSection from "@/components/sections/doctor/DoctorSection";
 import TestimonialSection from "@/components/sections/testimonials/TestimonialSection";

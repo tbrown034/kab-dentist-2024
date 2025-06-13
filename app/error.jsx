@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import confusedTooth from "@/public/images/logos/confusedTooth.png";
+import confusedTooth from "../src/assets/images/logos/confusedTooth.png";
 
 export default function ErrorPage() {
   return (

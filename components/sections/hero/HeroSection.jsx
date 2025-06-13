@@ -45,9 +45,7 @@ const HeroSection = () => {
               Dr. Keith A. Brown DDS, FAGD
             </Link>{" "}
             has provided trusted dental care to Naperville and the surrounding
-            area for over 40 years.
-            <br />
-            Located at{" "}
+            area for over 40 years. Located at{" "}
             <a
               href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
               className="text-teal-700 dark:text-teal-500 underline hover:text-teal-600 active:text-teal-400"
