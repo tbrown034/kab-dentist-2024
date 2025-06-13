@@ -1,5 +1,5 @@
 import Image from "next/image";
-import drWithPatientAndComputer from "../../../public/images/doctor/dr-with-computer.jpeg";
+import drWithPatientAndComputer from "../../../src/assets/images/doctor/dr-with-computer.jpeg";
 
 const DoctorSingleImage = () => {
   return (

@@ -4,7 +4,8 @@ import FullTitle from "@/components/shared/FullTitle";
 import sectionContents from "@/lib/content/sectionContent.json";
 import EmergencyFAQs from "@/components/sections/emergency/EmergencyFAQs";
 import UnifiedForm from "@/components/forms/UnifiedForm";
-import EmergencyActions from "@/components/sections/emergency/EmergencyActions";
+
+import { PhoneIcon } from "@heroicons/react/24/solid";
 
 export const metadata = {
   title: "Emergency Dental Services in Naperville | Dr. Keith Brown DDS",
@@ -59,7 +60,16 @@ const Page = () => {
           </p>
         ))}
       </div>
-      <EmergencyActions />
+      <div className="p-4 flex">
+        <a
+          href="tel:6302968702"
+          className="inline-flex items-center w-full gap-2 px-6 py-3 text-lg font-semibold text-center text-gray-900 transition-colors duration-200 bg-white border border-gray-300 rounded-lg lg:px-8 lg:py-4 hover:bg-gray-50 lg:text-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto"
+          aria-label="Call our dental office"
+        >
+          <PhoneIcon className="w-5 h-5 text-teal-600" />
+          Call (630-296-8702)
+        </a>
+      </div>{" "}
       <div className="mx-4 mt-2" id="emergencyForm">
         <UnifiedForm formType="emergency" />
       </div>

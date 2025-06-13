@@ -3,7 +3,7 @@
 import React from "react";
 import FullTitle from "@/components/shared/FullTitle";
 import Image from "next/image";
-import bankExt2 from "@/public/images/office/bankExt2.jpeg";
+import bankExt2 from "../../../src/assets/images/building/building-exterior.jpeg";
 import MyGoogleMap from "./MyGoogleMap";
 import Link from "next/link";
 

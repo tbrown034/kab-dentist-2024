@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import confusedTooth from "@/public/images/logos/confusedTooth.png"; // Use @/ alias
+import confusedTooth from "../src/assets/images/logos/confusedTooth.png"; // Use @/ alias
 
 export default function NotFound() {
   return (
