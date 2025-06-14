@@ -7,11 +7,11 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "@/components/layout/header/ThemeToggle";
 
 const links = [
-  { href: "/#locationSection", label: "Location" },
-  { href: "/dental-services", label: "Services" }, // Fixed route name
   { href: "/appointment", label: "Appointments" },
+  { href: "/emergency", label: "Emergency Care" },
+  { href: "/dental-services", label: "Services" },
+  { href: "/#locationSection", label: "Location" },
   { href: "/blog", label: "Blog" },
-  { href: "/emergency", label: "Emergency" },
 ];
 
 function HeaderDropdown() {
