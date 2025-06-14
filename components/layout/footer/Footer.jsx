@@ -9,10 +9,11 @@ import {
 } from "@/lib/constants/constants";
 
 const footerLinks = [
-  { href: "/#home", label: "Home" },
-  { href: "/dental-services", label: "Dental Services" }, // Updated route name
+  { href: "/appointment", label: "Appointments" },
   { href: "/emergency", label: "Emergency Care" },
-  { href: "/appointment", label: "Appointment" }, // Updated route name
+  { href: "/dental-services", label: "Services" },
+  { href: "/#locationSection", label: "Location" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const Footer = () => {

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import blogContent from "@/lib/content/blogContent.json";
 import Image from "next/image";
 import Link from "next/link";
+import avatar from "../../../../src/assets/images/doctor/dr-avatar.jpeg";
 
 export async function generateStaticParams() {
   return blogContent.map((post) => ({
@@ -69,7 +70,7 @@ const BlogPostPage = ({ params }) => {
       </p>
       <div className="flex items-center gap-4 mt-2 text-gray-600 dark:text-gray-400">
         <Image
-          src="/images/doctor/avatar.jpeg"
+          src={avatar}
           alt="Dr. Keith A. Brown"
           width={40}
           height={40}

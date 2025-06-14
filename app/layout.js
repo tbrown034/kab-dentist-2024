@@ -56,35 +56,25 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                console.log('🎨 Theme Init Script: Starting theme initialization');
                 try {
                   var theme = localStorage.getItem('theme');
                   var isDarkSystem = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  console.log('🎨 Theme Init Script: Found saved theme:', theme);
-                  console.log('🎨 Theme Init Script: System preference is dark:', isDarkSystem);
 
                   document.documentElement.classList.remove('light', 'dark');
 
                   if (theme === 'light') {
                     document.documentElement.classList.add('light');
-                    console.log('🎨 Theme Init Script: Applied light theme');
                   } else if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
-                    console.log('🎨 Theme Init Script: Applied dark theme');
                   } else {
                     if (isDarkSystem) {
                       document.documentElement.classList.add('dark');
-                      console.log('🎨 Theme Init Script: Applied system dark theme');
                     } else {
                       document.documentElement.classList.add('light');
-                      console.log('🎨 Theme Init Script: Applied system light theme');
                     }
                   }
-                  console.log('🎨 Theme Init Script: Theme initialization completed successfully');
                 } catch (e) {
-                  console.error('🎨 Theme Init Script: Error during initialization:', e);
                   document.documentElement.classList.add('light');
-                  console.log('🎨 Theme Init Script: Fallback to light mode applied');
                 }
               })();
             `,
