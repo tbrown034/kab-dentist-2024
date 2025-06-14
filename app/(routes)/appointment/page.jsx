@@ -1,26 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import UnifiedForm from "@/components/forms/UnifiedForm";
+import Medicaid from "@/components/shared/Medicaid";
 import FullTitle from "@/components/shared/FullTitle";
+import UnifiedForm from "@/components/forms/UnifiedForm";
 import drReception from "../../../src/assets/images/doctor/dr-horizontal-reception.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
 
 export const metadata = {
-  title: "Make an Appointment | Dr. Keith Brown DDS, FAGD",
+  title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
   description:
-    "Schedule your appointment with Dr. Keith Brown, DDS, FAGD, today. Fill out the form to get started.",
-  keywords: "appointment, dentist, Keith Brown DDS, Naperville, dental care",
+    "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS, FAGD offers comprehensive, family-friendly care. Schedule your visit today.",
+  keywords:
+    "dentist appointment Naperville, dental checkup, Dr. Keith Brown DDS, book dental visit",
   openGraph: {
-    title: "Make an Appointment | Keith Brown DDS",
+    title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
     description:
-      "Schedule your appointment with Dr. Keith Brown, DDS, FAGD, today. Fill out the form to get started.",
+      "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS, FAGD offers comprehensive, family-friendly care. Schedule your visit today.",
     url: "https://keithbrowndds.com/appointment",
     images: [
       {
         url: "https://keithbrowndds.com/og-appointment.jpg",
         width: 800,
         height: 600,
-        alt: "Keith Brown DDS - Make an Appointment",
+        alt: "Keith Brown DDS - Book Appointment",
       },
     ],
     site_name: "Keith Brown DDS",
@@ -29,66 +31,79 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Make an Appointment | Keith Brown DDS",
+    title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
     description:
-      "Schedule your appointment with Dr. Keith Brown, DDS, FAGD, today. Fill out the form to get started.",
+      "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS, FAGD offers comprehensive, family-friendly care. Schedule your visit today.",
     image: "https://keithbrowndds.com/twitter-appointment.jpg",
   },
 };
 
-export default function AppointmentPage() {
+const Page = () => {
   return (
     <div className="flex flex-col gap-12 p-6">
-      {/* Hero Section */}
-      <section className="flex flex-col md:flex-col lg:flex-row gap-6 xl:gap-12">
-        {/* Image */}
-        <div className="w-full xl:w-1/2">
-          <div className="relative w-full h-64 md:h-80 xl:h-[26rem] rounded-lg shadow-lg overflow-hidden">
+      <section
+        className="flex flex-col xl:flex-row gap-6 xl:gap-12"
+        id="appointmentSection"
+      >
+        <div className="w-full xl:w-1/2 flex items-center justify-center">
+          <div className="relative w-full h-[280px] sm:aspect-[5/3] lg:aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
             <Image
               src={drReception}
-              alt="Dr. Keith A. Brown standing at the reception area"
+              alt="Dr. Keith A. Brown at the reception desk, welcoming patients"
               fill
               priority
-              className="object-cover object-center"
+              className="object-cover object-top"
               sizes="(min-width: 1280px) 50vw, 100vw"
             />
           </div>
         </div>
 
-        {/* Content */}
         <div className="flex flex-col justify-center gap-6 w-full xl:w-1/2">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
-              <FullTitle
-                title="Make an Appointment"
-                highlightedText="Make an Appointment"
-                highlightInFront={true}
-              />
-            </h1>
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Schedule Your Visit Today
-            </h2>
-          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
+            <FullTitle
+              title="Simplifying Your Journey with Easy Scheduling"
+              highlightedText="Simplifying Your Journey"
+              highlightInFront={true}
+            />
+          </h1>
 
-          <div className="flex flex-col gap-4 pb-2 text-lg xl:text-xl">
+          <div className="flex flex-col gap-4 pb-2 text-xl">
             <p>
-              We look forward to seeing you! Dr. Brown and the team are
-              dedicated to providing top-quality dental care for all our
-              patients. Fill out the form below to schedule your appointment.
+              Embark on your journey to a healthier, happier smile with our easy
+              online scheduling. We ensure top-tier dental care with unmatched
+              patient convenience.
             </p>
             <p>
-              Please provide as much detail as possible to help us prepare for
-              your visit. Once we receive your form, a member of our team will
-              contact you to confirm your appointment.
+              In pain or ready to schedule? Don’t wait –{" "}
+              <a
+                href="tel:6302968702"
+                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+              >
+                call now
+              </a>
+              ,{" "}
+              <Link
+                href="#appointmentForm"
+                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+              >
+                fill out the form below
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="/dental-services"
+                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+              >
+                learn more
+              </Link>
+              .
             </p>
           </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-start flex-wrap xl:items-center xl:gap-6">
+          <div className="flex flex-col gap-4 mt-2 sm:flex-row xl:flex-wrap xl:gap-6">
             <a
               href="tel:6302968702"
-              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-teal-600 rounded-lg lg:px-8 lg:py-4 hover:bg-teal-700 lg:text-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
-              aria-label="Call our dental office"
+              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              aria-label="Call our office"
             >
               <PhoneIcon className="w-5 h-5" />
               Call (630-296-8702)
@@ -96,31 +111,25 @@ export default function AppointmentPage() {
 
             <Link
               href="#appointmentForm"
-              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 bg-white border border-gray-300 rounded-lg lg:px-8 lg:py-4 hover:bg-gray-50 lg:text-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-              aria-label="Go to appointment form"
+              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              aria-label="Request dental appointment"
             >
               <DocumentTextIcon className="w-5 h-5 text-teal-600" />
-              Go to Form
+              Request Appointment
             </Link>
           </div>
-
-          {/* FAQ Link */}
-          <p className="text-sm">
-            <Link
-              href="#appointmentForm"
-              className="font-medium text-teal-700 underline hover:text-teal-600 active:text-teal-500 dark:text-teal-400"
-            >
-              Have questions about the process?
-            </Link>{" "}
-            See answers to common appointment topics.
-          </p>
         </div>
       </section>
 
-      {/* Form */}
-      <div className="mx-4 mt-2" id="appointmentForm">
+      <div id="appointmentForm">
         <UnifiedForm formType="appointment" />
+      </div>
+
+      <div className="text-black dark:text-white">
+        <Medicaid />
       </div>
     </div>
   );
-}
+};
+
+export default Page;
