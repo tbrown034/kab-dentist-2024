@@ -106,7 +106,7 @@ const Page = () => {
               aria-label="Call our office"
             >
               <PhoneIcon className="w-5 h-5" />
-              Call (630-296-8702)
+              Call (630) 296-8702
             </a>
 
             <Link
