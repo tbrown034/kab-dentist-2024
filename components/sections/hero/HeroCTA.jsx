@@ -23,7 +23,7 @@ const HeroCTA = () => {
         aria-label="Call our dental office"
       >
         <PhoneIcon className="w-5 h-5 text-teal-600" />
-        Call (630-296-8702)
+        Call (630) 296-8702
       </a>
     </section>
   );
