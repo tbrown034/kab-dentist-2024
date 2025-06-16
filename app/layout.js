@@ -6,7 +6,6 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { inter, raleway } from "@/app/font";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 
 const metadataBase = new URL("https://keithbrowndds.com");
 
@@ -54,6 +53,15 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id=GTM-W3JKZNL4'+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-W3JKZNL4');`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
@@ -84,6 +92,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W3JKZNL4"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <ThemeProvider>
           <Header />
           {children}
@@ -91,9 +107,6 @@ export default function RootLayout({ children }) {
           <EmergencyBanner />
           <Analytics />
           <SpeedInsights />
-          <GoogleAnalytics
-            gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID || ""}
-          />
         </ThemeProvider>
       </body>
     </html>
