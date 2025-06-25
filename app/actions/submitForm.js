@@ -5,16 +5,28 @@ import nodemailer from "nodemailer";
 import { format } from "date-fns";
 import { EmailTemplate } from "@/app/api/submitForm/EmailTemplate";
 
-function getCentralTime() {
-  return new Date().toLocaleString("en-US", {
+// Returns { time: "h:mm AM/PM M/d/yy", zone: "CST/CDT" }
+function getCentralTimeInfo() {
+  const now = new Date();
+
+  const options = {
     timeZone: "America/Chicago",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
     hour12: true,
-  });
+    hour: "numeric",
+    minute: "2-digit",
+    month: "numeric",
+    day: "numeric",
+    year: "2-digit",
+    timeZoneName: "short", // e.g., CDT or CST
+  };
+
+  const formatter = new Intl.DateTimeFormat("en-US", options);
+  const parts = formatter.formatToParts(now);
+  const lookup = Object.fromEntries(parts.map((p) => [p.type, p.value]));
+  return {
+    time: `${lookup.hour}:${lookup.minute} ${lookup.dayPeriod} ${lookup.month}/${lookup.day}/${lookup.year}`,
+    zone: lookup.timeZoneName || "CT",
+  };
 }
 
 // Simple in-memory rate limiting (resets on server restart)
@@ -155,7 +167,8 @@ export async function submitForm(prevState, formData) {
       },
     });
 
-    const timestamp = format(new Date(), "h:mm a M/d/yy");
+    const { time, zone } = getCentralTimeInfo();
+    const timestamp = `${time} ${zone}`;
     const { subject, text, html } = EmailTemplate({ ...data, timestamp });
 
     const recipients = isDev
