@@ -1,57 +1,69 @@
+// components/dialogs/InsuranceCheck.jsx
 "use client";
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+  Description,
+} from "@headlessui/react";
 
-import { Dialog } from "@headlessui/react";
-
-export default function DialogCheck({ onContinue, onClose }) {
+export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
   return (
-    <>
-      <Dialog open={true} onClose={onClose} className="relative z-50">
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50"
-          aria-hidden="true"
-        />
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="w-full max-w-lg p-6 space-y-4 bg-white border rounded-lg shadow-xl">
-            <Dialog.Title className="text-lg font-medium text-gray-900">
-              Insurance Policy Information
-            </Dialog.Title>
-            <Dialog.Description as="div" className="space-y-2">
-              <p className="text-sm text-gray-500">
-                We accept most insurance plans. Our insurance specialist will
-                help guide you through understanding your coverage, payment
-                plans, and any out-of-pocket expenses.
-              </p>
-              <p className="text-sm text-gray-500">
-                However, we currently do not accept <b>Medicaid or Medicare</b>,
-                including Medicaid plans from Blue Cross Community, Meridian,
-                Aetna Better Health, CHIP, Illinois All Kids, DentaQuest, and
-                Molina Healthcare.
-              </p>
-              <p className="text-sm text-gray-500">
-                For more details, please call our office at{" "}
-                <a href="tel:630-296-8702" className="text-teal-600 underline">
-                  630-296-8702
-                </a>{" "}
-                to speak with our dedicated insurance specialist.
-              </p>
-            </Dialog.Description>
-            <div className="flex justify-end gap-4">
-              <button
-                onClick={onClose}
-                className="px-4 py-2 text-sm font-semibold text-white bg-gray-600 rounded-md shadow-inner hover:bg-gray-700 focus:outline-none"
+    <Dialog open={isOpen} onClose={onCancel} className="relative z-50">
+      <DialogBackdrop className="fixed inset-0 bg-black/50" />
+      <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+        <DialogPanel className="max-w-lg space-y-6 rounded-xl bg-white p-8 shadow-2xl">
+          <DialogTitle className="text-xl font-bold text-gray-900">
+            Insurance Coverage Check
+          </DialogTitle>
+
+          <Description as="div" className="space-y-4 text-gray-600">
+            <p>
+              Before we submit your appointment request, we want to ensure we
+              can provide the best service for your insurance coverage.
+            </p>
+            <p>
+              <strong>We accept most insurance plans</strong>, and our insurance
+              specialist will help guide you through understanding your coverage
+              and payment options.
+            </p>
+            <p>
+              However, we currently{" "}
+              <strong>do not accept Medicaid or Medicare</strong>, including
+              Medicaid plans from Blue Cross Community, Meridian, Aetna Better
+              Health, CHIP, Illinois All Kids, DentaQuest, and Molina
+              Healthcare.
+            </p>
+            <p>
+              For specific questions about your coverage, please call our office
+              at{" "}
+              <a
+                href="tel:630-296-8702"
+                className="font-semibold text-teal-600 hover:text-teal-700 transition-colors"
               >
-                Go Back
-              </button>
-              <button
-                onClick={onContinue}
-                className="px-4 py-2 text-sm font-semibold text-white bg-teal-600 rounded-md shadow-inner hover:bg-teal-700 focus:outline-none"
-              >
-                I understand, Submit
-              </button>
-            </div>
-          </Dialog.Panel>
-        </div>
-      </Dialog>
-    </>
+                630-296-8702
+              </a>{" "}
+              to speak with our insurance specialist.
+            </p>
+          </Description>
+
+          <div className="flex gap-4 pt-4">
+            <button
+              onClick={onCancel}
+              className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 transition-colors"
+            >
+              Go Back
+            </button>
+            <button
+              onClick={onConfirm}
+              className="flex-1 rounded-lg bg-teal-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-700 transition-colors"
+            >
+              I Understand, Submit Request
+            </button>
+          </div>
+        </DialogPanel>
+      </div>
+    </Dialog>
   );
 }

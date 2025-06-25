@@ -1,5 +1,6 @@
 export function EmailTemplate({
-  name,
+  firstName,
+  lastName,
   email,
   phone,
   city,
@@ -12,9 +13,8 @@ export function EmailTemplate({
 }) {
   const isEmergency = formType === "emergency" || painLevel >= 8;
 
-  const firstName = name.split(" ")[0];
-  const lastInitial = name.split(" ")[1]?.[0] || "";
-  const shortName = `${firstName} ${lastInitial}.`;
+  const name = `${firstName} ${lastName}`.trim();
+  const shortName = `${firstName} ${lastName.charAt(0) || ""}.`;
 
   const subject = isEmergency
     ? `🔴 EMERGENCY: ${shortName} (${city}) • ${phone} @ ${timestamp}`
