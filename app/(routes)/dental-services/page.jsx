@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
@@ -126,13 +125,13 @@ const DentalServices = () => {
       </section>
 
       {/* Services Content */}
+      <ServicesSeparator />
+
       <div id="browseServices">
         <ServicesSearch />
       </div>
 
-      <ServicesSeparator />
       <FAQs />
-      <DocBot />
     </div>
   );
 };

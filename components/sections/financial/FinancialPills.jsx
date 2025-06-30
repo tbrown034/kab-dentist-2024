@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import careCredit from "../../../src/assets/images/logos/careCredit.png";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import FullTitle from "@/components/shared/FullTitle";
 import FinancialPills from "./FinancialPills";
 import FinancialFAQs from "./FinancialFAQs";

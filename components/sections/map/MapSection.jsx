@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import FullTitle from "@/components/shared/FullTitle";
 import Image from "next/image";
 import bankExt2 from "../../../src/assets/images/building/building-exterior.jpeg";

@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import sectionContents from "@/lib/content/sectionContent.json"; // Fixed: Use @/ alias
 import FullTitle from "@/components/shared/FullTitle";

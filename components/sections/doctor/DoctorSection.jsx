@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import FullTitle from "@/components/shared/FullTitle";
 import DoctorFAGD from "./DoctorFAGD";

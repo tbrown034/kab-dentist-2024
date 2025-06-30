@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import photo from "../../../src/assets/images/doctor/dr-with-computer.jpeg";
 
