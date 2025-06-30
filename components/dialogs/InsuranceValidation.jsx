@@ -20,7 +20,14 @@ export default function InsuranceValidation({ isOpen, onClose, onSubmit }) {
               </p>
               <p className="text-sm text-gray-500">
                 If you have these insurance plans, please call our office at
-                630-296-8702 to discuss alternative options.
+                <a
+                  href="tel:6302968702"
+                  className="text-teal-600 underline"
+                  data-track="phone-click"
+                >
+                  (630) 296-8702
+                </a>{" "}
+                to discuss alternative options.
               </p>
             </div>
           </Dialog.Description>

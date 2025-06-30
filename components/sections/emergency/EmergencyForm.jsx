@@ -50,7 +50,7 @@ export default function EmergencyForm() {
             {errorMessage && (
               <p className="p-2 text-red-800">
                 Error: {errorMessage}. Sorry we are having an issue, please try
-                again or call our office at 630-296-8702
+                again or call our office at (630) 296-8702
               </p>
             )}
             <form
