@@ -44,8 +44,12 @@ export default function DialogBox() {
               </p>
               <p className="text-sm text-gray-500">
                 For more details, please call our office at{" "}
-                <a href="tel:630-296-8702" className="text-teal-600 underline">
-                  630-296-8702
+                <a
+                  href="tel:630-296-8702"
+                  className="text-teal-600 underline"
+                  data-track="phone-click"
+                >
+                  (630) 296-8702
                 </a>{" "}
                 to speak with our dedicated insurance specialist.
               </p>

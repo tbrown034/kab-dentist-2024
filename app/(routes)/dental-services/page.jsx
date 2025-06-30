@@ -87,6 +87,7 @@ const DentalServices = () => {
               <a
                 href="tel:6302968702"
                 className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                data-track="phone-click"
               >
                 call us
               </a>{" "}

@@ -39,10 +39,11 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
               For specific questions about your coverage, please call our office
               at{" "}
               <a
-                href="tel:630-296-8702"
+                href="tel:6302968702"
                 className="font-semibold text-teal-600 hover:text-teal-700 transition-colors"
+                data-track="phone-click"
               >
-                630-296-8702
+                (630) 296-8702
               </a>{" "}
               to speak with our insurance specialist.
             </p>
