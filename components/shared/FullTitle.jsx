@@ -1,5 +1,3 @@
-import React from "react";
-
 // FullTitle Component
 const FullTitle = ({ title, highlightedText, highlightInFront }) => {
   return (

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Medicaid = () => (
   <div className="px-4 text-sm ">
     <p>

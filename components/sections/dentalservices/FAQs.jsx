@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import {
   Accordion,
   AccordionContent,
@@ -6,11 +6,10 @@ import {
   AccordionTrigger,
 } from "@/components/shadcn-ui/accordion";
 import servicesContent from "@/lib/content/servicesContent.json";
-import Link from "next/link";
 
 const FAQs = () => {
   return (
-    <div className="mt-2">
+    <div className="">
       {servicesContent.map((service, index) => (
         <div key={index} id={service.id} className="mb-8">
           <h3 className="mb-4 text-2xl font-semibold">{service.title}</h3>

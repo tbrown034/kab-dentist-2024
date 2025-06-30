@@ -54,61 +54,7 @@
             }
         ]
     },
-    {
-        "id": "cosmetic-dentistry",
-        "title": "Cosmetic Dentistry",
-        "text": "Our cosmetic dentistry services enhance the appearance of your smile. From teeth whitening to veneers, we offer a variety of treatments to help you achieve the smile you've always wanted.",
-        "details": [
-            {
-                "title": "Teeth Whitening",
-                "description": "Professional teeth whitening to brighten your smile. We use safe and effective whitening agents that can lighten the color of your teeth several shades in just one visit. This treatment removes stains caused by coffee, tea, smoking, and aging.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/teeth-whitening",
-                "symptoms": ["stained teeth", "discoloration", "yellow teeth"]
-            },
-            {
-                "title": "Veneers",
-                "description": "Veneers improve the appearance of the front teeth. These thin shells of porcelain or composite resin cover the front surface of teeth, correcting imperfections like chips, gaps, and discoloration. Veneers are custom-made to match the natural look of your teeth.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/veneers",
-                "symptoms": ["chipped tooth", "gaps", "discolored teeth"]
-            },
-            {
-                "title": "Bonding",
-                "description": "Bonding repairs chipped or cracked teeth. This involves applying a tooth-colored resin to the damaged area and hardening it with a special light. Bonding can improve the appearance of teeth and is a cost-effective alternative to other cosmetic treatments.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/bonding",
-                "symptoms": ["cracked tooth", "chipped tooth", "gaps"]
-            },
-            {
-                "title": "Inlays and Onlays",
-                "description": "Inlays and onlays restore decayed or damaged teeth. These are made from porcelain or composite resin and are more durable than regular fillings. Inlays fit inside the tooth cusps, while onlays extend over one or more cusps of the tooth.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/inlays-and-onlays",
-                "symptoms": ["large cavities", "broken tooth", "damaged tooth"]
-            },
-            {
-                "title": "Gum Contouring",
-                "description": "Gum contouring reshapes the gums to improve the appearance of your smile. This procedure can correct uneven gum lines, making teeth look more uniform. It's often combined with other cosmetic treatments for optimal results.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/gum-contouring",
-                "symptoms": ["uneven gums", "gummy smile", "receding gums"]
-            },
-            {
-                "title": "Clear Aligners",
-                "description": "Clear aligners are an alternative to traditional braces for straightening teeth. They are nearly invisible and can be removed for eating and cleaning. Aligners gradually shift teeth into the desired position, offering a discreet option for orthodontic treatment.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/orthodontics",
-                "symptoms": ["crooked teeth", "overbite", "underbite"]
-            },
-            {
-                "title": "Smile Makeovers",
-                "description": "Smile makeovers involve a combination of cosmetic procedures to transform your smile. This could include whitening, veneers, bonding, and more. We tailor each makeover to your unique goals, ensuring a beautiful and confident smile.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/smile-makeovers",
-                "symptoms": ["discolored teeth", "crooked teeth", "gaps"]
-            },
-            {
-                "title": "Dental Implants",
-                "description": "Dental implants replace missing teeth with a durable, long-lasting solution. The implant is a titanium post that acts as a tooth root, topped with a crown. Implants look and function like natural teeth and help preserve the jawbone.",
-                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dental-implants",
-                "symptoms": ["missing teeth", "loose dentures", "bone loss"]
-            }
-        ]
-    },
+
     {
         "id": "emergency-dentistry",
         "title": "Emergency Dentistry",
@@ -161,6 +107,61 @@
                 "description": "Emergency root canal treatment to save infected teeth. This procedure relieves pain and removes infection from the tooth's pulp. Immediate treatment helps prevent the need for extraction.",
                 "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/emergency-root-canals",
                 "symptoms": ["severe pain", "infection", "swelling"]
+            }
+        ]
+    },
+     {
+        "id": "cosmetic-dentistry",
+        "title": "Cosmetic Dentistry",
+        "text": "Our cosmetic dentistry services enhance the appearance of your smile. From teeth whitening to veneers, we offer a variety of treatments to help you achieve the smile you've always wanted.",
+        "details": [
+            {
+                "title": "Teeth Whitening",
+                "description": "Professional teeth whitening to brighten your smile. We use safe and effective whitening agents that can lighten the color of your teeth several shades in just one visit. This treatment removes stains caused by coffee, tea, smoking, and aging.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/teeth-whitening",
+                "symptoms": ["stained teeth", "discoloration", "yellow teeth"]
+            },
+            {
+                "title": "Veneers",
+                "description": "Veneers improve the appearance of the front teeth. These thin shells of porcelain or composite resin cover the front surface of teeth, correcting imperfections like chips, gaps, and discoloration. Veneers are custom-made to match the natural look of your teeth.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/veneers",
+                "symptoms": ["chipped tooth", "gaps", "discolored teeth"]
+            },
+            {
+                "title": "Bonding",
+                "description": "Bonding repairs chipped or cracked teeth. This involves applying a tooth-colored resin to the damaged area and hardening it with a special light. Bonding can improve the appearance of teeth and is a cost-effective alternative to other cosmetic treatments.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/bonding",
+                "symptoms": ["cracked tooth", "chipped tooth", "gaps"]
+            },
+            {
+                "title": "Inlays and Onlays",
+                "description": "Inlays and onlays restore decayed or damaged teeth. These are made from porcelain or composite resin and are more durable than regular fillings. Inlays fit inside the tooth cusps, while onlays extend over one or more cusps of the tooth.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/inlays-and-onlays",
+                "symptoms": ["large cavities", "broken tooth", "damaged tooth"]
+            },
+            {
+                "title": "Gum Contouring",
+                "description": "Gum contouring reshapes the gums to improve the appearance of your smile. This procedure can correct uneven gum lines, making teeth look more uniform. It's often combined with other cosmetic treatments for optimal results.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/gum-contouring",
+                "symptoms": ["uneven gums", "gummy smile", "receding gums"]
+            },
+            {
+                "title": "Clear Aligners",
+                "description": "Clear aligners are an alternative to traditional braces for straightening teeth. They are nearly invisible and can be removed for eating and cleaning. Aligners gradually shift teeth into the desired position, offering a discreet option for orthodontic treatment.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/orthodontics",
+                "symptoms": ["crooked teeth", "overbite", "underbite"]
+            },
+            {
+                "title": "Smile Makeovers",
+                "description": "Smile makeovers involve a combination of cosmetic procedures to transform your smile. This could include whitening, veneers, bonding, and more. We tailor each makeover to your unique goals, ensuring a beautiful and confident smile.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/smile-makeovers",
+                "symptoms": ["discolored teeth", "crooked teeth", "gaps"]
+            },
+            {
+                "title": "Dental Implants",
+                "description": "Dental implants replace missing teeth with a durable, long-lasting solution. The implant is a titanium post that acts as a tooth root, topped with a crown. Implants look and function like natural teeth and help preserve the jawbone.",
+                "moreInfo": "https://www.ada.org/en/member-center/oral-health-topics/dental-implants",
+                "symptoms": ["missing teeth", "loose dentures", "bone loss"]
             }
         ]
     }
