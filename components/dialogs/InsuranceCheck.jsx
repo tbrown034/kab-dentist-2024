@@ -58,6 +58,7 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
             </button>
             <button
               onClick={onConfirm}
+              data-track="form-final-submit" // ADD THIS LINE
               className="flex-1 rounded-lg bg-teal-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-700 transition-colors"
             >
               I Understand, Submit Request
