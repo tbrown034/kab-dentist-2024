@@ -4,8 +4,8 @@ import Footer from "@/components/layout/footer/Footer";
 import EmergencyBanner from "@/components/layout/extra/EmergencyBanner";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { inter, raleway } from "@/app/font";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { Analytics } from "@vercel/analytics/react";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const metadataBase = new URL("https://keithbrowndds.com");
 
@@ -105,8 +105,8 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <EmergencyBanner />
-          <Analytics />
-          <SpeedInsights />
+          {/* <Analytics /> */}
+          {/* <SpeedInsights /> */}
         </ThemeProvider>
       </body>
     </html>
