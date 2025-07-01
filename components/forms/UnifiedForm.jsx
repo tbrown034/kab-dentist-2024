@@ -34,6 +34,7 @@ function SubmitButton({ isPending }) {
     <button
       type="submit"
       disabled={isPending}
+      data-track="form-initial-submit" // ADD THIS LINE
       className={`group relative w-full overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed ${
         isPending
           ? "bg-gradient-to-r from-green-600 to-green-700 hover:shadow-lg"
