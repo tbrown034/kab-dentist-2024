@@ -31,7 +31,11 @@ const Footer = () => {
             {address}
           </a>
           <div className="flex flex-col gap-2">
-            <a href={`tel:${officeNumber}`} className="hover:underline">
+            <a
+              href={`tel:${officeNumber}`}
+              className="hover:underline"
+              data-track="phone-click"
+            >
               Office Number: {officeNumber}
             </a>
             <a href={`tel:${trackingNumber}`} className="hover:underline">
