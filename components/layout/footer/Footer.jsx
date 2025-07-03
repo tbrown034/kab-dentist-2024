@@ -38,7 +38,11 @@ const Footer = () => {
             >
               Office Number: {officeNumber}
             </a>
-            <a href={`tel:${trackingNumber}`} className="hover:underline">
+            <a
+              href={`tel:${trackingNumber}`}
+              data-track="phone-click"
+              className="hover:underline"
+            >
               New Patient and Afterhours Number: {trackingNumber}
             </a>
           </div>
