@@ -34,7 +34,7 @@ function SubmitButton({ isPending }) {
     <button
       type="submit"
       disabled={isPending}
-      data-track="form-initial-submit" // ADD THIS LINE
+      id="form-initial-submit"
       className={`group relative w-full overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed ${
         isPending
           ? "bg-gradient-to-r from-green-600 to-green-700 hover:shadow-lg"
@@ -87,14 +87,17 @@ export default function UnifiedForm({ formType = "appointment" }) {
     setShowInsuranceDialog(true);
   };
 
-  // Actually submit the form after confirmation
+  // Actually submit the form after confirmation with delay for GTM
   const handleConfirmSubmit = () => {
     setShowInsuranceDialog(false);
     if (pendingFormData) {
-      startTransition(() => {
-        action(pendingFormData);
-      });
-      setPendingFormData(null);
+      // Small delay to ensure GTM tag fires before navigation/state change
+      setTimeout(() => {
+        startTransition(() => {
+          action(pendingFormData);
+        });
+        setPendingFormData(null);
+      }, 100);
     }
   };
 

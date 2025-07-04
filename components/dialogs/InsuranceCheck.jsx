@@ -9,6 +9,24 @@ import {
 } from "@headlessui/react";
 
 export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
+  // Enhanced click handler to ensure GTM tracking
+  const handleConfirmClick = () => {
+    // Fire GTM event manually as backup
+    if (typeof window !== "undefined" && window.dataLayer) {
+      window.dataLayer.push({
+        event: "form_final_submit",
+        event_category: "form",
+        event_action: "submit",
+        event_label: "insurance_confirmed",
+      });
+    }
+
+    // Small delay to ensure GTM processes the event
+    setTimeout(() => {
+      onConfirm();
+    }, 50);
+  };
+
   return (
     <Dialog open={isOpen} onClose={onCancel} className="relative z-50">
       <DialogBackdrop className="fixed inset-0 bg-black/50" />
@@ -57,8 +75,8 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
               Go Back
             </button>
             <button
-              onClick={onConfirm}
-              data-track="form-final-submit"
+              onClick={handleConfirmClick}
+              id="form-final-submit"
               className="flex-1 rounded-lg bg-teal-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-700 transition-colors"
             >
               I Understand, Submit Request
