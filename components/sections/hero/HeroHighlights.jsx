@@ -39,6 +39,7 @@ const HeroHighlights = ({ onPhoneClick }) => {
 
       <button
         className="flex items-center gap-2 text-teal-600 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400"
+        data-track="phone-click"
         onClick={onPhoneClick}
       >
         <FontAwesomeIcon icon={faPhone} size="lg" />

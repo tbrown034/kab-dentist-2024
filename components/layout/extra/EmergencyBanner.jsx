@@ -21,7 +21,7 @@ const EmergencyBanner = () => {
         </Link>
       </p>
       <div className="flex items-center gap-4">
-        <Link href={`tel:${trackingNumber}`} data-tracker="phone-click">
+        <Link href={`tel:${trackingNumber}`} data-track="phone-click">
           <div className="flex items-center p-2 text-teal-800 bg-white border border-gray-600 rounded-xl dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
             <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
             <span>Call</span>
