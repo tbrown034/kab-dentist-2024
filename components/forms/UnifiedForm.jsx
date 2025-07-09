@@ -87,17 +87,48 @@ export default function UnifiedForm({ formType = "appointment" }) {
     setShowInsuranceDialog(true);
   };
 
-  // Actually submit the form after confirmation with delay for GTM
+  // Actually submit the form after confirmation with GTM tracking
   const handleConfirmSubmit = () => {
     setShowInsuranceDialog(false);
     if (pendingFormData) {
-      // Small delay to ensure GTM tag fires before navigation/state change
+      // 🔥 FIRE GTM EVENT - This is the key fix!
+      if (typeof window !== "undefined" && window.dataLayer) {
+        window.dataLayer.push({
+          event: "generate_lead",
+          form_type: formType,
+          pain_level: painLevel,
+          form_data: {
+            firstName: pendingFormData.get("firstName"),
+            lastName: pendingFormData.get("lastName"),
+            email: pendingFormData.get("email"),
+            phone: pendingFormData.get("phone"),
+            city: pendingFormData.get("city"),
+            insurance: pendingFormData.get("insurance"),
+            returningPatient: pendingFormData.get("returningPatient"),
+            painLevel: painLevel,
+          },
+          event_category: "form",
+          event_action: "submit",
+          event_label:
+            formType === "emergency" ? "emergency_form" : "appointment_form",
+          value: painLevel > 7 ? 150 : 100, // Higher value for emergency cases
+          currency: "USD",
+        });
+
+        // Debug log for development
+        console.log("GTM Event Fired: generate_lead", {
+          form_type: formType,
+          pain_level: painLevel,
+        });
+      }
+
+      // Small delay to ensure GTM processes the event before form submission
       setTimeout(() => {
         startTransition(() => {
           action(pendingFormData);
         });
         setPendingFormData(null);
-      }, 100);
+      }, 200); // Increased delay slightly for GTM processing
     }
   };
 
@@ -106,6 +137,26 @@ export default function UnifiedForm({ formType = "appointment" }) {
     setShowInsuranceDialog(false);
     setPendingFormData(null);
   };
+
+  // 🔥 FIRE SUCCESS EVENT TO GTM (moved outside conditional)
+  useEffect(() => {
+    if (
+      state?.type === "success" &&
+      typeof window !== "undefined" &&
+      window.dataLayer
+    ) {
+      window.dataLayer.push({
+        event: "form_success",
+        form_type: formType,
+        event_category: "form",
+        event_action: "success",
+        event_label:
+          formType === "emergency"
+            ? "emergency_form_success"
+            : "appointment_form_success",
+      });
+    }
+  }, [state?.type, formType]);
 
   // Success state with consistent styling
   if (state?.type === "success") {
