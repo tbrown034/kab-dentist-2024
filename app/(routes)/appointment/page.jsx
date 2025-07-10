@@ -5,7 +5,7 @@ import FullTitle from "@/components/shared/FullTitle";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drReception from "../../../src/assets/images/doctor/dr-horizontal-reception.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
-import { officeNumber } from "@/lib/constants";
+import { officeNumber } from "@/lib/constants/constants";
 
 export const metadata = {
   title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
