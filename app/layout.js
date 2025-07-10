@@ -100,6 +100,10 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <script
+          type="text/javascript"
+          src="https://cdn.callrail.com/companies/448518253/ecdaf78f16b496fa23b912/swap.js"
+        ></script>
         <ThemeProvider>
           <Header />
           {children}
