@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,7 +5,7 @@ import {
   faSpa,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { officeNumber, trackingNumber } from "@/lib/constants/constants";
+import { officeNumber } from "@/lib/constants/constants";
 
 const HeroHighlights = ({ onPhoneClick }) => {
   return (
@@ -48,21 +47,13 @@ const HeroHighlights = ({ onPhoneClick }) => {
         </div>
       </button>
       <span className="text-sm md:text-base lg:text-lg">
-        Returning patients can call{" "}
+        Patients can call{" "}
         <Link
           href={`tel:${officeNumber}`}
           className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
           data-track="phone-click"
         >
           {officeNumber}
-        </Link>
-        . New patients or emergency cases can reach us at{" "}
-        <Link
-          href={`tel:${trackingNumber} `}
-          data-track="phone-click"
-          className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
-        >
-          {trackingNumber}
         </Link>
         .
       </span>

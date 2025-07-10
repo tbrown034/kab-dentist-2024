@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { CalendarDaysIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { officeNumber } from "@/lib/constants/constants";
@@ -19,7 +17,7 @@ const HeroCTA = () => {
 
       {/* Call Us */}
       <a
-        href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
+        href={`tel:${officeNumber}`}
         className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 transition-colors duration-200 bg-white border border-gray-300 rounded-lg lg:px-8 lg:py-4 hover:bg-gray-50 lg:text-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto"
         aria-label="Call our dental office"
         data-track="phone-click"

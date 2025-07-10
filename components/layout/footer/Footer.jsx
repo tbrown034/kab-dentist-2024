@@ -1,12 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import {
-  address,
-  trackingNumber,
-  officeNumber,
-  email,
-} from "@/lib/constants/constants";
+import { address, officeNumber, email } from "@/lib/constants/constants";
 
 const footerLinks = [
   { href: "/appointment", label: "Appointments" },
@@ -37,13 +32,6 @@ const Footer = () => {
               data-track="phone-click"
             >
               Office Number: {officeNumber}
-            </a>
-            <a
-              href={`tel:${trackingNumber}`}
-              data-track="phone-click"
-              className="hover:underline"
-            >
-              New Patient and Afterhours Number: {trackingNumber}
             </a>
           </div>
           <a href={`mailto:${email}`} className="block hover:underline">
