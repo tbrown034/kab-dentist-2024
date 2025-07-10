@@ -6,8 +6,8 @@ import FullTitle from "@/components/shared/FullTitle";
 import sectionContents from "@/lib/content/sectionContent.json";
 import ServicesSeparator from "@/components/sections/dentalservices/ServicesSeparator";
 import ServicesSearch from "@/components/sections/dentalservices/ServicesSearch";
-import DocBot from "@/components/sections/dentalservices/DocBot";
 import officeEquipment from "../../../src/assets/images/doctor/dr-with-patient-before.jpeg";
+import { officeNumber } from "@/lib/constants/constants";
 
 export const metadata = {
   title: "Dental Services - Naperville | Dr. Keith Brown DDS",
@@ -85,12 +85,12 @@ const DentalServices = () => {
             <p>
               Browse our services below. If you don't see what you need,{" "}
               <a
-                href="tel:6302968702"
+                href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
                 className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
                 data-track="phone-click"
               >
-                call us
-              </a>{" "}
+                {officeNumber}
+              </a>
               or{" "}
               <Link
                 href="/appointment"

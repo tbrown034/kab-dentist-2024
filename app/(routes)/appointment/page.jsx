@@ -5,6 +5,7 @@ import FullTitle from "@/components/shared/FullTitle";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drReception from "../../../src/assets/images/doctor/dr-horizontal-reception.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
+import { officeNumber } from "@/lib/constants";
 
 export const metadata = {
   title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
@@ -76,11 +77,11 @@ const Page = () => {
             <p>
               In pain or ready to schedule? Don’t wait –{" "}
               <a
-                href="tel:6302968702"
+                href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
                 className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
                 data-track="phone-click"
               >
-                call now
+                {officeNumber}
               </a>
               ,{" "}
               <Link
@@ -102,13 +103,13 @@ const Page = () => {
 
           <div className="flex flex-col gap-4 mt-2 sm:flex-row xl:flex-wrap xl:gap-6">
             <a
-              href="tel:6302968702"
+              href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
               data-track="phone-click"
               className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               aria-label="Call our office"
             >
               <PhoneIcon className="w-5 h-5" />
-              Call (630) 296-8702
+              Call {officeNumber}
             </a>
 
             <Link
