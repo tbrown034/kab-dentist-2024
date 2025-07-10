@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import doctorPortrait from "../../../src/assets/images/doctor/dr-horizontal-primary.jpeg";
 
