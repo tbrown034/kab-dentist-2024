@@ -7,6 +7,7 @@ import {
   DialogTitle,
   Description,
 } from "@headlessui/react";
+import { officeNumber } from "@/lib/constants/constants";
 
 export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
   // Enhanced click handler to ensure GTM tracking
@@ -57,12 +58,12 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
               For specific questions about your coverage, please call our office
               at{" "}
               <a
-                href="tel:6302968702"
+                href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
                 className="font-semibold text-teal-600 hover:text-teal-700 transition-colors"
                 data-track="phone-click"
               >
-                (630) 296-8702
-              </a>{" "}
+                {officeNumber}
+              </a>
               to speak with our insurance specialist.
             </p>
           </Description>

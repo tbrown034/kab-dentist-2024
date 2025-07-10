@@ -4,6 +4,7 @@ import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import { officeNumber } from "@/lib/constants/constants";
 
 export default function DialogBox() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,12 +46,12 @@ export default function DialogBox() {
               <p className="text-sm text-gray-500">
                 For more details, please call our office at{" "}
                 <a
-                  href="tel:630-296-8702"
+                  href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
                   className="text-teal-600 underline"
                   data-track="phone-click"
                 >
-                  (630) 296-8702
-                </a>{" "}
+                  {officeNumber}
+                </a>
                 to speak with our dedicated insurance specialist.
               </p>
             </Dialog.Description>
