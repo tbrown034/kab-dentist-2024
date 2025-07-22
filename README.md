@@ -326,6 +326,25 @@ Update `lib/content/servicesContent.json` with new service categories and detail
 
 ---
 
+## 🔄 Major Improvements & Updates
+
+This section tracks significant enhancements made to the dental practice website:
+
+### 2025 Updates
+- **Phone Number Standardization**: Centralized all phone numbers to use constants from `lib/constants/constants.js` to eliminate hardcoded numbers throughout the codebase
+- **CallRail Integration**: Added CallRail tracking script to layout for better call tracking and analytics
+- **Code Consistency**: Unified phone number references across all components and API routes
+
+### Previous Improvements
+- **Appointment Booking System**: Unified form for regular and emergency appointments with pain level slider
+- **DocBot AI Assistant**: OpenAI-powered dental Q&A with predefined responses
+- **Emergency Care System**: 24/7 availability messaging with priority routing
+- **Mobile Optimization**: Mobile-first responsive design implementation
+- **SEO Enhancement**: Structured metadata and optimized sitemap for conversion funnels
+- **Email System**: Multi-recipient notification system with retry logic
+
+---
+
 ## 📝 Notes for Future Developers
 
 - This site prioritizes **conversion optimization** over flashy design
