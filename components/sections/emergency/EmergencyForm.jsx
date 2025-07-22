@@ -5,6 +5,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import PainSlider from "@/components/forms/PainSlider";
 import EmergencyFormText from "./EmergencyFormText";
 import DialogBox from "@/components/dialogs/InsuranceDialog";
+import { officeNumber } from "@/lib/constants/constants";
 
 export default function EmergencyForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -50,7 +51,7 @@ export default function EmergencyForm() {
             {errorMessage && (
               <p className="p-2 text-red-800">
                 Error: {errorMessage}. Sorry we are having an issue, please try
-                again or call our office at (630) 296-8702
+                again or call our office at {officeNumber}
               </p>
             )}
             <form

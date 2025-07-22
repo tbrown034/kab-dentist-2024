@@ -12,6 +12,7 @@ import { submitForm } from "@/app/actions/submitForm";
 import PainSlider from "@/components/forms/PainSlider";
 import DialogBox from "@/components/dialogs/InsuranceDialog";
 import InsuranceCheck from "@/components/dialogs/InsuranceCheck";
+import { officeNumber } from "@/lib/constants/constants";
 
 // Phone formatter
 function formatPhoneNumber(value) {
@@ -196,8 +197,8 @@ export default function UnifiedForm({ formType = "appointment" }) {
             <div className="rounded-xl bg-teal-600 p-4 sm:p-6 text-white">
               <p className="text-base sm:text-lg leading-relaxed">
                 {formType === "emergency"
-                  ? "Thank you for contacting us regarding your dental emergency. We will get back to you shortly. If you do not hear from us immediately, please call our office at (630) 296-8702. If this is a medical emergency, please call 911."
-                  : "Thank you for requesting an appointment with us! We will get back to you shortly to confirm your appointment, set up a time, and answer any questions you might have. Please call our office at (630) 296-8702 if you don't hear back immediately or if this is urgent or an emergency."}
+                  ? `Thank you for contacting us regarding your dental emergency. We will get back to you shortly. If you do not hear from us immediately, please call our office at ${officeNumber}. If this is a medical emergency, please call 911.`
+                  : `Thank you for requesting an appointment with us! We will get back to you shortly to confirm your appointment, set up a time, and answer any questions you might have. Please call our office at ${officeNumber} if you don't hear back immediately or if this is urgent or an emergency.`}
               </p>
             </div>
           </div>

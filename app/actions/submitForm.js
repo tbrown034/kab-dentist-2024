@@ -3,6 +3,7 @@
 
 import nodemailer from "nodemailer";
 import { EmailTemplate } from "@/app/api/submitForm/EmailTemplate";
+import { officeNumber } from "@/lib/constants/constants";
 
 // Returns { time: "h:mm AM/PM M/d/yy", zone: "CST/CDT" }
 function getCentralTimeInfo() {
@@ -136,7 +137,7 @@ export async function submitForm(prevState, formData) {
         return {
           type: "error",
           message:
-            "Please contact our office directly for dental inquiries at (630) 296-8702.",
+            `Please contact our office directly for dental inquiries at ${officeNumber}.`,
         };
       }
     }
@@ -233,7 +234,7 @@ export async function submitForm(prevState, formData) {
       return {
         type: "error",
         message:
-          "Failed to send email. Please call our office at (630) 296-8702.",
+          `Failed to send email. Please call our office at ${officeNumber}.`,
       };
     }
   } catch (error) {
@@ -241,7 +242,7 @@ export async function submitForm(prevState, formData) {
     return {
       type: "error",
       message:
-        "Sorry, we're having an issue. Please try again or call (630) 296-8702.",
+        `Sorry, we're having an issue. Please try again or call ${officeNumber}.`,
     };
   }
 }
