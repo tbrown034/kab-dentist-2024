@@ -3,7 +3,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { address, email, telNumber, displayNumber } from "@/lib/constants/constants";
+import { address, email } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 const footerLinks = [
   { href: "/appointment", label: "Appointments" },
@@ -28,13 +29,7 @@ const Footer = () => {
             {address}
           </a>
           <div className="flex flex-col gap-2">
-            <a
-              href={`tel:${telNumber}`}
-              className="hover:underline"
-              data-track="phone-click"
-            >
-              Office Number: {displayNumber}
-            </a>
+            <span>Office Number: <DisplayNumber /></span>
           </div>
           <a href={`mailto:${email}`} className="block hover:underline">
             {email}

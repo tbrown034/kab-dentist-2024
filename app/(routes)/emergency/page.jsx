@@ -6,7 +6,8 @@ import EmergencyFAQs from "@/components/sections/emergency/EmergencyFAQs";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drWithPatientAfter from "../../../src/assets/images/doctor/dr-with-patient-after.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import { telNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
   title: "Emergency Dentist in Naperville | Dr. Keith A. Brown DDS, FAGD",
@@ -119,7 +120,7 @@ const Page = () => {
               data-track="phone-click"
             >
               <PhoneIcon className="w-5 h-5" />
-              Call {displayNumber}
+              Call <DisplayNumber asLink={false} />
             </a>
 
             <Link

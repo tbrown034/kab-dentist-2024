@@ -8,7 +8,8 @@ import {
   DialogTitle,
   Description,
 } from "@headlessui/react";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import { telNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
   // Enhanced click handler to ensure GTM tracking
@@ -63,7 +64,7 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
                 className="font-semibold text-teal-600 hover:text-teal-700 transition-colors"
                 data-track="phone-click"
               >
-                {displayNumber}
+                <DisplayNumber asLink={false} />
               </a>
               to speak with our insurance specialist.
             </p>
