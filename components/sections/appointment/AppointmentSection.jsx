@@ -1,3 +1,6 @@
+// components/sections/appointment/AppointmentSection.jsx
+// Server Component
+
 import sectionContents from "@/lib/content/sectionContent.json";
 import FullTitle from "@/components/shared/FullTitle";
 import UnifiedForm from "@/components/forms/UnifiedForm";

@@ -1,3 +1,5 @@
+// components/layout/header/ThemeToggle.jsx
+// Client Component
 "use client";
 import { Switch } from "@headlessui/react";
 import { useTheme } from "@/contexts/ThemeContext";

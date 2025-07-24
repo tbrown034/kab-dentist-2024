@@ -1,3 +1,5 @@
+// components/forms/PainSlider.jsx
+// Client Component
 "use client";
 
 const PainSlider = ({ value, onChange }) => {

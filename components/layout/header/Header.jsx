@@ -1,4 +1,6 @@
 // components/layout/header/Header.jsx
+// Client Component
+"use client";
 import HeaderFullNav from "@/components/layout/header/HeaderFullNav";
 import HeaderDropDown from "@/components/layout/header/HeaderDropDown";
 import ThemeToggle from "@/components/layout/header/ThemeToggle";

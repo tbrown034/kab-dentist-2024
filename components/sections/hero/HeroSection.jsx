@@ -1,3 +1,6 @@
+// components/sections/hero/HeroSection.jsx
+// Server Component
+
 import Link from "next/link";
 import HeroCTA from "./HeroCTA";
 import HeroImageDesktop from "./HeroImageDesktop";

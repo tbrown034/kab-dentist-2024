@@ -1,7 +1,9 @@
+// components/layout/footer/Footer.jsx
+// Server Component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { address, officeNumber, email } from "@/lib/constants/constants";
+import { address, email, telNumber, displayNumber } from "@/lib/constants/constants";
 
 const footerLinks = [
   { href: "/appointment", label: "Appointments" },
@@ -27,11 +29,11 @@ const Footer = () => {
           </a>
           <div className="flex flex-col gap-2">
             <a
-              href={`tel:${officeNumber}`}
+              href={`tel:${telNumber}`}
               className="hover:underline"
               data-track="phone-click"
             >
-              Office Number: {officeNumber}
+              Office Number: {displayNumber}
             </a>
           </div>
           <a href={`mailto:${email}`} className="block hover:underline">
