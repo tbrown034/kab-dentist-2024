@@ -1,10 +1,12 @@
+// components/dialogs/InsuranceDialog.jsx
+// Client Component
 "use client";
 
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { officeNumber } from "@/lib/constants/constants";
+import { telNumber, displayNumber } from "@/lib/constants/constants";
 
 export default function DialogBox() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,11 +48,11 @@ export default function DialogBox() {
               <p className="text-sm text-gray-500">
                 For more details, please call our office at{" "}
                 <a
-                  href={`tel:${officeNumber.replace(/[^\d]/g, "")}`}
+                  href={`tel:${telNumber}`}
                   className="text-teal-600 underline"
                   data-track="phone-click"
                 >
-                  {officeNumber}
+                  {displayNumber}
                 </a>
                 to speak with our dedicated insurance specialist.
               </p>

@@ -6,6 +6,7 @@ import EmergencyFAQs from "@/components/sections/emergency/EmergencyFAQs";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drWithPatientAfter from "../../../src/assets/images/doctor/dr-with-patient-after.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
+import { telNumber, displayNumber } from "@/lib/constants/constants";
 
 export const metadata = {
   title: "Emergency Dentist in Naperville | Dr. Keith A. Brown DDS, FAGD",
@@ -83,9 +84,9 @@ const Page = () => {
               free night and weekend consultations to help you get seen fast.
             </p>
             <p>
-              In pain or unsure what to do? Don’t wait –{" "}
+              In pain or unsure what to do? Don't wait –{" "}
               <a
-                href="tel:6302968702"
+                href={`tel:${telNumber}`}
                 data-track="phone-click"
                 className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
               >
@@ -112,13 +113,13 @@ const Page = () => {
           {/* CTAs */}
           <div className="flex flex-col gap-4 mt-2 sm:flex-row xl:flex-wrap xl:gap-6">
             <a
-              href="tel:6302968702"
+              href={`tel:${telNumber}`}
               className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               aria-label="Call our emergency dental line"
               data-track="phone-click"
             >
               <PhoneIcon className="w-5 h-5" />
-              Call (630) 296-8702
+              Call {displayNumber}
             </a>
 
             <Link

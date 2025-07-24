@@ -1,3 +1,5 @@
+// components/layout/header/HeaderDropDown.jsx
+// Client Component
 "use client";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";

@@ -136,7 +136,7 @@ export async function submitForm(prevState, formData) {
         return {
           type: "error",
           message:
-            "Please contact our office directly for dental inquiries at (630) 296-8702.",
+            `Please contact our office directly for dental inquiries at (630) 357-9358.`,
         };
       }
     }
@@ -233,7 +233,7 @@ export async function submitForm(prevState, formData) {
       return {
         type: "error",
         message:
-          "Failed to send email. Please call our office at (630) 296-8702.",
+          `Failed to send email. Please call our office at (630) 357-9358.`,
       };
     }
   } catch (error) {
@@ -241,7 +241,7 @@ export async function submitForm(prevState, formData) {
     return {
       type: "error",
       message:
-        "Sorry, we're having an issue. Please try again or call (630) 296-8702.",
+        `Sorry, we're having an issue. Please try again or call (630) 357-9358.`,
     };
   }
 }

@@ -1,3 +1,5 @@
+// components/layout/header/HeaderFullNav.jsx
+// Server Component
 import Link from "next/link";
 
 const links = [

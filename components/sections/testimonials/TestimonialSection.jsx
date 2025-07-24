@@ -1,4 +1,7 @@
+// components/sections/testimonials/TestimonialSection.jsx
+// Client Component
 "use client";
+
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,

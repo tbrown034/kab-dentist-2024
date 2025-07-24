@@ -1,3 +1,5 @@
+// components/sections/map/MapSection.jsx
+// Client Component
 "use client";
 
 import FullTitle from "@/components/shared/FullTitle";

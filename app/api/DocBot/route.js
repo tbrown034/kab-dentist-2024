@@ -16,7 +16,7 @@ const predefinedAnswers = {
   hours:
     "Our office hours are Monday, Wednesday, and Friday from 8 AM to 5 PM. This adjusted schedule allows for proper sterilization between visits.",
   appointment:
-    "You can book an appointment by calling our office at (630) 296-0589 or by visiting our website and using our online scheduling system.",
+    `You can book an appointment by calling our office at (630) 357-9358 or by visiting our website and using our online scheduling system.`,
   insurance:
     "Yes, we accept a variety of insurance plans. Please contact our office for more details on the specific plans we accept.",
   services:

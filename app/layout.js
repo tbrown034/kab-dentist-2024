@@ -51,6 +51,7 @@ export default function RootLayout({ children }) {
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -65,21 +66,25 @@ export default function RootLayout({ children }) {
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('theme');
-                  var isDarkSystem = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+                    var theme = localStorage.getItem('theme');
+                    var isDarkSystem = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-                  document.documentElement.classList.remove('light', 'dark');
+                    document.documentElement.classList.remove('light', 'dark');
 
-                  if (theme === 'light') {
-                    document.documentElement.classList.add('light');
-                  } else if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    if (isDarkSystem) {
+                    if (theme === 'light') {
+                      document.documentElement.classList.add('light');
+                    } else if (theme === 'dark') {
                       document.documentElement.classList.add('dark');
                     } else {
-                      document.documentElement.classList.add('light');
+                      if (isDarkSystem) {
+                        document.documentElement.classList.add('dark');
+                      } else {
+                        document.documentElement.classList.add('light');
+                      }
                     }
+                  } else {
+                    document.documentElement.classList.add('light');
                   }
                 } catch (e) {
                   document.documentElement.classList.add('light');
@@ -88,6 +93,10 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        <script
+          type="text/javascript"
+          src="https://cdn.callrail.com/companies/448518253/ecdaf78f16b496fa23b912/swap.js"
+        ></script>
       </head>
       <body
         className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
@@ -100,10 +109,6 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <script
-          type="text/javascript"
-          src="https://cdn.callrail.com/companies/448518253/ecdaf78f16b496fa23b912/swap.js"
-        ></script>
         <ThemeProvider>
           <Header />
           {children}

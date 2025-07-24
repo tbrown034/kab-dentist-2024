@@ -1,3 +1,5 @@
+// components/sections/dentalservices/ServicesSearch.jsx
+// Client Component
 "use client";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
