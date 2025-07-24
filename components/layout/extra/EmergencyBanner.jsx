@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 const EmergencyBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -24,16 +24,11 @@ const EmergencyBanner = () => {
         </Link>
       </p>
       <div className="flex items-center gap-4">
-        <Link
-          href={`tel:${telNumber}`}
-          data-track="phone-click"
-        >
-          <div className="flex items-center p-2 text-teal-800 bg-white border border-gray-600 rounded-xl dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300">
-            <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
-            <span>Call</span>
-            <span className="ml-1">{displayNumber}</span>
-          </div>
-        </Link>
+        <div className="flex items-center p-2 text-teal-800 bg-white border border-gray-600 rounded-xl dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300" data-track="phone-click">
+          <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
+          <span>Call</span>
+          <span className="ml-1"><DisplayNumber /></span>
+        </div>
         <button
           onClick={() => setIsVisible(false)}
           type="button"

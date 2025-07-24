@@ -1,8 +1,8 @@
-// components/sections/hero/HeroCTA.jsx
-// Server Component
+"use client";
+
 import Link from "next/link";
 import { CalendarDaysIcon, PhoneIcon } from "@heroicons/react/24/solid";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 const HeroCTA = () => {
   return (
@@ -18,15 +18,10 @@ const HeroCTA = () => {
       </Link>
 
       {/* Call Us */}
-      <a
-        href={`tel:${telNumber}`}
-        className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 transition-colors duration-200 bg-white border border-gray-300 rounded-lg lg:px-8 lg:py-4 hover:bg-gray-50 lg:text-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto"
-        aria-label="Call our dental office"
-        data-track="phone-click"
-      >
+      <div className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 transition-colors duration-200 bg-white border border-gray-300 rounded-lg lg:px-8 lg:py-4 hover:bg-gray-50 lg:text-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto">
         <PhoneIcon className="w-5 h-5 text-teal-600" />
-        Call {displayNumber}
-      </a>
+        Call <DisplayNumber />
+      </div>
     </section>
   );
 };

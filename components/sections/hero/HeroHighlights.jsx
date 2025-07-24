@@ -1,5 +1,5 @@
-// components/sections/hero/HeroHighlights.jsx
-// Server Component
+"use client";
+
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,7 +7,7 @@ import {
   faSpa,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 const HeroHighlights = ({ onPhoneClick }) => {
   return (
@@ -50,13 +50,7 @@ const HeroHighlights = ({ onPhoneClick }) => {
       </button>
       <span className="text-sm md:text-base lg:text-lg">
         Patients can call{" "}
-        <a
-          href={`tel:${telNumber}`}
-          className="font-semibold text-teal-700 underline dark:text-teal-600 hover:text-teal-600 active:text-teal-400"
-          data-track="phone-click"
-        >
-          {displayNumber}
-        </a>
+        <DisplayNumber />
         .
       </span>
     </div>

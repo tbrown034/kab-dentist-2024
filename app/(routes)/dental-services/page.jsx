@@ -7,7 +7,8 @@ import sectionContents from "@/lib/content/sectionContent.json";
 import ServicesSeparator from "@/components/sections/dentalservices/ServicesSeparator";
 import ServicesSearch from "@/components/sections/dentalservices/ServicesSearch";
 import officeEquipment from "../../../src/assets/images/doctor/dr-with-patient-before.jpeg";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import { telNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
   title: "Dental Services - Naperville | Dr. Keith Brown DDS",
@@ -89,7 +90,7 @@ const DentalServices = () => {
                 className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
                 data-track="phone-click"
               >
-                {displayNumber}
+                <DisplayNumber asLink={false} />
               </a>
               or{" "}
               <Link

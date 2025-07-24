@@ -5,7 +5,8 @@ import FullTitle from "@/components/shared/FullTitle";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drReception from "../../../src/assets/images/doctor/dr-horizontal-reception.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import { telNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
   title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
@@ -81,7 +82,7 @@ const Page = () => {
                 className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
                 data-track="phone-click"
               >
-                {displayNumber}
+                <DisplayNumber asLink={false} />
               </a>
               ,{" "}
               <Link
@@ -109,7 +110,7 @@ const Page = () => {
               aria-label="Call our office"
             >
               <PhoneIcon className="w-5 h-5" />
-              Call {displayNumber}
+              Call <DisplayNumber asLink={false} />
             </a>
 
             <Link

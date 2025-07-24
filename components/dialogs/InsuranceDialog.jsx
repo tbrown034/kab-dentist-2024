@@ -6,7 +6,8 @@ import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { telNumber, displayNumber } from "@/lib/constants/constants";
+import { telNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 
 export default function DialogBox() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function DialogBox() {
                   className="text-teal-600 underline"
                   data-track="phone-click"
                 >
-                  {displayNumber}
+                  <DisplayNumber asLink={false} />
                 </a>
                 to speak with our dedicated insurance specialist.
               </p>
