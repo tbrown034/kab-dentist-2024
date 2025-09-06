@@ -12,9 +12,10 @@ const Header = () => {
         <a
           id="#home"
           href="/"
-          className="font-bold text-gray-900 dark:text-gray-100 text-lg sm:text-xl lg:text-2xl hover:text-teal-600 transition-colors tracking-tight"
+          className="font-bold text-gray-900 dark:text-gray-100 text-xl sm:text-2xl lg:text-3xl hover:text-teal-600 transition-colors tracking-tight"
         >
-          Dr. Keith A. Brown DDS
+          <span className="sm:hidden">Dr. Keith A. Brown DDS</span>
+          <span className="hidden sm:inline">Dr. Keith A. Brown DDS</span>
         </a>
         <div className="hidden lg:flex">
           <HeaderFullNav />

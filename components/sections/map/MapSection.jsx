@@ -15,9 +15,9 @@ const MapSection = () => {
   const highlightInFront = true;
 
   return (
-    <section className="w-full max-w-6xl mx-auto" id="locationSection">
+    <section className="max-w-7xl mx-auto" id="locationSection">
       {/* Heading */}
-      <h2 className="font-header text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8 sm:mb-10 lg:mb-12 px-4 text-center">
+      <h2 className="font-header text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8 sm:mb-10 lg:mb-12 text-center">
         <FullTitle
           title={title}
           highlightedText={highlightedText}
@@ -78,8 +78,12 @@ const MapSection = () => {
       </div>
 
       {/* Google Map below */}
-      <div className="mt-8 lg:mt-12 rounded-2xl overflow-hidden shadow-xl">
-        <MyGoogleMap />
+      <div className="mt-8 lg:mt-12">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-teal-600/20 dark:border-teal-400/20 bg-gradient-to-br from-teal-50 to-white dark:from-gray-800 dark:to-gray-900 p-1">
+          <div className="rounded-xl overflow-hidden">
+            <MyGoogleMap />
+          </div>
+        </div>
       </div>
     </section>
   );

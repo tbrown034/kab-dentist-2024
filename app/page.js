@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection />
       
       {/* Content sections with consistent spacing */}
-      <div className="flex flex-col gap-24 px-6 py-20 sm:gap-28 sm:px-8 sm:py-24 lg:gap-32 lg:px-12 lg:py-32">
+      <div className="flex flex-col gap-20 px-4 py-16 sm:gap-24 sm:px-6 sm:py-20 lg:gap-32 lg:px-8 lg:py-24">
         {/* <FeaturesSection /> */}
         <DoctorSection />
         <TestimonialSection />

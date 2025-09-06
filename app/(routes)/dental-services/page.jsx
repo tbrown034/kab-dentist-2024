@@ -49,29 +49,29 @@ const DentalServices = () => {
   if (!title || !textBlock || textBlock.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-12 p-6">
+    <div className="flex flex-col gap-16 sm:gap-20 lg:gap-24 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-7xl mx-auto">
       {/* Hero Section */}
       <section
-        className="flex flex-col xl:flex-row gap-6 xl:gap-12"
+        className="flex flex-col md:flex-row gap-8 md:gap-12 items-center"
         id="servicesSection"
       >
         {/* Image */}
-        <div className="w-full xl:w-1/2 flex items-center justify-center">
-          <div className="relative w-full h-[280px] sm:aspect-[5/3] lg:aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[16/10] rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.01]">
             <Image
               src={officeEquipment}
               alt="Modern dental equipment and technology at Dr. Keith A. Brown's office"
               fill
               priority
               className="object-cover object-center"
-              sizes="(min-width: 1280px) 50vw, 100vw"
+              sizes="(min-width: 768px) 50vw, 100vw"
             />
           </div>
         </div>
 
         {/* Content */}
-        <div className="flex flex-col justify-center gap-6 w-full xl:w-1/2">
-          <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
+        <div className="flex flex-col justify-center gap-6 w-full md:w-1/2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-header">
             <FullTitle
               title={title}
               highlightedText={highlightedText}
@@ -79,23 +79,23 @@ const DentalServices = () => {
             />
           </h1>
 
-          <div className="flex flex-col gap-4 pb-2 text-xl">
+          <div className="flex flex-col gap-4 text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-200 leading-relaxed">
             {textBlock.map((block, blockIndex) => (
               <p key={blockIndex}>{block.text}</p>
             ))}
             <p>
-              Browse our services below. If you don't see what you need,{" "}
+              Browse our services below. If you don't see what you need, call{" "}
               <a
                 href={`tel:${telNumber}`}
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
                 data-track="phone-click"
               >
                 <DisplayNumber asLink={false} />
               </a>
-              or{" "}
+              {" "}or{" "}
               <Link
                 href="/appointment"
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
               >
                 request an appointment
               </Link>{" "}
@@ -104,10 +104,10 @@ const DentalServices = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap max-w-full">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
             <Link
               href="#browseServices"
-              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-white bg-teal-600 rounded-xl hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
               aria-label="Browse our dental services"
             >
               <DocumentTextIcon className="w-5 h-5 flex-shrink-0" />
@@ -116,11 +116,11 @@ const DentalServices = () => {
 
             <Link
               href="/appointment"
-              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
-              aria-label="Book a dental appointment"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-2xl shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
+              aria-label="Request a dental appointment"
             >
-              <PhoneIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
-              <span>Book Appointment</span>
+              <PhoneIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
+              <span>Request Appointment</span>
             </Link>
           </div>
         </div>

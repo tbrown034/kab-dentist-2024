@@ -42,13 +42,13 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <div className="flex flex-col gap-12 p-6">
+    <div className="flex flex-col gap-16 sm:gap-20 lg:gap-24 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-7xl mx-auto">
       <section
-        className="flex flex-col xl:flex-row gap-6 xl:gap-12"
+        className="flex flex-col md:flex-row gap-8 md:gap-12 items-center"
         id="appointmentSection"
       >
-        <div className="w-full xl:w-1/2 flex items-center justify-center">
-          <div className="relative w-full h-[280px] sm:aspect-[5/3] lg:aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[16/10] rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.01]">
             <Image
               src={drReception}
               alt="Dr. Keith A. Brown at the reception desk, welcoming patients"
@@ -60,8 +60,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-6 w-full xl:w-1/2">
-          <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
+        <div className="flex flex-col justify-center gap-6 w-full md:w-1/2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-header">
             <FullTitle
               title="Simplifying Your Journey with Easy Scheduling"
               highlightedText="Simplifying Your Journey"
@@ -69,17 +69,17 @@ const Page = () => {
             />
           </h1>
 
-          <div className="flex flex-col gap-4 pb-2 text-xl">
+          <div className="flex flex-col gap-4 text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-200 leading-relaxed">
             <p>
               Embark on your journey to a healthier, happier smile with our easy
               online scheduling. We ensure top-tier dental care with unmatched
               patient convenience.
             </p>
             <p>
-              In pain or ready to schedule? Don’t wait –{" "}
+              In pain or ready to schedule? Don't wait –{" "}
               <a
                 href={`tel:${telNumber}`}
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
                 data-track="phone-click"
               >
                 <DisplayNumber asLink={false} />
@@ -87,14 +87,14 @@ const Page = () => {
               ,{" "}
               <Link
                 href="#appointmentForm"
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
               >
                 fill out the form below
               </Link>{" "}
               or{" "}
               <Link
                 href="/dental-services"
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
               >
                 learn more
               </Link>
@@ -102,23 +102,23 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap max-w-full">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
             <a
               href={`tel:${telNumber}`}
               data-track="phone-click"
-              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-white bg-teal-600 rounded-xl hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
               aria-label="Call our office"
             >
               <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-              <span className="whitespace-nowrap">Call <DisplayNumber asLink={false} /></span>
+              <span>Call <DisplayNumber asLink={false} /></span>
             </a>
 
             <Link
               href="#appointmentForm"
-              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-2xl shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
               aria-label="Request dental appointment"
             >
-              <DocumentTextIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+              <DocumentTextIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
               <span>Request Appointment</span>
             </Link>
           </div>

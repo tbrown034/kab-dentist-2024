@@ -307,13 +307,13 @@ export default function UnifiedForm({ formType = "appointment" }) {
             </div>
             <h2 className="mb-3 text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
               {formType === "emergency"
-                ? "Emergency Consultation"
-                : "Book Your Visit"}
+                ? "Emergency Consultation & Scheduling"
+                : "Request an Appointment"}
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
               {formType === "emergency"
                 ? "Get immediate dental care when you need it most"
-                : "Start your journey to better oral health today"}
+                : "New patients welcome! We'll assess your needs and schedule your appointment"}
             </p>
           </div>
 

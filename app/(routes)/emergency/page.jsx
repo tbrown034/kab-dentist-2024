@@ -43,15 +43,29 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <div className="flex flex-col gap-12 p-6">
+    <div className="flex flex-col gap-16 sm:gap-20 lg:gap-24 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-7xl mx-auto">
       {/* Hero Section */}
       <section
-        className="flex flex-col xl:flex-row gap-6 xl:gap-12"
+        className="flex flex-col md:flex-row gap-8 md:gap-12 items-center"
         id="emergencySection"
       >
-        {/* Content First on Mobile, Second on Desktop */}
-        <div className="flex flex-col justify-center gap-6 w-full xl:w-1/2 order-1 xl:order-2">
-          <h1 className="text-3xl font-extrabold tracking-tight font-header xl:text-5xl mb-2">
+        {/* Image Section */}
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[16/10] rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.01]">
+            <Image
+              src={drWithPatientAfter}
+              alt="Dr. Keith A. Brown providing emergency dental care"
+              fill
+              priority
+              className="object-cover object-top"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="flex flex-col justify-center gap-6 w-full md:w-1/2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-header">
             <FullTitle
               title="When It Matters Most, We're Here"
               highlightedText="When It Matters Most"
@@ -59,97 +73,46 @@ const Page = () => {
             />
           </h1>
 
-          <div className="flex flex-col gap-4 pb-2 text-xl">
+          <div className="flex flex-col gap-4 text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-200 leading-relaxed">
             <p>
               With over 40 years serving Naperville,{" "}
               <Link
-                className="font-semibold text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
+                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
                 href="#doctorSection"
               >
                 Dr. Keith A. Brown DDS
               </Link>{" "}
               understands that dental emergencies don't wait for business hours.
-              That's why we take after-hours calls to provide immediate guidance
-              and get you scheduled quickly.
+              We take after-hours calls to provide immediate guidance.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              <strong>Our approach:</strong> Call us anytime for immediate phone consultation.
-              We'll help manage your pain, assess urgency, and often schedule you
-              for next-day care. No emergency room visits needed for most dental issues.
-            </p>
-            <p>
-              Need help now?{" "}
-              <a
-                href={`tel:${telNumber}`}
-                data-track="phone-click"
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500 font-semibold"
-              >
-                Call us anytime
-              </a>
-              ,{" "}
-              <Link
-                href="#emergencyForm"
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
-              >
-                request a consultation online
-              </Link>{" "}
-              or{" "}
-              <Link
-                href="#emergencyFAQs"
-                className="text-teal-700 underline hover:text-teal-600 active:text-teal-400 dark:text-teal-500"
-              >
-                check our emergency FAQs
-              </Link>
-              .
-            </p>
+            <div className="bg-teal-50 dark:bg-teal-900/20 border-l-4 border-teal-600 p-4 rounded-r-lg">
+              <p className="text-base sm:text-lg font-medium text-teal-900 dark:text-teal-100">
+                <strong>Call Our Emergency Line:</strong> Leave a detailed message and Dr. Brown will often return urgent calls personally when available. 
+                We'll help assess your situation and get you scheduled for immediate care.
+              </p>
+            </div>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap max-w-full">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
             <a
               href={`tel:${telNumber}`}
-              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-white bg-teal-600 rounded-xl hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
               aria-label="Call our emergency dental line"
               data-track="phone-click"
             >
               <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-              <span className="whitespace-nowrap">Call <DisplayNumber asLink={false} /></span>
+              <span>Emergency: <DisplayNumber asLink={false} /></span>
             </a>
 
             <Link
               href="#emergencyForm"
-              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
-              aria-label="Request emergency consultation"
+              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-2xl shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
+              aria-label="Submit emergency request form"
             >
-              <DocumentTextIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
-              <span>Emergency Consultation</span>
+              <DocumentTextIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
+              <span>Submit Emergency Request Form</span>
             </Link>
-          </div>
-        </div>
-
-        {/* Image - Smaller on Mobile, Normal on Desktop */}
-        <div className="w-full xl:w-1/2 flex items-start xl:items-center justify-center order-2 xl:order-1">
-          {/* Mobile: Small floating image */}
-          <div className="xl:hidden relative w-32 h-32 sm:w-40 sm:h-40 rounded-full shadow-lg overflow-hidden float-right ml-4 mb-4">
-            <Image
-              src={drWithPatientAfter}
-              alt="Dr. Keith A. Brown"
-              fill
-              priority
-              className="object-cover object-center"
-              sizes="160px"
-            />
-          </div>
-          {/* Desktop: Full size image */}
-          <div className="hidden xl:block relative w-full aspect-[16/9] rounded-lg shadow-lg overflow-hidden">
-            <Image
-              src={drWithPatientAfter}
-              alt="Dr. Keith A. Brown providing emergency dental care"
-              fill
-              priority
-              className="object-cover object-top"
-              sizes="(min-width: 1280px) 50vw"
-            />
           </div>
         </div>
       </section>
