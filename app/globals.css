@@ -18,7 +18,7 @@ html {
   overflow: hidden;
 }
 
-/* Slide down animation for emergency banner */
+/* Slide animations for emergency banner */
 @keyframes slide-down {
   from {
     transform: translateY(-100%);
@@ -28,8 +28,21 @@ html {
   }
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .animate-slide-down {
   animation: slide-down 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
 }
 
 @layer base {
