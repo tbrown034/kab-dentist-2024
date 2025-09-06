@@ -58,20 +58,22 @@ const MapSection = () => {
             We offer free, designated parking and elevator access to our office.
           </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Link
-              className="inline-flex items-center justify-center rounded-lg px-5 py-3 text-base font-medium bg-teal-600 text-white shadow-sm hover:bg-teal-700 active:bg-teal-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 transition-colors"
+              className="group relative inline-flex items-center justify-center gap-3 sm:gap-2.5 rounded-2xl px-6 sm:px-7 py-4 text-base sm:text-lg font-semibold text-white overflow-hidden transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 bg-gradient-to-r from-teal-600 to-teal-700 shadow-xl hover:shadow-2xl hover:from-teal-700 hover:to-teal-800"
               href="https://www.google.com/maps?sca_esv=79ff9b4c6b5b9f67&sca_upv=1&output=search&q=keith+brown+dds&source=lnms&entry=mc"
             >
-              <MapPinIcon className="w-5 h-5 mr-2" />
-              Get Directions
+              <MapPinIcon className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span className="tracking-wide">Get Directions</span>
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
             </Link>
             <button
-              className="inline-flex items-center justify-center rounded-lg px-5 py-3 text-base font-medium border-2 border-gray-400 dark:border-gray-500 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-500 dark:hover:border-gray-400 active:bg-gray-100 dark:active:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 transition-all"
+              className="group relative inline-flex items-center justify-center gap-3 sm:gap-2.5 rounded-2xl px-6 sm:px-7 py-4 text-base sm:text-lg font-semibold backdrop-blur-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200/50 dark:border-gray-700/50 text-gray-900 dark:text-gray-100 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:bg-white/90 dark:hover:bg-gray-800/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2"
               onClick={copyAddressToClipboard}
             >
-              <ClipboardDocumentIcon className="w-5 h-5 mr-2" />
-              Copy Address
+              <ClipboardDocumentIcon className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span className="tracking-wide">Copy Address</span>
             </button>
           </div>
         </div>

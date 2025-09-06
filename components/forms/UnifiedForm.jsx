@@ -62,7 +62,7 @@ function SubmitButton({ isPending, formType }) {
               />
             </svg>
             <span>
-              {formType === "emergency" ? "Request Emergency Care" : "Book Appointment"}
+              {formType === "emergency" ? "Request Emergency Care" : "Request Appointment"}
             </span>
           </>
         )}
@@ -180,9 +180,11 @@ export default function UnifiedForm({ formType = "appointment" }) {
   if (state?.type === "success") {
     return (
       <div className="px-2 sm:px-6 lg:px-16 xl:px-24">
-        <div
-          ref={containerRef}
-          className="relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl border border-gray-100 dark:border-gray-700"
+        {/* Success container */}
+        <div className="relative">
+          <div
+            ref={containerRef}
+            className="relative overflow-hidden rounded-3xl bg-gray-50 dark:bg-gray-900 p-6 sm:p-10 lg:p-12 shadow-2xl ring-2 ring-green-300 dark:ring-green-700 border border-white dark:border-gray-800"
         >
           <div className="relative">
             <div className="mb-8 text-center">
@@ -206,10 +208,10 @@ export default function UnifiedForm({ formType = "appointment" }) {
                   ? "Emergency Request Received"
                   : "Request Successfully Sent"}
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">We'll contact you within 1 business day</p>
+              <p className="text-xl text-gray-600 dark:text-gray-400">We'll contact you as soon as possible</p>
             </div>
 
-            <div className="rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/20 border-2 border-teal-200 dark:border-teal-800 p-6 sm:p-8">
+            <div className="rounded-2xl bg-gradient-to-br from-teal-50/80 to-teal-100/80 dark:from-teal-900/30 dark:to-teal-800/30 backdrop-blur-sm border border-teal-200/50 dark:border-teal-800/50 p-6 sm:p-8 shadow-lg">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 rounded-full bg-teal-600 dark:bg-teal-500 flex items-center justify-center">
@@ -225,15 +227,19 @@ export default function UnifiedForm({ formType = "appointment" }) {
                       <>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>Our team will review your emergency request immediately</span>
+                          <span className="font-semibold">Your request goes directly to Dr. Brown</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>We'll call you back as soon as possible to discuss your situation</span>
+                          <span>Dr. Brown often returns urgent calls personally when available</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>If you need immediate assistance, please call <span className="font-semibold">{displayNumber}</span></span>
+                          <span>We'll assess your situation and may be able to see you immediately</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>For fastest response, call our emergency line: <span className="font-semibold">{displayNumber}</span></span>
                         </li>
                         <li className="flex items-start gap-2 text-red-600 dark:text-red-400 font-semibold">
                           <span className="mt-1">!</span>
@@ -244,19 +250,19 @@ export default function UnifiedForm({ formType = "appointment" }) {
                       <>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>Our scheduling team will review your request</span>
+                          <span className="font-semibold">Your request goes directly to Dr. Brown's office</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>We'll contact you within 1 business day to confirm your appointment</span>
+                          <span>We personally review every request and prioritize based on urgency</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>You'll receive appointment details and any preparation instructions</span>
+                          <span>We'll contact you as soon as possible to schedule your appointment</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-teal-600 mt-1">•</span>
-                          <span>Questions? Call us at <span className="font-semibold">{displayNumber}</span></span>
+                          <span>Need immediate help? Call us directly at <span className="font-semibold">{displayNumber}</span></span>
                         </li>
                       </>
                     )}
@@ -283,19 +289,22 @@ export default function UnifiedForm({ formType = "appointment" }) {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 
   // Main form
   return (
     <div className="px-2 sm:px-6 lg:px-16 xl:px-24">
-      <div
-        ref={containerRef}
-        className="relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl border border-gray-100 dark:border-gray-700"
-      >
-        <div className="relative">
+      {/* Form container */}
+      <div className="relative">
+        <div
+          ref={containerRef}
+          className="relative overflow-hidden rounded-3xl bg-gray-50 dark:bg-gray-900 p-6 sm:p-10 lg:p-12 shadow-2xl ring-2 ring-gray-200 dark:ring-gray-700 border border-white dark:border-gray-800"
+        >
+          <div className="relative">
           <div className="mb-8 sm:mb-10 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-800 dark:to-teal-900">
+            <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-800 dark:to-teal-900 shadow-lg">
               <svg className="w-8 h-8 text-teal-700 dark:text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                   d={formType === "emergency" 
@@ -315,6 +324,24 @@ export default function UnifiedForm({ formType = "appointment" }) {
                 ? "Get immediate dental care when you need it most"
                 : "New patients welcome! We'll assess your needs and schedule your appointment"}
             </p>
+            
+            {/* Progress Steps */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-teal-600"></div>
+                <span className="text-xs font-medium text-gray-600 dark:text-gray-400">Quick Info</span>
+              </div>
+              <div className="w-8 h-px bg-gray-300 dark:bg-gray-600"></div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <span className="text-xs font-medium text-gray-400 dark:text-gray-500">Contact</span>
+              </div>
+              <div className="w-8 h-px bg-gray-300 dark:bg-gray-600"></div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <span className="text-xs font-medium text-gray-400 dark:text-gray-500">Details</span>
+              </div>
+            </div>
           </div>
 
           {/* Error Message */}
@@ -349,7 +376,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
             </div>
           )}
 
-          <Form action={handleFormSubmit} className="space-y-8">
+          <Form action={handleFormSubmit} className="space-y-6">
             <input type="hidden" name="formType" value={formType} />
             <input type="hidden" name="painLevel" value={painLevel} />
             <input type="hidden" name="phone" value={phone} />
@@ -357,7 +384,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
             {/* Name Section with modern label */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <div className="h-8 w-1.5 bg-gradient-to-b from-teal-500 to-teal-600 rounded-full shadow-md"></div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Your Information</h3>
               </div>
               
@@ -373,7 +400,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
                     name="firstName"
                     type="text"
                     id="firstName"
-                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    className="w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-4 min-h-[52px] text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 shadow-sm transition-all duration-200 hover:shadow-md focus:bg-white dark:focus:bg-gray-800 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:shadow-lg"
                     placeholder="John"
                     required
                   />
@@ -390,7 +417,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
                     name="lastName"
                     type="text"
                     id="lastName"
-                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    className="w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-4 min-h-[52px] text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 shadow-sm transition-all duration-200 hover:shadow-md focus:bg-white dark:focus:bg-gray-800 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:shadow-lg"
                     placeholder="Smith"
                     required
                   />
@@ -401,7 +428,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <div className="h-8 w-1.5 bg-gradient-to-b from-teal-500 to-teal-600 rounded-full shadow-md"></div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Contact Details</h3>
               </div>
               
@@ -417,7 +444,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
                     name="email"
                     type="email"
                     id="email"
-                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    className="w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-4 min-h-[52px] text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 shadow-sm transition-all duration-200 hover:shadow-md focus:bg-white dark:focus:bg-gray-800 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:shadow-lg"
                     placeholder="your@email.com"
                     required
                   />
@@ -435,7 +462,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
                     id="phone"
                     value={phone}
                     onChange={handlePhoneChange}
-                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    className="w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-4 min-h-[52px] text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 shadow-sm transition-all duration-200 hover:shadow-md focus:bg-white dark:focus:bg-gray-800 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:shadow-lg"
                     placeholder="(630) 555-1234"
                     maxLength={14}
                     required
@@ -453,7 +480,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
                     name="city"
                     type="text"
                     id="city"
-                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    className="w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-4 min-h-[52px] text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 shadow-sm transition-all duration-200 hover:shadow-md focus:bg-white dark:focus:bg-gray-800 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:shadow-lg"
                     placeholder="Naperville"
                     required
                   />
@@ -464,7 +491,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
             {/* Insurance & Details */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <div className="h-8 w-1.5 bg-gradient-to-b from-teal-500 to-teal-600 rounded-full shadow-md"></div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Insurance & Details</h3>
               </div>
               
@@ -497,62 +524,68 @@ export default function UnifiedForm({ formType = "appointment" }) {
                   name="question"
                   id="question"
                   rows="4"
-                  className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-900 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 resize-none"
+                  className="w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-4 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 shadow-sm transition-all duration-200 hover:shadow-md focus:bg-white dark:focus:bg-gray-800 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-500/30 focus:shadow-lg resize-none"
                   placeholder="Please describe your dental concern or what type of appointment you need..."
                   required
                 ></textarea>
               </div>
             </div>
 
-            {/* Additional Information */}
+            {/* Additional Information - Pain Level */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <div className="h-8 w-1.5 bg-gradient-to-b from-teal-500 to-teal-600 rounded-full shadow-md"></div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Additional Information</h3>
               </div>
               
-              {/* Pain Level */}
               <div className="group">
                 <label className="block mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Current Pain Level
+                  Current {formType === "emergency" ? "Pain" : "Discomfort"} Level {formType === "emergency" ? <span className="text-red-600 dark:text-red-400">*</span> : "(Optional)"}
                 </label>
-                <div className="rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 p-4">
+                <div className="rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 p-5 shadow-md transition-all duration-200">
                   <PainSlider value={painLevel} onChange={setPainLevel} />
                 </div>
+                <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                  {formType === "emergency" ? "This helps us prepare for your emergency visit" : "This helps us prioritize urgent cases"}
+                </p>
               </div>
+            </div>
 
-              {/* Returning Patient */}
+            {/* Returning Patient Check */}
+            <div className="space-y-4">
               <div className="group">
                 <label className="block mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
                   Have you visited us before? <span className="text-teal-600 dark:text-teal-400">*</span>
                 </label>
-                <div className="grid grid-cols-2 gap-3">
-                  <label className="relative flex cursor-pointer items-center justify-center gap-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-teal-500 has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50 dark:has-[:checked]:bg-teal-900/30">
+                <div className="grid grid-cols-2 gap-4">
+                  <label className="group relative flex cursor-pointer items-center justify-center rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-5 min-h-[60px] shadow-md transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg hover:border-teal-500 has-[:checked]:bg-gradient-to-r has-[:checked]:from-teal-600 has-[:checked]:to-teal-700 has-[:checked]:text-white has-[:checked]:border-teal-600 has-[:checked]:shadow-xl has-[:checked]:ring-2 has-[:checked]:ring-teal-500/30 overflow-hidden">
                     <input
                       name="returningPatient"
                       type="radio"
                       value="yes"
-                      className="sr-only"
+                      className="sr-only peer"
                       required
                     />
-                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Yes, I'm a patient</span>
+                    <span className="text-base font-semibold text-gray-900 dark:text-gray-100 peer-checked:text-white transition-colors">Yes, I'm a patient</span>
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 peer-checked:translate-x-full"></div>
                   </label>
-                  <label className="relative flex cursor-pointer items-center justify-center gap-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-teal-500 has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50 dark:has-[:checked]:bg-teal-900/30">
+                  <label className="group relative flex cursor-pointer items-center justify-center rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-5 min-h-[60px] shadow-md transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg hover:border-teal-500 has-[:checked]:bg-gradient-to-r has-[:checked]:from-teal-600 has-[:checked]:to-teal-700 has-[:checked]:text-white has-[:checked]:border-teal-600 has-[:checked]:shadow-xl has-[:checked]:ring-2 has-[:checked]:ring-teal-500/30 overflow-hidden">
                     <input
                       name="returningPatient"
                       type="radio"
                       value="no"
-                      className="sr-only"
+                      className="sr-only peer"
                       required
                     />
-                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">I'm new here</span>
+                    <span className="text-base font-semibold text-gray-900 dark:text-gray-100 peer-checked:text-white transition-colors">I'm new here</span>
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 peer-checked:translate-x-full"></div>
                   </label>
                 </div>
               </div>
             </div>
 
             {/* Submit Button */}
-            <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="pt-6 border-t border-gray-200/50 dark:border-gray-700/50">
               <SubmitButton isPending={isPending} formType={formType} />
               <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
                 By submitting, you agree to be contacted regarding your appointment request.
@@ -561,6 +594,7 @@ export default function UnifiedForm({ formType = "appointment" }) {
           </Form>
         </div>
       </div>
+    </div>
 
       {/* Insurance Confirmation Dialog */}
       <InsuranceCheck

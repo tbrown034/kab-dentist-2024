@@ -8,7 +8,7 @@ import ThemeToggle from "@/components/layout/header/ThemeToggle";
 const Header = () => {
   return (
     <header className="sticky top-0 z-40 bg-white/80 dark:bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-800/60 border-b border-gray-200 dark:border-gray-600">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 sm:h-18 lg:h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 flex items-center justify-between">
         <a
           id="#home"
           href="/"

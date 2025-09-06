@@ -30,13 +30,19 @@ const ThemeToggle = () => {
     <Switch
       checked={isDarkMode}
       onChange={handleToggle}
-      className={`${isDarkMode ? "bg-teal-600" : "bg-gray-200"}
-        relative inline-flex h-6 w-11 items-center rounded-full`}
+      className={`${
+        isDarkMode 
+          ? "bg-gray-700 hover:bg-gray-600" 
+          : "bg-gray-200 hover:bg-gray-300"
+      }
+      relative inline-flex h-7 w-14 items-center rounded-full shadow-inner transition-colors duration-200`}
     >
       <span className="sr-only">Toggle Dark Mode</span>
+      
+      {/* Simple sliding dot with subtle shadow */}
       <span
-        className={`${isDarkMode ? "translate-x-6" : "translate-x-1"}
-          inline-block h-4 w-4 transform rounded-full bg-white transition`}
+        className={`${isDarkMode ? "translate-x-8" : "translate-x-1"}
+        inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform duration-200 ease-in-out`}
       />
     </Switch>
   );

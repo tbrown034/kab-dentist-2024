@@ -65,7 +65,7 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
                 data-track="phone-click"
               >
                 <DisplayNumber asLink={false} />
-              </a>
+              </a>{" "}
               to speak with our insurance specialist.
             </p>
           </Description>

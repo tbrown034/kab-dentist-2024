@@ -16,6 +16,19 @@ const PainSlider = ({ value, onChange }) => {
     10: "Extreme or unbearable pain",
   };
 
+  // Determine color based on pain level
+  const getColorClass = () => {
+    if (value <= 3) return "from-teal-600 to-teal-700 dark:from-teal-400 dark:to-teal-500";
+    if (value <= 6) return "from-gray-600 to-gray-700 dark:from-gray-400 dark:to-gray-500";
+    return "from-orange-600 to-orange-700 dark:from-orange-400 dark:to-orange-500";
+  };
+
+  const getSliderColor = () => {
+    if (value <= 3) return "rgb(20 184 166)"; // teal
+    if (value <= 6) return "rgb(107 114 128)"; // gray
+    return "rgb(251 146 60)"; // orange
+  };
+
   return (
     <div className="flex flex-col space-y-4">
       <input
@@ -25,15 +38,21 @@ const PainSlider = ({ value, onChange }) => {
         value={value}
         id="painLevel"
         onChange={(e) => onChange(e.target.value)}
-        className="w-full h-3 bg-gray-200 dark:bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
+        className="w-full h-3 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700 rounded-full appearance-none cursor-pointer slider shadow-inner transition-all duration-300"
+        style={{
+          background: `linear-gradient(to right, ${getSliderColor()} 0%, ${getSliderColor()} ${(value - 1) * 11.11}%, rgb(229 231 235) ${(value - 1) * 11.11}%, rgb(229 231 235) 100%)`
+        }}
       />
-      <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-        <span>No Pain</span>
-        <span>Severe Pain</span>
+      <div className="flex justify-between text-sm">
+        <span className="font-medium text-gray-500 dark:text-gray-400">1</span>
+        <span className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-wide">Pain Scale</span>
+        <span className="font-medium text-gray-500 dark:text-gray-400">10</span>
       </div>
-      <div className="flex flex-col items-center justify-center gap-2 text-center">
-        <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">Level: {value}</p>
-        <p className="text-base text-gray-700 dark:text-gray-200">{painDescriptions[value]}</p>
+      <div className="flex flex-col items-center justify-center gap-2 text-center p-4 rounded-xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/30 dark:border-gray-700/30">
+        <p className={`text-2xl font-bold bg-gradient-to-r ${getColorClass()} bg-clip-text text-transparent transition-all duration-300`}>
+          Level {value}
+        </p>
+        <p className="text-base font-medium text-gray-700 dark:text-gray-200">{painDescriptions[value]}</p>
       </div>
     </div>
   );
