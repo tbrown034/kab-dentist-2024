@@ -24,7 +24,7 @@ const predefinedAnswers = {
   emergency:
     "Yes, we offer 24/7 emergency care. For immediate assistance, call our office anytime or fill out the emergency hotline form on our website.",
   credentials:
-    "Dr. Keith A. Brown, DDS, FAGD, has over four decades of experience in dentistry. He is a Fellow of the Academy of General Dentistry and a member of the American Dental Association, Chicago Dental Society, and American Equilibration Society.",
+    "Dr. Keith A. Brown, DDS, has over four decades of experience in dentistry. He is a Fellow of the Academy of General Dentistry and a member of the American Dental Association, Chicago Dental Society, and American Equilibration Society.",
   sedation:
     "Yes, we offer free nitrous oxide (laughing gas) for pain-free appointments. This service is complimentary with any visit.",
   payment:

@@ -2,76 +2,165 @@
 // Server Component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { address, email } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
 
 const footerLinks = [
-  { href: "/appointment", label: "Appointments" },
+  { href: "/appointment", label: "Book Appointment", featured: true },
   { href: "/emergency", label: "Emergency Care" },
-  { href: "/dental-services", label: "Services" },
-  { href: "/#locationSection", label: "Location" },
-  { href: "/blog", label: "Blog" },
+  { href: "/dental-services", label: "Our Services" },
+  { href: "/#locationSection", label: "Location & Hours" },
+  { href: "/blog", label: "Dental Blog" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="px-10 py-12 text-gray-600 dark:text-gray-200 ">
-      <div className="grid grid-cols-1 gap-8 ">
-        <div className="space-y-4">
-          <h2 className="text-lg font-bold">Contact</h2>
-          <a
-            href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
-            className="block hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {address}
-          </a>
-          <div className="flex flex-col gap-2">
-            <span>Office Number: <DisplayNumber /></span>
-          </div>
-          <a href={`mailto:${email}`} className="block hover:underline">
-            {email}
-          </a>
-        </div>
-        <div className="space-y-4">
-          <h2 className="text-lg font-bold">Quick Links</h2>
-          {footerLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <span className="block hover:underline">{link.label}</span>
+    <footer className="mt-24 sm:mt-28 lg:mt-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 border-t border-gray-200 dark:border-gray-600">
+      <div className="px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <div className="max-w-7xl mx-auto">
+          {/* Top Section - Brand & CTA */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              Dr. Keith A. Brown DDS
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8">
+              Your Trusted Naperville Dentist for Over 40 Years
+            </p>
+            <Link
+              href="/appointment"
+              className="inline-flex items-center gap-3 px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-500 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
+            >
+              Schedule Your Visit Today
             </Link>
-          ))}
-        </div>
-        <div className="space-y-4">
-          <h2 className="text-lg font-bold">Follow Us</h2>
-          <div className="flex space-x-4">
-            <a
-              href="https://www.facebook.com/KeithABrownDDS/about_details"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600"
-            >
-              <FontAwesomeIcon icon={faFacebookF} size="lg" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/keith-brown-2055826b/"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-600"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
-            </a>
+          </div>
+
+          {/* Main Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            {/* Contact Information */}
+            <div className="space-y-5">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Us</h3>
+              
+              <a
+                href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
+                className="flex items-start gap-3 hover:text-teal-600 transition-colors group"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPinIcon className="w-5 h-5 mt-0.5 text-teal-600 flex-shrink-0" />
+                <span className="text-gray-600 dark:text-gray-300 group-hover:text-teal-600 dark:group-hover:text-teal-500">
+                  {address}
+                </span>
+              </a>
+              
+              <div className="flex items-center gap-3">
+                <PhoneIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                <span className="text-gray-600 dark:text-gray-300">
+                  <DisplayNumber />
+                </span>
+              </div>
+              
+              <a 
+                href={`mailto:${email}`} 
+                className="flex items-center gap-3 hover:text-teal-600 transition-colors group"
+              >
+                <EnvelopeIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                <span className="text-gray-600 dark:text-gray-300 group-hover:text-teal-600 dark:group-hover:text-teal-500">
+                  {email}
+                </span>
+              </a>
+            </div>
+
+            {/* Office Hours */}
+            <div className="space-y-5">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Office Hours</h3>
+              <div className="flex items-start gap-3">
+                <ClockIcon className="w-5 h-5 mt-0.5 text-teal-600 flex-shrink-0" />
+                <div className="space-y-2 text-gray-600 dark:text-gray-300">
+                  <p>Mon-Thu: 8:00 AM - 5:00 PM</p>
+                  <p>Friday: By Appointment</p>
+                  <p>Sat-Sun: Emergency Only</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div className="space-y-5">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Quick Links</h3>
+              <nav className="space-y-3">
+                {footerLinks.map((link) => (
+                  <Link 
+                    key={link.href} 
+                    href={link.href}
+                    className={`block hover:text-teal-600 transition-colors ${
+                      link.featured 
+                        ? 'font-semibold text-teal-600 dark:text-teal-500' 
+                        : 'text-gray-600 dark:text-gray-300'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Connect */}
+            <div className="space-y-5">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Connect With Us</h3>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.facebook.com/KeithABrownDDS/about_details"
+                  aria-label="Visit our Facebook page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-md hover:shadow-lg hover:scale-110 transition-all"
+                >
+                  <FontAwesomeIcon icon={faFacebookF} className="text-blue-600 dark:text-blue-400" size="lg" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/keith-brown-2055826b/"
+                  aria-label="Visit Dr. Brown's LinkedIn profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-700 shadow-md hover:shadow-lg hover:scale-110 transition-all"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} className="text-blue-700 dark:text-blue-400" size="lg" />
+                </a>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mt-4">
+                Follow us for dental tips, office updates, and special offers!
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-16 pt-8 border-t border-gray-300 dark:border-gray-700">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-300">
+              <p>© 2025 Dr. Keith A. Brown DDS. All rights reserved.</p>
+              <div className="flex items-center gap-4">
+                <Link 
+                  href="/admin"
+                  className="text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 transition-colors"
+                >
+                  Admin
+                </Link>
+                <span className="text-gray-400">•</span>
+                <p>
+                  Website by{" "}
+                  <Link 
+                    href="https://trevorthewebdeveloper.com/"
+                    className="text-teal-600 dark:text-teal-500 hover:underline font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    TB Web and Design
+                  </Link>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="py-4 mt-8 text-center border-t border-gray-300 dark:border-gray-700">
-        © 2025 Keith Brown DDS FAGD. Website Created and Maintained by{" "}
-        <Link href="https://trevorthewebdeveloper.com/">
-          <span className="hover:underline">TB Web and Design</span>
-        </Link>
       </div>
     </footer>
   );

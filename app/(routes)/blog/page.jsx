@@ -5,7 +5,7 @@ import FullTitle from "@/components/shared/FullTitle";
 export const metadata = {
   title: "Blog | Dr. Keith Brown DDS",
   description:
-    "Explore the Keith Brown DDS FAGD blog for insightful articles, updates, and tips related to dental care and health. Stay informed with our latest posts.",
+    "Explore the Keith Brown DDS blog for insightful articles, updates, and tips related to dental care and health. Stay informed with our latest posts.",
   keywords:
     "dentistry blog, dental articles, dental updates, dental health, Dr. Keith A. Brown",
 };

@@ -1,0 +1,151 @@
+{
+  "lastUpdated": "2025-01-06T10:00:00Z",
+  "dateRange": {
+    "start": "2024-12-01",
+    "end": "2025-01-06"
+  },
+  "googleAds": {
+    "impressions": 45230,
+    "clicks": 2145,
+    "ctr": 4.74,
+    "avgCpc": 3.82,
+    "totalSpend": 8194.90,
+    "conversions": 87,
+    "conversionRate": 4.06,
+    "costPerConversion": 94.20,
+    "campaigns": [
+      {
+        "name": "Emergency Dental - Naperville",
+        "impressions": 12450,
+        "clicks": 823,
+        "spend": 3455.86,
+        "conversions": 42
+      },
+      {
+        "name": "General Dentistry - Search",
+        "impressions": 18900,
+        "clicks": 756,
+        "spend": 2678.32,
+        "conversions": 28
+      },
+      {
+        "name": "Cosmetic Services",
+        "impressions": 13880,
+        "clicks": 566,
+        "spend": 2060.72,
+        "conversions": 17
+      }
+    ]
+  },
+  "localServices": {
+    "leads": 124,
+    "messageLeads": 45,
+    "phoneLeads": 79,
+    "avgCostPerLead": 28.50,
+    "totalSpend": 3534.00,
+    "disputedLeads": 3,
+    "rating": 4.9,
+    "reviews": 187,
+    "responseTime": "< 1 hour"
+  },
+  "callRail": {
+    "totalCalls": 342,
+    "answeredCalls": 318,
+    "missedCalls": 24,
+    "avgCallDuration": "4:23",
+    "firstTimeCallers": 198,
+    "repeatCallers": 144,
+    "topSources": [
+      {"source": "Google Ads", "calls": 145},
+      {"source": "Organic Search", "calls": 89},
+      {"source": "Local Services", "calls": 79},
+      {"source": "Direct", "calls": 29}
+    ],
+    "callsByHour": [
+      {"hour": 8, "calls": 22},
+      {"hour": 9, "calls": 45},
+      {"hour": 10, "calls": 52},
+      {"hour": 11, "calls": 48},
+      {"hour": 12, "calls": 31},
+      {"hour": 13, "calls": 29},
+      {"hour": 14, "calls": 38},
+      {"hour": 15, "calls": 42},
+      {"hour": 16, "calls": 28},
+      {"hour": 17, "calls": 7}
+    ]
+  },
+  "googleAnalytics": {
+    "users": 8945,
+    "newUsers": 6234,
+    "sessions": 12456,
+    "pageviews": 34782,
+    "avgSessionDuration": "2:45",
+    "bounceRate": 42.3,
+    "topPages": [
+      {"page": "/", "views": 8234, "avgTime": "1:23"},
+      {"page": "/emergency", "views": 5621, "avgTime": "2:45"},
+      {"page": "/dental-services", "views": 4892, "avgTime": "3:12"},
+      {"page": "/appointment", "views": 3456, "avgTime": "4:05"},
+      {"page": "/insurance", "views": 2134, "avgTime": "1:56"}
+    ],
+    "devices": {
+      "mobile": 5867,
+      "desktop": 2456,
+      "tablet": 622
+    },
+    "traffic": [
+      {"source": "Organic Search", "users": 3456, "percentage": 38.6},
+      {"source": "Paid Search", "users": 2145, "percentage": 24.0},
+      {"source": "Direct", "users": 1789, "percentage": 20.0},
+      {"source": "Social", "users": 892, "percentage": 10.0},
+      {"source": "Referral", "users": 663, "percentage": 7.4}
+    ]
+  },
+  "costOverTime": [
+    {"date": "2024-12-01", "googleAds": 245.30, "localServices": 114.00, "total": 359.30},
+    {"date": "2024-12-02", "googleAds": 198.45, "localServices": 85.50, "total": 283.95},
+    {"date": "2024-12-03", "googleAds": 312.80, "localServices": 142.50, "total": 455.30},
+    {"date": "2024-12-04", "googleAds": 278.90, "localServices": 99.50, "total": 378.40},
+    {"date": "2024-12-05", "googleAds": 265.70, "localServices": 114.00, "total": 379.70},
+    {"date": "2024-12-06", "googleAds": 289.30, "localServices": 85.50, "total": 374.80},
+    {"date": "2024-12-07", "googleAds": 156.20, "localServices": 57.00, "total": 213.20},
+    {"date": "2024-12-08", "googleAds": 145.60, "localServices": 28.50, "total": 174.10},
+    {"date": "2024-12-09", "googleAds": 298.70, "localServices": 142.50, "total": 441.20},
+    {"date": "2024-12-10", "googleAds": 324.50, "localServices": 171.00, "total": 495.50},
+    {"date": "2024-12-11", "googleAds": 310.20, "localServices": 114.00, "total": 424.20},
+    {"date": "2024-12-12", "googleAds": 285.90, "localServices": 85.50, "total": 371.40},
+    {"date": "2024-12-13", "googleAds": 298.30, "localServices": 142.50, "total": 440.80},
+    {"date": "2024-12-14", "googleAds": 178.40, "localServices": 57.00, "total": 235.40},
+    {"date": "2024-12-15", "googleAds": 165.30, "localServices": 28.50, "total": 193.80},
+    {"date": "2024-12-16", "googleAds": 315.60, "localServices": 171.00, "total": 486.60},
+    {"date": "2024-12-17", "googleAds": 289.70, "localServices": 114.00, "total": 403.70},
+    {"date": "2024-12-18", "googleAds": 276.80, "localServices": 85.50, "total": 362.30},
+    {"date": "2024-12-19", "googleAds": 265.40, "localServices": 142.50, "total": 407.90},
+    {"date": "2024-12-20", "googleAds": 245.60, "localServices": 114.00, "total": 359.60},
+    {"date": "2024-12-21", "googleAds": 189.30, "localServices": 57.00, "total": 246.30},
+    {"date": "2024-12-22", "googleAds": 176.80, "localServices": 28.50, "total": 205.30},
+    {"date": "2024-12-23", "googleAds": 198.90, "localServices": 85.50, "total": 284.40},
+    {"date": "2024-12-24", "googleAds": 124.50, "localServices": 28.50, "total": 153.00},
+    {"date": "2024-12-25", "googleAds": 87.30, "localServices": 0, "total": 87.30},
+    {"date": "2024-12-26", "googleAds": 234.60, "localServices": 114.00, "total": 348.60},
+    {"date": "2024-12-27", "googleAds": 256.80, "localServices": 85.50, "total": 342.30},
+    {"date": "2024-12-28", "googleAds": 189.40, "localServices": 57.00, "total": 246.40},
+    {"date": "2024-12-29", "googleAds": 176.30, "localServices": 28.50, "total": 204.80},
+    {"date": "2024-12-30", "googleAds": 245.70, "localServices": 114.00, "total": 359.70},
+    {"date": "2024-12-31", "googleAds": 156.80, "localServices": 57.00, "total": 213.80},
+    {"date": "2025-01-01", "googleAds": 98.40, "localServices": 0, "total": 98.40},
+    {"date": "2025-01-02", "googleAds": 312.60, "localServices": 171.00, "total": 483.60},
+    {"date": "2025-01-03", "googleAds": 298.90, "localServices": 142.50, "total": 441.40},
+    {"date": "2025-01-04", "googleAds": 234.50, "localServices": 85.50, "total": 320.00},
+    {"date": "2025-01-05", "googleAds": 198.70, "localServices": 57.00, "total": 255.70},
+    {"date": "2025-01-06", "googleAds": 278.30, "localServices": 114.00, "total": 392.30}
+  ],
+  "kpis": {
+    "monthlyRevenue": 142500,
+    "monthlyNewPatients": 87,
+    "avgPatientValue": 1638,
+    "roi": 12.3,
+    "appointmentConversionRate": 68.5,
+    "noShowRate": 4.2
+  }
+}

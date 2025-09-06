@@ -10,48 +10,43 @@ import {
 } from "@/components/shadcn-ui/carousel";
 import testimonialsEntries from "./testimonialEntries.js";
 import sectionContents from "@/lib/content/sectionContent.json";
-import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const TestimonialSection = () => {
   const { title, textBlock } = sectionContents.testimonialSection;
   return (
-    <section className="flex flex-col gap-4">
-      <h2
-        className={`font-header text-2xl md:text-3xl font-extrabold tracking-tight`}
-      >
-        {title} <span className="text-teal-500">{textBlock[0].text}</span>
-      </h2>
+    <section className="w-full max-w-6xl mx-auto">
+      <div className="text-center mb-8 sm:mb-10 lg:mb-12 px-4">
+        <h2 className="font-header text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+          {title} <span className="text-teal-600">{textBlock[0].text}</span>
+        </h2>
+      </div>
       <Carousel
         plugins={[
           Autoplay({
-            delay: 8000,
+            delay: 10000,
             stopOnInteraction: true,
           }),
         ]}
-        className="flex flex-col gap-4 p-2 px-4 mx-4 text-white bg-teal-800 rounded-lg shadow"
+        opts={{
+          align: "center",
+          loop: true,
+          duration: 40,
+        }}
+        className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-teal-700 to-teal-800 shadow-xl text-white"
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-2 md:-ml-4">
           {testimonialsEntries.map(({ id, quote, reviewer, city }) => (
-            <CarouselItem key={id} className="flex ">
-              <div className="flex flex-col items-center justify-center">
-                <FontAwesomeIcon
-                  className="my-2 text-teal-100"
-                  icon={faQuoteLeft}
-                  size="2x"
-                ></FontAwesomeIcon>
-                <blockquote className="text-xl font-medium text-center">
-                  {quote}
-                </blockquote>
-                <FontAwesomeIcon
-                  className="my-2 text-teal-100"
-                  icon={faQuoteRight}
-                  size="2x"
-                ></FontAwesomeIcon>
-                <figcaption className="mt-4 font-semibold text-center">
-                  - {reviewer}
-                  {city ? `, ${city}` : ""}
-                </figcaption>
+            <CarouselItem key={id} className="pl-2 md:pl-4">
+              <div className="p-6 sm:p-8 lg:p-12 min-h-[200px] sm:min-h-[250px] lg:min-h-[300px] flex items-center">
+                <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6 w-full max-w-3xl mx-auto">
+                  <blockquote className="text-lg sm:text-xl lg:text-2xl font-light text-center leading-relaxed px-4 italic">
+                    "{quote}"
+                  </blockquote>
+                  <figcaption className="text-base sm:text-lg lg:text-xl font-semibold text-center text-teal-100">
+                    — {reviewer}
+                    {city ? `, ${city}` : ""}
+                  </figcaption>
+                </div>
               </div>
             </CarouselItem>
           ))}

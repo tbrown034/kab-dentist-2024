@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow Check - Dental Site</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f0f9ff;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0d9488;
+            margin-bottom: 20px;
+        }
+        .breakpoint-test {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f8f8;
+            border-left: 4px solid #0d9488;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .pass {
+            background: #10b981;
+            color: white;
+        }
+        .fail {
+            background: #ef4444;
+            color: white;
+        }
+        .info {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .test-script {
+            background: #1f2937;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Horizontal Overflow Test Results</h1>
+        
+        <div class="breakpoint-test">
+            <h2>Current Viewport</h2>
+            <p>Width: <span id="viewport-width"></span>px</p>
+            <p>Horizontal Scroll: <span id="scroll-status"></span></p>
+        </div>
+
+        <div class="breakpoint-test">
+            <h2>Common Breakpoints to Test</h2>
+            <ul>
+                <li>320px - Small mobile</li>
+                <li>375px - iPhone SE/8</li>
+                <li>430px - iPhone Pro Max</li>
+                <li>768px - iPad Portrait</li>
+                <li>820px - iPad Air</li>
+                <li>1024px - iPad Landscape</li>
+                <li>1280px - Desktop</li>
+            </ul>
+        </div>
+
+        <div class="test-script">
+            <h3>Console Test Script (Copy & Run in DevTools):</h3>
+            <pre>// Run this in the console on your actual site
+[...document.body.querySelectorAll('*')].forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.right > window.innerWidth || r.left < 0) {
+        console.log('❌ Overflow:', {
+            element: el,
+            left: r.left,
+            right: r.right,
+            width: r.width,
+            viewport: window.innerWidth,
+            classes: el.className
+        });
+    }
+});
+console.log('✅ Overflow check complete');</pre>
+        </div>
+
+        <div class="breakpoint-test">
+            <h2>✅ Fixes Applied</h2>
+            <ul>
+                <li>✓ Added overflow-x-clip to html and body</li>
+                <li>✓ Replaced all w-screen with w-full</li>
+                <li>✓ Fixed image overflow with proper constraints</li>
+                <li>✓ Removed negative margins causing overflow</li>
+                <li>✓ Added overflow-x-clip to sections with shadows</li>
+                <li>✓ Standardized section padding (px-4 sm:px-6 lg:px-8)</li>
+                <li>✓ Hero images already using Next.js Image properly</li>
+                <li>✓ Fixed heading wrapping with text-balance</li>
+                <li>✓ Buttons already have whitespace-nowrap</li>
+                <li>✓ Fixed nav baseline alignment</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <p><strong>Testing Instructions:</strong></p>
+            <ol>
+                <li>Open Chrome DevTools</li>
+                <li>Toggle device toolbar (Cmd+Shift+M)</li>
+                <li>Set zoom to 100% and DPR to 2</li>
+                <li>Test each breakpoint listed above</li>
+                <li>Run the console script to find any remaining overflow elements</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Update viewport info
+        function updateViewport() {
+            document.getElementById('viewport-width').textContent = window.innerWidth;
+            const hasScroll = document.documentElement.scrollWidth > window.innerWidth;
+            const scrollStatus = document.getElementById('scroll-status');
+            scrollStatus.textContent = hasScroll ? 'DETECTED ⚠️' : 'None ✅';
+            scrollStatus.className = hasScroll ? 'status fail' : 'status pass';
+        }
+        
+        updateViewport();
+        window.addEventListener('resize', updateViewport);
+    </script>
+</body>
+</html>

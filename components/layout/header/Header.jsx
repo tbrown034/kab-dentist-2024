@@ -7,26 +7,28 @@ import ThemeToggle from "@/components/layout/header/ThemeToggle";
 
 const Header = () => {
   return (
-    <nav className="flex items-center justify-between text-2xl tracking-tighter font-header md:gap-6">
-      <a
-        id="#home"
-        href="/"
-        className="font-bold hover:text-teal-800 active:-textteal-700"
-      >
-        Dr. Keith A. Brown DDS
-      </a>
-      <div className="hidden md:flex">
-        <HeaderFullNav />
-      </div>
-      <div className="flex items-center gap-4">
-        <div className="flex md:hidden">
-          <HeaderDropDown />
+    <header className="sticky top-0 z-40 bg-white/80 dark:bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-800/60 border-b border-gray-200 dark:border-gray-600">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 sm:h-18 lg:h-20 flex items-center justify-between">
+        <a
+          id="#home"
+          href="/"
+          className="font-bold text-gray-900 dark:text-gray-100 text-lg sm:text-xl lg:text-2xl hover:text-teal-600 transition-colors tracking-tight"
+        >
+          Dr. Keith A. Brown DDS
+        </a>
+        <div className="hidden lg:flex">
+          <HeaderFullNav />
         </div>
-        <div className="hidden md:flex">
-          <ThemeToggle />
+        <div className="flex items-center gap-3">
+          <div className="flex lg:hidden">
+            <HeaderDropDown />
+          </div>
+          <div className="hidden lg:flex">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

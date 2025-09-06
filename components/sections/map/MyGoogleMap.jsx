@@ -36,7 +36,7 @@ function MyGoogleMap() {
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-      <div className="w-full overflow-hidden rounded-lg h-96">
+      <div className="w-full overflow-hidden h-[400px] sm:h-[450px] lg:h-[500px]">
         <Map
           {...cameraProps}
           onCameraChanged={handleCameraChange}
@@ -53,32 +53,24 @@ function MyGoogleMap() {
               position={businessLocation}
               onCloseClick={() => setInfoOpen(false)}
             >
-              <div style={{ fontSize: "16px", maxWidth: "250px" }}>
-                <h2 style={{ color: "#0078A8", fontWeight: "bold" }}>
-                  Keith Brown DDS
+              <div className="p-3 min-w-[250px]">
+                <h2 className="text-teal-700 font-bold text-lg mb-2">
+                  Dr. Keith A. Brown DDS
                 </h2>
-                <p>{address}</p>
-                <p>Providing top-notch dental care.</p>
-                <div style={{ display: "flex", gap: "8px" }}>
+                <p className="text-gray-700 text-sm mb-1">{address}</p>
+                <p className="text-gray-600 text-sm mb-3">Providing exceptional dental care since 1982.</p>
+                <div className="flex gap-3">
                   <a
                     href={`https://www.google.com/maps/dir/?api=1&destination=${businessLocation.lat},${businessLocation.lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: "#0078A8", textDecoration: "underline" }}
+                    className="text-teal-600 hover:text-teal-700 underline text-sm font-medium"
                   >
                     Get Directions
                   </a>
                   <button
                     onClick={copyAddressToClipboard}
-                    style={{
-                      color: "#0078A8",
-                      textDecoration: "underline",
-                      backgroundColor: "transparent",
-                      border: "none",
-                      cursor: "pointer",
-                      padding: 0,
-                      margin: 0,
-                    }}
+                    className="text-teal-600 hover:text-teal-700 underline text-sm font-medium bg-transparent border-0 cursor-pointer p-0"
                   >
                     Copy Address
                   </button>

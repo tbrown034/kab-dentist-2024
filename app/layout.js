@@ -10,16 +10,16 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const metadataBase = new URL("https://keithbrowndds.com");
 
 export const metadata = {
-  title: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
+  title: "Dr. Keith Brown DDS | Naperville Family & Emergency Dentist",
   description:
-    "Visit Dr. Keith Brown, DDS, FAGD's dental office for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
+    "Visit Dr. Keith Brown, DDS's dental office for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
   keywords:
-    "Keith Brown, DDS, FAGD, Keith A. Brown, dentist, emergency, Chicagoland, Aurora, Bolingbrook, weekend, weekend dentist, urgent dental, Naperville, dentist near me, emergency dentist, dr, dr.",
+    "Keith Brown, DDS, Keith A. Brown, dentist, emergency, Chicagoland, Aurora, Bolingbrook, weekend, weekend dentist, urgent dental, Naperville, dentist near me, emergency dentist, dr, dr.",
   metadataBase,
   openGraph: {
-    title: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
+    title: "Dr. Keith Brown DDS | Naperville Family & Emergency Dentist",
     description:
-      "Visit Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
+      "Visit Keith Brown, DDS for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
     url: metadataBase.href,
     siteName: "Keith Brown DDS",
     images: [
@@ -27,7 +27,7 @@ export const metadata = {
         url: `${metadataBase.href}/og-image.jpg`,
         width: 800,
         height: 600,
-        alt: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
+        alt: "Dr. Keith Brown DDS | Naperville Family & Emergency Dentist",
       },
     ],
     locale: "en_US",
@@ -35,9 +35,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Keith Brown DDS, FAGD | Naperville Family & Emergency Dentist",
+    title: "Dr. Keith Brown DDS | Naperville Family & Emergency Dentist",
     description:
-      "Visit Dr. Keith Brown, DDS, FAGD for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
+      "Visit Dr. Keith Brown, DDS for trusted dental care in Naperville and Chicagoland. We offer comprehensive dental services and emergency care, including weekends.",
     image: `${metadataBase.href}/twitter-image.jpg`,
   },
 };
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${inter.variable} ${raleway.variable}`}
+      className={`overflow-x-clip scroll-smooth ${inter.variable} ${raleway.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -99,7 +99,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body
-        className={`${inter.className} p-4 px-6 bg-teal-50 bg-opacity-70 text-black lg:text-xl dark:bg-gray-800 dark:text-gray-100`}
+        className={`${inter.className} overflow-x-clip antialiased bg-teal-50 bg-opacity-70 text-black dark:bg-gray-700 dark:text-gray-100`}
       >
         <noscript>
           <iframe

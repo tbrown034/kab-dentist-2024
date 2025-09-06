@@ -4,8 +4,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import ThemeToggle from "@/components/layout/header/ThemeToggle";
 
 const links = [
@@ -20,10 +19,7 @@ function HeaderDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button className="flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
-        <FontAwesomeIcon
-          icon={faBars}
-          className="text-gray-900 dark:text-white"
-        />
+        <Bars3Icon className="w-6 h-6 text-gray-900 dark:text-white" />
       </Menu.Button>
       <Transition
         as={Fragment}

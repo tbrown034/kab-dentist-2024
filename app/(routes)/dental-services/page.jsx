@@ -104,23 +104,23 @@ const DentalServices = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col gap-4 mt-2 sm:flex-row xl:flex-wrap xl:gap-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap max-w-full">
             <Link
               href="#browseServices"
-              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-white bg-teal-600 rounded-xl hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
               aria-label="Browse our dental services"
             >
-              <DocumentTextIcon className="w-5 h-5" />
-              Browse Services
+              <DocumentTextIcon className="w-5 h-5 flex-shrink-0" />
+              <span>Browse Services</span>
             </Link>
 
             <Link
               href="/appointment"
-              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
               aria-label="Book a dental appointment"
             >
-              <PhoneIcon className="w-5 h-5 text-teal-600" />
-              Book Appointment
+              <PhoneIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+              <span>Book Appointment</span>
             </Link>
           </div>
         </div>

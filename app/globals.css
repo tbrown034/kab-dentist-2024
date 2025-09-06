@@ -7,6 +7,17 @@ html {
   scroll-behavior: smooth !important;
 }
 
+/* Smooth carousel animations */
+[data-carousel-content] {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent testimonial overflow */
+.testimonial-carousel {
+  contain: layout;
+  overflow: hidden;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

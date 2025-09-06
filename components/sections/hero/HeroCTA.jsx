@@ -6,23 +6,25 @@ import DisplayNumber from "@/components/DisplayNumber";
 
 const HeroCTA = () => {
   return (
-    <section className="flex flex-col gap-4  sm:flex-row sm:items-start sm:gap-4 xl:flex-wrap xl:items-center xl:gap-6">
-      {/* Book Appointment */}
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+      {/* Book Appointment - Primary CTA */}
       <Link
         href="/appointment"
-        className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white transition-colors duration-200 bg-teal-600 rounded-lg lg:px-8 lg:py-4 hover:bg-teal-700 lg:text-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:w-auto"
+        className="inline-flex items-center justify-center rounded-lg px-5 py-3 text-base font-medium bg-teal-600 text-white shadow-sm hover:bg-teal-700 active:bg-teal-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 transition-colors"
         aria-label="Book a dental appointment"
       >
-        <CalendarDaysIcon className="w-5 h-5" />
+        <CalendarDaysIcon className="w-5 h-5 mr-2 flex-shrink-0" />
         Book Appointment
       </Link>
 
-      {/* Call Us */}
-      <div className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 transition-colors duration-200 bg-white border border-gray-300 rounded-lg lg:px-8 lg:py-4 hover:bg-gray-50 lg:text-xl focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:w-auto">
-        <PhoneIcon className="w-5 h-5 text-teal-600" />
-        Call <DisplayNumber />
-      </div>
-    </section>
+      {/* Call Us - Secondary CTA */}
+      <button 
+        className="inline-flex items-center justify-center rounded-lg px-5 py-3 text-base font-medium border-2 border-gray-400 dark:border-gray-500 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-500 dark:hover:border-gray-400 active:bg-gray-100 dark:active:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 transition-all"
+      >
+        <PhoneIcon className="w-5 h-5 mr-2 text-teal-600 dark:text-teal-400 flex-shrink-0" />
+        <span>Call </span><DisplayNumber />
+      </button>
+    </div>
   );
 };
 

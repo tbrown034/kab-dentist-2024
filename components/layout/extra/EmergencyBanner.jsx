@@ -1,41 +1,44 @@
 // components/layout/extra/EmergencyBanner.jsx
 // Client Component
 "use client";
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import DisplayNumber from "@/components/DisplayNumber";
+import { telNumber } from "@/lib/constants/constants";
+
+const LS_KEY = "kbdds_emergency_banner_dismissed_v1";
 
 const EmergencyBanner = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  if (!isVisible) return null;
+  useEffect(() => {
+    const dismissed = typeof window !== "undefined" && localStorage.getItem(LS_KEY) === "1";
+    if (!dismissed) setOpen(true);
+  }, []);
+
+  if (!open) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 z-20 flex items-center w-full gap-4 px-6 py-3 text-xs bg-teal-800 border-t border-gray-200 sm:text-sm lg:text-lg sm:gap-2 dark:border-gray-700">
-      <p className="flex-1 font-light text-white">
-        Need urgent dental care? Take advantage of our{" "}
-        <Link
-          href="/emergency"
-          className="font-medium text-white underline hover:no-underline"
-        >
-          after-hours and emergency care.
-        </Link>
-      </p>
-      <div className="flex items-center gap-4">
-        <div className="flex items-center p-2 text-teal-800 bg-white border border-gray-600 rounded-xl dark:text-gray-900 border-opacity-85 hover:bg-gray-200 active:bg-gray-300" data-track="phone-click">
-          <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
-          <span>Call</span>
-          <span className="ml-1"><DisplayNumber /></span>
-        </div>
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[min(100%-2rem,72rem)]">
+      <div className="flex items-center gap-3 rounded-xl border border-teal-800/20 bg-teal-700 text-white px-4 sm:px-5 py-3 shadow-lg">
+        <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-800/60 text-sm font-semibold">!</span>
+        <p className="flex-1 text-sm sm:text-base leading-snug">
+          <strong>Dental emergency?</strong> Call now for immediate guidance.
+        </p>
         <button
-          onClick={() => setIsVisible(false)}
-          type="button"
-          className="p-2 text-gray-400 rounded-lg hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
-          aria-label="Close banner"
+          className="whitespace-nowrap rounded-lg bg-white text-teal-800 px-3.5 py-2 text-sm font-semibold hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors"
         >
-          <FontAwesomeIcon icon={faTimes} className="w-5 h-5" />
+          Call:{" "}<DisplayNumber asLink={false} />
+        </button>
+        <button
+          aria-label="Dismiss"
+          onClick={() => {
+            localStorage.setItem(LS_KEY, "1");
+            setOpen(false);
+          }}
+          className="ml-1 rounded-md p-2 hover:bg-teal-800/40 transition-colors"
+        >
+          <XMarkIcon className="h-5 w-5" />
         </button>
       </div>
     </div>

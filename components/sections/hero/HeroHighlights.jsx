@@ -11,48 +11,52 @@ import DisplayNumber from "@/components/DisplayNumber";
 
 const HeroHighlights = ({ onPhoneClick }) => {
   return (
-    <div className="flex flex-col gap-3 mt-2">
-      <Link
-        className="flex items-center gap-2 text-teal-600 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400"
-        href="/emergency"
-      >
-        <FontAwesomeIcon icon={faExclamationCircle} size="lg" />
-        <span className="text-base font-bold md:text-xl lg:text-2xl">
-          Offering 24/7 Emergency Care
-        </span>
-      </Link>
-      <div className="text-sm md:text-base lg:text-lg">
-        Life is unpredictable. We're reliable.
+    <div className="flex flex-col gap-4 border-t border-gray-200 pt-6 dark:border-gray-700">
+      <div className="space-y-2">
+        <Link
+          className="flex items-center gap-2.5 text-teal-600 hover:text-teal-700 transition-colors"
+          href="/emergency"
+        >
+          <FontAwesomeIcon icon={faExclamationCircle} className="w-5 h-5 flex-shrink-0" />
+          <span className="text-base font-semibold sm:text-lg">
+            Offering 24/7 Emergency Care
+          </span>
+        </Link>
+        <p className="text-sm text-gray-600 ml-7 sm:text-base dark:text-gray-300">
+          Life is unpredictable. We're reliable.
+        </p>
       </div>
 
-      <Link
-        className="flex items-center gap-2 text-teal-600 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400"
-        href="#servicesSection"
-      >
-        <FontAwesomeIcon icon={faSpa} size="lg" />
-        <span className="text-base font-bold md:text-xl lg:text-2xl">
-          Relaxation with Nitrous Oxide
-        </span>
-      </Link>
-      <div className="text-sm md:text-base lg:text-lg">
-        Don't stress. We offer complimentary laughing gas with all visits.
+      <div className="space-y-2">
+        <Link
+          className="flex items-center gap-2.5 text-teal-600 hover:text-teal-700 transition-colors"
+          href="#servicesSection"
+        >
+          <FontAwesomeIcon icon={faSpa} className="w-5 h-5 flex-shrink-0" />
+          <span className="text-base font-semibold sm:text-lg">
+            Relaxation with Nitrous Oxide
+          </span>
+        </Link>
+        <p className="text-sm text-gray-600 ml-7 sm:text-base dark:text-gray-300">
+          Don't stress. We offer complimentary laughing gas with all visits.
+        </p>
       </div>
 
-      <button
-        className="flex items-center gap-2 text-teal-600 underline transition duration-200 ease-in-out hover:text-teal-500 active:text-teal-400"
-        data-track="phone-click"
-        onClick={onPhoneClick}
-      >
-        <FontAwesomeIcon icon={faPhone} size="lg" />
-        <div className="text-base font-bold md:text-xl lg:text-2xl">
-          Give Us a Ring Anytime
-        </div>
-      </button>
-      <span className="text-sm md:text-base lg:text-lg">
-        Patients can call{" "}
-        <DisplayNumber />
-        .
-      </span>
+      <div className="space-y-2">
+        <button
+          className="flex items-center gap-2.5 text-teal-600 hover:text-teal-700 transition-colors"
+          data-track="phone-click"
+          onClick={onPhoneClick}
+        >
+          <FontAwesomeIcon icon={faPhone} className="w-5 h-5 flex-shrink-0" />
+          <span className="text-base font-semibold sm:text-lg">
+            Give Us a Ring Anytime
+          </span>
+        </button>
+        <p className="text-sm text-gray-600 ml-7 sm:text-base dark:text-gray-300">
+          Patients can call <DisplayNumber />.
+        </p>
+      </div>
     </div>
   );
 };

@@ -59,7 +59,7 @@ const BlogContainer = () => {
   }, []);
 
   return (
-    <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+    <div className="max-w-7xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
       <div className="flex flex-col gap-4 mb-6">
         <div className="flex w-full gap-2">
           <input

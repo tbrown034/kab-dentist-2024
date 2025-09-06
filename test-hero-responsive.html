@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Responsive Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .viewport-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .test-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+        .test-section h2 {
+            margin-top: 0;
+        }
+        .hero-mock {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .image-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Mobile */
+        @media (max-width: 639px) {
+            .mobile-view { display: block; }
+            .tablet-view { display: none; }
+            .desktop-view { display: none; }
+            .image-placeholder.mobile { aspect-ratio: 4/5; }
+        }
+        
+        /* Tablet */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .mobile-view { display: none; }
+            .tablet-view { display: block; }
+            .desktop-view { display: none; }
+            .image-placeholder.tablet { aspect-ratio: 4/3; }
+        }
+        
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .mobile-view { display: none; }
+            .tablet-view { display: none; }
+            .desktop-view { display: block; }
+            .image-placeholder.desktop { aspect-ratio: 16/10; }
+            .desktop-layout {
+                display: flex;
+                gap: 40px;
+                align-items: center;
+            }
+            .desktop-layout > div {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="viewport-info">
+        <div>Width: <span id="width"></span>px</div>
+        <div>View: <span id="view"></span></div>
+    </div>
+
+    <div class="container">
+        <h1>Hero Section Responsive Test</h1>
+        
+        <!-- Mobile View -->
+        <div class="mobile-view test-section">
+            <h2>📱 Mobile View (< 640px)</h2>
+            <div class="hero-mock">
+                <div class="image-placeholder mobile" style="max-width: 320px; margin: 0 auto 24px;">
+                    Vertical Portrait (4:5)
+                </div>
+                <h1 style="font-size: 1.875rem; margin-bottom: 16px;">Naperville's Home For Modern, Trusted Dentistry</h1>
+                <p style="font-size: 1rem;">Dr. Keith A. Brown DDS, FAGD has provided trusted dental care...</p>
+                <div style="margin-top: 20px;">
+                    <button style="width: 100%; padding: 16px; margin-bottom: 12px; background: teal; color: white; border-radius: 8px;">Book Appointment</button>
+                    <button style="width: 100%; padding: 16px; background: white; border: 2px solid #ddd; border-radius: 8px;">Call Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tablet View -->
+        <div class="tablet-view test-section">
+            <h2>📱 Tablet View (640px - 1023px)</h2>
+            <div class="hero-mock">
+                <div class="image-placeholder tablet" style="max-width: 600px; margin: 0 auto 32px;">
+                    Horizontal Portrait (4:3)
+                </div>
+                <h1 style="font-size: 2.25rem; margin-bottom: 20px;">Naperville's Home For Modern, Trusted Dentistry</h1>
+                <p style="font-size: 1.125rem;">Dr. Keith A. Brown DDS, FAGD has provided trusted dental care...</p>
+                <div style="margin-top: 24px; display: flex; gap: 16px;">
+                    <button style="flex: 1; padding: 14px; background: teal; color: white; border-radius: 8px;">Book Appointment</button>
+                    <button style="flex: 1; padding: 14px; background: white; border: 2px solid #ddd; border-radius: 8px;">Call Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop View -->
+        <div class="desktop-view test-section">
+            <h2>🖥️ Desktop View (≥ 1024px)</h2>
+            <div class="hero-mock desktop-layout">
+                <div>
+                    <div class="image-placeholder desktop">
+                        Horizontal Portrait (16:10)
+                    </div>
+                </div>
+                <div>
+                    <h1 style="font-size: 3rem; margin-bottom: 24px;">Naperville's Home For Modern, Trusted Dentistry</h1>
+                    <p style="font-size: 1.25rem; margin-bottom: 20px;">Dr. Keith A. Brown DDS, FAGD has provided trusted dental care...</p>
+                    <div style="margin-top: 28px; display: flex; gap: 16px;">
+                        <button style="padding: 16px 32px; background: teal; color: white; border-radius: 8px;">Book Appointment</button>
+                        <button style="padding: 16px 32px; background: white; border: 2px solid #ddd; border-radius: 8px;">Call Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateViewportInfo() {
+            const width = window.innerWidth;
+            document.getElementById('width').textContent = width;
+            
+            let view = 'Mobile';
+            if (width >= 1024) view = 'Desktop';
+            else if (width >= 640) view = 'Tablet';
+            
+            document.getElementById('view').textContent = view;
+        }
+        
+        window.addEventListener('resize', updateViewportInfo);
+        updateViewportInfo();
+    </script>
+</body>
+</html>

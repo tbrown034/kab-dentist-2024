@@ -13,7 +13,9 @@ import { submitForm } from "@/app/actions/submitForm";
 import PainSlider from "@/components/forms/PainSlider";
 import DialogBox from "@/components/dialogs/InsuranceDialog";
 import InsuranceCheck from "@/components/dialogs/InsuranceCheck";
-import { displayNumber } from "@/lib/constants/constants";
+import { displayNumber, telNumber } from "@/lib/constants/constants";
+import Link from "next/link";
+import { PhoneIcon } from "@heroicons/react/24/solid";
 
 // Phone formatter
 function formatPhoneNumber(value) {
@@ -31,30 +33,44 @@ function formatPhoneNumber(value) {
 }
 
 // Modern Submit Button with Loading Animation
-function SubmitButton({ isPending }) {
+function SubmitButton({ isPending, formType }) {
   return (
     <button
       type="submit"
       disabled={isPending}
       id="form-initial-submit"
-      className={`group relative w-full overflow-hidden rounded-xl px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 disabled:cursor-not-allowed ${
+      className={`group relative w-full overflow-hidden rounded-2xl px-8 py-5 text-lg font-semibold text-white shadow-xl transition-all duration-300 transform disabled:cursor-not-allowed ${
         isPending
-          ? "bg-gradient-to-r from-green-600 to-green-700 hover:shadow-lg"
-          : "bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 hover:shadow-xl"
+          ? "bg-gradient-to-r from-green-600 to-green-700"
+          : "bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
       }`}
     >
       <div className="relative flex items-center justify-center gap-3">
-        {isPending && (
-          <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+        {isPending ? (
+          <>
+            <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+            <span>Processing...</span>
+          </>
+        ) : (
+          <>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                d={formType === "emergency" 
+                  ? "M13 10V3L4 14h7v7l9-11h-7z" // Lightning bolt for emergency
+                  : "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" // Calendar for appointment
+                }
+              />
+            </svg>
+            <span>
+              {formType === "emergency" ? "Request Emergency Care" : "Book Appointment"}
+            </span>
+          </>
         )}
-        <span className={isPending ? "opacity-90" : ""}>
-          {isPending ? "Submitting..." : "Submit Request"}
-        </span>
       </div>
 
       {/* Subtle shimmer effect on hover */}
       {!isPending && (
-        <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
+        <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
       )}
     </button>
   );
@@ -166,13 +182,13 @@ export default function UnifiedForm({ formType = "appointment" }) {
       <div className="px-2 sm:px-6 lg:px-16 xl:px-24">
         <div
           ref={containerRef}
-          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-800 via-teal-700 to-teal-900 p-4 sm:p-8 text-white shadow-2xl"
+          className="relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl border border-gray-100 dark:border-gray-700"
         >
           <div className="relative">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-500 shadow-lg">
+            <div className="mb-8 text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 mb-4 rounded-full bg-gradient-to-br from-green-400 to-green-600 shadow-lg">
                 <svg
-                  className="h-6 w-6 text-white"
+                  className="h-10 w-10 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -180,27 +196,89 @@ export default function UnifiedForm({ formType = "appointment" }) {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={3}
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
               </div>
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-bold">
-                  {formType === "emergency"
-                    ? "Emergency Request Received"
-                    : "Appointment Request Sent"}
-                </h2>
-                <p className="text-teal-200">We'll be in touch shortly</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                {formType === "emergency"
+                  ? "Emergency Request Received"
+                  : "Request Successfully Sent"}
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-400">We'll contact you within 1 business day</p>
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/20 border-2 border-teal-200 dark:border-teal-800 p-6 sm:p-8">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-teal-600 dark:bg-teal-500 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-2">What happens next?</h3>
+                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                    {formType === "emergency" ? (
+                      <>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>Our team will review your emergency request immediately</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>We'll call you back as soon as possible to discuss your situation</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>If you need immediate assistance, please call <span className="font-semibold">{displayNumber}</span></span>
+                        </li>
+                        <li className="flex items-start gap-2 text-red-600 dark:text-red-400 font-semibold">
+                          <span className="mt-1">!</span>
+                          <span>For life-threatening emergencies, call 911</span>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>Our scheduling team will review your request</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>We'll contact you within 1 business day to confirm your appointment</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>You'll receive appointment details and any preparation instructions</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-teal-600 mt-1">•</span>
+                          <span>Questions? Call us at <span className="font-semibold">{displayNumber}</span></span>
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div className="rounded-xl bg-teal-600 p-4 sm:p-6 text-white">
-              <p className="text-base sm:text-lg leading-relaxed">
-                {formType === "emergency"
-                  ? `Thank you for contacting us regarding your dental emergency. We will get back to you shortly. If you do not hear from us immediately, please call our office at ${displayNumber}. If this is a medical emergency, please call 911.`
-                  : `Thank you for requesting an appointment with us! We will get back to you shortly to confirm your appointment, set up a time, and answer any questions you might have. Please call our office at ${displayNumber} if you don't hear back immediately or if this is urgent or an emergency.`}
-              </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`tel:${telNumber}`}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                <PhoneIcon className="w-5 h-5" />
+                Call Now: {displayNumber}
+              </a>
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-xl border-2 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all"
+              >
+                Return to Home
+              </Link>
             </div>
           </div>
         </div>
@@ -213,16 +291,26 @@ export default function UnifiedForm({ formType = "appointment" }) {
     <div className="px-2 sm:px-6 lg:px-16 xl:px-24">
       <div
         ref={containerRef}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-800 via-teal-700 to-teal-900 p-4 sm:p-8 text-white shadow-2xl"
+        className="relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 p-6 sm:p-10 lg:p-12 shadow-2xl border border-gray-100 dark:border-gray-700"
       >
         <div className="relative">
-          <div className="mb-6 sm:mb-8">
-            <h2 className="mb-3 text-3xl sm:text-4xl font-bold tracking-tight">
+          <div className="mb-8 sm:mb-10 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-800 dark:to-teal-900">
+              <svg className="w-8 h-8 text-teal-700 dark:text-teal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                  d={formType === "emergency" 
+                    ? "M13 10V3L4 14h7v7l9-11h-7z"
+                    : "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  }
+                />
+              </svg>
+            </div>
+            <h2 className="mb-3 text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
               {formType === "emergency"
                 ? "Emergency Consultation"
                 : "Book Your Visit"}
             </h2>
-            <p className="text-lg sm:text-xl text-teal-100">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
               {formType === "emergency"
                 ? "Get immediate dental care when you need it most"
                 : "Start your journey to better oral health today"}
@@ -231,11 +319,11 @@ export default function UnifiedForm({ formType = "appointment" }) {
 
           {/* Error Message */}
           {state?.type === "error" && (
-            <div className="mb-6 rounded-xl border border-red-400 bg-red-50 p-4 shadow-lg">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
+            <div className="mb-6 rounded-xl border-2 border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800 p-4 shadow-lg">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/50 flex-shrink-0">
                   <svg
-                    className="h-5 w-5 text-red-600"
+                    className="h-5 w-5 text-red-600 dark:text-red-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -248,11 +336,14 @@ export default function UnifiedForm({ formType = "appointment" }) {
                     />
                   </svg>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-red-800">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-red-800 dark:text-red-300">
                     Something went wrong
                   </h3>
-                  <p className="text-red-700">{state.message}</p>
+                  <p className="text-red-700 dark:text-red-400 text-sm mt-1">{state.message}</p>
+                  <p className="text-red-600 dark:text-red-500 text-sm mt-2">
+                    Please try again or call us at {displayNumber}
+                  </p>
                 </div>
               </div>
             </div>
@@ -263,178 +354,209 @@ export default function UnifiedForm({ formType = "appointment" }) {
             <input type="hidden" name="painLevel" value={painLevel} />
             <input type="hidden" name="phone" value={phone} />
 
-            {/* First Name & Last Name */}
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="space-y-2">
-                <label
-                  htmlFor="firstName"
-                  className="block text-lg font-semibold text-white"
-                >
-                  First Name
-                </label>
-                <input
-                  name="firstName"
-                  type="text"
-                  id="firstName"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200"
-                  placeholder="John"
-                  required
-                />
+            {/* Name Section with modern label */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Your Information</h3>
               </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="lastName"
-                  className="block text-lg font-semibold text-white"
-                >
-                  Last Name
-                </label>
-                <input
-                  name="lastName"
-                  type="text"
-                  id="lastName"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200"
-                  placeholder="Smith"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Contact Information Grid */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="space-y-2 sm:col-span-2 lg:col-span-1">
-                <label
-                  htmlFor="email"
-                  className="block text-lg font-semibold text-white"
-                >
-                  Email
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  id="email"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="phone"
-                  className="block text-lg font-semibold text-white"
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  value={phone}
-                  onChange={handlePhoneChange}
-                  className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200"
-                  placeholder="(630) 555-1234"
-                  maxLength={14}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="city"
-                  className="block text-lg font-semibold text-white"
-                >
-                  City
-                </label>
-                <input
-                  name="city"
-                  type="text"
-                  id="city"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200"
-                  placeholder="Naperville"
-                  required
-                />
-              </div>
-            </div>
-
-            {/* Insurance */}
-            <div className="space-y-2">
-              <label
-                htmlFor="insurance"
-                className="flex items-center gap-2 text-lg font-semibold text-white"
-              >
-                Insurance
-                <DialogBox />
-              </label>
-              <input
-                name="insurance"
-                type="text"
-                id="insurance"
-                className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200"
-                placeholder="Blue Cross Blue Shield, Aetna, etc."
-                required
-              />
-            </div>
-
-            {/* Question/Issue */}
-            <div className="space-y-2">
-              <label
-                htmlFor="question"
-                className="block text-lg font-semibold text-white"
-              >
-                Details
-              </label>
-              <textarea
-                name="question"
-                id="question"
-                rows="5"
-                className="w-full rounded-xl border border-slate-300 bg-white px-6 py-4 text-lg text-gray-900 placeholder:text-gray-500 transition-all duration-300 focus:bg-white focus:border-teal-400 focus:outline-none focus:ring-2 focus:ring-teal-200 resize-none"
-                placeholder="Please describe your dental concern or what type of appointment you need..."
-                required
-              ></textarea>
-            </div>
-
-            {/* Pain Level */}
-            <div className="space-y-4">
-              <label className="block text-lg font-semibold text-white">
-                Pain Level
-              </label>
-              <div className="rounded-xl border border-slate-300 bg-slate-100 p-6">
-                <PainSlider value={painLevel} onChange={setPainLevel} />
-              </div>
-            </div>
-
-            {/* Returning Patient */}
-            <div className="space-y-4">
-              <label className="block text-lg font-semibold text-white">
-                Are you a returning patient?
-              </label>
-              <div className="grid grid-cols-2 gap-4">
-                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-slate-300 bg-slate-100 px-4 py-4 transition-all duration-300 hover:bg-slate-200 hover:border-teal-300">
+              
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="group">
+                  <label
+                    htmlFor="firstName"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    First Name <span className="text-teal-600 dark:text-teal-400">*</span>
+                  </label>
                   <input
-                    name="returningPatient"
-                    type="radio"
-                    value="yes"
-                    className="h-5 w-5 text-teal-600 focus:ring-2 focus:ring-teal-200"
+                    name="firstName"
+                    type="text"
+                    id="firstName"
+                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    placeholder="John"
                     required
                   />
-                  <span className="text-lg font-medium text-gray-900">Yes</span>
-                </label>
-                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-slate-300 bg-slate-100 px-4 py-4 transition-all duration-300 hover:bg-slate-200 hover:border-teal-300">
+                </div>
+
+                <div className="group">
+                  <label
+                    htmlFor="lastName"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Last Name <span className="text-teal-600 dark:text-teal-400">*</span>
+                  </label>
                   <input
-                    name="returningPatient"
-                    type="radio"
-                    value="no"
-                    className="h-5 w-5 text-teal-600 focus:ring-2 focus:ring-teal-200"
+                    name="lastName"
+                    type="text"
+                    id="lastName"
+                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    placeholder="Smith"
                     required
                   />
-                  <span className="text-lg font-medium text-gray-900">No</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Contact Details</h3>
+              </div>
+              
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="group sm:col-span-2 lg:col-span-1">
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Email Address <span className="text-teal-600 dark:text-teal-400">*</span>
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    id="email"
+                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+
+                <div className="group">
+                  <label
+                    htmlFor="phone"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Phone Number <span className="text-teal-600 dark:text-teal-400">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    placeholder="(630) 555-1234"
+                    maxLength={14}
+                    required
+                  />
+                </div>
+
+                <div className="group">
+                  <label
+                    htmlFor="city"
+                    className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    City <span className="text-teal-600 dark:text-teal-400">*</span>
+                  </label>
+                  <input
+                    name="city"
+                    type="text"
+                    id="city"
+                    className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                    placeholder="Naperville"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Insurance & Details */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Insurance & Details</h3>
+              </div>
+              
+              <div className="group">
+                <label
+                  htmlFor="insurance"
+                  className="flex items-center gap-2 mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                  Insurance Provider <span className="text-teal-600 dark:text-teal-400">*</span>
+                  <DialogBox />
                 </label>
+                <input
+                  name="insurance"
+                  type="text"
+                  id="insurance"
+                  className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-600 focus:border-teal-500 dark:focus:border-teal-400 focus:outline-none focus:ring-4 focus:ring-teal-500/10"
+                  placeholder="Blue Cross Blue Shield, Aetna, etc."
+                  required
+                />
+              </div>
+
+              <div className="group">
+                <label
+                  htmlFor="question"
+                  className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+                >
+                  How can we help you? <span className="text-teal-600 dark:text-teal-400">*</span>
+                </label>
+                <textarea
+                  name="question"
+                  id="question"
+                  rows="4"
+                  className="w-full rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white placeholder:text-gray-400 transition-all duration-200 focus:bg-white dark:focus:bg-gray-900 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 resize-none"
+                  placeholder="Please describe your dental concern or what type of appointment you need..."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            {/* Additional Information */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-1 bg-teal-600 rounded-full"></div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Additional Information</h3>
+              </div>
+              
+              {/* Pain Level */}
+              <div className="group">
+                <label className="block mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Current Pain Level
+                </label>
+                <div className="rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 p-4">
+                  <PainSlider value={painLevel} onChange={setPainLevel} />
+                </div>
+              </div>
+
+              {/* Returning Patient */}
+              <div className="group">
+                <label className="block mb-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Have you visited us before? <span className="text-teal-600 dark:text-teal-400">*</span>
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  <label className="relative flex cursor-pointer items-center justify-center gap-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-teal-500 has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50 dark:has-[:checked]:bg-teal-900/30">
+                    <input
+                      name="returningPatient"
+                      type="radio"
+                      value="yes"
+                      className="sr-only"
+                      required
+                    />
+                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Yes, I'm a patient</span>
+                  </label>
+                  <label className="relative flex cursor-pointer items-center justify-center gap-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-teal-500 has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50 dark:has-[:checked]:bg-teal-900/30">
+                    <input
+                      name="returningPatient"
+                      type="radio"
+                      value="no"
+                      className="sr-only"
+                      required
+                    />
+                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100">I'm new here</span>
+                  </label>
+                </div>
               </div>
             </div>
 
             {/* Submit Button */}
-            <div className="pt-4">
-              <SubmitButton isPending={isPending} />
+            <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
+              <SubmitButton isPending={isPending} formType={formType} />
+              <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                By submitting, you agree to be contacted regarding your appointment request.
+              </p>
             </div>
           </Form>
         </div>

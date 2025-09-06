@@ -9,15 +9,15 @@ import { telNumber } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
-  title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
+  title: "Request a Dental Appointment | Dr. Keith A. Brown DDS",
   description:
-    "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS, FAGD offers comprehensive, family-friendly care. Schedule your visit today.",
+    "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS offers comprehensive, family-friendly care. Schedule your visit today.",
   keywords:
     "dentist appointment Naperville, dental checkup, Dr. Keith Brown DDS, book dental visit",
   openGraph: {
-    title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
+    title: "Request a Dental Appointment | Dr. Keith A. Brown DDS",
     description:
-      "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS, FAGD offers comprehensive, family-friendly care. Schedule your visit today.",
+      "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS offers comprehensive, family-friendly care. Schedule your visit today.",
     url: "https://keithbrowndds.com/appointment",
     images: [
       {
@@ -33,9 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Request a Dental Appointment | Dr. Keith A. Brown DDS, FAGD",
+    title: "Request a Dental Appointment | Dr. Keith A. Brown DDS",
     description:
-      "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS, FAGD offers comprehensive, family-friendly care. Schedule your visit today.",
+      "Looking to book a dental appointment in Naperville? Dr. Keith A. Brown DDS offers comprehensive, family-friendly care. Schedule your visit today.",
     image: "https://keithbrowndds.com/twitter-appointment.jpg",
   },
 };
@@ -102,24 +102,24 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 mt-2 sm:flex-row xl:flex-wrap xl:gap-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap max-w-full">
             <a
               href={`tel:${telNumber}`}
               data-track="phone-click"
-              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-white bg-teal-600 rounded-xl hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
               aria-label="Call our office"
             >
-              <PhoneIcon className="w-5 h-5" />
-              Call <DisplayNumber asLink={false} />
+              <PhoneIcon className="w-5 h-5 flex-shrink-0" />
+              <span className="whitespace-nowrap">Call <DisplayNumber asLink={false} /></span>
             </a>
 
             <Link
               href="#appointmentForm"
-              className="flex items-center gap-2 px-6 py-3 text-lg font-semibold text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+              className="flex-1 sm:flex-initial min-w-0 flex items-center justify-center gap-2 px-4 py-3 text-base font-semibold text-gray-900 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:px-5 lg:px-6 lg:text-lg"
               aria-label="Request dental appointment"
             >
-              <DocumentTextIcon className="w-5 h-5 text-teal-600" />
-              Request Appointment
+              <DocumentTextIcon className="w-5 h-5 text-teal-600 flex-shrink-0" />
+              <span>Request Appointment</span>
             </Link>
           </div>
         </div>

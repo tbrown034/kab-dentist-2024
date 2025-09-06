@@ -33,7 +33,7 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
   return (
     <Dialog open={isOpen} onClose={onCancel} className="relative z-50">
       <DialogBackdrop className="fixed inset-0 bg-black/50" />
-      <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+      <div className="fixed inset-0 flex w-full items-center justify-center p-4">
         <DialogPanel className="max-w-lg space-y-6 rounded-xl bg-white p-8 shadow-2xl">
           <DialogTitle className="text-xl font-bold text-gray-900">
             Insurance Coverage Check
