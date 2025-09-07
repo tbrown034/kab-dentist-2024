@@ -78,8 +78,7 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <ClockIcon className="w-5 h-5 mt-0.5 text-teal-600 flex-shrink-0" />
                 <div className="space-y-2 text-gray-600 dark:text-gray-300">
-                  <p>Mon-Thu: 8:00 AM - 5:00 PM</p>
-                  <p>Friday: By Appointment</p>
+                  <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
                   <p>Sat-Sun: Emergency Only</p>
                 </div>
               </div>
