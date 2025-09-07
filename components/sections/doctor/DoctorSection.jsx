@@ -45,24 +45,24 @@ const DoctorSection = () => {
             </Link>{" "}
             in Maywood, IL. He is a member of the{" "}
             <Link
-              href="https://www.ada.org/"
-              className="font-semibold text-teal-700 underline underline-offset-2 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors active:text-teal-500"
-            >
-              American Dental Association
-            </Link>
-            ,{" "}
-            <Link
               href="https://www.cds.org/"
               className="font-semibold text-teal-700 underline underline-offset-2 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors active:text-teal-500"
             >
               Chicago Dental Society
+            </Link>
+            ,{" "}
+            <Link
+              href="https://www.isds.org/"
+              className="font-semibold text-teal-700 underline underline-offset-2 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors active:text-teal-500"
+            >
+              Illinois State Dental Society
             </Link>{" "}
             and{" "}
             <Link
-              href="https://www.aes-tmj.org/"
+              href="https://www.ada.org/"
               className="font-semibold text-teal-700 underline underline-offset-2 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors active:text-teal-500"
             >
-              American Equilibration Society
+              American Dental Association
             </Link>
             .
           </p>
