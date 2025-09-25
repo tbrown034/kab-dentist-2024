@@ -1,7 +1,7 @@
 // components/layout/header/HeaderDropDown.jsx
 // Client Component
 "use client";
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
@@ -16,6 +16,23 @@ const links = [
 ];
 
 function HeaderDropdown() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Show placeholder before mounting to prevent layout shift
+  if (!mounted) {
+    return (
+      <div className="relative inline-block">
+        <div className="flex items-center justify-center p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-md min-w-[48px] min-h-[48px]">
+          <div className="w-7 h-7" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Menu as="div" className="relative inline-block text-left">
       <Menu.Button className="relative flex items-center justify-center p-3 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-md hover:shadow-lg active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 min-w-[48px] min-h-[48px]">

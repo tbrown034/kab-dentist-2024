@@ -13,7 +13,7 @@ import { submitForm } from "@/app/actions/submitForm";
 import PainSlider from "@/components/forms/PainSlider";
 import DialogBox from "@/components/dialogs/InsuranceDialog";
 import InsuranceCheck from "@/components/dialogs/InsuranceCheck";
-import { displayNumber, telNumber } from "@/lib/constants/constants";
+import DisplayNumber from "@/components/DisplayNumber";
 import Link from "next/link";
 import { PhoneIcon } from "@heroicons/react/24/solid";
 
@@ -272,13 +272,12 @@ export default function UnifiedForm({ formType = "appointment" }) {
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${telNumber}`}
+              <DisplayNumber
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
-              >
-                <PhoneIcon className="w-5 h-5" />
-                Call Now: {displayNumber}
-              </a>
+                showIcon={true}
+                iconComponent={PhoneIcon}
+                prefixText="Call Now: "
+              />
               <Link
                 href="/"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold rounded-xl border-2 border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all"

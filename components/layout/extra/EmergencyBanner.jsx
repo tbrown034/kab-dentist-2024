@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import DisplayNumber from "@/components/DisplayNumber";
 import Link from "next/link";
-import { telNumber } from "@/lib/constants/constants";
 
 const LS_KEY = "kbdds_emergency_banner_dismissed_v1";
 
@@ -45,12 +44,9 @@ const EmergencyBanner = () => {
           
           {/* Actions */}
           <div className="flex items-center gap-3 self-end sm:self-auto">
-            <a
-              href={`tel:${telNumber}`}
+            <DisplayNumber
               className="inline-flex items-center justify-center rounded-xl bg-white/95 backdrop-blur-sm text-teal-700 px-4 py-2.5 text-sm font-semibold shadow-md hover:bg-white hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 transition-all"
-            >
-              <DisplayNumber asLink={false} />
-            </a>
+            />
             <Link
               href="/appointment"
               className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm text-white px-4 py-2.5 text-sm font-semibold hover:bg-white/20 border border-white/30 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 transition-all whitespace-nowrap"

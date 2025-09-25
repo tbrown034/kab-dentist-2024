@@ -10,7 +10,7 @@ const HeroImageMobile = () => (
       priority
       placeholder="blur"
       className="object-cover object-[50%_20%]"
-      sizes="100vw"
+      sizes="(max-width: 640px) 100vw, 0vw"
     />
   </div>
 );

@@ -7,7 +7,6 @@ import sectionContents from "@/lib/content/sectionContent.json";
 import ServicesSeparator from "@/components/sections/dentalservices/ServicesSeparator";
 import ServicesSearch from "@/components/sections/dentalservices/ServicesSearch";
 import officeEquipment from "../../../src/assets/images/doctor/dr-with-patient-before.jpeg";
-import { telNumber } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
@@ -85,13 +84,9 @@ const DentalServices = () => {
             ))}
             <p>
               Browse our services below. If you don't see what you need, call{" "}
-              <a
-                href={`tel:${telNumber}`}
+              <DisplayNumber
                 className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
-                data-track="phone-click"
-              >
-                <DisplayNumber asLink={false} />
-              </a>
+              />
               {" "}or{" "}
               <Link
                 href="/appointment"

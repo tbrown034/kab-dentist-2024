@@ -6,7 +6,6 @@ import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { telNumber } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export default function DialogBox() {
@@ -48,14 +47,10 @@ export default function DialogBox() {
               </p>
               <p className="text-sm text-gray-500">
                 For more details, please call our office at{" "}
-                <a
-                  href={`tel:${telNumber}`}
+                <DisplayNumber
                   className="text-teal-600 underline"
-                  data-track="phone-click"
-                >
-                  <DisplayNumber asLink={false} />
-                </a>
-                to speak with our dedicated insurance specialist.
+                />
+                {" "}to speak with our dedicated insurance specialist.
               </p>
             </Dialog.Description>
             <div className="flex justify-end gap-4">

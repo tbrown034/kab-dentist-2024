@@ -5,7 +5,6 @@ import FullTitle from "@/components/shared/FullTitle";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drReception from "../../../src/assets/images/doctor/dr-horizontal-reception.jpeg";
 import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
-import { telNumber } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
@@ -77,13 +76,9 @@ const Page = () => {
             </p>
             <p>
               In pain or ready to schedule? Don't wait –{" "}
-              <a
-                href={`tel:${telNumber}`}
+              <DisplayNumber
                 className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
-                data-track="phone-click"
-              >
-                <DisplayNumber asLink={false} />
-              </a>
+              />
               ,{" "}
               <Link
                 href="#appointmentForm"
@@ -103,15 +98,10 @@ const Page = () => {
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
-            <a
-              href={`tel:${telNumber}`}
-              data-track="phone-click"
+            <DisplayNumber
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
-              aria-label="Call our office"
-            >
-              <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-              <span>Call <DisplayNumber asLink={false} /></span>
-            </a>
+              prefixText="Call "
+            />
 
             <Link
               href="#appointmentForm"

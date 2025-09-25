@@ -8,7 +8,6 @@ import {
   DialogTitle,
   Description,
 } from "@headlessui/react";
-import { telNumber } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
@@ -59,14 +58,10 @@ export default function InsuranceCheck({ isOpen, onConfirm, onCancel }) {
             <p>
               For specific questions about your coverage, please call our office
               at{" "}
-              <a
-                href={`tel:${telNumber}`}
+              <DisplayNumber
                 className="font-semibold text-teal-600 hover:text-teal-700 transition-colors"
-                data-track="phone-click"
-              >
-                <DisplayNumber asLink={false} />
-              </a>{" "}
-              to speak with our insurance specialist.
+              />
+              {" "}to speak with our insurance specialist.
             </p>
           </Description>
 

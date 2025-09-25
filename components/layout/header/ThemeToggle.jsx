@@ -9,7 +9,10 @@ const ThemeToggle = () => {
 
   // Prevent rendering until theme is determined
   if (!mounted) {
-    return null;
+    // Reserve space for the toggle to prevent layout shift
+    return (
+      <div className="h-7 w-14 rounded-full bg-gray-200 dark:bg-gray-700" />
+    );
   }
 
   const isDarkMode = resolvedTheme === "dark";

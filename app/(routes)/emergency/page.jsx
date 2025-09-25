@@ -2,11 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Medicaid from "@/components/shared/Medicaid";
 import FullTitle from "@/components/shared/FullTitle";
-import EmergencyFAQs from "@/components/sections/emergency/EmergencyFAQs";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drWithPatientAfter from "../../../src/assets/images/doctor/dr-with-patient-after.jpeg";
-import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
-import { telNumber } from "@/lib/constants/constants";
+import { DocumentTextIcon } from "@heroicons/react/24/solid";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
@@ -95,15 +93,10 @@ const Page = () => {
 
           {/* CTAs */}
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
-            <a
-              href={`tel:${telNumber}`}
+            <DisplayNumber
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
-              aria-label="Call our emergency dental line"
-              data-track="phone-click"
-            >
-              <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-              <span>Emergency: <DisplayNumber asLink={false} /></span>
-            </a>
+              prefixText="Emergency: "
+            />
 
             <Link
               href="#emergencyForm"
@@ -120,11 +113,6 @@ const Page = () => {
       {/* Emergency Form */}
       <div id="emergencyForm">
         <UnifiedForm formType="emergency" />
-      </div>
-
-      {/* FAQs */}
-      <div id="emergencyFAQs">
-        <EmergencyFAQs />
       </div>
 
       {/* Medicaid Info */}
