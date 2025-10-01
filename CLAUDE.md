@@ -1,3 +1,215 @@
+# Development Philosophy & Rules
+
+## CRITICAL: Development Standards (READ FIRST)
+
+**These rules override all other considerations and must be followed strictly:**
+
+### 1. Don't Break Working Code
+- **NEVER** modify code that is functioning correctly unless explicitly instructed
+- **NEVER** freelance or make unsolicited "improvements"
+- **NEVER** apply quick fixes or patches that aren't consistent with the rest of the codebase
+- **ALWAYS** think holistically and methodically about changes
+
+### 2. Consistency Over Cleverness
+- Value **KISS** (Keep It Simple, Stupid) above all else
+- Ensure changes are compatible with existing patterns throughout the app
+- Every change must be defensible with clear reasoning
+- Prefer boring, predictable solutions over novel approaches
+
+### 3. Security First
+- Security is paramount - never compromise on security considerations
+- Always validate user input
+- Never expose sensitive data in client-side code
+- Use environment variables for all secrets
+- Follow OAuth best practices strictly
+
+### 4. Confidence & Honesty
+- **ONLY** claim to have found a solution if you are **90%+ confident**
+- If confidence is lower, **state your confidence level explicitly** (e.g., "I'm about 60% confident this will work")
+- If you **don't know**, **admit it** and ask questions
+- It's better to solve problems together than to implement uncertain solutions
+
+### 5. Read Before Acting
+- **ALWAYS** do a thorough read-through of relevant files before making changes
+- Understand the existing patterns and architecture
+- Check for similar implementations elsewhere in the codebase
+- Never assume - verify by reading the code
+
+---
+
+# Project Overview
+
+**Site**: Dr. Keith A. Brown DDS - Naperville Family & Emergency Dentist
+**Domain**: keithbrowndds.com
+**Tech Stack**:
+- Next.js 15.3.3 (App Router)
+- React 19.1.0
+- Better Auth 1.3.23 (OAuth with Google)
+- Neon Database (PostgreSQL)
+- Tailwind CSS
+- Kysely (SQL query builder)
+- CallRail (dynamic phone number tracking)
+
+**Key Features**:
+- Admin dashboard with analytics (Google Ads, Local Services, CallRail data)
+- Google OAuth authentication for admin access
+- Dark/light theme support
+- Phone number tracking with CallRail DNI
+- Responsive design (mobile-first)
+- Server-side rendering with client-side interactivity
+
+---
+
+# Authentication with Better Auth
+
+## Overview
+This project uses **Better Auth v1.3.23** for authentication. Better Auth is a Next.js-native auth library that provides OAuth 2.0, session management, and database-backed sessions.
+
+## Configuration Files
+
+### 1. `/auth.ts` (Server Configuration)
+```typescript
+import { betterAuth } from "better-auth";
+import { neon } from "@neondatabase/serverless";
+import { NeonDialect } from "kysely-neon";
+import { nextCookies } from "better-auth/next-js";
+
+export const auth = betterAuth({
+  database: {
+    dialect: new NeonDialect({
+      neon: neon(process.env.POSTGRES_URL || process.env.DATABASE_URL || ""),
+    }),
+    type: "postgres",
+  },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    },
+  },
+  plugins: [nextCookies()],
+});
+```
+
+### 2. `/lib/auth-client.ts` (Client Configuration)
+```typescript
+import { createAuthClient } from "better-auth/react";
+
+export const authClient = createAuthClient({
+  baseURL: typeof window !== "undefined" ? window.location.origin : "http://localhost:3000",
+});
+
+export const { signIn, signOut, signUp, useSession } = authClient;
+```
+
+### 3. `/app/api/auth/[...all]/route.ts` (API Route Handler)
+```typescript
+import { auth } from "@/auth";
+import { toNextJsHandler } from "better-auth/next-js";
+
+export const { POST, GET } = toNextJsHandler(auth);
+```
+
+### 4. `/middleware.ts` (Route Protection)
+```typescript
+import { NextRequest, NextResponse } from "next/server";
+import { getCookieCache } from "better-auth/cookies";
+
+export async function middleware(request: NextRequest) {
+  const session = await getCookieCache(request);
+
+  if (!session && request.nextUrl.pathname.startsWith("/admin")) {
+    const loginUrl = new URL("/login", request.url);
+    loginUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
+    return NextResponse.redirect(loginUrl);
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: ["/admin/:path*"],
+};
+```
+
+## Environment Variables
+
+**Required in `.env`:**
+```bash
+BETTER_AUTH_SECRET=<random-secret-string>
+BETTER_AUTH_URL=http://localhost:3000  # MUST match actual URL
+POSTGRES_URL=postgresql://...
+```
+
+**Required in `.env.local`:**
+```bash
+GOOGLE_CLIENT_ID=<your-google-client-id>
+GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+```
+
+**⚠️ IMPORTANT**: Remove any old auth configs (Auth0, NextAuth) to avoid conflicts.
+
+## OAuth Flow
+
+1. User clicks "Continue with Google" on `/login`
+2. `signIn.social({ provider: "google", callbackURL: "/admin" })` called
+3. Better Auth redirects to Google OAuth
+4. Google redirects to `/api/auth/callback/google`
+5. Better Auth creates session
+6. User redirected to `callbackURL`
+
+## Session Management
+
+**Server-Side:**
+```typescript
+import { auth } from "@/auth";
+import { headers } from "next/headers";
+
+const session = await auth.api.getSession({ headers: await headers() });
+if (!session) redirect("/login");
+```
+
+**Client-Side:**
+```typescript
+import { useSession } from "@/lib/auth-client";
+
+const { data: session, isPending } = useSession();
+```
+
+## Common Issues
+
+### `state_mismatch` Error
+
+**Causes:**
+- Missing or incorrect `BETTER_AUTH_URL`
+- Cookie persistence issues (third-party cookie blocking)
+- baseURL mismatch between client/server
+- Old auth configs (Auth0) conflicting
+- Google OAuth redirect URI misconfiguration
+
+**Debug:**
+1. Check `BETTER_AUTH_URL` in `.env` matches actual URL
+2. Inspect cookies in DevTools (look for `better-auth.*`)
+3. Remove old auth environment variables
+4. Test in incognito mode
+5. Verify Google Console redirect URI
+
+**Fix:**
+- Set explicit `BETTER_AUTH_URL` (don't rely on auto-detection)
+- Use consistent baseURL in client and server
+- Remove conflicting auth configs
+
+## Best Practices
+
+1. Always use server-side session validation for protected routes
+2. Never trust client-side session state for authorization
+3. Use middleware only for optimistic redirects
+4. Keep OAuth credentials in `.env.local` (not git)
+5. Set explicit `BETTER_AUTH_URL`
+6. Test OAuth in incognito mode
+
+---
+
 # Icon Library Guidelines
 
 ## CRITICAL: Use Heroicons as Primary Icon Library

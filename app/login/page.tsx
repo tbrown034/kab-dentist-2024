@@ -1,18 +1,19 @@
 "use client";
 
 import { signIn } from "@/lib/auth-client";
-import { useSearchParams } from "next/navigation";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { ShieldCheckIcon, Cog6ToothIcon } from "@heroicons/react/24/outline";
 
-function LoginForm() {
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/admin";
+export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
     setIsLoading(true);
     try {
+      // Read callbackUrl from URL params
+      const params = new URLSearchParams(window.location.search);
+      const callbackUrl = params.get("callbackUrl") || "/admin";
+
       await signIn.social({
         provider: "google",
         callbackURL: callbackUrl,
@@ -24,8 +25,9 @@ function LoginForm() {
   };
 
   return (
-    <div className="flex items-center justify-center px-4 py-12 sm:py-16 lg:py-20">
-      <div className="max-w-md w-full">
+    <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-7xl mx-auto">
+      <div className="flex items-center justify-center">
+        <div className="max-w-md w-full">
         {/* Logo/Branding Section */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900 mb-4">
@@ -102,19 +104,8 @@ function LoginForm() {
             Contact Support
           </a>
         </p>
+        </div>
       </div>
     </div>
-  );
-}
-
-export default function LoginPage() {
-  return (
-    <Suspense fallback={
-      <div className="flex items-center justify-center px-4 py-12 sm:py-16 lg:py-20">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
-      </div>
-    }>
-      <LoginForm />
-    </Suspense>
   );
 }

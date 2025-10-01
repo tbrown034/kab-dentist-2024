@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`overflow-x-clip scroll-smooth ${inter.variable} ${raleway.variable}`}
+      className={`overflow-x-clip ${inter.variable} ${raleway.variable}`}
       suppressHydrationWarning
     >
       <head>

@@ -49,7 +49,7 @@ export default function FooterAuthSection() {
   return (
     <div className="flex items-center gap-4">
       <Link
-        href="/login?callbackUrl=/admin"
+        href="/login"
         className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-500 transition-colors"
       >
         Log In
