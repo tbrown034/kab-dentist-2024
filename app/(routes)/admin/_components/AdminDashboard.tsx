@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { signOut } from "@/lib/auth-client";
 import {
   LineChart,
@@ -35,6 +36,7 @@ import {
 import metricsData from "@/lib/data/dashboard-metrics.json";
 
 const AdminDashboard = () => {
+  const router = useRouter();
   const [selectedDateRange, setSelectedDateRange] = useState("30d");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -119,7 +121,13 @@ const AdminDashboard = () => {
                 Home
               </Link>
               <button
-                onClick={() => signOut()}
+                onClick={() => signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      router.push("/");
+                    },
+                  },
+                })}
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors shadow-sm"
               >
                 <ArrowRightOnRectangleIcon className="w-4 h-4" />

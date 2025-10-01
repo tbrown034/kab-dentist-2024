@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useSession, signOut } from "@/lib/auth-client";
 
 export default function FooterAuthSection() {
+  const router = useRouter();
   const { data: session, isPending } = useSession();
 
   if (isPending) {
@@ -29,7 +31,13 @@ export default function FooterAuthSection() {
         </Link>
         <span className="text-gray-400">•</span>
         <button
-          onClick={() => signOut()}
+          onClick={() => signOut({
+            fetchOptions: {
+              onSuccess: () => {
+                router.push("/");
+              },
+            },
+          })}
           className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-500 transition-colors"
         >
           Log Out
