@@ -3,7 +3,7 @@
 import { signIn } from "@/lib/auth-client";
 import { useSearchParams } from "next/navigation";
 import { useState, Suspense } from "react";
-import { ShieldCheckIcon } from "@heroicons/react/24/outline";
+import { ShieldCheckIcon, Cog6ToothIcon } from "@heroicons/react/24/outline";
 
 function LoginForm() {
   const searchParams = useSearchParams();
@@ -57,7 +57,7 @@ function LoginForm() {
           >
             {isLoading ? (
               <>
-                <div className="animate-spin rounded-full h-5 w-5 border-2 border-gray-300 border-t-teal-600"></div>
+                <Cog6ToothIcon className="animate-spin h-6 w-6 text-teal-600" />
                 <span>Signing in...</span>
               </>
             ) : (
