@@ -11,6 +11,13 @@ export const auth = betterAuth({
     "https://www.keithbrowndds.com",
   ],
 
+  advanced: {
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: "keithbrowndds.com",
+    },
+  },
+
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
