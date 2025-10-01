@@ -6,6 +6,7 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from "@heroicons/react
 import Link from "next/link";
 import { address, email } from "@/lib/constants/constants";
 import DisplayNumber from "@/components/DisplayNumber";
+import FooterAuthSection from "./FooterAuthSection";
 
 const footerLinks = [
   { href: "/appointment", label: "Book Appointment", featured: true },
@@ -138,16 +139,11 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-300">
               <p>© 2025 Dr. Keith A. Brown DDS. All rights reserved.</p>
               <div className="flex items-center gap-4">
-                <Link 
-                  href="/admin"
-                  className="text-gray-400 hover:text-teal-600 dark:hover:text-teal-500 transition-colors"
-                >
-                  Admin
-                </Link>
+                <FooterAuthSection />
                 <span className="text-gray-400">•</span>
                 <p>
                   Website by{" "}
-                  <Link 
+                  <Link
                     href="https://trevorthewebdeveloper.com/"
                     className="text-teal-600 dark:text-teal-500 hover:underline font-medium"
                     target="_blank"

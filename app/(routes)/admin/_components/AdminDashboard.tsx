@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { signOut } from "@/lib/auth-client";
 import {
   LineChart,
   Line,
@@ -26,7 +28,9 @@ import {
   ArrowUpIcon,
   ArrowDownIcon,
   ClockIcon,
-  MagnifyingGlassIcon
+  MagnifyingGlassIcon,
+  HomeIcon,
+  ArrowRightOnRectangleIcon
 } from "@heroicons/react/24/solid";
 import metricsData from "@/lib/data/dashboard-metrics.json";
 
@@ -43,7 +47,7 @@ const AdminDashboard = () => {
   const COLORS = ["#0d9488", "#14b8a6", "#5eead4", "#99f6e4", "#2dd4bf"];
 
   // Format currency
-  const formatCurrency = (value) => {
+  const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -53,10 +57,17 @@ const AdminDashboard = () => {
   };
 
   // Format percentage
-  const formatPercent = (value) => `${value.toFixed(1)}%`;
+  const formatPercent = (value: number) => `${value.toFixed(1)}%`;
 
   // KPI Cards Component
-  const KPICard = ({ title, value, change, icon: Icon, prefix = "", suffix = "" }) => {
+  const KPICard = ({ title, value, change, icon: Icon, prefix = "", suffix = "" }: {
+    title: string;
+    value: string | number;
+    change: number;
+    icon: any;
+    prefix?: string;
+    suffix?: string;
+  }) => {
     const isPositive = change >= 0;
     return (
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
@@ -79,23 +90,43 @@ const AdminDashboard = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center py-20">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 lg:p-8">
+    <div className="p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-            Practice Analytics Dashboard
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400">
-            Real-time insights from Google Ads, Local Services, CallRail, and Analytics
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+            <div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                Practice Analytics Dashboard
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400">
+                Real-time insights from Google Ads, Local Services, CallRail, and Analytics
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
+              >
+                <HomeIcon className="w-4 h-4" />
+                Home
+              </Link>
+              <button
+                onClick={() => signOut()}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-teal-600 rounded-lg hover:bg-teal-700 transition-colors shadow-sm"
+              >
+                <ArrowRightOnRectangleIcon className="w-4 h-4" />
+                Log Out
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Date Range Selector */}
@@ -156,15 +187,15 @@ const AdminDashboard = () => {
             <ResponsiveContainer width="100%" height={300}>
               <AreaChart data={metricsData.costOverTime.slice(-30)}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis 
-                  dataKey="date" 
+                <XAxis
+                  dataKey="date"
                   tick={{ fontSize: 12 }}
                   tickFormatter={(date) => new Date(date).toLocaleDateString('en', { month: 'short', day: 'numeric' })}
                 />
                 <YAxis tick={{ fontSize: 12 }} tickFormatter={(value) => `$${value}`} />
-                <Tooltip 
-                  formatter={(value) => formatCurrency(value)}
-                  labelFormatter={(date) => new Date(date).toLocaleDateString('en', { month: 'long', day: 'numeric', year: 'numeric' })}
+                <Tooltip
+                  formatter={(value) => formatCurrency(value as number)}
+                  labelFormatter={(date) => new Date(date as string).toLocaleDateString('en', { month: 'long', day: 'numeric', year: 'numeric' })}
                 />
                 <Legend />
                 <Area type="monotone" dataKey="googleAds" stackId="1" stroke="#0d9488" fill="#14b8a6" name="Google Ads" />
@@ -181,13 +212,13 @@ const AdminDashboard = () => {
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={metricsData.callRail.callsByHour}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis 
-                  dataKey="hour" 
+                <XAxis
+                  dataKey="hour"
                   tick={{ fontSize: 12 }}
                   tickFormatter={(hour) => `${hour}:00`}
                 />
                 <YAxis tick={{ fontSize: 12 }} />
-                <Tooltip 
+                <Tooltip
                   labelFormatter={(hour) => `${hour}:00 - ${hour}:59`}
                 />
                 <Bar dataKey="calls" fill="#0d9488" radius={[8, 8, 0, 0]} />
@@ -210,7 +241,7 @@ const AdminDashboard = () => {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ source, percentage }) => `${source}: ${percentage}%`}
+                  label={({ source, percentage }: any) => `${source}: ${percentage}%`}
                   outerRadius={80}
                   fill="#8884d8"
                   dataKey="users"

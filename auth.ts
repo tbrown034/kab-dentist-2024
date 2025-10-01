@@ -1,15 +1,19 @@
 import { betterAuth } from "better-auth";
-import { Pool } from "@neondatabase/serverless";
+import { neon } from "@neondatabase/serverless";
+import { NeonDialect } from "kysely-neon";
 
 export const auth = betterAuth({
-      socialProviders: {
-        google: {
-            clientId: process.env.GOOGLE_CLIENT_ID as string,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-        },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     },
+  },
 
-  database: new Pool({
-    connectionString: process.env.POSTGRES_URL
-  }),
+  database: {
+    dialect: new NeonDialect({
+      neon: neon(process.env.POSTGRES_URL || process.env.DATABASE_URL || ""),
+    }),
+    type: "postgres",
+  },
 });
