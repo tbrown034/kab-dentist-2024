@@ -42,6 +42,29 @@
 - **Exception**: Read-only git commands (git status, git diff, git log) are allowed when analyzing code
 - When asked for "code" to push changes, provide the git commands to run, not execute them
 
+### 7. Next.js Suspense Boundaries
+- **ALWAYS** wrap `useSearchParams()`, `usePathname()`, and `useRouter()` from `next/navigation` in a Suspense boundary
+- **Pattern**: Create a separate component for the content that uses these hooks, then wrap it in `<Suspense>` in the page export
+- **Why**: Next.js requires this for static generation to prevent build failures
+- **Example**:
+  ```tsx
+  import { Suspense } from "react";
+  import { useSearchParams } from "next/navigation";
+
+  function PageContent() {
+    const searchParams = useSearchParams();
+    return <div>...</div>;
+  }
+
+  export default function Page() {
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <PageContent />
+      </Suspense>
+    );
+  }
+  ```
+
 ---
 
 # Project Overview
