@@ -2,10 +2,10 @@
 
 import { signIn } from "@/lib/auth-client";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 
-export default function LoginPage() {
+function LoginForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
   const [isLoading, setIsLoading] = useState(false);
@@ -104,5 +104,17 @@ export default function LoginPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center px-4 py-12 sm:py-16 lg:py-20">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   );
 }
