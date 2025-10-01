@@ -35,6 +35,13 @@
 - Check for similar implementations elsewhere in the codebase
 - Never assume - verify by reading the code
 
+### 6. Never Touch Git
+- **NEVER** run git commands (add, commit, push, pull, etc.) unless explicitly instructed by the user
+- **ALWAYS** suggest git commands for the user to run manually instead
+- Provide clear, copy-pasteable commands for the user to execute
+- **Exception**: Read-only git commands (git status, git diff, git log) are allowed when analyzing code
+- When asked for "code" to push changes, provide the git commands to run, not execute them
+
 ---
 
 # Project Overview

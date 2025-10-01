@@ -17,6 +17,7 @@ export default function LoginPage() {
       await signIn.social({
         provider: "google",
         callbackURL: callbackUrl,
+        errorCallbackURL: "/auth-error",
       });
     } catch (error) {
       console.error("Sign in error:", error);
