@@ -1,21 +1,14 @@
 import { betterAuth } from "better-auth";
 import { neon } from "@neondatabase/serverless";
 import { NeonDialect } from "kysely-neon";
+import { nextCookies } from "better-auth/next-js";
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL || "https://keithbrowndds.com",
-
-  trustedOrigins: [
-    "http://localhost:3000",
-    "https://keithbrowndds.com",
-    "https://www.keithbrowndds.com",
-  ],
-
-  advanced: {
-    crossSubDomainCookies: {
-      enabled: true,
-      domain: "keithbrowndds.com",
-    },
+  database: {
+    dialect: new NeonDialect({
+      neon: neon(process.env.POSTGRES_URL || process.env.DATABASE_URL || ""),
+    }),
+    type: "postgres",
   },
 
   socialProviders: {
@@ -25,10 +18,5 @@ export const auth = betterAuth({
     },
   },
 
-  database: {
-    dialect: new NeonDialect({
-      neon: neon(process.env.POSTGRES_URL || process.env.DATABASE_URL || ""),
-    }),
-    type: "postgres",
-  },
+  plugins: [nextCookies()],
 });
