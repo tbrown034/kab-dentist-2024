@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PhoneIcon, DocumentTextIcon } from "@heroicons/react/24/solid";
+import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/solid";
 import FAQs from "@/components/sections/dentalservices/FAQs";
 import FullTitle from "@/components/shared/FullTitle";
 import sectionContents from "@/lib/content/sectionContent.json";
@@ -82,40 +82,27 @@ const DentalServices = () => {
             {textBlock.map((block, blockIndex) => (
               <p key={blockIndex}>{block.text}</p>
             ))}
-            <p>
-              Browse our services below. If you don't see what you need, call{" "}
-              <DisplayNumber
-                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
-              />
-              {" "}or{" "}
-              <Link
-                href="/appointment"
-                className="font-semibold text-teal-700 underline underline-offset-2 hover:text-teal-600 transition-colors dark:text-teal-500"
-              >
-                request an appointment
-              </Link>{" "}
-              to learn more.
-            </p>
+            <div className="bg-teal-50 dark:bg-teal-900/20 border-l-4 border-teal-600 p-4 rounded-r-lg">
+              <p className="text-base sm:text-lg font-medium text-teal-900 dark:text-teal-100">
+                <strong>Can't find what you need?</strong> Browse our services below or contact us to learn more.
+              </p>
+            </div>
           </div>
 
           {/* CTAs */}
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
-            <Link
-              href="#browseServices"
+            <DisplayNumber
+              showIcon={true}
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
-              aria-label="Browse our dental services"
-            >
-              <DocumentTextIcon className="w-5 h-5 flex-shrink-0" />
-              <span>Browse Services</span>
-            </Link>
+            />
 
             <Link
-              href="/appointment"
+              href="#browseServices"
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-2xl shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
-              aria-label="Request a dental appointment"
+              aria-label="Browse our dental services"
             >
-              <PhoneIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
-              <span>Request Appointment</span>
+              <ClipboardDocumentCheckIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
+              <span>Services</span>
             </Link>
           </div>
         </div>

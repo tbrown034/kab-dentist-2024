@@ -4,7 +4,7 @@ import Medicaid from "@/components/shared/Medicaid";
 import FullTitle from "@/components/shared/FullTitle";
 import UnifiedForm from "@/components/forms/UnifiedForm";
 import drWithPatientAfter from "../../../src/assets/images/doctor/dr-with-patient-after.jpeg";
-import { DocumentTextIcon } from "@heroicons/react/24/solid";
+import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import DisplayNumber from "@/components/DisplayNumber";
 
 export const metadata = {
@@ -94,8 +94,8 @@ const Page = () => {
           {/* CTAs */}
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-3 sm:flex-wrap lg:flex-nowrap pt-4">
             <DisplayNumber
+              showIcon={true}
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-lg hover:from-teal-700 hover:to-teal-800 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200"
-              prefixText="Emergency: "
             />
 
             <Link
@@ -103,8 +103,8 @@ const Page = () => {
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-4 text-base font-semibold text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-2xl shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
               aria-label="Submit emergency request form"
             >
-              <DocumentTextIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
-              <span>Submit Emergency Request Form</span>
+              <CalendarDaysIcon className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
+              <span>Appointment</span>
             </Link>
           </div>
         </div>

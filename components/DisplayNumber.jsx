@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { PhoneIcon } from "@heroicons/react/24/solid";
 import { telNumber, displayNumber } from "@/lib/constants/constants";
 
 export default function DisplayNumber({
@@ -11,6 +12,8 @@ export default function DisplayNumber({
   iconComponent: Icon = null,
   prefixText = "",              // e.g., "Call Now: "
 }) {
+  // Use provided icon or default to PhoneIcon
+  const IconToUse = Icon || PhoneIcon;
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -31,7 +34,7 @@ export default function DisplayNumber({
       className={className}
       aria-label={`Call ${displayText}`}
     >
-      {showIcon && Icon && <Icon className="w-5 h-5 inline-block flex-shrink-0" />}
+      {showIcon && <IconToUse className="w-5 h-5 inline-block flex-shrink-0" />}
       {prefixText && <span>{prefixText}</span>}
       <span className="callrail-phone">{displayText}</span>
     </a>

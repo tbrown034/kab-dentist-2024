@@ -54,9 +54,11 @@ const MapSection = () => {
             </Link>
             — where comfort, convenience, and care come together.
           </p>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
-            We offer free, designated parking and elevator access to our office.
-          </p>
+          <div className="bg-teal-50 dark:bg-teal-900/20 border-l-4 border-teal-600 p-4 rounded-r-lg">
+            <p className="text-base sm:text-lg font-medium text-teal-900 dark:text-teal-100">
+              <strong>Convenient Access:</strong> We offer free, designated parking and elevator access to our office.
+            </p>
+          </div>
 
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
@@ -64,7 +66,7 @@ const MapSection = () => {
               href="https://www.google.com/maps?sca_esv=79ff9b4c6b5b9f67&sca_upv=1&output=search&q=keith+brown+dds&source=lnms&entry=mc"
             >
               <MapPinIcon className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" />
-              <span className="tracking-wide">Get Directions</span>
+              <span className="tracking-wide">Directions</span>
               {/* Shimmer effect */}
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
             </Link>
@@ -73,7 +75,7 @@ const MapSection = () => {
               onClick={copyAddressToClipboard}
             >
               <ClipboardDocumentIcon className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" />
-              <span className="tracking-wide">Copy Address</span>
+              <span className="tracking-wide">Copy</span>
             </button>
           </div>
         </div>

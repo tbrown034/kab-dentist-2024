@@ -109,6 +109,17 @@
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-padding-top: 5rem; /* 80px - accounts for sticky header */
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 6rem; /* 96px for larger header on desktop */
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter), sans-serif;
@@ -117,5 +128,38 @@
   /* Header font classes */
   .font-header {
     font-family: var(--font-raleway), sans-serif;
+  }
+
+  /* Range slider thumb styles for mobile touch targets */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid currentColor;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid currentColor;
+  }
+
+  input[type="range"]:active::-webkit-slider-thumb {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
+
+  input[type="range"]:active::-moz-range-thumb {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
   }
 }

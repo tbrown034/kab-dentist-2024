@@ -51,7 +51,7 @@ const EmergencyBanner = () => {
               href="/appointment"
               className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm text-white px-4 py-2.5 text-sm font-semibold hover:bg-white/20 border border-white/30 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 transition-all whitespace-nowrap"
             >
-              <span className="hidden xs:inline">Request </span>Appointment
+              Appointment
             </Link>
             <button
               aria-label="Dismiss banner"

@@ -14,7 +14,7 @@ const HeroCTA = () => {
         aria-label="Book a dental appointment"
       >
         <CalendarDaysIcon className="w-5 h-5 sm:w-5 sm:h-5 flex-shrink-0" />
-        <span className="tracking-wide">Book Appointment</span>
+        <span className="tracking-wide">Appointment</span>
         {/* Shimmer effect */}
         <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
       </Link>
