@@ -4,12 +4,11 @@ import { NeonDialect } from "kysely-neon";
 import { nextCookies } from "better-auth/next-js";
 import { APIError } from "better-auth/api";
 
-// Email allowlist - only these emails can sign up
-const ALLOWED_EMAILS = [
-  "trevor.brown@gmail.com",
-  "kabdds@keithbrowndds.com",
-  "admin@keithbrowndds.com",
-];
+// Email allowlist - load from environment variable for security
+const ALLOWED_EMAILS = (process.env.ALLOWED_ADMIN_EMAILS || "")
+  .split(",")
+  .map((email) => email.trim().toLowerCase())
+  .filter(Boolean);
 
 export const auth = betterAuth({
   // Explicit base URL prevents state mismatch errors
