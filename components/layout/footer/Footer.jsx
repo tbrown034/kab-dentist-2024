@@ -23,17 +23,22 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto">
           {/* Top Section - Brand & CTA */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4">
               Dr. Keith A. Brown DDS
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               Your Trusted Naperville Dentist for Over 40 Years
             </p>
             <Link
               href="/appointment"
-              className="inline-flex items-center gap-3 px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-teal-600 to-teal-500 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
+              className="group relative inline-flex items-center gap-3 px-8 py-5 text-base sm:text-lg font-bold text-white bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all overflow-hidden"
             >
-              Schedule Your Visit Today
+              <span className="relative z-10">Schedule Your Visit Today</span>
+              <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full"></div>
             </Link>
           </div>
 
@@ -41,7 +46,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {/* Contact Information */}
             <div className="space-y-5">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Us</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Contact Us</h3>
               
               <a
                 href="https://maps.app.goo.gl/mdUmVC7ukmrKS1ER8"
@@ -75,7 +80,7 @@ const Footer = () => {
 
             {/* Office Hours */}
             <div className="space-y-5">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Office Hours</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Office Hours</h3>
               <div className="flex items-start gap-3">
                 <ClockIcon className="w-5 h-5 mt-0.5 text-teal-600 flex-shrink-0" />
                 <div className="space-y-2 text-gray-600 dark:text-gray-300">
@@ -87,7 +92,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="space-y-5">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Quick Links</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Quick Links</h3>
               <nav className="space-y-3">
                 {footerLinks.map((link) => (
                   <Link 
@@ -107,7 +112,7 @@ const Footer = () => {
 
             {/* Connect */}
             <div className="space-y-5">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Connect With Us</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Connect With Us</h3>
               <div className="flex gap-4">
                 <a
                   href="https://www.facebook.com/KeithABrownDDS/about_details"
