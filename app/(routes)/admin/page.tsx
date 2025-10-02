@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import AdminDashboard from "./_components/AdminDashboard";
+import BillingDashboard from "./_components/BillingDashboard";
 
 export default async function AdminPage() {
   const session = await auth.api.getSession({
@@ -12,5 +12,5 @@ export default async function AdminPage() {
     redirect("/login?callbackUrl=/admin");
   }
 
-  return <AdminDashboard />;
+  return <BillingDashboard />;
 }

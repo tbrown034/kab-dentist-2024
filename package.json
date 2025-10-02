@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "billing:update": "python3 scripts/billing/run_pipeline.py --full",
+    "billing:quick": "python3 scripts/billing/run_pipeline.py"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",

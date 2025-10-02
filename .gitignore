@@ -35,3 +35,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# billing data (CSVs and generated files)
+scripts/billing/data/raw/*.csv
+scripts/billing/data/staging/
+scripts/billing/data/curated/
+scripts/billing/data/exports/
+scripts/billing/data/manifest.json
+scripts/billing/logs/
+scripts/logs/
