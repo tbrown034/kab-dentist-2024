@@ -2,6 +2,14 @@
 
 Processes monthly Google Ads billing CSVs and generates dashboard data.
 
+## 📚 Documentation
+
+- **[Monthly Update Guide](MONTHLY_UPDATE_GUIDE.md)** - Step-by-step instructions for non-technical users
+- **[How It Works](HOW_IT_WORKS.md)** - Visual guide explaining the data flow and pipeline
+- **Quick Reference** - See below for fast updates
+
+---
+
 ## Monthly Update Process
 
 ### 1. Export CSV from Google Ads
@@ -29,7 +37,13 @@ npm run billing:update
 npm run billing:quick
 ```
 
-### 5. Deploy
+### 5. Copy to Website
+After the pipeline completes, copy the generated JSON to the website:
+```bash
+cp data/exports/for_website/monthly_data_*.json ../../lib/data/google-ads-billing.json
+```
+
+### 6. Deploy
 ```bash
 npm run build
 # Then deploy to Vercel

@@ -1,22 +1,22 @@
 {
   "summary": {
-    "generated_date": "2025-10-02T17:31:33.240442",
+    "generated_date": "2025-10-02T20:50:08.072024",
     "data_range": {
       "start": 2024,
       "end": 2025,
-      "months_count": 16
+      "months_count": 17
     },
     "totals": {
-      "all_time_spend": 27582.77,
-      "google_ads_spend": 10644.29,
-      "lsa_spend": 16938.48,
-      "total_clicks": 8413,
-      "total_leads": 165
+      "all_time_spend": 28644.05,
+      "google_ads_spend": 10684.84,
+      "lsa_spend": 17959.21,
+      "total_clicks": 8428,
+      "total_leads": 173
     },
     "averages": {
-      "monthly_spend": 1723.92,
+      "monthly_spend": 1684.94,
       "cost_per_click": 1.27,
-      "cost_per_lead": 102.66
+      "cost_per_lead": 103.81
     }
   },
   "monthly_data": [
@@ -378,7 +378,7 @@
       "year": 2025,
       "month": 9,
       "month_name": "September",
-      "total_spend": 47.07,
+      "total_spend": 815.98,
       "google_ads": {
         "spend": 47.07,
         "clicks": 21,
@@ -389,13 +389,36 @@
         "cost_per_click": 2.24
       },
       "lsa": {
-        "spend": 0.0,
-        "leads": 0,
-        "cost_per_lead": 0
+        "spend": 768.91,
+        "leads": 6,
+        "cost_per_lead": 128.15
       },
-      "credits": -18.32,
+      "credits": -19.52,
       "fees": 0.0,
       "payments": -504.93,
+      "is_partial": false
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "month_name": "October",
+      "total_spend": 292.37,
+      "google_ads": {
+        "spend": 40.55,
+        "clicks": 15,
+        "campaigns": [
+          "Keith Brown DDS, FAGD | Naperville's Family & Emergency Dentist"
+        ],
+        "cost_per_click": 2.7
+      },
+      "lsa": {
+        "spend": 251.82,
+        "leads": 2,
+        "cost_per_lead": 125.91
+      },
+      "credits": -0.68,
+      "fees": 0.0,
+      "payments": -796.46,
       "is_partial": false
     }
   ]
